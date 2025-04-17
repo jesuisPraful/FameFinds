@@ -1,5 +1,6 @@
 ﻿CREATE DATABASE FameFinds
 GO 
+
 Use FameFinds
 GO
 -- 1. UserCustomer Table

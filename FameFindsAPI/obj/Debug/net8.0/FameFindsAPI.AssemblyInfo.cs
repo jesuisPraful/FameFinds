@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FameFindsAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6b3f43603bad4b16bf20b87f71b86d6ea1f583e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55f067abc0c63e4f908a019955af612802e39b15")]
 [assembly: System.Reflection.AssemblyProductAttribute("FameFindsAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FameFindsAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
