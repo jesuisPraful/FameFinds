@@ -1,0 +1,16 @@
+E:\NEX PROJECT\FameFindsSolution\DAL\bin\Debug\net8.0\appsettings.json
+E:\NEX PROJECT\FameFindsSolution\DAL\bin\Debug\net8.0\FameFindsDAL.deps.json
+E:\NEX PROJECT\FameFindsSolution\DAL\bin\Debug\net8.0\FameFindsDAL.runtimeconfig.json
+E:\NEX PROJECT\FameFindsSolution\DAL\bin\Debug\net8.0\FameFindsDAL.dll
+E:\NEX PROJECT\FameFindsSolution\DAL\bin\Debug\net8.0\FameFindsDAL.pdb
+E:\NEX PROJECT\FameFindsSolution\DAL\obj\Debug\net8.0\FameFindsDAL.csproj.AssemblyReference.cache
+E:\NEX PROJECT\FameFindsSolution\DAL\obj\Debug\net8.0\FameFindsDAL.GeneratedMSBuildEditorConfig.editorconfig
+E:\NEX PROJECT\FameFindsSolution\DAL\obj\Debug\net8.0\FameFindsDAL.AssemblyInfoInputs.cache
+E:\NEX PROJECT\FameFindsSolution\DAL\obj\Debug\net8.0\FameFindsDAL.AssemblyInfo.cs
+E:\NEX PROJECT\FameFindsSolution\DAL\obj\Debug\net8.0\FameFindsDAL.csproj.CoreCompileInputs.cache
+E:\NEX PROJECT\FameFindsSolution\DAL\obj\Debug\net8.0\FameFindsDAL.sourcelink.json
+E:\NEX PROJECT\FameFindsSolution\DAL\obj\Debug\net8.0\FameFindsDAL.dll
+E:\NEX PROJECT\FameFindsSolution\DAL\obj\Debug\net8.0\refint\FameFindsDAL.dll
+E:\NEX PROJECT\FameFindsSolution\DAL\obj\Debug\net8.0\FameFindsDAL.pdb
+E:\NEX PROJECT\FameFindsSolution\DAL\obj\Debug\net8.0\FameFindsDAL.genruntimeconfig.cache
+E:\NEX PROJECT\FameFindsSolution\DAL\obj\Debug\net8.0\ref\FameFindsDAL.dll
