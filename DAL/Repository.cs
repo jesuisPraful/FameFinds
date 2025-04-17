@@ -19,6 +19,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 customers = null;
             }
             return customers;
