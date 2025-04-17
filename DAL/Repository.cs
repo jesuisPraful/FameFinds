@@ -26,5 +26,19 @@ namespace DAL
         } 
        
 
+        public List<Product> getAllProducts()
+        {
+            List<Product> products = new List<Product>();
+            try
+            {
+                products=context.Products.ToList();
+            }
+            catch (Exception ex)
+            {
+                products = null;
+            }
+            return products;
+        }
+
     }
 }

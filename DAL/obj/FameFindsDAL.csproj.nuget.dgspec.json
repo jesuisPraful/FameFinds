@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\NEX PROJECT\\GitHub\\TopPicks\\DAL\\FameFindsDAL.csproj": {}
+    "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\DAL\\FameFindsDAL.csproj": {}
   },
   "projects": {
-    "E:\\NEX PROJECT\\GitHub\\TopPicks\\DAL\\FameFindsDAL.csproj": {
+    "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\DAL\\FameFindsDAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\NEX PROJECT\\GitHub\\TopPicks\\DAL\\FameFindsDAL.csproj",
+        "projectUniqueName": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\DAL\\FameFindsDAL.csproj",
         "projectName": "FameFindsDAL",
-        "projectPath": "E:\\NEX PROJECT\\GitHub\\TopPicks\\DAL\\FameFindsDAL.csproj",
-        "packagesPath": "C:\\Users\\pavan\\.nuget\\packages\\",
-        "outputPath": "E:\\NEX PROJECT\\GitHub\\TopPicks\\DAL\\obj\\",
+        "projectPath": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\DAL\\FameFindsDAL.csproj",
+        "packagesPath": "C:\\Users\\amrut\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\pavan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\amrut\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
