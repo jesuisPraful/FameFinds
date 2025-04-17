@@ -14,3 +14,19 @@ E:\NEX PROJECT\FameFindsSolution\DAL\obj\Debug\net8.0\refint\FameFindsDAL.dll
 E:\NEX PROJECT\FameFindsSolution\DAL\obj\Debug\net8.0\FameFindsDAL.pdb
 E:\NEX PROJECT\FameFindsSolution\DAL\obj\Debug\net8.0\FameFindsDAL.genruntimeconfig.cache
 E:\NEX PROJECT\FameFindsSolution\DAL\obj\Debug\net8.0\ref\FameFindsDAL.dll
+C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\bin\Debug\net8.0\appsettings.json
+C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\bin\Debug\net8.0\FameFindsDAL.deps.json
+C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\bin\Debug\net8.0\FameFindsDAL.runtimeconfig.json
+C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\bin\Debug\net8.0\FameFindsDAL.dll
+C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\bin\Debug\net8.0\FameFindsDAL.pdb
+C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\obj\Debug\net8.0\FameFindsDAL.csproj.AssemblyReference.cache
+C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\obj\Debug\net8.0\FameFindsDAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\obj\Debug\net8.0\FameFindsDAL.AssemblyInfoInputs.cache
+C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\obj\Debug\net8.0\FameFindsDAL.AssemblyInfo.cs
+C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\obj\Debug\net8.0\FameFindsDAL.csproj.CoreCompileInputs.cache
+C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\obj\Debug\net8.0\FameFindsDAL.sourcelink.json
+C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\obj\Debug\net8.0\FameFindsDAL.dll
+C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\obj\Debug\net8.0\refint\FameFindsDAL.dll
+C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\obj\Debug\net8.0\FameFindsDAL.pdb
+C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\obj\Debug\net8.0\FameFindsDAL.genruntimeconfig.cache
+C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\obj\Debug\net8.0\ref\FameFindsDAL.dll

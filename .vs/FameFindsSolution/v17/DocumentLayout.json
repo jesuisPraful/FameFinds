@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\NEX PROJECT\\GitHub\\TopPicks\\",
+  "WorkspaceRootPath": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\NEX PROJECT\\GitHub\\TopPicks\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{CB376A01-158E-4A0A-919E-539F074749DB}|DAL\\FameFindsDAL.csproj|c:\\users\\amrut\\source\\repos\\offline csharp\\overall project\\toppicks\\dal\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB376A01-158E-4A0A-919E-539F074749DB}|DAL\\FameFindsDAL.csproj|solutionrelative:dal\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +14,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1234,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": ".gitignore",
-              "DocumentMoniker": "E:\\NEX PROJECT\\GitHub\\TopPicks\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "E:\\NEX PROJECT\\GitHub\\TopPicks\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAABgAAAAAAAAAAAAEwCEAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-17T11:46:04.606Z",
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\DAL\\Repository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repository.cs",
+              "ToolTip": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\DAL\\Repository.cs",
+              "RelativeToolTip": "DAL\\Repository.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T12:06:04.839Z",
               "EditorCaption": ""
             }
           ]
@@ -37,23 +53,7 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             }
           ]
         }
