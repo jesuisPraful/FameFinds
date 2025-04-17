@@ -30,6 +30,7 @@ C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\obj\Debu
 C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\obj\Debug\net8.0\FameFindsDAL.pdb
 C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\obj\Debug\net8.0\FameFindsDAL.genruntimeconfig.cache
 C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\DAL\obj\Debug\net8.0\ref\FameFindsDAL.dll
+<<<<<<< HEAD
 E:\NEX PROJECT\GitHub\TopPicks\DAL\bin\Debug\net8.0\appsettings.json
 E:\NEX PROJECT\GitHub\TopPicks\DAL\bin\Debug\net8.0\FameFindsDAL.deps.json
 E:\NEX PROJECT\GitHub\TopPicks\DAL\bin\Debug\net8.0\FameFindsDAL.runtimeconfig.json
@@ -46,3 +47,5 @@ E:\NEX PROJECT\GitHub\TopPicks\DAL\obj\Debug\net8.0\refint\FameFindsDAL.dll
 E:\NEX PROJECT\GitHub\TopPicks\DAL\obj\Debug\net8.0\FameFindsDAL.pdb
 E:\NEX PROJECT\GitHub\TopPicks\DAL\obj\Debug\net8.0\FameFindsDAL.genruntimeconfig.cache
 E:\NEX PROJECT\GitHub\TopPicks\DAL\obj\Debug\net8.0\ref\FameFindsDAL.dll
+=======
+>>>>>>> 177451f2ac419621a05c7ca69a11c4b8f4d0d924
