@@ -3,7 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\",
   "Documents": [
     {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+      "AbsoluteMoniker": "D:0:0:{CB376A01-158E-4A0A-919E-539F074749DB}|DAL\\FameFindsDAL.csproj|e:\\nex project\\github\\toppicks\\dal\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB376A01-158E-4A0A-919E-539F074749DB}|DAL\\FameFindsDAL.csproj|solutionrelative:dal\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\NEX PROJECT\\GitHub\\TopPicks\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+=======
+>>>>>>> fedd0b72a1210dcd5a88fa55907e7c2c0a660b2b
       "AbsoluteMoniker": "D:0:0:{CB376A01-158E-4A0A-919E-539F074749DB}|DAL\\FameFindsDAL.csproj|c:\\users\\amrut\\source\\repos\\offline csharp\\overall project\\toppicks\\dal\\sqlquery1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
       "RelativeMoniker": "D:0:0:{CB376A01-158E-4A0A-919E-539F074749DB}|DAL\\FameFindsDAL.csproj|solutionrelative:dal\\sqlquery1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
     },
@@ -41,6 +52,7 @@
     {
       "AbsoluteMoniker": "D:0:0:{CB376A01-158E-4A0A-919E-539F074749DB}|DAL\\FameFindsDAL.csproj|c:\\users\\amrut\\source\\repos\\offline csharp\\overall project\\toppicks\\dal\\sqlquery1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame",
       "RelativeMoniker": "D:0:0:{CB376A01-158E-4A0A-919E-539F074749DB}|DAL\\FameFindsDAL.csproj|solutionrelative:dal\\sqlquery1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame"
+>>>>>>> 177451f2ac419621a05c7ca69a11c4b8f4d0d924
     }
   ],
   "DocumentGroupContainers": [
@@ -93,6 +105,16 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
+              "Title": "Repository.cs",
+              "DocumentMoniker": "E:\\NEX PROJECT\\GitHub\\TopPicks\\DAL\\Repository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repository.cs",
+              "ToolTip": "E:\\NEX PROJECT\\GitHub\\TopPicks\\DAL\\Repository.cs",
+              "RelativeToolTip": "DAL\\Repository.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAcwCcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T12:09:06.444Z",
+=======
               "Title": "SQLQuery1.sql ",
               "DocumentMoniker": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\DAL\\SQLQuery1.sql",
               "RelativeDocumentMoniker": "DAL\\SQLQuery1.sql",
@@ -139,6 +161,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-17T12:39:50.151Z",
+>>>>>>> 177451f2ac419621a05c7ca69a11c4b8f4d0d924
               "EditorCaption": ""
 =======
 >>>>>>> Stashed changes
@@ -146,6 +169,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
               "Title": "SQLQuery1.sql ",
@@ -187,6 +211,18 @@
               "$type": "Document",
               "DocumentIndex": 0,
 >>>>>>> Stashed changes
+=======
+<<<<<<< HEAD
+              "Title": ".gitignore",
+              "DocumentMoniker": "E:\\NEX PROJECT\\GitHub\\TopPicks\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "E:\\NEX PROJECT\\GitHub\\TopPicks\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAABgAAAAAAAAAAAAEwCEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-17T11:46:04.606Z",
+=======
+>>>>>>> fedd0b72a1210dcd5a88fa55907e7c2c0a660b2b
               "Title": "Repository.cs",
               "DocumentMoniker": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\DAL\\Repository.cs",
               "RelativeDocumentMoniker": "DAL\\Repository.cs",
@@ -199,6 +235,7 @@
 >>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-17T12:06:04.839Z",
+>>>>>>> 177451f2ac419621a05c7ca69a11c4b8f4d0d924
               "EditorCaption": ""
             }
           ]

@@ -144,3 +144,17 @@ C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\FameFindsAPI
 C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\FameFindsAPI\obj\Debug\net8.0\FameFindsAPI.pdb
 C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\FameFindsAPI\obj\Debug\net8.0\FameFindsAPI.genruntimeconfig.cache
 C:\Users\amrut\source\repos\offline csharp\Overall Project\TopPicks\FameFindsAPI\obj\Debug\net8.0\ref\FameFindsAPI.dll
+<<<<<<< HEAD
+E:\NEX PROJECT\GitHub\TopPicks\FameFindsAPI\obj\Debug\net8.0\FameFindsAPI.csproj.AssemblyReference.cache
+E:\NEX PROJECT\GitHub\TopPicks\FameFindsAPI\obj\Debug\net8.0\FameFindsAPI.GeneratedMSBuildEditorConfig.editorconfig
+E:\NEX PROJECT\GitHub\TopPicks\FameFindsAPI\obj\Debug\net8.0\FameFindsAPI.AssemblyInfoInputs.cache
+E:\NEX PROJECT\GitHub\TopPicks\FameFindsAPI\obj\Debug\net8.0\FameFindsAPI.AssemblyInfo.cs
+E:\NEX PROJECT\GitHub\TopPicks\FameFindsAPI\obj\Debug\net8.0\FameFindsAPI.csproj.CoreCompileInputs.cache
+E:\NEX PROJECT\GitHub\TopPicks\FameFindsAPI\obj\Debug\net8.0\FameFindsAPI.MvcApplicationPartsAssemblyInfo.cs
+E:\NEX PROJECT\GitHub\TopPicks\FameFindsAPI\obj\Debug\net8.0\FameFindsAPI.MvcApplicationPartsAssemblyInfo.cache
+E:\NEX PROJECT\GitHub\TopPicks\FameFindsAPI\obj\Debug\net8.0\FameFindsAPI.sourcelink.json
+E:\NEX PROJECT\GitHub\TopPicks\FameFindsAPI\obj\Debug\net8.0\FameFindsAPI.dll
+E:\NEX PROJECT\GitHub\TopPicks\FameFindsAPI\obj\Debug\net8.0\refint\FameFindsAPI.dll
+E:\NEX PROJECT\GitHub\TopPicks\FameFindsAPI\obj\Debug\net8.0\FameFindsAPI.pdb
+=======
+>>>>>>> 177451f2ac419621a05c7ca69a11c4b8f4d0d924

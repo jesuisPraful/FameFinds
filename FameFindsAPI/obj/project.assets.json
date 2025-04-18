@@ -3462,19 +3462,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\amrut\\.nuget\\packages\\": {}
+    "C:\\Users\\pavan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\FameFindsAPI\\FameFindsAPI.csproj",
+      "projectUniqueName": "E:\\NEX PROJECT\\GitHub\\TopPicks\\FameFindsAPI\\FameFindsAPI.csproj",
       "projectName": "FameFindsAPI",
-      "projectPath": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\FameFindsAPI\\FameFindsAPI.csproj",
-      "packagesPath": "C:\\Users\\amrut\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\FameFindsAPI\\obj\\",
+      "projectPath": "E:\\NEX PROJECT\\GitHub\\TopPicks\\FameFindsAPI\\FameFindsAPI.csproj",
+      "packagesPath": "C:\\Users\\pavan\\.nuget\\packages\\",
+      "outputPath": "E:\\NEX PROJECT\\GitHub\\TopPicks\\FameFindsAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\amrut\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pavan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3489,8 +3489,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\DAL\\FameFindsDAL.csproj": {
-              "projectPath": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\DAL\\FameFindsDAL.csproj"
+            "E:\\NEX PROJECT\\GitHub\\TopPicks\\DAL\\FameFindsDAL.csproj": {
+              "projectPath": "E:\\NEX PROJECT\\GitHub\\TopPicks\\DAL\\FameFindsDAL.csproj"
             }
           }
         }

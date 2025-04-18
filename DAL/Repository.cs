@@ -4,12 +4,12 @@ namespace DAL
 {
     public class Repository
     {
-        FameFindsContext context {  get; set; }
-        public Repository()
+        private readonly FameFindsContext context;
+        public Repository(FameFindsContext Famecontext)
         {
-            context = new FameFindsContext();
+            context = Famecontext;
         }
-
+        #region CUSTOMER RELATED METHODS
         public List<Customer> getAllCustomers()
         {
             List<Customer> customers = new List<Customer>();
@@ -24,7 +24,48 @@ namespace DAL
             }
             return customers;
         } 
+        public bool AddCustomer(Customer customer)
+        {
+            bool status = false;
+            try
+            {
+                context.Customers.Add(customer);
+                context.SaveChanges();
+                status = true;
+            }
+            catch (Exception ex)
+            {
 
+                status = false;
+            }
+            return status;
+        }
+        public bool UpdateCustomerDeatils(Customer customer)
+        {
+            bool status = false;
+            try
+            {
+
+                var customerOne = context.Customers.Find(customer.CustomerId);
+                if (customerOne != null)
+                {
+                    customerOne.FullName = customer.FullName;
+                    customerOne.PhoneNumber = customer.PhoneNumber;
+                    customerOne.Email = customer.Email;
+                    context.SaveChanges();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                status = false;
+            }
+            return status;
+        }
+
+        #endregion
+        #region PRODUCT RELATED METHODS
         public List<Product> getAllProducts()
         {
             List<Product> products = new List<Product>();
@@ -38,6 +79,6 @@ namespace DAL
             }
             return products;
         }
-
+        #endregion
     }
 }
