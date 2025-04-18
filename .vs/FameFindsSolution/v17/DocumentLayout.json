@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\",
   "Documents": [
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{CB376A01-158E-4A0A-919E-539F074749DB}|DAL\\FameFindsDAL.csproj|c:\\users\\amrut\\source\\repos\\offline csharp\\overall project\\toppicks\\dal\\sqlquery1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
       "RelativeMoniker": "D:0:0:{CB376A01-158E-4A0A-919E-539F074749DB}|DAL\\FameFindsDAL.csproj|solutionrelative:dal\\sqlquery1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
     },
     {
+=======
+>>>>>>> Stashed changes
       "AbsoluteMoniker": "D:0:0:{CB376A01-158E-4A0A-919E-539F074749DB}|DAL\\FameFindsDAL.csproj|c:\\users\\amrut\\source\\repos\\offline csharp\\overall project\\toppicks\\dal\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB376A01-158E-4A0A-919E-539F074749DB}|DAL\\FameFindsDAL.csproj|solutionrelative:dal\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{A25AF30D-8F30-493E-BDB8-88E903854BC2}|FameFindsAPI\\FameFindsAPI.csproj|c:\\users\\amrut\\source\\repos\\offline csharp\\overall project\\toppicks\\famefindsapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A25AF30D-8F30-493E-BDB8-88E903854BC2}|FameFindsAPI\\FameFindsAPI.csproj|solutionrelative:famefindsapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A25AF30D-8F30-493E-BDB8-88E903854BC2}|FameFindsAPI\\FameFindsAPI.csproj|c:\\users\\amrut\\source\\repos\\offline csharp\\overall project\\toppicks\\famefindsapi\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A25AF30D-8F30-493E-BDB8-88E903854BC2}|FameFindsAPI\\FameFindsAPI.csproj|solutionrelative:famefindsapi\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{CB376A01-158E-4A0A-919E-539F074749DB}|DAL\\FameFindsDAL.csproj|c:\\users\\amrut\\source\\repos\\offline csharp\\overall project\\toppicks\\dal\\sqlquery1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{CB376A01-158E-4A0A-919E-539F074749DB}|DAL\\FameFindsDAL.csproj|solutionrelative:dal\\sqlquery1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+>>>>>>> Stashed changes
     },
     {
       "AbsoluteMoniker": "D:0:0:{A25AF30D-8F30-493E-BDB8-88E903854BC2}|FameFindsAPI\\FameFindsAPI.csproj|c:\\users\\amrut\\source\\repos\\offline csharp\\overall project\\toppicks\\famefindsapi\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +50,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1234,
+<<<<<<< Updated upstream
           "SelectedChildIndex": 6,
+=======
+          "SelectedChildIndex": 8,
+>>>>>>> Stashed changes
           "Children": [
             {
               "$type": "Bookmark",
@@ -63,6 +75,7 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+<<<<<<< Updated upstream
             },
             {
               "$type": "Document",
@@ -127,16 +140,63 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-17T12:39:50.151Z",
               "EditorCaption": ""
+=======
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+<<<<<<< Updated upstream
+=======
+              "Title": "SQLQuery1.sql ",
+              "DocumentMoniker": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\DAL\\SQLQuery1.sql",
+              "RelativeDocumentMoniker": "DAL\\SQLQuery1.sql",
+              "ToolTip": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\DAL\\SQLQuery1.sql",
+              "RelativeToolTip": "DAL\\SQLQuery1.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-04-17T12:42:35.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\DAL\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "DAL\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\DAL\\Models\\Product.cs",
+              "RelativeToolTip": "DAL\\Models\\Product.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T12:40:34.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "customer.cs",
+              "DocumentMoniker": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\FameFindsAPI\\Models\\customer.cs",
+              "RelativeDocumentMoniker": "FameFindsAPI\\Models\\customer.cs",
+              "ToolTip": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\FameFindsAPI\\Models\\customer.cs",
+              "RelativeToolTip": "FameFindsAPI\\Models\\customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T12:39:56.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+>>>>>>> Stashed changes
               "Title": "Repository.cs",
               "DocumentMoniker": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\DAL\\Repository.cs",
               "RelativeDocumentMoniker": "DAL\\Repository.cs",
               "ToolTip": "C:\\Users\\amrut\\source\\repos\\offline csharp\\Overall Project\\TopPicks\\DAL\\Repository.cs",
               "RelativeToolTip": "DAL\\Repository.cs",
+<<<<<<< Updated upstream
               "ViewState": "AgIAABQAAAAAAAAAAAAgwCgAAAAAAAAAAAAAAA==",
+=======
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+>>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-17T12:06:04.839Z",
               "EditorCaption": ""
