@@ -9,6 +9,10 @@ namespace DAL
         {
             context = Famecontext;
         }
+
+        public Repository()
+        {
+        }
         #region CUSTOMER RELATED METHODS
         public List<Customer> getAllCustomers()
         {
