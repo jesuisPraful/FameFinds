@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\NEX PROJECT\\GitHub\\TopPicks\\FameFindsAPI\\FameFindsAPI.csproj": {}
+    "C:\\Users\\91620\\Desktop\\Project\\TopPicks\\FameFindsAPI\\FameFindsAPI.csproj": {}
   },
   "projects": {
-    "E:\\NEX PROJECT\\GitHub\\TopPicks\\DAL\\FameFindsDAL.csproj": {
+    "C:\\Users\\91620\\Desktop\\Project\\TopPicks\\DAL\\FameFindsDAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\NEX PROJECT\\GitHub\\TopPicks\\DAL\\FameFindsDAL.csproj",
+        "projectUniqueName": "C:\\Users\\91620\\Desktop\\Project\\TopPicks\\DAL\\FameFindsDAL.csproj",
         "projectName": "FameFindsDAL",
-        "projectPath": "E:\\NEX PROJECT\\GitHub\\TopPicks\\DAL\\FameFindsDAL.csproj",
-        "packagesPath": "C:\\Users\\pavan\\.nuget\\packages\\",
-        "outputPath": "E:\\NEX PROJECT\\GitHub\\TopPicks\\DAL\\obj\\",
+        "projectPath": "C:\\Users\\91620\\Desktop\\Project\\TopPicks\\DAL\\FameFindsDAL.csproj",
+        "packagesPath": "C:\\Users\\91620\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\91620\\Desktop\\Project\\TopPicks\\DAL\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\pavan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\91620\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -85,21 +89,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\NEX PROJECT\\GitHub\\TopPicks\\FameFindsAPI\\FameFindsAPI.csproj": {
+    "C:\\Users\\91620\\Desktop\\Project\\TopPicks\\FameFindsAPI\\FameFindsAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\NEX PROJECT\\GitHub\\TopPicks\\FameFindsAPI\\FameFindsAPI.csproj",
+        "projectUniqueName": "C:\\Users\\91620\\Desktop\\Project\\TopPicks\\FameFindsAPI\\FameFindsAPI.csproj",
         "projectName": "FameFindsAPI",
-        "projectPath": "E:\\NEX PROJECT\\GitHub\\TopPicks\\FameFindsAPI\\FameFindsAPI.csproj",
-        "packagesPath": "C:\\Users\\pavan\\.nuget\\packages\\",
-        "outputPath": "E:\\NEX PROJECT\\GitHub\\TopPicks\\FameFindsAPI\\obj\\",
+        "projectPath": "C:\\Users\\91620\\Desktop\\Project\\TopPicks\\FameFindsAPI\\FameFindsAPI.csproj",
+        "packagesPath": "C:\\Users\\91620\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\91620\\Desktop\\Project\\TopPicks\\FameFindsAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\pavan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\91620\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -114,8 +122,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\NEX PROJECT\\GitHub\\TopPicks\\DAL\\FameFindsDAL.csproj": {
-                "projectPath": "E:\\NEX PROJECT\\GitHub\\TopPicks\\DAL\\FameFindsDAL.csproj"
+              "C:\\Users\\91620\\Desktop\\Project\\TopPicks\\DAL\\FameFindsDAL.csproj": {
+                "projectPath": "C:\\Users\\91620\\Desktop\\Project\\TopPicks\\DAL\\FameFindsDAL.csproj"
               }
             }
           }
@@ -159,7 +167,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

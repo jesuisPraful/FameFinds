@@ -1,7 +1,14 @@
-﻿CREATE DATABASE FameFinds
-GO 
+﻿USE [master]
+GO
 
-Use FameFinds
+IF (EXISTS (SELECT name FROM master.dbo.sysdatabases WHERE ('[' + name + ']' = N'FameFinds'OR name = N'FameFinds')))
+DROP DATABASE FameFinds
+GO
+
+CREATE DATABASE FameFinds
+GO
+
+USE FameFinds
 GO
 -- 1. UserCustomer Table
 CREATE TABLE Customer (
@@ -9,67 +16,57 @@ CREATE TABLE Customer (
     FullName NVARCHAR(100),
     Email NVARCHAR(100) UNIQUE,
     PasswordHash NVARCHAR(100),  -- Encrypted password
-    PhoneNumber NVARCHAR(15),
+    PhoneNumber NVARCHAR(15)
 );
 
-INSERT INTO [Customer] (FullName, Email, PasswordHash, PhoneNumber)
-VALUES 
-('Alice Johnson', 'alice@example.com', '2Xx9NmZ8y3A9eI3Zel==', '9876543210'),
-('Bob Smith', 'bobsmith@example.com', '7Kp9DjY62zLfN9Fk0Qa==', '9123456789'),
-('Catherine Lee', 'catlee@example.com', '0Qj3Llm5PvKJ9dFp5Rt==', '7890123456');
-GO
-SELECT * FROM Customer;
-GO
--- 2. UserVendor Table
+--2. Vendor Table
 CREATE TABLE Vendor (
     VendorId INT PRIMARY KEY IDENTITY,
     VendorName NVARCHAR(100),
     Email NVARCHAR(100) UNIQUE,
     PasswordHash NVARCHAR(100),  -- Encrypted password
-    PhoneNumber NVARCHAR(15),
+    PhoneNumber NVARCHAR(15)
 );
 GO
 
-INSERT INTO Vendor (VendorName, Email, PasswordHash, PhoneNumber)
-VALUES 
-('Craft Bazaar', 'vendor1@bazaar.com', '9Pq7HsL2tYv==', '9988776655'),
-('Silk Heritage', 'vendor2@silk.com', '7Tj2KuR8aZx==', '9876123450');
-GO
-SELECT * FROM Vendor;
-GO
--- 3. Shop Table
+
+
+-- Shop Table
 CREATE TABLE Shop (
     ShopId INT PRIMARY KEY IDENTITY,
-    ShopName NVARCHAR(150),
-    City NVARCHAR(100),
-    Address NVARCHAR(255),
-    VendorId INT,
-    FOREIGN KEY (VendorId) REFERENCES Vendor(VendorId)
+    ShopName VARCHAR(150),
+    EmailId VARCHAR(100) NOT NULL,
+    CityName VARCHAR(100) NOT NULL,
+    PINCODE VARCHAR(6) NOT NULL,
+    ContactNumber VARCHAR(15) NOT NULL,
+    Full_Address TEXT NOT NULL,
+    Latitude DECIMAL(10, 8) NOT NULL,
+    Longitude DECIMAL(11, 8) NOT NULL,
+    Opening_time TIME,
+    ClosingTime TIME,
+    IsOpen BIT DEFAULT 1,
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    VendorId INT NOT NULL,
+    FOREIGN KEY (VendorId) REFERENCES Vendor(VendorId),
+    CHECK (
+        (LOWER(CityName) = 'patna' AND PINCODE = '800001') OR
+        (LOWER(CityName) = 'mumbai' AND PINCODE = '400001') OR
+        (LOWER(CityName) = 'delhi' AND PINCODE = '110001') OR
+        (LOWER(CityName) = 'hyderabad' AND PINCODE = '500001') OR
+        (LOWER(CityName) = 'bengaluru' AND PINCODE = '560001')
+    )
 );
 GO
-INSERT INTO Shop (ShopName, City, Address, VendorId)
-VALUES 
-('Cauvery Handicrafts Emporium', 'Mysore', 'Sayyaji Rao Road, Mysore', 1),
-('Mysore Silk Palace', 'Mysore', 'Devaraja Market, Mysore', 2);
-GO
-SELECT * FROM Shop;
-GO
+
+ 
 
 -- 4. Category Table
 CREATE TABLE Category (
     CategoryId INT PRIMARY KEY IDENTITY,
-    CategoryName NVARCHAR(100) UNIQUE,
+    CategoryName NVARCHAR(100) UNIQUE
 );
 GO
-INSERT INTO Category (CategoryName)
-VALUES 
-('Handicrafts'),
-('Silk Sarees'),
-('Sandalwood Products'),
-('Jewellery');
-GO
-SELECT * FROM Category
-GO
+
 
 -- 5. Products Table
 CREATE TABLE Products (
@@ -79,15 +76,6 @@ CREATE TABLE Products (
     CategoryId INT,
     FOREIGN KEY (CategoryId) REFERENCES Category(CategoryId)
 );
-GO
-INSERT INTO Products (ProductName, Description, CategoryId)
-VALUES 
-('Wooden Elephant Figurine', 'Handcrafted wooden elephant made from rosewood', 1),
-('Mysore Silk Saree', 'Traditional silk saree with golden zari work', 2),
-('Sandalwood Soap', 'Natural sandalwood-scented bathing soap', 3),
-('Silver Anklets', 'Traditional Indian silver anklets', 4);
-GO
-SELECT * FROM Products
 GO
 
 -- 6. ShopProduct Table (Mapping Shop to Products)
@@ -101,14 +89,7 @@ CREATE TABLE ShopProduct (
     FOREIGN KEY (ProductId) REFERENCES Products(ProductId)
 );
 GO
-INSERT INTO ShopProduct (ShopId, ProductId, Price, Stock)
-VALUES 
-(1, 1, 850.00, 20),
-(1, 3, 120.00, 100),
-(2, 2, 4500.00, 15),
-(2, 4, 950.00, 10);
-GO
-SELECT * FROM ShopProduct
+
 
 -- 7. Rating Table
 CREATE TABLE Rating (
@@ -122,10 +103,83 @@ CREATE TABLE Rating (
     FOREIGN KEY (ShopId) REFERENCES Shop(ShopId)
 );
 GO
-INSERT INTO Rating (CustomerId, ShopId, RatingValue, Review)
-VALUES 
-(1, 1, 5, 'Amazing collection of handicrafts and great staff.'),
-(2, 2, 4, 'Beautiful silk sarees. Bit expensive but worth it.'),
-(3, 1, 4, 'Loved the sandalwood items. Neatly arranged shop.');
+
+
+INSERT INTO Customer (FullName, Email, PasswordHash, PhoneNumber) VALUES
+('Rahul Sharma', 'rahul@example.com', 'hash1', '9876543210'),
+('Priya Mehta', 'priya@example.com', 'hash2', '9998877665');
+
+
 GO
-SELECT * FROM Rating
+INSERT INTO Vendor (VendorName, Email, PasswordHash, PhoneNumber) VALUES
+('StarStyles', 'starstyles@example.com', 'vendorhash1', '8888888888'),
+('GlamZone', 'glamzone@example.com', 'vendorhash2', '7777777777');
+
+GO
+INSERT INTO Shop (ShopName, EmailId, CityName, PINCODE, ContactNumber, Full_Address, Latitude, Longitude, Opening_time, ClosingTime, VendorId)
+VALUES
+('Style Hub', 'stylehub@example.com', 'Patna', '800001', '9800000000', 'Boring Road, Patna', 25.615379, 85.101027, '10:00', '20:00', 1),
+('Glam Villa', 'glamvilla@example.com', 'Mumbai', '400001', '9700000000', 'Bandra, Mumbai', 19.076090, 72.877426, '09:00', '21:00', 2);
+
+GO
+INSERT INTO Category (CategoryName) VALUES
+('Clothing'),
+('Accessories'),
+('Footwear');
+
+GO
+INSERT INTO Products (ProductName, Description, CategoryId) VALUES
+('Denim Jacket', 'Stylish blue denim jacket for men', 1),
+('Leather Belt', 'Premium quality leather belt', 2),
+('Sneakers', 'Trendy white sneakers for all seasons', 3);
+
+GO
+INSERT INTO ShopProduct (ShopId, ProductId, Price, Stock) VALUES
+(1, 1, 1999.99, 20),
+(1, 2, 499.50, 50),
+(2, 3, 2999.00, 30);
+
+GO
+INSERT INTO Rating (CustomerId, ShopId, RatingValue, Review) VALUES
+(1, 1, 5, 'Great collection and service!'),
+(2, 2, 4, 'Nice variety but prices are high.');
+
+
+-- 1. View Customers
+SELECT * FROM Customer;
+
+-- 2. View Vendors
+SELECT * FROM Vendor;
+
+-- 3. View Shops
+SELECT * FROM Shop;
+
+-- 4. View Categories
+SELECT * FROM Category;
+
+-- 5. View Products
+SELECT * FROM Products;
+
+-- 6. View Shop Products (with JOIN for clarity)
+SELECT 
+    SP.ShopProductId,
+    S.ShopName,
+    P.ProductName,
+    SP.Price,
+    SP.Stock
+FROM ShopProduct SP
+JOIN Shop S ON SP.ShopId = S.ShopId
+JOIN Products P ON SP.ProductId = P.ProductId;
+
+-- 7. View Ratings (with JOIN for details)
+SELECT 
+    R.RatingId,
+    C.FullName AS CustomerName,
+    S.ShopName,
+    R.RatingValue,
+    R.Review,
+    R.CreatedAt
+FROM Rating R
+JOIN Customer C ON R.CustomerId = C.CustomerId
+JOIN Shop S ON R.ShopId = S.ShopId;
+

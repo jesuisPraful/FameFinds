@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DAL.Models;
+namespace FameFindsDAL.Models;
 
 public partial class Rating
 {
