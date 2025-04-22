@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FameFindsDAL", "FameFindsDAL\FameFindsDAL.csproj", "{D4237B96-9556-4AF6-82B5-08430B9CBADF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FameFindsDAL", "FameFindsDAL\FameFindsDAL.csproj", "{D4237B96-9556-4AF6-82B5-08430B9CBADF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FameFindsWebServices", "FameFindsWebServices\FameFindsWebServices.csproj", "{FD6DBC36-0013-4322-95DF-20BA57AAB0B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D4237B96-9556-4AF6-82B5-08430B9CBADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4237B96-9556-4AF6-82B5-08430B9CBADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4237B96-9556-4AF6-82B5-08430B9CBADF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD6DBC36-0013-4322-95DF-20BA57AAB0B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD6DBC36-0013-4322-95DF-20BA57AAB0B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD6DBC36-0013-4322-95DF-20BA57AAB0B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD6DBC36-0013-4322-95DF-20BA57AAB0B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
