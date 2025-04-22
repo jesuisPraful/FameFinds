@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
 namespace FameFindsDAL
@@ -70,7 +71,42 @@ namespace FameFindsDAL
             return status;
         }
 
+        #region category
+
+        public List<Category> GetAllCategories()
+        {
+            List<Category> categories = new List<Category>();
+            try
+            {
+                categories = context.Categories.ToList();
+            }
+            catch (Exception ex)
+            {
+                categories = null;
+            }
+            return categories;
+        }
         #endregion
 
+        #region Products
+
+        public List<Product> GetAllProducts()
+        {
+            List<Product> products = new List<Product>();
+            try
+            {
+                products = context.Products.ToList();
+            }
+            catch (Exception ex)
+            {
+                products = null;
+            }
+            return products;
+        }
+
+
+
+
+        #endregion
     }
 }

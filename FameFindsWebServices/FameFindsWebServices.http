@@ -1,4 +1,3 @@
-@FameFindsWebServices_HostAddress = http://localhost:5194
 
 GET {{FameFindsWebServices_HostAddress}}/weatherforecast/
 Accept: application/json

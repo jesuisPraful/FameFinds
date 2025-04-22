@@ -132,8 +132,8 @@ INSERT INTO Products (ProductName, Description, CategoryId) VALUES
 ('Denim Jacket', 'Stylish blue denim jacket for men', 1),
 ('Leather Belt', 'Premium quality leather belt', 2),
 ('Sneakers', 'Trendy white sneakers for all seasons', 3);
-
 GO
+
 INSERT INTO ShopProduct (ShopId, ProductId, Price, Stock) VALUES
 (1, 1, 1999.99, 20),
 (1, 2, 499.50, 50),
