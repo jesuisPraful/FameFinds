@@ -42,14 +42,9 @@ namespace FameFindsDAL
             }
             catch (Exception)
             {
-                status=false;
+                status = false;
             }
             return status;
         }
-
-
-
-
-
     }
 }

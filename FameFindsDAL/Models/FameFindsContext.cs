@@ -32,38 +32,38 @@ public partial class FameFindsContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        var builder = new ConfigurationBuilder()
-         .SetBasePath(Directory.GetCurrentDirectory())
-         .AddJsonFile("appsettings.json");
-        var config = builder.Build();
-        var connectionString =
-       config.GetConnectionString("ConnectionName");
-        if (!optionsBuilder.IsConfigured)
-        {
-            optionsBuilder.UseSqlServer(connectionString);
-        }
+            var builder = new ConfigurationBuilder()
+             .SetBasePath(Directory.GetCurrentDirectory())
+             .AddJsonFile("appsettings.json");
+            var config = builder.Build();
+            var connectionString =
+           config.GetConnectionString("ConnectionName");
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(connectionString);
+            }
     }
 
-protected override void OnModelCreating(ModelBuilder modelBuilder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasKey(e => e.CategoryId).HasName("PK__Category__19093A0B6647495D");
+            entity.HasKey(e => e.CategoryId).HasName("PK__Category__19093A0B82EE1F42");
 
             entity.ToTable("Category");
 
-            entity.HasIndex(e => e.CategoryName, "UQ__Category__8517B2E0C49A3ECC").IsUnique();
+            entity.HasIndex(e => e.CategoryName, "UQ__Category__8517B2E0BA6392F6").IsUnique();
 
             entity.Property(e => e.CategoryName).HasMaxLength(100);
         });
 
         modelBuilder.Entity<Customer>(entity =>
         {
-            entity.HasKey(e => e.CustomerId).HasName("PK__Customer__A4AE64D8FF2FFF12");
+            entity.HasKey(e => e.CustomerId).HasName("PK__Customer__A4AE64D87A3E66C5");
 
             entity.ToTable("Customer");
 
-            entity.HasIndex(e => e.Email, "UQ__Customer__A9D10534C9F851A7").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__Customer__A9D1053461462BB4").IsUnique();
 
             entity.Property(e => e.Email).HasMaxLength(100);
             entity.Property(e => e.FullName).HasMaxLength(100);
@@ -73,7 +73,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.HasKey(e => e.ProductId).HasName("PK__Products__B40CC6CD807A31F5");
+            entity.HasKey(e => e.ProductId).HasName("PK__Products__B40CC6CD9453B435");
 
             entity.Property(e => e.Description).HasMaxLength(255);
             entity.Property(e => e.ProductName).HasMaxLength(150);
@@ -85,7 +85,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
         modelBuilder.Entity<Rating>(entity =>
         {
-            entity.HasKey(e => e.RatingId).HasName("PK__Rating__FCCDF87CDCA2C9A9");
+            entity.HasKey(e => e.RatingId).HasName("PK__Rating__FCCDF87CB43E5F87");
 
             entity.ToTable("Rating");
 
@@ -105,7 +105,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
         modelBuilder.Entity<Shop>(entity =>
         {
-            entity.HasKey(e => e.ShopId).HasName("PK__Shop__67C557C9313FD0DD");
+            entity.HasKey(e => e.ShopId).HasName("PK__Shop__67C557C933EBBF58");
 
             entity.ToTable("Shop");
 
@@ -144,7 +144,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
         modelBuilder.Entity<ShopProduct>(entity =>
         {
-            entity.HasKey(e => e.ShopProductId).HasName("PK__ShopProd__A9FBB4D5FC610662");
+            entity.HasKey(e => e.ShopProductId).HasName("PK__ShopProd__A9FBB4D5C11DFD61");
 
             entity.ToTable("ShopProduct");
 
@@ -161,11 +161,11 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
         modelBuilder.Entity<Vendor>(entity =>
         {
-            entity.HasKey(e => e.VendorId).HasName("PK__Vendor__FC8618F35F68F5FA");
+            entity.HasKey(e => e.VendorId).HasName("PK__Vendor__FC8618F3EE270827");
 
             entity.ToTable("Vendor");
 
-            entity.HasIndex(e => e.Email, "UQ__Vendor__A9D10534E32672EC").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__Vendor__A9D1053417C2ACD4").IsUnique();
 
             entity.Property(e => e.Email).HasMaxLength(100);
             entity.Property(e => e.PasswordHash).HasMaxLength(100);
