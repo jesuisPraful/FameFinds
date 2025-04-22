@@ -1,7 +1,24 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\NEX PROJECT\\GitHub\\TopPicks\\",
-  "Documents": [],
+  "WorkspaceRootPath": "E:\\NEX PROJECT\\FameFinds\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|e:\\nex project\\famefinds\\famefindswebservices\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|e:\\nex project\\famefinds\\famefindswebservices\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|e:\\nex project\\famefinds\\famefindswebservices\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|e:\\nex project\\famefinds\\famefindsdal\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|solutionrelative:famefindsdal\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +26,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1234,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "E:\\NEX PROJECT\\FameFinds\\FameFindsWebServices\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "FameFindsWebServices\\Models\\Customer.cs",
+              "ToolTip": "E:\\NEX PROJECT\\FameFinds\\FameFindsWebServices\\Models\\Customer.cs",
+              "RelativeToolTip": "FameFindsWebServices\\Models\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T11:09:31.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "E:\\NEX PROJECT\\FameFinds\\FameFindsWebServices\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "FameFindsWebServices\\Controllers\\CustomerController.cs",
+              "ToolTip": "E:\\NEX PROJECT\\FameFinds\\FameFindsWebServices\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "FameFindsWebServices\\Controllers\\CustomerController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBIAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T11:00:04.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\NEX PROJECT\\FameFinds\\FameFindsWebServices\\appsettings.json",
+              "RelativeDocumentMoniker": "FameFindsWebServices\\appsettings.json",
+              "ToolTip": "E:\\NEX PROJECT\\FameFinds\\FameFindsWebServices\\appsettings.json",
+              "RelativeToolTip": "FameFindsWebServices\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-22T10:58:15.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\NEX PROJECT\\FameFinds\\FameFindsDAL\\appsettings.json",
+              "RelativeDocumentMoniker": "FameFindsDAL\\appsettings.json",
+              "ToolTip": "E:\\NEX PROJECT\\FameFinds\\FameFindsDAL\\appsettings.json",
+              "RelativeToolTip": "FameFindsDAL\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-22T10:58:09.532Z",
+              "EditorCaption": ""
             }
           ]
         },
