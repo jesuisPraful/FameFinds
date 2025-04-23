@@ -40,7 +40,7 @@ namespace FameFindsWebServices.Controllers
             }
             return Ok(customers);
         }
-        [HttpPost]
+        //[HttpPost]
         //public IActionResult AddCustomer(Customer customer)
         //{
         //    bool status = false;
@@ -66,6 +66,6 @@ namespace FameFindsWebServices.Controllers
         //        status = false;
         //        return BadRequest("Failed to add customer");
         //    }
-        }
+        //}
     }
 }
