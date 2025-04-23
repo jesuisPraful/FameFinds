@@ -21,7 +21,8 @@ namespace FameFindsWebServices.Controllers
             try
             {
                 var customersList = _repository.GetAllCustomers();
-                if (customersList != null) {
+                if (customersList != null)
+                {
                     foreach (var customer in customersList)
                     {
                         Customer customerOne = new Customer();
@@ -40,7 +41,7 @@ namespace FameFindsWebServices.Controllers
             }
             return Ok(customers);
         }
-        [HttpPost]
+        // [HttpPost]
         //public IActionResult AddCustomer(Customer customer)
         //{
         //    bool status = false;
@@ -66,6 +67,7 @@ namespace FameFindsWebServices.Controllers
         //        status = false;
         //        return BadRequest("Failed to add customer");
         //    }
-        }
+        //}
+        //}
     }
 }
