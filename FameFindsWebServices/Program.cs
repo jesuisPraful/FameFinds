@@ -15,9 +15,8 @@ internal class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
-        builder.Services.AddSingleton<FameFindsRepository>(new FameFindsRepository(new FameFindsContext(new DbContextOptions<FameFindsContext>())));
-        builder.Services.AddDbContext<FameFindsContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionName")));
+        builder.Services.AddScoped<FameFindsRepository>();
+        builder.Services.AddScoped<FameFindsContext>();
 
         var app = builder.Build();
 
