@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 internal class Program
 {
+    private static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
@@ -14,9 +15,10 @@ internal class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
-        builder.Services.AddSingleton<FameFindsRepository>(new FameFindsRepository(new FameFindsContext(new DbContextOptions<FameFindsContext>())));
-        builder.Services.AddDbContext<FameFindsContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionName")));
+        builder.Services.AddScoped<FameFindsRepository>(/*new FameFindsRepository(new FameFindsContext(new DbContextOptions<FameFindsContext>()))*/);
+        builder.Services.AddScoped<FameFindsContext>();
+        //builder.Services.AddDbContext<FameFindsContext>(options =>
+        //    options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionName")));
 
         var app = builder.Build();
 
@@ -31,10 +33,8 @@ internal class Program
 
         app.UseAuthorization();
 
-
         app.MapControllers();
 
         app.Run();
     }
-}
 }

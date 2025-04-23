@@ -53,7 +53,7 @@ namespace FameFindsDAL
                 var customerOne = context.Customers.Find(customer.CustomerId);
                 if (customerOne == null)
                 {
-                    status =  false;
+                    status = false;
                 }
                 else
                 {
@@ -62,7 +62,7 @@ namespace FameFindsDAL
                     customerOne.PhoneNumber = customer.PhoneNumber;
                     context.SaveChanges();
                     status = true;
-                }      
+                }
             }
             catch (Exception ex)
             {
@@ -70,6 +70,7 @@ namespace FameFindsDAL
             }
             return status;
         }
+        #endregion
 
         #region category
 
