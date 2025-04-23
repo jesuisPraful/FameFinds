@@ -244,15 +244,16 @@ namespace FameFindsDAL
             return ratings;
         }
 
-        public bool RemoveRating(Rating rating)
+        public bool RemoveRating(int ratingId)
         {
             bool status = false;
             try
             {
-                var removeObj = context.Ratings.Find(rating.RatingId);
-                if (removeObj != null && removeObj.CustomerId == rating.CustomerId)
+                var removeObj = context.Ratings.Find(ratingId);
+                //if (removeObj != null && removeObj.CustomerId == rating.CustomerId)
+                if(removeObj != null && removeObj.CustomerId != null)
                 {
-                    context.Ratings.Remove(rating);
+                    context.Ratings.Remove(removeObj);
                     context.SaveChanges();
                     status = true;
                 }
