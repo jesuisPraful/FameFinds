@@ -21,7 +21,8 @@ namespace FameFindsWebServices.Controllers
             try
             {
                 var customersList = _repository.GetAllCustomers();
-                if (customersList != null) {
+                if (customersList != null)
+                {
                     foreach (var customer in customersList)
                     {
                         Customer customerOne = new Customer();
@@ -39,33 +40,6 @@ namespace FameFindsWebServices.Controllers
                 return BadRequest("Failed to retrieve customers");
             }
             return Ok(customers);
-        }
-        [HttpPost]
-        //public IActionResult AddCustomer(Customer customer)
-        //{
-        //    bool status = false;
-        //    try
-        //    {
-        //        var customer = new FameFindsDAL.Models.Customer();
-        //        if (ModelState.IsValid)
-        //        {
-        //            status = _repository.AddCustomer(customer);
-        //            if (status)
-        //            {
-        //                return Ok("Customer added successfully");
-        //            }
-        //            else
-        //            {
-        //                return BadRequest("Failed to add customer");
-        //            }
-        //        }
-        //        return BadRequest("Invalid customer data");
-        //    }
-        //    catch (Exception)
-        //    {
-        //        status = false;
-        //        return BadRequest("Failed to add customer");
-        //    }
         }
     }
 }

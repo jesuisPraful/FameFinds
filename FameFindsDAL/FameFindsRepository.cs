@@ -204,5 +204,66 @@ namespace FameFindsDAL
         }
         #endregion
 
+        #region Ratings
+        public bool AddRating(Rating rating)
+        {
+            bool status = false;
+            try
+            {
+                var shopObj = context.Customers.Find(rating.ShopId);
+                if (shopObj != null && rating.CustomerId != null)
+                {
+                    context.Ratings.Add(rating);
+                    context.SaveChanges();
+                    status = true;
+                }
+                else
+                {
+                    status = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                status = false;
+            }
+            return status;
         }
+
+        public List<Rating> GetRatings()
+        {
+            List<Rating> ratings = new List<Rating>();
+            try
+            {
+                ratings = (from r in context.Ratings
+                           select r).ToList();
+            }
+            catch (Exception ex)
+            {
+                ratings = null;
+            }
+            return ratings;
+        }
+
+        public bool RemoveRating(Rating rating)
+        {
+            bool status = false;
+            try
+            {
+                var removeObj = context.Ratings.Find(rating.RatingId);
+                if (removeObj != null && removeObj.CustomerId == rating.CustomerId)
+                {
+                    context.Ratings.Remove(rating);
+                    context.SaveChanges();
+                    status = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                status = false;
+            }
+            return status;
+        }
+        #endregion
+
+    }
 }
