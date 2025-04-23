@@ -1,4 +1,5 @@
 ﻿using FameFindsDAL.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,33 +11,20 @@ namespace FameFindsDAL
 {
     public class FameFindsRepository
     {
-        private readonly FameFindsContext context;
+        private readonly FameFindsContext _context;
         public FameFindsRepository(FameFindsContext Famecontext)
         {
-            context = Famecontext;
+            _context = Famecontext;
         }
 
         #region CUSTOMER
-        public List<Customer> GetAllCustomers()
-        {
-            List<Customer> customers = new List<Customer>();
-            try
-            {
-                customers = context.Customers.ToList();
-            }
-            catch (Exception ex)
-            {
-                customers = null;
-            }
-            return customers;
-        }
-        public bool AddCustomer(Customer customer)
+        public bool RegisterCustomer(Customer customer)
         {
             bool status = false;
             try
             {
-                context.Customers.Add(customer);
-                context.SaveChanges();
+                _context.Customers.Add(customer);
+                _context.SaveChanges();
                 status = true;
             }
             catch (Exception ex)
@@ -45,22 +33,106 @@ namespace FameFindsDAL
             }
             return status;
         }
-        public bool UpdateCustomer(Customer customer)
+        public Customer LoginCustomer(string email, string passwordHash)
         {
-            bool status = false;
             try
             {
-                var customerOne = context.Customers.Find(customer.CustomerId);
+                var user = _context.Customers.FirstOrDefault(u => u.Email == email && u.PasswordHash == passwordHash);
+                return user;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Login failed: {ex.Message}");
+                return null;
+            }
+        }
+
+        public Customer GetCustomerById(int customerId)
+        {
+            Customer customer = new Customer();
+            try
+            {
+                customer = _context.Customers.Find(customerId);
+            }
+            catch (Exception ex)
+            {
+                customer = null;
+            }
+            return customer;
+        }
+
+        public List<Customer> GetAllCustomers()
+        {
+            List<Customer> customers = new List<Customer>();
+            try
+            {
+                customers = _context.Customers.ToList();
+            }
+            catch (Exception ex)
+            {
+                customers = null;
+                Console.WriteLine(ex.Message);
+            }
+            return customers;
+        }
+        public int UpdateCustomer(Customer customer)
+        {
+            int status = 0;
+            try
+            {
+                var customerOne = _context.Customers.Find(customer.CustomerId);
                 if (customerOne == null)
                 {
-                    status = false;
+                    status = -1;
                 }
                 else
                 {
                     customerOne.FullName = customer.FullName;
                     customerOne.Email = customer.Email;
                     customerOne.PhoneNumber = customer.PhoneNumber;
-                    context.SaveChanges();
+                    _context.SaveChanges();
+                    status = 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                status = -99;
+            }
+            return status;
+        }
+        public int DeleteCustomer(int customerId)
+        {
+            int status = 0;
+            try
+            {
+                var customerOne = _context.Customers.Find(customerId);
+                if (customerOne == null)
+                {
+                    status = -1;
+                }
+                else
+                {
+                    _context.Customers.Remove(customerOne);
+                    _context.SaveChanges();
+                    status = 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                status = -99;
+            }
+            return status;
+        }
+        public bool UpdateUserPassword(int customerId, string newPasswordHash)
+        {
+            bool status = false;
+            try
+            {
+                var user = _context.Customers.Find(customerId);
+                if (user != null)
+                {
+                    user.PasswordHash = newPasswordHash;
+                    _context.SaveChanges();
                     status = true;
                 }
             }
@@ -70,6 +142,21 @@ namespace FameFindsDAL
             }
             return status;
         }
+
+        public bool IsEmailExists(string email)
+        {
+            try
+            {
+                return _context.Customers.Any(c => c.Email == email);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in IsEmailExists: {ex.Message}");
+                return false;
+            }
+        }
+
+
         #endregion
 
         #region category
@@ -79,7 +166,7 @@ namespace FameFindsDAL
             List<Category> categories = new List<Category>();
             try
             {
-                categories = context.Categories.ToList();
+                categories = _context.Categories.ToList();
             }
             catch (Exception ex)
             {
@@ -96,7 +183,7 @@ namespace FameFindsDAL
             List<Product> products = new List<Product>();
             try
             {
-                products = context.Products.ToList();
+                products = _context.Products.ToList();
             }
             catch (Exception ex)
             {
@@ -104,10 +191,6 @@ namespace FameFindsDAL
             }
             return products;
         }
-
-
-
-
         #endregion
     }
 }
