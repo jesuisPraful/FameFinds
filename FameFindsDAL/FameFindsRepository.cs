@@ -16,6 +16,20 @@ namespace FameFindsDAL
             context = Famecontext;
         }
 
+        #region CUSTOMER
+        public List<Customer> GetAllCustomers()
+        {
+            List<Customer> customers = new List<Customer>();
+            try
+            {
+                customers = context.Customers.ToList();
+            }
+            catch (Exception ex)
+            {
+                customers = null;
+            }
+            return customers;
+        }
         public bool AddCustomer(Customer customer)
         {
             bool status = false;
@@ -31,22 +45,32 @@ namespace FameFindsDAL
             }
             return status;
         }
-
-        public bool AddVendor(Vendor vendor)
+        public bool UpdateCustomer(Customer customer)
         {
             bool status = false;
             try
             {
-                context.Vendors.Add(vendor);
-                context.SaveChanges();
-                status = true;
+                var customerOne = context.Customers.Find(customer.CustomerId);
+                if (customerOne == null)
+                {
+                    status = false;
+                }
+                else
+                {
+                    customerOne.FullName = customer.FullName;
+                    customerOne.Email = customer.Email;
+                    customerOne.PhoneNumber = customer.PhoneNumber;
+                    context.SaveChanges();
+                    status = true;
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 status = false;
             }
             return status;
         }
+        #endregion
 
         #region category
 
