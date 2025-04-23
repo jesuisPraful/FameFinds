@@ -192,7 +192,7 @@ namespace FameFindsDAL
         }
         public bool AddProduct(Product product)
         {
-          var name= ( from p in context.Products
+          var name= ( from p in _context.Products
             where p.ProductName == product.ProductName
             select p).FirstOrDefault();
             bool status = false;
@@ -200,8 +200,8 @@ namespace FameFindsDAL
             { 
                 try
                 {
-                    context.Products.Add(product);
-                    context.SaveChanges();
+                    _context.Products.Add(product);
+                    _context.SaveChanges();
                     status = true;
                 }
                 catch (Exception ex)
@@ -222,13 +222,13 @@ namespace FameFindsDAL
             bool status = false;
             try
             {
-                var existingProduct = context.Products.Find(product.ProductId);
+                var existingProduct = _context.Products.Find(product.ProductId);
                 if (existingProduct != null)
                 {
                     existingProduct.ProductName = product.ProductName;
                     existingProduct.Description = product.Description;
                     existingProduct.CategoryId = product.CategoryId;
-                    context.SaveChanges();
+                    _context.SaveChanges();
                     status = true;
                 }
             }
@@ -243,11 +243,11 @@ namespace FameFindsDAL
             bool status = false;
             try
             {
-                var existingProduct = context.Products.Find(productId);
+                var existingProduct = _context.Products.Find(productId);
                 if (existingProduct != null)
                 {
-                    context.Products.Remove(existingProduct);
-                    context.SaveChanges();
+                    _context.Products.Remove(existingProduct);
+                    _context.SaveChanges();
                     status = true;
                 }
             }
@@ -262,7 +262,7 @@ namespace FameFindsDAL
             Product product = new Product();
             try
             {
-                product = (from p in context.Products
+                product = (from p in _context.Products
                           where p.ProductName == ProductName
                           select p).FirstOrDefault();
             }
@@ -277,8 +277,8 @@ namespace FameFindsDAL
             List<Product> products = new List<Product>();
             try
             {
-                products = (from p in context.Products
-                            join c in context.Categories on p.CategoryId equals c.CategoryId
+                products = (from p in _context.Products
+                            join c in _context.Categories on p.CategoryId equals c.CategoryId
                             where c.CategoryName == categoryName
                             select p).ToList();
             }
