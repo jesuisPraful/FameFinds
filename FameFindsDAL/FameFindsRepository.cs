@@ -321,8 +321,6 @@ namespace FameFindsDAL
             }
             return status;
         }
-
-
         public bool UpdateVendor(Vendor vendor)
         {
             bool status = false;
@@ -368,7 +366,21 @@ namespace FameFindsDAL
             }
             return false;
         }
-       
+        public Vendor GetVendorByName(string VendorName)
+        {
+            Vendor vendor = new Vendor();
+            try
+            {
+                vendor = (from V in _context.Vendors
+                           where V.VendorName == VendorName
+                     select V).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                vendor = null;
+            }
+            return vendor;
+        }
 
         #endregion
 
