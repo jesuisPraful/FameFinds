@@ -15,7 +15,6 @@ internal class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
- 
         builder.Services.AddScoped<FameFindsRepository>();
         builder.Services.AddScoped<FameFindsContext>();
 
