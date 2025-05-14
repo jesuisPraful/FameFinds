@@ -17,7 +17,7 @@ namespace FameFindsWebServices.Controllers
             _repository = repository;
         }
 
-        [HttpGet]
+        [HttpGet("GetAllCustomers")]
         public IActionResult GetAllCustomers()
         {
             List<Customer> customers = new List<Customer>();
@@ -166,7 +166,7 @@ namespace FameFindsWebServices.Controllers
                 return BadRequest("Failed to Delete Customer");
             }
         }
-        [HttpGet("{customerId}")]
+        [HttpGet("customerId")]
         public IActionResult GetCustomerById(int customerId)
         {
             try
@@ -203,7 +203,7 @@ namespace FameFindsWebServices.Controllers
                     return BadRequest("Email must be provided.");
 
                 bool exists = _repository.IsEmailExists(email);
-                return Ok(new { emailExists = exists });
+                return Ok(exists);
             }
             catch (Exception ex)
             {
