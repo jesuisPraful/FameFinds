@@ -13,6 +13,11 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+#Node_Modules
+FameFindsApp/node_modules/
+**/node_modules/
+
+
 # Mono auto generated files
 mono_crash.*
 
