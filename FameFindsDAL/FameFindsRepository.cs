@@ -380,8 +380,9 @@ namespace FameFindsDAL
             bool status = false;
             try
             {
+                var shopObj = _context.Shops.Find(rating.ShopId);
                 var customerObj = _context.Customers.Find(rating.CustomerId);
-                if (customerObj != null)
+                if (shopObj != null && customerObj != null)
                 {
                     _context.Ratings.Add(rating);
                     _context.SaveChanges();
