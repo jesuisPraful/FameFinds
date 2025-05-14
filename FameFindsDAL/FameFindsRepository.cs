@@ -367,22 +367,22 @@ namespace FameFindsDAL
             }
             return false;
         }
-<<<<<<< HEAD
         public Vendor GetVendorByName(string VendorName)
         {
             Vendor vendor = new Vendor();
             try
             {
                 vendor = (from V in _context.Vendors
-                           where V.VendorName == VendorName
-                     select V).FirstOrDefault();
+                          where V.VendorName == VendorName
+                          select V).FirstOrDefault();
             }
             catch (Exception ex)
             {
                 vendor = null;
             }
             return vendor;
-=======
+        }
+
         #endregion
 
         #region Ratings
@@ -754,7 +754,6 @@ namespace FameFindsDAL
                 status = false;
             }
             return status;
->>>>>>> 2d4adc2ce6e378bd244a6a332394ec87450a4090
         }
 
         #endregion
