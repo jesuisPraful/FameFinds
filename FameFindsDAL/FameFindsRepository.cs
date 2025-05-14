@@ -372,13 +372,15 @@ namespace FameFindsDAL
         #endregion
 
         #region Ratings
+
         public bool AddRating(Rating rating)
         {
             bool status = false;
             try
             {
-                var shopObj = _context.Customers.Find(rating.ShopId);
-                if (shopObj != null && rating.CustomerId != null)
+                var shopObj = _context.Shops.Find(rating.ShopId);
+                var customerObj = _context.Customers.Find(rating.CustomerId);
+                if (shopObj != null && customerObj != null)
                 {
                     _context.Ratings.Add(rating);
                     _context.SaveChanges();
@@ -395,6 +397,27 @@ namespace FameFindsDAL
             }
             return status;
         }
+
+        //public bool UpdateRating(Rating rating)
+        //{
+        //    bool status = false;
+        //    try
+        //    {
+        //        var ratingObj = _context.Ratings.Find(rating.RatingId);
+        //        if (ratingObj != null && rating.CustomerId != null)
+        //        {
+        //            ratingObj.RatingValue = rating.RatingValue;
+        //            ratingObj.Comment = rating.Comment;
+        //            _context.SaveChanges();
+        //            status = true;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        status = false;
+        //    }
+        //    return status;
+        //}
 
         public List<Rating> GetRatings()
         {
@@ -431,6 +454,7 @@ namespace FameFindsDAL
             }
             return status;
         }
+
         #endregion
 
         #region shop
