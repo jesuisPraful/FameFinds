@@ -367,3 +367,7 @@ FodyWeavers.xsd
 /.gitignore
 /.vs/FameFindsSolution/v17/DocumentLayout.json
 /.gitignore
+/FameFindsDAL/appsettings.json
+/FameFindsWebServices/appsettings.json
+/.gitignore
+/.gitignore
