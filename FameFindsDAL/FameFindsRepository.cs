@@ -192,12 +192,12 @@ namespace FameFindsDAL
         }
         public bool AddProduct(Product product)
         {
-          var name= ( from p in _context.Products
-            where p.ProductName == product.ProductName
-            select p).FirstOrDefault();
+            var name = (from p in _context.Products
+                        where p.ProductName == product.ProductName
+                        select p).FirstOrDefault();
             bool status = false;
-            if ((name==null))
-            { 
+            if ((name == null))
+            {
                 try
                 {
                     _context.Products.Add(product);
@@ -263,8 +263,8 @@ namespace FameFindsDAL
             try
             {
                 product = (from p in _context.Products
-                          where p.ProductName == ProductName
-                          select p).FirstOrDefault();
+                           where p.ProductName == ProductName
+                           select p).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -336,7 +336,7 @@ namespace FameFindsDAL
                     vendorObj.VendorName = vendor.VendorName;
                     _context.Vendors.Update(vendorObj);
                     _context.SaveChanges();
-                   status=true;
+                    status = true;
                 }
                 else
                 {
@@ -345,7 +345,7 @@ namespace FameFindsDAL
             }
             catch (Exception ex)
             {
-                status=false;
+                status = false;
             }
             return status;
         }
@@ -368,22 +368,23 @@ namespace FameFindsDAL
             }
             return false;
         }
-       
+
 
         #endregion
 
-    }
+
         #region Ratings
+
         public bool AddRating(Rating rating)
         {
             bool status = false;
             try
             {
-                var shopObj = context.Customers.Find(rating.ShopId);
-                if (shopObj != null && rating.CustomerId != null)
+                var customerObj = _context.Customers.Find(rating.CustomerId);
+                if (customerObj != null)
                 {
-                    context.Ratings.Add(rating);
-                    context.SaveChanges();
+                    _context.Ratings.Add(rating);
+                    _context.SaveChanges();
                     status = true;
                 }
                 else
@@ -398,12 +399,33 @@ namespace FameFindsDAL
             return status;
         }
 
+        //public bool UpdateRating(Rating rating)
+        //{
+        //    bool status = false;
+        //    try
+        //    {
+        //        var ratingObj = _context.Ratings.Find(rating.RatingId);
+        //        if (ratingObj != null && rating.CustomerId != null)
+        //        {
+        //            ratingObj.RatingValue = rating.RatingValue;
+        //            ratingObj.Comment = rating.Comment;
+        //            _context.SaveChanges();
+        //            status = true;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        status = false;
+        //    }
+        //    return status;
+        //}
+
         public List<Rating> GetRatings()
         {
             List<Rating> ratings = new List<Rating>();
             try
             {
-                ratings = (from r in context.Ratings
+                ratings = (from r in _context.Ratings
                            select r).ToList();
             }
             catch (Exception ex)
@@ -418,12 +440,12 @@ namespace FameFindsDAL
             bool status = false;
             try
             {
-                var removeObj = context.Ratings.Find(ratingId);
+                var removeObj = _context.Ratings.Find(ratingId);
                 //if (removeObj != null && removeObj.CustomerId == rating.CustomerId)
-                if(removeObj != null && removeObj.CustomerId != null)
+                if (removeObj != null && removeObj.CustomerId != null)
                 {
-                    context.Ratings.Remove(removeObj);
-                    context.SaveChanges();
+                    _context.Ratings.Remove(removeObj);
+                    _context.SaveChanges();
                     status = true;
                 }
             }
@@ -433,6 +455,7 @@ namespace FameFindsDAL
             }
             return status;
         }
+
         #endregion
 
     }

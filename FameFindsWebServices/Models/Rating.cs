@@ -2,7 +2,7 @@
 {
     public class Rating
     {
-        public int RatingId { get; set; }
+        public int? RatingId { get; set; }
 
         public int? CustomerId { get; set; }
 

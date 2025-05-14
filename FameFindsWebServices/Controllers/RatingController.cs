@@ -35,19 +35,19 @@ namespace FameFindsWebServices.Controllers
             bool result = false;
             try
             {
-                if(ModelState.IsValid)
+                if (ModelState.IsValid)
                 {
                     Rating rating1 = new Rating();
-                    rating1.RatingId = rating.RatingId;
+                    //rating1.RatingId = rating.RatingId;
                     rating1.CustomerId = rating.CustomerId;
                     rating1.ShopId = rating.ShopId;
                     rating1.RatingValue = rating.RatingValue;
                     rating1.Review = rating.Review;
-                    rating1.CreatedAt = rating1.CreatedAt;
+                    rating1.CreatedAt = DateTime.Now;
 
                     result = _repository.AddRating(rating1);
 
-                    if(result)
+                    if (result)
                     {
                         return Ok("Ratings added successfully");
                     }
