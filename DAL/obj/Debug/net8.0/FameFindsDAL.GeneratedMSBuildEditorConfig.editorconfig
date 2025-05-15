@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FameFindsDAL
-build_property.ProjectDir = C:\Users\91620\Desktop\Project\TopPicks\DAL\
+build_property.ProjectDir = C:\Users\amrut\source\repos\FameFinds\DAL\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
