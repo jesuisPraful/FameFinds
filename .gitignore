@@ -367,3 +367,12 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/.vs/FameFindsSolution/v17/.suo
+/.vs/FameFindsSolution/v17/.suo
+/.gitignore
+/.vs/FameFindsSolution/v17/DocumentLayout.json
+/.gitignore
+/FameFindsDAL/appsettings.json
+/FameFindsWebServices/appsettings.json
+/.gitignore
+/.gitignore

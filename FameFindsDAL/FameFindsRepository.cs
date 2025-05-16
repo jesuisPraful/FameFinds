@@ -161,7 +161,6 @@ namespace FameFindsDAL
         #endregion
 
         #region category
-
         public List<Category> GetAllCategories()
         {
             List<Category> categories = new List<Category>();
