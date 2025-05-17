@@ -20,6 +20,17 @@ internal class Program
         builder.Services.AddScoped<FameFindsContext>();
         builder.Services.AddScoped<AuthenticationService>();
 
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAllOrigins",
+                builder =>
+                {
+                    builder.AllowAnyOrigin()
+                           .AllowAnyMethod()
+                           .AllowAnyHeader();
+                });
+        });
+
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
@@ -30,6 +41,8 @@ internal class Program
         }
 
         app.UseHttpsRedirection();
+
+        app.UseCors("AllowAllOrigins");
 
         app.UseAuthorization();
 
