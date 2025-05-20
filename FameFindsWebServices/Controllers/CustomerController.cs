@@ -52,7 +52,7 @@ namespace FameFindsWebServices.Controllers
         }
 
         [HttpPost("Register")]
-        public IActionResult RegisterCustomer(Models.CustomerRegister customer)
+        public IActionResult RegisterCustomer([FromBody] CustomerRegister customer)
         {
             bool status = false;
             try
@@ -67,11 +67,15 @@ namespace FameFindsWebServices.Controllers
                         Password = customer.Password
                     };
                     status = _authService.Register(customerOne);
-                    return Ok("User Registered Successfully ");
+                    if (status)
+                        return Ok("User Registered Successfully");
+                    else
+                        return BadRequest("Registration failed");
                 }
                 else
                 {
-                    return BadRequest("Invalid Data");
+                    var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
+                    return BadRequest(new { message = "Invalid Data", errors });
                 }
             }
             catch (Exception)
