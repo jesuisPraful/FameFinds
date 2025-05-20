@@ -182,5 +182,3 @@ SELECT
 FROM Rating R
 JOIN Customer C ON R.CustomerId = C.CustomerId
 JOIN Shop S ON R.ShopId = S.ShopId;
-
-DELETE FROM Customer WHERE CustomerId = 3;

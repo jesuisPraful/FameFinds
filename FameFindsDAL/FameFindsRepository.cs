@@ -19,7 +19,7 @@ namespace FameFindsDAL
         }
 
         #region CUSTOMER
-        public bool RegisterCustomer(Customer customer)
+          public bool RegisterCustomer(Customer customer)
         {
             bool status = false;
             try
@@ -54,6 +54,19 @@ namespace FameFindsDAL
             try
             {
                 customer = _context.Customers.Find(customerId);
+            }
+            catch (Exception ex)
+            {
+                customer = null;
+            }
+            return customer;
+        }
+        public Customer GetCustomerByUsername(string username)
+        {
+            Customer customer = new Customer();
+            try
+            {
+                customer = _context.Customers.FirstOrDefault(u => u.Email == username);
             }
             catch (Exception ex)
             {
@@ -740,9 +753,7 @@ namespace FameFindsDAL
             }
             return status;
         }
-
         #endregion
-
     }
 
 }
