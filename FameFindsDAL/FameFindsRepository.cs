@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
+using static FameFindsDAL.FameFindsRepository;
 using static System.Formats.Asn1.AsnWriter;
 
 namespace FameFindsDAL
@@ -755,7 +756,8 @@ namespace FameFindsDAL
             return status;
         }
 
-        #endregion
+        #endregion        
+
 
     }
 

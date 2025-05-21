@@ -3,6 +3,54 @@
   "WorkspaceRootPath": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsapp\\src\\app\\components\\landing\\landing.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\landing\\landing.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsapp\\src\\app\\services\\product.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\services\\product.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\app-routing.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\app-routing.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\models\\product.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\models\\product.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsdal\\famefindsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|solutionrelative:famefindsdal\\famefindsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\app.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\app.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\components\\landing\\landing.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\landing\\landing.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\app.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\app.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\services\\landing.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\services\\landing.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\components\\view-products\\view-products.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\view-products\\view-products.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\models\\register.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\models\\register.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindswebservices\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsdal\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|solutionrelative:famefindsdal\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -11,84 +59,8 @@
       "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsdal\\famefindsdbscript.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|",
-      "RelativeMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|solutionrelative:famefindsdal\\famefindsdbscript.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindswebservices\\controllers\\ratingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\controllers\\ratingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsdal\\famefindsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|solutionrelative:famefindsdal\\famefindsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindswebservices\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindswebservices\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindswebservices\\controllers\\vendorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\controllers\\vendorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindswebservices\\models\\vendor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\models\\vendor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindswebservices\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsdal\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|solutionrelative:famefindsdal\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsdal\\models\\shop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|solutionrelative:famefindsdal\\models\\shop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsdal\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|solutionrelative:famefindsdal\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsdal\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|solutionrelative:famefindsdal\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindswebservices\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsdal\\models\\vendor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|solutionrelative:famefindsdal\\models\\vendor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsdal\\models\\famefindscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|solutionrelative:famefindsdal\\models\\famefindscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindswebservices\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindswebservices\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindswebservices\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsdal\\famefindsdbscript.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
-      "RelativeMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|solutionrelative:famefindsdal\\famefindsdbscript.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsdal\\famefindsdbscript.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame",
-      "RelativeMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|solutionrelative:famefindsdal\\famefindsdbscript.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame"
+      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\app.component.spec.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\app.component.spec.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -98,7 +70,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1234,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -121,99 +93,29 @@
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\appsettings.json",
-              "RelativeDocumentMoniker": "FameFindsWebServices\\appsettings.json",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\appsettings.json*",
-              "RelativeToolTip": "FameFindsWebServices\\appsettings.json*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-14T06:19:45.163Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\appsettings.json",
-              "RelativeDocumentMoniker": "FameFindsDAL\\appsettings.json",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\appsettings.json",
-              "RelativeToolTip": "FameFindsDAL\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-14T06:19:41.95Z",
+              "Title": "landing.component.css",
+              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\landing\\landing.component.css",
+              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\components\\landing\\landing.component.css",
+              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\landing\\landing.component.css",
+              "RelativeToolTip": "FameFindsApp\\src\\app\\components\\landing\\landing.component.css",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-21T06:59:49.94Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "RatingController.cs",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Controllers\\RatingController.cs",
-              "RelativeDocumentMoniker": "FameFindsWebServices\\Controllers\\RatingController.cs",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Controllers\\RatingController.cs",
-              "RelativeToolTip": "FameFindsWebServices\\Controllers\\RatingController.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAkwFgAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T06:08:00.415Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ShopController.cs",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Controllers\\ShopController.cs",
-              "RelativeDocumentMoniker": "FameFindsWebServices\\Controllers\\ShopController.cs",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Controllers\\ShopController.cs",
-              "RelativeToolTip": "FameFindsWebServices\\Controllers\\ShopController.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T06:06:09.664Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Rating.cs",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Models\\Rating.cs",
-              "RelativeDocumentMoniker": "FameFindsWebServices\\Models\\Rating.cs",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Models\\Rating.cs",
-              "RelativeToolTip": "FameFindsWebServices\\Models\\Rating.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T06:04:30.411Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "VendorController.cs",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Controllers\\VendorController.cs",
-              "RelativeDocumentMoniker": "FameFindsWebServices\\Controllers\\VendorController.cs",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Controllers\\VendorController.cs",
-              "RelativeToolTip": "FameFindsWebServices\\Controllers\\VendorController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIAAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T11:05:18.851Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Vendor.cs",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Models\\Vendor.cs",
-              "RelativeDocumentMoniker": "FameFindsWebServices\\Models\\Vendor.cs",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Models\\Vendor.cs",
-              "RelativeToolTip": "FameFindsWebServices\\Models\\Vendor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T11:01:17.583Z",
-              "EditorCaption": ""
+              "Title": "product.ts",
+              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\Models\\product.ts",
+              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\Models\\product.ts",
+              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\Models\\product.ts",
+              "RelativeToolTip": "FameFindsApp\\src\\app\\Models\\product.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-05-21T06:50:15.823Z"
             },
             {
               "$type": "Document",
@@ -223,154 +125,155 @@
               "RelativeDocumentMoniker": "FameFindsDAL\\FameFindsRepository.cs",
               "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\FameFindsRepository.cs",
               "RelativeToolTip": "FameFindsDAL\\FameFindsRepository.cs",
-              "ViewState": "AgIAANUCAAAAAAAAAAAAwPQCAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAP0BAAAAAAAAAAAswPYCAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T10:59:53.981Z",
+              "WhenOpened": "2025-05-21T06:26:11.846Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "product.service.ts",
+              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\services\\product.service.ts",
+              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\services\\product.service.ts",
+              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\services\\product.service.ts",
+              "RelativeToolTip": "FameFindsApp\\src\\app\\services\\product.service.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-05-21T06:09:39.759Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Customer.cs",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\Models\\Customer.cs",
-              "RelativeDocumentMoniker": "FameFindsDAL\\Models\\Customer.cs",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\Models\\Customer.cs",
-              "RelativeToolTip": "FameFindsDAL\\Models\\Customer.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T17:32:44.714Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FameFindsDBScript.sql ",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\FameFindsDBScript.sql",
-              "RelativeDocumentMoniker": "FameFindsDAL\\FameFindsDBScript.sql",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\FameFindsDBScript.sql",
-              "RelativeToolTip": "FameFindsDAL\\FameFindsDBScript.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-04-23T10:59:53.991Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "FameFindsDAL\\Models\\Product.cs",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\Models\\Product.cs",
-              "RelativeToolTip": "FameFindsDAL\\Models\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T10:59:53.959Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "FameFindsContext.cs",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\Models\\FameFindsContext.cs",
-              "RelativeDocumentMoniker": "FameFindsDAL\\Models\\FameFindsContext.cs",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\Models\\FameFindsContext.cs",
-              "RelativeToolTip": "FameFindsDAL\\Models\\FameFindsContext.cs",
-              "ViewState": "AgIAAKMAAAAAAAAAAAAewLAAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T10:59:53.743Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "FameFindsWebServices\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "FameFindsWebServices\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAHoAAAAAAAAAAAAuwIoAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T10:59:53.977Z"
+              "Title": "view-products.component.ts",
+              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\view-products\\view-products.component.ts",
+              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\components\\view-products\\view-products.component.ts",
+              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\view-products\\view-products.component.ts",
+              "RelativeToolTip": "FameFindsApp\\src\\app\\components\\view-products\\view-products.component.ts",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-05-21T06:08:18.797Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\Models\\Category.cs",
-              "RelativeDocumentMoniker": "FameFindsDAL\\Models\\Category.cs",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\Models\\Category.cs",
-              "RelativeToolTip": "FameFindsDAL\\Models\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T17:33:28.758Z"
+              "DocumentIndex": 10,
+              "Title": "register.ts",
+              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\Models\\register.ts",
+              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\Models\\register.ts",
+              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\Models\\register.ts",
+              "RelativeToolTip": "FameFindsApp\\src\\app\\Models\\register.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-05-20T11:33:04.868Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "landing.service.ts",
+              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\services\\landing.service.ts",
+              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\services\\landing.service.ts",
+              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\services\\landing.service.ts",
+              "RelativeToolTip": "FameFindsApp\\src\\app\\services\\landing.service.ts",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-05-19T13:40:57.511Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "landing.component.ts",
+              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\landing\\landing.component.ts",
+              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\components\\landing\\landing.component.ts",
+              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\landing\\landing.component.ts",
+              "RelativeToolTip": "FameFindsApp\\src\\app\\components\\landing\\landing.component.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-05-19T13:36:16.665Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "Shop.cs",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\Models\\Shop.cs",
-              "RelativeDocumentMoniker": "FameFindsDAL\\Models\\Shop.cs",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\Models\\Shop.cs",
-              "RelativeToolTip": "FameFindsDAL\\Models\\Shop.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T17:33:36.631Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Program.cs",
               "RelativeDocumentMoniker": "FameFindsWebServices\\Program.cs",
               "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Program.cs",
               "RelativeToolTip": "FameFindsWebServices\\Program.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAABMAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T10:59:53.972Z"
+              "WhenOpened": "2025-05-19T11:47:46.8Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "CustomerController.cs",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Controllers\\CustomerController.cs",
-              "RelativeDocumentMoniker": "FameFindsWebServices\\Controllers\\CustomerController.cs",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Controllers\\CustomerController.cs",
-              "RelativeToolTip": "FameFindsWebServices\\Controllers\\CustomerController.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAYwDAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T11:10:37.989Z"
+              "DocumentIndex": 13,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\appsettings.json",
+              "RelativeDocumentMoniker": "FameFindsWebServices\\appsettings.json",
+              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\appsettings.json",
+              "RelativeToolTip": "FameFindsWebServices\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-19T11:14:44.406Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Vendor.cs",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\Models\\Vendor.cs",
-              "RelativeDocumentMoniker": "FameFindsDAL\\Models\\Vendor.cs",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\Models\\Vendor.cs",
-              "RelativeToolTip": "FameFindsDAL\\Models\\Vendor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T11:01:23.016Z"
+              "DocumentIndex": 12,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\appsettings.json",
+              "RelativeDocumentMoniker": "FameFindsDAL\\appsettings.json",
+              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\appsettings.json",
+              "RelativeToolTip": "FameFindsDAL\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-19T11:14:12.555Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "FameFindsWebServices\\Models\\Product.cs",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Models\\Product.cs",
-              "RelativeToolTip": "FameFindsWebServices\\Models\\Product.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T10:59:53.966Z"
+              "DocumentIndex": 7,
+              "Title": "app.component.ts",
+              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\app.component.ts",
+              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\app.component.ts",
+              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\app.component.ts",
+              "RelativeToolTip": "FameFindsApp\\src\\app\\app.component.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-05-14T16:00:21.293Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Models\\Category.cs",
-              "RelativeDocumentMoniker": "FameFindsWebServices\\Models\\Category.cs",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Models\\Category.cs",
-              "RelativeToolTip": "FameFindsWebServices\\Models\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T10:59:53.987Z"
+              "DocumentIndex": 14,
+              "Title": "app.component.spec.ts",
+              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\app.component.spec.ts",
+              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\app.component.spec.ts",
+              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\app.component.spec.ts",
+              "RelativeToolTip": "FameFindsApp\\src\\app\\app.component.spec.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-05-14T16:00:09.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "app.component.html",
+              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\app.component.html",
+              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\app.component.html",
+              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\app.component.html",
+              "RelativeToolTip": "FameFindsApp\\src\\app\\app.component.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-05-14T16:00:00.975Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "app-routing.module.ts",
+              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\app-routing.module.ts",
+              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\app-routing.module.ts",
+              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\app-routing.module.ts",
+              "RelativeToolTip": "FameFindsApp\\src\\app\\app-routing.module.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-05-14T15:44:14.337Z",
+              "EditorCaption": ""
             }
           ]
         }
