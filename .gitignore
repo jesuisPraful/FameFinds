@@ -13,6 +13,11 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+#Node_Modules
+FameFindsApp/node_modules/
+**/node_modules/
+
+
 # Mono auto generated files
 mono_crash.*
 
@@ -362,3 +367,22 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/.vs/FameFindsSolution/v17/.suo
+/.vs/FameFindsSolution/v17/.suo
+/.gitignore
+/.vs/FameFindsSolution/v17/DocumentLayout.json
+/.gitignore
+/FameFindsDAL/appsettings.json
+/FameFindsWebServices/appsettings.json
+/.gitignore
+/.gitignore
+/.vs/FameFindsSolution/v17/.futdcache.v2
+/.vs/FameFindsSolution/v17/.suo
+/.gitignore
+/.gitignore
+/.vs/FameFindsSolution/v17/DocumentLayout.json
+/.vs/FameFindsSolution/v17/.futdcache.v2
+/.gitignore
+/.vs/FameFindsSolution/v17/.futdcache.v2
+/.vs/FameFindsSolution/v17/.suo
+/.vs/FameFindsSolution/v17/DocumentLayout.json

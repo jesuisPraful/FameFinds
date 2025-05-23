@@ -14,4 +14,10 @@
     <ProjectReference Include="..\FameFindsDAL\FameFindsDAL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Services\AuthenticationService.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
 </Project>

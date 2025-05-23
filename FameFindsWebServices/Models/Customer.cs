@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FameFindsWebServices.Models
 {
@@ -23,5 +24,8 @@ namespace FameFindsWebServices.Models
         [MaxLength(15, ErrorMessage = "Phone Number cannot exceed 15 characters")]
         [Phone(ErrorMessage = "Invalid Phone Number format")]
         public string? PhoneNumber { get; set; }
+
+        [NotMapped]
+        public string? Password { get; set; }
     }
 }
