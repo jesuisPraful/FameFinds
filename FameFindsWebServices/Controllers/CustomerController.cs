@@ -1,5 +1,6 @@
 ﻿using FameFindsDAL;
 using FameFindsWebServices.Models;
+using FameFindsWebServices.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
@@ -12,10 +13,13 @@ namespace FameFindsWebServices.Controllers
     public class CustomerController : Controller
     {
         private readonly FameFindsRepository _repository;
-        public CustomerController(FameFindsRepository repository)
+        private readonly AuthenticationService _authService;
+        public CustomerController(FameFindsRepository repository,AuthenticationService authService)
         {
             _repository = repository;
+            _authService = authService;
         }
+
 
         [HttpGet("GetAllCustomers")]
         public IActionResult GetAllCustomers()
@@ -48,27 +52,30 @@ namespace FameFindsWebServices.Controllers
         }
 
         [HttpPost("Register")]
-        public IActionResult RegisterCustomer(Models.Customer customer)
+        public IActionResult RegisterCustomer([FromBody] CustomerRegister customer)
         {
             bool status = false;
             try
             {
                 if (ModelState.IsValid)
                 {
-                    FameFindsDAL.Models.Customer customerOne = new FameFindsDAL.Models.Customer();
-
-                    customerOne.FullName = customer.FullName;
-                    customerOne.Email = customer.Email;
-                    customerOne.PhoneNumber = customer.PhoneNumber;
-                    //customerOne.CustomerId = customer.CustomerId;
-                    customerOne.PasswordHash = customer.PasswordHash;
-
-                    status = _repository.RegisterCustomer(customerOne);
-                    return Ok("User Registered Successfully ");
+                    var customerOne = new Customer
+                    {
+                        FullName = customer.FullName,
+                        Email = customer.Email,
+                        PhoneNumber = customer.PhoneNumber,
+                        Password = customer.Password
+                    };
+                    status = _authService.Register(customerOne);
+                    if (status)
+                        return Ok("User Registered Successfully");
+                    else
+                        return BadRequest("Registration failed");
                 }
                 else
                 {
-                    return BadRequest("Invalid Data");
+                    var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
+                    return BadRequest(new { message = "Invalid Data", errors });
                 }
             }
             catch (Exception)
@@ -82,7 +89,11 @@ namespace FameFindsWebServices.Controllers
         {
             try
             {
-                var user = _repository.LoginCustomer(email, passwordHash);
+                var user = _authService.Login(new Models.Customer
+                {
+                    Email = email,
+                    Password = passwordHash
+                });
 
                 if (user != null)
                     return Ok(user);
@@ -138,7 +149,7 @@ namespace FameFindsWebServices.Controllers
         [HttpPut("update-password")]
         public IActionResult UpdatePassword([FromQuery] int userId, [FromQuery] string newPasswordHash)
         {
-            var success = _repository.UpdateUserPassword(userId, newPasswordHash);
+            var success = _authService.UpdatePassword(userId, newPasswordHash);
             return success ? Ok("Password updated.") : NotFound("User not found.");
         }
 

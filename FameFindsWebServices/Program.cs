@@ -1,5 +1,6 @@
 using FameFindsDAL;
 using FameFindsDAL.Models;
+using FameFindsWebServices.Services;
 using Microsoft.EntityFrameworkCore;
 
 internal class Program
@@ -17,6 +18,23 @@ internal class Program
 
         builder.Services.AddScoped<FameFindsRepository>();
         builder.Services.AddScoped<FameFindsContext>();
+        builder.Services.AddScoped<AuthenticationService>();
+
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAllOrigins",
+                builder =>
+                {
+                    builder.AllowAnyOrigin()
+                           .AllowAnyMethod()
+                           .AllowAnyHeader();
+                });
+        });
+
+        builder.Services.AddControllers().AddJsonOptions(options =>
+        {
+            options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+        });
 
         var app = builder.Build();
 
@@ -28,6 +46,8 @@ internal class Program
         }
 
         app.UseHttpsRedirection();
+
+        app.UseCors("AllowAllOrigins");
 
         app.UseAuthorization();
 

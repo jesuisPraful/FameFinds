@@ -1,9 +1,13 @@
 ﻿using FameFindsDAL.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
+using static FameFindsDAL.FameFindsRepository;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace FameFindsDAL
 {
@@ -16,7 +20,7 @@ namespace FameFindsDAL
         }
 
         #region CUSTOMER
-        public bool RegisterCustomer(Customer customer)
+          public bool RegisterCustomer(Customer customer)
         {
             bool status = false;
             try
@@ -51,6 +55,19 @@ namespace FameFindsDAL
             try
             {
                 customer = _context.Customers.Find(customerId);
+            }
+            catch (Exception ex)
+            {
+                customer = null;
+            }
+            return customer;
+        }
+        public Customer GetCustomerByUsername(string username)
+        {
+            Customer customer = new Customer();
+            try
+            {
+                customer = _context.Customers.FirstOrDefault(u => u.Email == username);
             }
             catch (Exception ex)
             {
@@ -318,8 +335,6 @@ namespace FameFindsDAL
             }
             return status;
         }
-
-
         public bool UpdateVendor(Vendor vendor)
         {
             bool status = false;
@@ -365,6 +380,22 @@ namespace FameFindsDAL
             }
             return false;
         }
+        public Vendor GetVendorByName(string VendorName)
+        {
+            Vendor vendor = new Vendor();
+            try
+            {
+                vendor = (from V in _context.Vendors
+                          where V.VendorName == VendorName
+                          select V).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                vendor = null;
+            }
+            return vendor;
+        }
+
         #endregion
 
         #region Ratings
@@ -562,13 +593,11 @@ namespace FameFindsDAL
         public List<Shop> GetShopsByCityName(string cityName)
         {
 
-            City city = _context.Cities.Where(c=>c.CityName == cityName).FirstOrDefault();
-                
             List<Shop> shops = new List<Shop>();
             try
             {
                 shops = _context.Shops
-                    .Where(s => s.CityId == city.CityId).Select(s => s)
+                    .Where(s => s.CityName == cityName).Select(s => s)
                     .ToList();
             }
 
@@ -599,7 +628,7 @@ namespace FameFindsDAL
 
 
 
-
+                 
                 foreach (var shopProduct in ListShopsProducts)
                 {
                     Shop shop = new Shop();
@@ -619,19 +648,21 @@ namespace FameFindsDAL
         }
 
 
+
+
         public List<Shop> GetShopByCategoryName(string categoryName)
         {
-
+            
             try
             {
-                var category = _context.Categories.Where(c => c.CategoryName == categoryName).FirstOrDefault();
+                var category = _context.Categories.Where(c=>c.CategoryName==categoryName).FirstOrDefault();
 
-                var productIds = _context.Products.Where(p => p.CategoryId == category.CategoryId).Select(p => p.ProductId).ToList();
-
+                var productIds = _context.Products.Where(p=>p.CategoryId == category.CategoryId).Select(p=>p.ProductId).ToList();
+                
                 List<int> shopsId = new List<int>();
-                foreach (var productId in productIds)
+                foreach(var productId in productIds)
                 {
-                    var shopId = Convert.ToInt32(_context.ShopProducts.Where(sp => sp.ProductId == productId).Select(sp => sp.ShopId).FirstOrDefault());
+                    var shopId = Convert.ToInt32(_context.ShopProducts.Where(sp=>sp.ProductId==productId).Select(sp=>sp.ShopId).FirstOrDefault());
                     shopsId.Add(shopId);
                 }
 
@@ -737,7 +768,8 @@ namespace FameFindsDAL
             }
             return status;
         }
-
         #endregion
     }
+
 }
+

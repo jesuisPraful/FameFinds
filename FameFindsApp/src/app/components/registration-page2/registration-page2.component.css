@@ -1,0 +1,103 @@
+.register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  height: 100vh;
+}
+
+.register-box {
+  background: linear-gradient(to right, #e6e4fb, #ffffff);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  max-width: 90%;
+}
+
+  .register-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center;
+  }
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #555;
+}
+
+input, select {
+  padding: 0.6rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+  input:focus, select:focus {
+    border-color: #4b6cb7;
+    outline: none;
+  }
+
+button {
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  border: none;
+  background: linear-gradient(to right, #4b6cb7, #182848);
+  color: white;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+  button:hover {
+    background: linear-gradient(to right, #182848, #4b6cb7);
+  }
+
+  button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+  }
+
+.links {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center; /* Changed from left */
+}
+
+  .links a {
+    color: #555;
+    text-decoration: none;
+  }
+
+  .links span {
+    color: #4b6cb7;
+    font-weight: bold;
+  }
+
+
+@media (min-width: 768px) {
+  .register-illustration {
+    display: block;
+    margin-left: 2rem;
+  }
+
+    .register-illustration img {
+      height: 250px;
+      object-fit: contain;
+    }
+}

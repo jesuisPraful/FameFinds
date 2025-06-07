@@ -2,23 +2,30 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http'; 
 import { AppComponent } from './app.component';
-import { ComponentComponent } from './component/component.component';
-import { ViewShopsComponent } from './components/view-shops/ViewShopsComponent';
-import { ServicesComponent } from './services/services.component';
+import { ProductService } from './services/product.service';
+import { ViewProductsComponent } from './components/view-products/view-products.component';
+import { FormsModule } from '@angular/forms';
+import { RegisterService } from './services/register.service';
+import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
+import { LoginComponent } from './components/login/login.component';
+import { CustomerService } from './services/customer.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ComponentComponent,
-    ViewShopsComponent,
-    ServicesComponent
+    ViewProductsComponent,
+    RegistrationPageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ProductService, RegisterService, CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
