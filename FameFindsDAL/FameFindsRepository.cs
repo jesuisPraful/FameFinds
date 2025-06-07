@@ -592,12 +592,12 @@ namespace FameFindsDAL
         //Get Shop By City Name
         public List<Shop> GetShopsByCityName(string cityName)
         {
-
+            City city = _context.Cities.Where(c => c.CityName == cityName).FirstOrDefault();
             List<Shop> shops = new List<Shop>();
             try
             {
                 shops = _context.Shops
-                    .Where(s => s.CityName == cityName).Select(s => s)
+                    .Where(s => s.CityId == city.CityId).Select(s => s)
                     .ToList();
             }
 
