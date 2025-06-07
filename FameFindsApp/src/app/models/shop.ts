@@ -2,7 +2,7 @@ export interface IShop {
   ShopId: number;
   ShopName: string;
   EmailId: string;
-  CityName: string;
+  CityId: number;
   Pincode: string;
   ContactNumber: string;
   FullAddress: string;
