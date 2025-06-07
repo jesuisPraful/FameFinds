@@ -174,6 +174,25 @@ namespace FameFindsDAL
 
         #endregion
 
+        public List<Product> GetProductByCity(string cityName)
+        {
+            City city  = _context.Cities.Where(c => c.CityName == cityName).FirstOrDefault();
+            List<Product> product = new List<Product>();
+           
+            try
+            {
+                product = _context.Products
+                    .Where(p => p.CityId == city.CityId)
+                    .ToList();
+            }
+            catch (Exception)
+            {
+
+                city = null;
+            }
+            return product;
+        }
+
         #region category
         public List<Category> GetAllCategories()
         {
