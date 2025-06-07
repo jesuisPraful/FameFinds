@@ -20,4 +20,7 @@ public partial class Product
     public virtual City? City { get; set; }
 
     public virtual ICollection<ShopProduct> ShopProducts { get; set; } = new List<ShopProduct>();
+
+    public virtual ICollection<Product> Products { get; set; } = new List<Product>();
+   
 }

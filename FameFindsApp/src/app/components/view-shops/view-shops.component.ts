@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IShop } from '../../models/shop';
 import { ShopService } from '../../services/shop.service';
 import { Router } from '@angular/router';
+import { IShop } from '../../Models/shop';
 
 @Component({
   selector: 'app-view-shops',
