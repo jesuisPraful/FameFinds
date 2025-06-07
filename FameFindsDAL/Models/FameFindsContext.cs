@@ -43,22 +43,22 @@ public partial class FameFindsContext : DbContext
     {
         modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasKey(e => e.CategoryId).HasName("PK__Category__19093A0B3508E3B9");
+            entity.HasKey(e => e.CategoryId).HasName("PK__Category__19093A0B7944B1BA");
 
             entity.ToTable("Category");
 
-            entity.HasIndex(e => e.CategoryName, "UQ__Category__8517B2E038A0EB68").IsUnique();
+            entity.HasIndex(e => e.CategoryName, "UQ__Category__8517B2E07DBF3426").IsUnique();
 
             entity.Property(e => e.CategoryName).HasMaxLength(100);
         });
 
         modelBuilder.Entity<City>(entity =>
         {
-            entity.HasKey(e => e.CityId).HasName("PK__City__F2D21B76039FD6FC");
+            entity.HasKey(e => e.CityId).HasName("PK__City__F2D21B761E196F32");
 
             entity.ToTable("City");
 
-            entity.HasIndex(e => e.CityName, "UQ__City__886159E582E18C1B").IsUnique();
+            entity.HasIndex(e => e.CityName, "UQ__City__886159E5E63D849C").IsUnique();
 
             entity.Property(e => e.CityId).ValueGeneratedNever();
             entity.Property(e => e.CityName)
@@ -68,11 +68,11 @@ public partial class FameFindsContext : DbContext
 
         modelBuilder.Entity<Customer>(entity =>
         {
-            entity.HasKey(e => e.CustomerId).HasName("PK__Customer__A4AE64D8CAD9F000");
+            entity.HasKey(e => e.CustomerId).HasName("PK__Customer__A4AE64D8F110EF1C");
 
             entity.ToTable("Customer");
 
-            entity.HasIndex(e => e.Email, "UQ__Customer__A9D10534B0303242").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__Customer__A9D10534C49C04E9").IsUnique();
 
             entity.Property(e => e.Email).HasMaxLength(100);
             entity.Property(e => e.FullName).HasMaxLength(100);
@@ -82,9 +82,9 @@ public partial class FameFindsContext : DbContext
 
         modelBuilder.Entity<CustomerPasswordResetToken>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Customer__3214EC07B0F4452B");
+            entity.HasKey(e => e.Id).HasName("PK__Customer__3214EC07A17EF13B");
 
-            entity.HasIndex(e => e.Token, "UQ__Customer__1EB4F8172FE5268A").IsUnique();
+            entity.HasIndex(e => e.Token, "UQ__Customer__1EB4F817E59463FD").IsUnique();
 
             entity.Property(e => e.Expiry).HasColumnType("datetime");
             entity.Property(e => e.IsUsed).HasDefaultValue(false);
@@ -101,7 +101,7 @@ public partial class FameFindsContext : DbContext
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.HasKey(e => e.ProductId).HasName("PK__Products__B40CC6CDA0C2A719");
+            entity.HasKey(e => e.ProductId).HasName("PK__Products__B40CC6CD884653A1");
 
             entity.Property(e => e.Description).HasMaxLength(255);
             entity.Property(e => e.ProductName).HasMaxLength(150);
@@ -117,7 +117,7 @@ public partial class FameFindsContext : DbContext
 
         modelBuilder.Entity<Rating>(entity =>
         {
-            entity.HasKey(e => e.RatingId).HasName("PK__Rating__FCCDF87CAE1FD468");
+            entity.HasKey(e => e.RatingId).HasName("PK__Rating__FCCDF87C65C2E359");
 
             entity.ToTable("Rating");
 
@@ -137,7 +137,7 @@ public partial class FameFindsContext : DbContext
 
         modelBuilder.Entity<Shop>(entity =>
         {
-            entity.HasKey(e => e.ShopId).HasName("PK__Shop__67C557C92BAEBC22");
+            entity.HasKey(e => e.ShopId).HasName("PK__Shop__67C557C9FB3729D3");
 
             entity.ToTable("Shop");
 
@@ -177,7 +177,7 @@ public partial class FameFindsContext : DbContext
 
         modelBuilder.Entity<ShopProduct>(entity =>
         {
-            entity.HasKey(e => e.ShopProductId).HasName("PK__ShopProd__A9FBB4D5A8B85D12");
+            entity.HasKey(e => e.ShopProductId).HasName("PK__ShopProd__A9FBB4D5BADA2DE3");
 
             entity.ToTable("ShopProduct");
 
@@ -194,11 +194,11 @@ public partial class FameFindsContext : DbContext
 
         modelBuilder.Entity<Vendor>(entity =>
         {
-            entity.HasKey(e => e.VendorId).HasName("PK__Vendor__FC8618F3E695FB21");
+            entity.HasKey(e => e.VendorId).HasName("PK__Vendor__FC8618F39D12C1FF");
 
             entity.ToTable("Vendor");
 
-            entity.HasIndex(e => e.Email, "UQ__Vendor__A9D1053410FDE371").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__Vendor__A9D10534F691F7C2").IsUnique();
 
             entity.Property(e => e.Email).HasMaxLength(100);
             entity.Property(e => e.PasswordHash).HasMaxLength(100);
@@ -208,9 +208,9 @@ public partial class FameFindsContext : DbContext
 
         modelBuilder.Entity<VendorPasswordResetToken>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__VendorPa__3214EC073DFF8A55");
+            entity.HasKey(e => e.Id).HasName("PK__VendorPa__3214EC07D4071888");
 
-            entity.HasIndex(e => e.Token, "UQ__VendorPa__1EB4F81775B0D477").IsUnique();
+            entity.HasIndex(e => e.Token, "UQ__VendorPa__1EB4F817A1666AA8").IsUnique();
 
             entity.Property(e => e.Expiry).HasColumnType("datetime");
             entity.Property(e => e.IsUsed).HasDefaultValue(false);
