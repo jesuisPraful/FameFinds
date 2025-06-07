@@ -16,4 +16,6 @@ public partial class Vendor
     public string? PhoneNumber { get; set; }
 
     public virtual ICollection<Shop> Shops { get; set; } = new List<Shop>();
+
+    public virtual ICollection<VendorPasswordResetToken> VendorPasswordResetTokens { get; set; } = new List<VendorPasswordResetToken>();
 }

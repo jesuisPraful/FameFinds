@@ -14,7 +14,7 @@ namespace FameFindsWebServices.Models
         public string EmailId { get; set; } = null!;
 
         [Required]
-        public string CityName { get; set; } = null!;
+        public int CityId { get; set; }
 
         [Required]
         public string Pincode { get; set; } = null!;
