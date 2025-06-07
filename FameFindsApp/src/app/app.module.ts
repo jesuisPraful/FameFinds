@@ -6,20 +6,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ProductService } from './services/product.service';
 import { ViewProductsComponent } from './components/view-products/view-products.component';
-import { LandingComponent } from './components/landing/landing.component';
+import { FormsModule } from '@angular/forms';
+import { RegisterService } from './services/register.service';
+import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewProductsComponent,
-    LandingComponent
+    RegistrationPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [ProductService],
+  providers: [ProductService, RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
