@@ -11,7 +11,7 @@ public partial class Shop
 
     public string EmailId { get; set; } = null!;
 
-    public string CityName { get; set; } = null!;
+    public int? CityId { get; set; }
 
     public string Pincode { get; set; } = null!;
 
@@ -32,6 +32,8 @@ public partial class Shop
     public DateTime? CreatedAt { get; set; }
 
     public int VendorId { get; set; }
+
+    public virtual City? City { get; set; }
 
     public virtual ICollection<Rating> Ratings { get; set; } = new List<Rating>();
 

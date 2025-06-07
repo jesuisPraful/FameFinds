@@ -32,7 +32,7 @@ namespace FameFindsWebServices.Controllers
                         shopOne.ShopId = shop.ShopId;
                         shopOne.ShopName = shop.ShopName;
                         shopOne.EmailId = shop.EmailId;
-                        shopOne.CityName = shop.CityName;
+                        shopOne.CityId = shop.CityId;
                         shopOne.Pincode = shop.Pincode;
                         shopOne.ContactNumber = shop.ContactNumber;
                         shopOne.FullAddress = shop.FullAddress;
@@ -70,7 +70,7 @@ namespace FameFindsWebServices.Controllers
                 
                     shopOne.ShopName = shop.ShopName;
                     shopOne.EmailId = shop.EmailId;
-                    shopOne.CityName = shop.CityName;
+                    shopOne.CityId = shop.CityId;
                     shopOne.Pincode = shop.Pincode;
                     shopOne.ContactNumber = shop.ContactNumber;
                     shopOne.FullAddress = shop.FullAddress;
@@ -112,7 +112,7 @@ namespace FameFindsWebServices.Controllers
                     shopOne.ShopId = shop.ShopId;
                     shopOne.ShopName = shop.ShopName;
                     shopOne.EmailId = shop.EmailId;
-                    shopOne.CityName = shop.CityName;
+                    shopOne.CityId = shop.CityId;
                     shopOne.Pincode = shop.Pincode;
                     shopOne.ContactNumber = shop.ContactNumber;
                     shopOne.FullAddress = shop.FullAddress;
@@ -155,7 +155,7 @@ namespace FameFindsWebServices.Controllers
                         shopOne.ShopId = shop.ShopId;
                         shopOne.ShopName = shop.ShopName;
                         shopOne.EmailId = shop.EmailId;
-                        shopOne.CityName = shop.CityName;
+                        shopOne.CityId = shop.CityId;
                         shopOne.Pincode = shop.Pincode;
                         shopOne.ContactNumber = shop.ContactNumber;
                         shopOne.FullAddress = shop.FullAddress;
@@ -196,7 +196,7 @@ namespace FameFindsWebServices.Controllers
                         shopOne.ShopId = shop.ShopId;
                         shopOne.ShopName = shop.ShopName;
                         shopOne.EmailId = shop.EmailId;
-                        shopOne.CityName = shop.CityName;
+                        shopOne.CityId = shop.CityId;
                         shopOne.Pincode = shop.Pincode;
                         shopOne.ContactNumber = shop.ContactNumber;
                         shopOne.FullAddress = shop.FullAddress;
@@ -237,7 +237,7 @@ namespace FameFindsWebServices.Controllers
                         shopOne.ShopId = shop.ShopId;
                         shopOne.ShopName = shop.ShopName;
                         shopOne.EmailId = shop.EmailId;
-                        shopOne.CityName = shop.CityName;
+                        shopOne.CityId = shop.CityId;
                         shopOne.Pincode = shop.Pincode;
                         shopOne.ContactNumber = shop.ContactNumber;
                         shopOne.FullAddress = shop.FullAddress;
@@ -276,7 +276,7 @@ namespace FameFindsWebServices.Controllers
                         shopOne.ShopId = shop.ShopId;
                         shopOne.ShopName = shop.ShopName;
                         shopOne.EmailId = shop.EmailId;
-                        shopOne.CityName = shop.CityName;
+                        shopOne.CityId = shop.CityId;
                         shopOne.Pincode = shop.Pincode;
                         shopOne.ContactNumber = shop.ContactNumber;
                         shopOne.FullAddress = shop.FullAddress;

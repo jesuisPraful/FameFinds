@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FameFindsWebServices.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[Action]")]
     [ApiController]
     public class VendorController : Controller
     {
@@ -44,7 +44,6 @@ namespace FameFindsWebServices.Controllers
             }
             return Ok(vendors);
         }
-
         [HttpPost]
         public JsonResult AddVendor(Models.Vendor vendor)
         {
@@ -121,6 +120,26 @@ namespace FameFindsWebServices.Controllers
                 return StatusCode(500, "Internal server error");
             }
 
+        }
+        [HttpGet]
+        public IActionResult GetVendorByName(string VendorName)
+        {
+            try
+            {
+                var vendor = _repository.GetVendorByName(VendorName);
+                if (vendor != null)
+                {
+                    return Ok(vendor);
+                }
+                else
+                {
+                    return NotFound("vendor not found");
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error");
+            }
         }
 
     }

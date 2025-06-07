@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
+using static FameFindsDAL.FameFindsRepository;
 using static System.Formats.Asn1.AsnWriter;
 
 namespace FameFindsDAL
@@ -334,8 +335,6 @@ namespace FameFindsDAL
             }
             return status;
         }
-
-
         public bool UpdateVendor(Vendor vendor)
         {
             bool status = false;
@@ -381,6 +380,22 @@ namespace FameFindsDAL
             }
             return false;
         }
+        public Vendor GetVendorByName(string VendorName)
+        {
+            Vendor vendor = new Vendor();
+            try
+            {
+                vendor = (from V in _context.Vendors
+                          where V.VendorName == VendorName
+                          select V).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                vendor = null;
+            }
+            return vendor;
+        }
+
         #endregion
 
         #region Ratings
