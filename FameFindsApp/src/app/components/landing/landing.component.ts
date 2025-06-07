@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
 export class LandingComponent {
   //Login: ILogin[];
   //Register: IRegister[];
+
 }
 //import { NgModule } from '@angular/core';
 //import { RouterModule, Routes } from '@angular/router';
