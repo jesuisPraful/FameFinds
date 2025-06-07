@@ -9,12 +9,15 @@ import { ViewProductsComponent } from './components/view-products/view-products.
 import { FormsModule } from '@angular/forms';
 import { RegisterService } from './services/register.service';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
+import { LoginComponent } from './components/login/login.component';
+import { CustomerService } from './services/customer.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewProductsComponent,
-    RegistrationPageComponent
+    RegistrationPageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,7 @@ import { RegistrationPageComponent } from './components/registration-page/regist
     HttpClientModule,
     FormsModule
   ],
-  providers: [ProductService, RegisterService],
+  providers: [ProductService, RegisterService, CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

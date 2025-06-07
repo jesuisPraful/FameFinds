@@ -3,19 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\components\\registration-page2\\registration-page2.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsapp\\src\\app\\components\\registration-page2\\registration-page2.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\registration-page2\\registration-page2.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsapp\\src\\app\\components\\registration-page2\\registration-page2.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\components\\registration-page2\\registration-page2.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\registration-page2\\registration-page2.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsapp\\src\\app\\services\\register2.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\services\\register2.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\services\\register2.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsapp\\src\\app\\models\\vendor.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\models\\vendor.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\models\\vendor.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
@@ -126,8 +126,7 @@
               "RelativeToolTip": "FameFindsApp\\src\\app\\components\\registration-page2\\registration-page2.component.ts",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAwAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-06-06T17:08:39.882Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T17:08:39.882Z"
             },
             {
               "$type": "Document",
@@ -137,7 +136,7 @@
               "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\components\\registration-page2\\registration-page2.component.html",
               "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\registration-page2\\registration-page2.component.html",
               "RelativeToolTip": "FameFindsApp\\src\\app\\components\\registration-page2\\registration-page2.component.html",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-06-06T17:12:10.112Z",
               "EditorCaption": ""
@@ -152,8 +151,7 @@
               "RelativeToolTip": "FameFindsApp\\src\\app\\services\\register2.service.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-06-07T06:07:28.636Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T06:07:28.636Z"
             },
             {
               "$type": "Document",
@@ -165,8 +163,7 @@
               "RelativeToolTip": "FameFindsApp\\src\\app\\Models\\vendor.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAEAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-06-07T06:08:08.5Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T06:08:08.5Z"
             },
             {
               "$type": "Document",
@@ -178,8 +175,7 @@
               "RelativeToolTip": "FameFindsApp\\src\\app\\app.module.ts",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-05-26T09:27:45.171Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-26T09:27:45.171Z"
             },
             {
               "$type": "Document",
@@ -191,8 +187,7 @@
               "RelativeToolTip": "FameFindsApp\\src\\app\\app-routing.module.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-05-26T09:45:24.283Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-26T09:45:24.283Z"
             },
             {
               "$type": "Document",
@@ -204,8 +199,7 @@
               "RelativeToolTip": "FameFindsApp\\src\\app\\app.component.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-06-06T11:42:51.794Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T11:42:51.794Z"
             },
             {
               "$type": "Document",
@@ -217,8 +211,7 @@
               "RelativeToolTip": "FameFindsApp\\src\\app\\app.component.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-06-06T11:39:45.444Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T11:39:45.444Z"
             },
             {
               "$type": "Document",

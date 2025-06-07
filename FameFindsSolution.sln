@@ -5,21 +5,21 @@ VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FameFindsDAL", "FameFindsDAL\FameFindsDAL.csproj", "{D4237B96-9556-4AF6-82B5-08430B9CBADF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FameFindsWebServices", "FameFindsWebServices\FameFindsWebServices.csproj", "{6DA53410-4951-4539-89C3-2358288C7E6A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FameFindsWebServices", "FameFindsWebServices\FameFindsWebServices.csproj", "{6DA53410-4951-4539-89C3-2358288C7E6A}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FameFindsApp(1)", "FameFindsApp\", "{DA858FB5-F5C4-4741-B472-1E783B327E03}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_65448"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51315"
 		Debug.AspNetCompiler.PhysicalPath = "FameFindsApp\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65448\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51315\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_65448"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51315"
 		Release.AspNetCompiler.PhysicalPath = "FameFindsApp\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65448\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51315\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
