@@ -7,6 +7,14 @@
       "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsdal\\famefindsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|solutionrelative:famefindsdal\\famefindsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindswebservices\\services\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\services\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsdal\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|solutionrelative:famefindsdal\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,76 +23,8 @@
       "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\models\\vendor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindswebservices\\services\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\services\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|c:\\users\\nheha\\desktop\\sruthi\\project\\famefinds\\famefindsapp\\src\\app\\app.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\app.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\components\\registration-page2\\registration-page2.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\registration-page2\\registration-page2.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\components\\registration-page2\\registration-page2.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\registration-page2\\registration-page2.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\services\\register2.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\services\\register2.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\models\\vendor.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\models\\vendor.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\app-routing.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\app-routing.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\app.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\app.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\components\\registration-page2\\registration-page2.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\registration-page2\\registration-page2.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\components\\registration-page\\registration-page.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\registration-page\\registration-page.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\components\\registration-page\\registration-page.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\registration-page\\registration-page.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\app.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\app.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\services\\landing.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\services\\landing.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\components\\landing\\landing.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\landing\\landing.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\components\\landing\\landing.component.spec.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\landing\\landing.component.spec.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\components\\landing\\landing.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\landing\\landing.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\components\\landing\\landing.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\landing\\landing.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp|C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\famefindsapp\\src\\app\\app.component.spec.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
@@ -102,8 +42,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1234,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Vendor.cs",
+              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Models\\Vendor.cs",
+              "RelativeDocumentMoniker": "FameFindsWebServices\\Models\\Vendor.cs",
+              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Models\\Vendor.cs",
+              "RelativeToolTip": "FameFindsWebServices\\Models\\Vendor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T13:55:44.543Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -130,20 +83,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Vendor.cs",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Models\\Vendor.cs",
-              "RelativeDocumentMoniker": "FameFindsWebServices\\Models\\Vendor.cs",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Models\\Vendor.cs",
-              "RelativeToolTip": "FameFindsWebServices\\Models\\Vendor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "FameFindsRepository.cs",
+              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\FameFindsRepository.cs",
+              "RelativeDocumentMoniker": "FameFindsDAL\\FameFindsRepository.cs",
+              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\FameFindsRepository.cs",
+              "RelativeToolTip": "FameFindsDAL\\FameFindsRepository.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAzwF4AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T13:39:06.582Z",
+              "WhenOpened": "2025-06-10T13:50:32.789Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Customer.cs",
               "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsDAL\\Models\\Customer.cs",
               "RelativeDocumentMoniker": "FameFindsDAL\\Models\\Customer.cs",
@@ -162,160 +115,27 @@
               "RelativeDocumentMoniker": "FameFindsWebServices\\Controllers\\CustomerController.cs",
               "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Controllers\\CustomerController.cs",
               "RelativeToolTip": "FameFindsWebServices\\Controllers\\CustomerController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAD4AAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAA2wD4AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T13:27:21.325Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "register2.service.ts",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\services\\register2.service.ts",
-              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\services\\register2.service.ts",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\services\\register2.service.ts",
-              "RelativeToolTip": "FameFindsApp\\src\\app\\services\\register2.service.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-06-07T06:07:28.636Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "vendor.ts",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\Models\\vendor.ts",
-              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\Models\\vendor.ts",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\Models\\vendor.ts",
-              "RelativeToolTip": "FameFindsApp\\src\\app\\Models\\vendor.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAEAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-06-07T06:08:08.5Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "app.module.ts",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\app.module.ts",
-              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\app.module.ts",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\app.module.ts",
-              "RelativeToolTip": "FameFindsApp\\src\\app\\app.module.ts",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-05-26T09:27:45.171Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "app-routing.module.ts",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\app-routing.module.ts",
-              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\app-routing.module.ts",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\app-routing.module.ts",
-              "RelativeToolTip": "FameFindsApp\\src\\app\\app-routing.module.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-05-26T09:45:24.283Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "app.component.html",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\app.component.html",
-              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\app.component.html",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\app.component.html",
-              "RelativeToolTip": "FameFindsApp\\src\\app\\app.component.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-06-06T11:42:51.794Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "AuthenticationService.cs",
               "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Services\\AuthenticationService.cs",
               "RelativeDocumentMoniker": "FameFindsWebServices\\Services\\AuthenticationService.cs",
               "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsWebServices\\Services\\AuthenticationService.cs",
               "RelativeToolTip": "FameFindsWebServices\\Services\\AuthenticationService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACQAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-26T09:24:49.821Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "registration-page2.component.html",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\registration-page2\\registration-page2.component.html",
-              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\components\\registration-page2\\registration-page2.component.html",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\registration-page2\\registration-page2.component.html",
-              "RelativeToolTip": "FameFindsApp\\src\\app\\components\\registration-page2\\registration-page2.component.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-06-06T17:12:10.112Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "registration-page2.component.ts",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\registration-page2\\registration-page2.component.ts",
-              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\components\\registration-page2\\registration-page2.component.ts",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\registration-page2\\registration-page2.component.ts",
-              "RelativeToolTip": "FameFindsApp\\src\\app\\components\\registration-page2\\registration-page2.component.ts",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-06-06T17:08:39.882Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "app.component.ts",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\app.component.ts",
-              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\app.component.ts",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\app.component.ts",
-              "RelativeToolTip": "FameFindsApp\\src\\app\\app.component.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-06-06T11:39:45.444Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "registration-page.component.html",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\registration-page\\registration-page.component.html",
-              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\components\\registration-page\\registration-page.component.html",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\registration-page\\registration-page.component.html",
-              "RelativeToolTip": "FameFindsApp\\src\\app\\components\\registration-page\\registration-page.component.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-05-26T11:11:45.81Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "registration-page2.component.css",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\registration-page2\\registration-page2.component.css",
-              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\components\\registration-page2\\registration-page2.component.css",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\registration-page2\\registration-page2.component.css",
-              "RelativeToolTip": "FameFindsApp\\src\\app\\components\\registration-page2\\registration-page2.component.css",
-              "ViewState": "AgIAABUAAAAAAAAAAAAmwGcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-06T17:12:50.297Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "registration-page.component.css",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\registration-page\\registration-page.component.css",
-              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\components\\registration-page\\registration-page.component.css",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\registration-page\\registration-page.component.css",
-              "RelativeToolTip": "FameFindsApp\\src\\app\\components\\registration-page\\registration-page.component.css",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAmwGYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-26T11:43:57.942Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 5,
               "Title": "landing.component.spec.ts",
               "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\landing\\landing.component.spec.ts",
               "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\components\\landing\\landing.component.spec.ts",
@@ -327,67 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "app.component.css",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\app.component.css",
-              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\app.component.css",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\app.component.css",
-              "RelativeToolTip": "FameFindsApp\\src\\app\\app.component.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-06T11:42:48.399Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "landing.component.css",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\landing\\landing.component.css",
-              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\components\\landing\\landing.component.css",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\landing\\landing.component.css",
-              "RelativeToolTip": "FameFindsApp\\src\\app\\components\\landing\\landing.component.css",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAADkAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-21T08:07:20.043Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "landing.component.html",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\landing\\landing.component.html",
-              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\components\\landing\\landing.component.html",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\landing\\landing.component.html",
-              "RelativeToolTip": "FameFindsApp\\src\\app\\components\\landing\\landing.component.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-05-21T08:07:09.565Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "landing.component.ts",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\landing\\landing.component.ts",
-              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\components\\landing\\landing.component.ts",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\landing\\landing.component.ts",
-              "RelativeToolTip": "FameFindsApp\\src\\app\\components\\landing\\landing.component.ts",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-06-03T08:25:53.867Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "landing.service.ts",
-              "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\services\\landing.service.ts",
-              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\services\\landing.service.ts",
-              "ToolTip": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\services\\landing.service.ts",
-              "RelativeToolTip": "FameFindsApp\\src\\app\\services\\landing.service.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-06-06T11:40:05.248Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 6,
               "Title": "app.component.spec.ts",
               "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\app.component.spec.ts",
               "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\app.component.spec.ts",
@@ -399,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 7,
               "Title": "registration-page.component.spec.ts",
               "DocumentMoniker": "C:\\Users\\nheha\\Desktop\\Sruthi\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\registration-page\\registration-page.component.spec.ts",
               "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\components\\registration-page\\registration-page.component.spec.ts",

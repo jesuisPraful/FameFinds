@@ -20,7 +20,7 @@ namespace FameFindsDAL
         }
 
         #region CUSTOMER
-          public bool RegisterCustomer(Customer customer)
+        public bool RegisterCustomer(Customer customer)
         {
             bool status = false;
             try
@@ -592,12 +592,12 @@ namespace FameFindsDAL
         //Get Shop By City Name
         public List<Shop> GetShopsByCityName(string cityName)
         {
-
+            City city = _context.Cities.Where(c => c.CityName == cityName).FirstOrDefault();
             List<Shop> shops = new List<Shop>();
             try
             {
                 shops = _context.Shops
-                    .Where(s => s.CityName == cityName).Select(s => s)
+                    .Where(s => s.CityId == city.CityId).Select(s => s)
                     .ToList();
             }
 
@@ -628,7 +628,7 @@ namespace FameFindsDAL
 
 
 
-                 
+
                 foreach (var shopProduct in ListShopsProducts)
                 {
                     Shop shop = new Shop();
@@ -652,17 +652,17 @@ namespace FameFindsDAL
 
         public List<Shop> GetShopByCategoryName(string categoryName)
         {
-            
+
             try
             {
-                var category = _context.Categories.Where(c=>c.CategoryName==categoryName).FirstOrDefault();
+                var category = _context.Categories.Where(c => c.CategoryName == categoryName).FirstOrDefault();
 
-                var productIds = _context.Products.Where(p=>p.CategoryId == category.CategoryId).Select(p=>p.ProductId).ToList();
-                
+                var productIds = _context.Products.Where(p => p.CategoryId == category.CategoryId).Select(p => p.ProductId).ToList();
+
                 List<int> shopsId = new List<int>();
-                foreach(var productId in productIds)
+                foreach (var productId in productIds)
                 {
-                    var shopId = Convert.ToInt32(_context.ShopProducts.Where(sp=>sp.ProductId==productId).Select(sp=>sp.ShopId).FirstOrDefault());
+                    var shopId = Convert.ToInt32(_context.ShopProducts.Where(sp => sp.ProductId == productId).Select(sp => sp.ShopId).FirstOrDefault());
                     shopsId.Add(shopId);
                 }
 
