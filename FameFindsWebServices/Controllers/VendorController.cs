@@ -1,8 +1,9 @@
 ﻿using FameFindsDAL;
-using FameFindsDAL.Models;
 using FameFindsWebServices.Models;
+using FameFindsWebServices.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace FameFindsWebServices.Controllers
 {
@@ -11,9 +12,11 @@ namespace FameFindsWebServices.Controllers
     public class VendorController : Controller
     {
         private readonly FameFindsRepository _repository;
-        public VendorController(FameFindsRepository repository)
+        private readonly AuthenticationService _authService;
+        public VendorController(FameFindsRepository repository, AuthenticationService authService)
         {
             _repository = repository;
+            _authService = authService;
         }
         [HttpGet]
         public IActionResult GetVendorDetails()
@@ -35,7 +38,6 @@ namespace FameFindsWebServices.Controllers
                         vendors.Add(v);
                     }
                 }
-
             }
             catch (Exception ex)
             {
@@ -44,25 +46,65 @@ namespace FameFindsWebServices.Controllers
             }
             return Ok(vendors);
         }
-        [HttpPost]
-        public JsonResult AddVendor(Models.Vendor vendor)
+        [HttpPost("Register")]
+        public IActionResult AddVendor([FromBody] Models.Vendor vendor)
         {
             bool result = false;
             try
             {
-                FameFindsDAL.Models.Vendor v = new FameFindsDAL.Models.Vendor();
-                //v.VendorId = vendor.VendorId;
-                v.VendorName = vendor.VendorName;
-                v.Email = vendor.Email;
-                v.PasswordHash = vendor.PasswordHash;
-                v.PhoneNumber = vendor.PhoneNumber;
-                result = _repository.AddVendor(v);
+                if (ModelState.IsValid)
+                {
+                    var vendorOne = new Vendor
+                    {
+                        VendorName = vendor.VendorName,
+                        Email=vendor.Email,
+                        PasswordHash = vendor.PasswordHash,
+                        PhoneNumber = vendor.PhoneNumber
+                    };
+                    result = _authService.AddVendor(vendorOne);
+                    if(result)
+                    {
+                        return Ok("Vendor Registered Successfully");
+                    }
+                    else
+                    {
+                        return BadRequest("Registration Failed");
+                    }
+                }
+                else
+                {
+                    var errors=ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage);
+                    return BadRequest(new {message="Invalid Data",errors});
+                }
+               
             }
             catch (Exception ex)
             {
                 result = true;
+                return BadRequest("Registration Failed");
             }
-            return Json(result);
+        }
+        [HttpPost("login")]
+        public IActionResult Login([FromQuery] string email, [FromQuery] string passwordHash)
+        {
+            try
+            {
+                var vendor = _authService.LoginVendor(new Models.Vendor
+                {
+                    Email = email,
+                    PasswordHash = passwordHash
+                });
+
+                if (vendor != null)
+                    return Ok(vendor);
+
+                return Unauthorized("Invalid email or password.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Login error: {ex.Message}");
+                return StatusCode(500, "An error occurred while processing your request.");
+            }
         }
         [HttpPut]
         public IActionResult UpdateVendor(Models.Vendor vendor) 

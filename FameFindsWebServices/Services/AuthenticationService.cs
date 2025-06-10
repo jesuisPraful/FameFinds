@@ -11,11 +11,13 @@ namespace FameFindsWebServices.Services
     {
         private readonly FameFindsRepository _repo;
         private readonly PasswordHasher<Customer> _hasher;
+        private readonly PasswordHasher<Vendor> _hasherV;
 
         public AuthenticationService(FameFindsRepository repo)
         {
             _repo = repo;
             _hasher = new PasswordHasher<Customer>();
+            _hasherV = new PasswordHasher<Vendor>();
         }
         public bool Register(Customer customer)
         {
@@ -32,6 +34,25 @@ namespace FameFindsWebServices.Services
             status = _repo.RegisterCustomer(customerOne);
             return status;
         }
+        
+        public bool AddVendor(Vendor vendor)
+        {
+            bool status = false;
+            string hashedPassword = _hasherV.HashPassword(vendor, vendor.PasswordHash); // Hash password
+                                                                                        // Do NOT nullify vendor.PasswordHash here
+
+            FameFindsDAL.Models.Vendor vendor1 = new FameFindsDAL.Models.Vendor()
+            {
+                VendorName = vendor.VendorName,
+                Email = vendor.Email,
+                PasswordHash = hashedPassword, // Use the hashed password
+                PhoneNumber = vendor.PhoneNumber
+            };
+            status = _repo.AddVendor(vendor1);
+            return status;
+        }
+
+
         public bool Login(Customer customer)
         {
             var storedUser = _repo.GetCustomerByUsername(customer.Email);
@@ -39,6 +60,16 @@ namespace FameFindsWebServices.Services
                 return false;
 
             var result = _hasher.VerifyHashedPassword(customer, storedUser.PasswordHash, customer.Password);
+            return result == PasswordVerificationResult.Success;
+        }
+
+        public bool LoginVendor(Vendor vendor)
+        {
+            var storedVendor = _repo.GetVendorByUsername(vendor.Email);
+            if (storedVendor == null)
+                return false;
+
+            var result = _hasherV.VerifyHashedPassword(vendor, storedVendor.PasswordHash, vendor.PasswordHash);
             return result == PasswordVerificationResult.Success;
         }
         public bool UpdatePassword(int userId, string newPassword)
@@ -51,6 +82,17 @@ namespace FameFindsWebServices.Services
             var hashedPassword = _hasher.HashPassword(tempCustomer, newPassword);
 
             return _repo.UpdateUserPassword(userId, hashedPassword);
+        }
+        public bool UpdatePasswordVendor(int vendorId, string newPassword)
+        {
+            var vendor = _repo.GetVendorById(vendorId);
+            if (vendor == null)
+                return false;
+
+            var tempvendor = new Vendor();
+            var hashedPassword = _hasherV.HashPassword(tempvendor, newPassword);
+
+            return _repo.UpdateUserPassword(vendorId, hashedPassword);
         }
     }
 }

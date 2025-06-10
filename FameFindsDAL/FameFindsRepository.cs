@@ -335,6 +335,45 @@ namespace FameFindsDAL
             }
             return status;
         }
+        public Vendor LoginVendor(string email, string passwordHash)
+        {
+            try
+            {
+                var vendor = _context.Vendors.FirstOrDefault(u => u.Email == email && u.PasswordHash == passwordHash);
+                return vendor;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Login failed: {ex.Message}");
+                return null;
+            }
+        }
+        public Vendor GetVendorById(int vendorId)
+        {
+            Vendor vendor = new Vendor();
+            try
+            {
+                vendor = _context.Vendors.Find(vendorId);
+            }
+            catch (Exception ex)
+            {
+                vendor = null;
+            }
+            return vendor;
+        }
+        public Vendor GetVendorByUsername(string username)
+        {
+            Vendor vendor=new Vendor();
+            try
+            {
+                vendor = _context.Vendors.FirstOrDefault(u => u.Email == username);
+            }
+            catch (Exception ex)
+            {
+                vendor = null;
+            }
+            return vendor;
+        }
         public bool UpdateVendor(Vendor vendor)
         {
             bool status = false;
