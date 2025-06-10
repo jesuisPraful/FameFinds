@@ -131,3 +131,5 @@ CREATE TABLE Rating (
     FOREIGN KEY (ShopId) REFERENCES Shop(ShopId)
 );
 GO
+
+SELECT * FROM Customer;

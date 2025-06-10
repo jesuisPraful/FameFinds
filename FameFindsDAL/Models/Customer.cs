@@ -19,5 +19,6 @@ public partial class Customer
 
     public virtual ICollection<Rating> Ratings { get; set; } = new List<Rating>();
 
-    public virtual ICollection<CustomerPasswordResetToken> CustomerPasswordResetTokens { get; set; } = new List<CustomerPasswordResetToken>();
 }
+
+   

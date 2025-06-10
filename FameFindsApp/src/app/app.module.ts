@@ -11,13 +11,18 @@ import { RegisterService } from './services/register.service';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
 import { LoginComponent } from './components/login/login.component';
 import { CustomerService } from './services/customer.service';
+import { LandingComponent } from './components/landing/landing.component';
+import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewProductsComponent,
     RegistrationPageComponent,
-    LoginComponent
+    LoginComponent,
+    LandingComponent,
+    RegistrationPage2Component
+
   ],
   imports: [
     BrowserModule,
