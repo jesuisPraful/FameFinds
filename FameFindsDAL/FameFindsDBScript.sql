@@ -132,4 +132,3 @@ CREATE TABLE Rating (
 );
 GO
 
-SELECT * FROM Customer;
