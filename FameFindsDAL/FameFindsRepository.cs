@@ -171,7 +171,45 @@ namespace FameFindsDAL
             }
         }
 
+        public void SaveOtp(int customerId, string otp)
+        {
+            var entry = new CustomerPasswordResetToken
+            {
+                CustomerId = customerId,
+                Token = otp,
+                Expiry = DateTime.Now.AddMinutes(5),
+                IsUsed = false,
+                RequestedAt = DateTime.Now
+            };
 
+            _context.CustomerPasswordResetTokens.Add(entry);
+            _context.SaveChanges();
+        }
+        public CustomerPasswordResetToken? VerifyOtp(int customerId, string otp)
+        {
+            return _context.CustomerPasswordResetTokens
+                .FirstOrDefault(t =>
+                    t.CustomerId == customerId &&
+                    t.Token == otp &&
+                    (t.IsUsed == false || t.IsUsed == null) &&
+                    t.Expiry > DateTime.Now
+                );
+        }
+        public void MarkOtpAsUsed(int customerId, string otp)
+        {
+            var token = _context.CustomerPasswordResetTokens
+        .FirstOrDefault(t =>
+            t.CustomerId == customerId &&
+            t.Token == otp &&
+            (t.IsUsed == false || t.IsUsed == null) &&
+            t.Expiry > DateTime.Now);
+
+            if (token != null)
+            {
+                token.IsUsed = true;
+                _context.SaveChanges();
+            }
+        }
         #endregion
 
         #region category

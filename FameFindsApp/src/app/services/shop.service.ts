@@ -2,7 +2,8 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { ErrorHandler, Injectable } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
 import { IShop } from '../Models/shop';
-import { IVendor } from '../Models/vendor';
+import { IVendor } from '../Models/Vendor'; }
+
 
 
 @Injectable({

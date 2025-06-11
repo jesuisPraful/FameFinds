@@ -14,10 +14,13 @@ namespace FameFindsWebServices.Controllers
     {
         private readonly FameFindsRepository _repository;
         private readonly AuthenticationService _authService;
-        public CustomerController(FameFindsRepository repository,AuthenticationService authService)
+        private readonly EmailService _emailService;
+
+        public CustomerController(FameFindsRepository repository,AuthenticationService authService, EmailService emailService)
         {
             _repository = repository;
             _authService = authService;
+            _emailService = emailService;
         }
 
 
@@ -222,6 +225,26 @@ namespace FameFindsWebServices.Controllers
                 return StatusCode(500, "Internal Server Error");
             }
         }
+
+        [HttpPost("request-otp")]
+        public IActionResult RequestOtp([FromBody] string email)
+        {
+            var customer = _repository.GetCustomerByUsername(email);
+            if (customer == null)
+            {
+                return NotFound("Email not found");
+            }
+
+            int customerId = customer.CustomerId; 
+
+            var otp = _emailService.GenerateOtp();
+            _repository.SaveOtp(customerId, otp);
+
+            _emailService.SendOtpEmail(email, otp); 
+
+            return Ok("OTP sent");
+        }
+
 
     }
 }

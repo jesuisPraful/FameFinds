@@ -19,6 +19,8 @@ internal class Program
         builder.Services.AddScoped<FameFindsRepository>();
         builder.Services.AddScoped<FameFindsContext>();
         builder.Services.AddScoped<AuthenticationService>();
+        builder.Services.AddScoped<EmailService>();
+
 
         builder.Services.AddCors(options =>
         {
