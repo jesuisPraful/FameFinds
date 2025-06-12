@@ -50,10 +50,7 @@ namespace FameFindsDAL
                 return null;
             }
         }
-        public bool IsEmailRegistered(string email)
-        {
-            return _context.Customers.Any(c => c.Email == email);
-        }
+       
 
         public Customer GetCustomerById(int customerId)
         {
@@ -164,6 +161,11 @@ namespace FameFindsDAL
             return status;
         }
 
+        //public bool IsEmailRegistered(string email)
+        //{
+        //    return _context.Customers.Any(c => c.Email == email);
+        //}
+        
         public bool IsEmailExists(string email)
         {
             try
@@ -176,7 +178,6 @@ namespace FameFindsDAL
                 return false;
             }
         }
-
         public void SaveOtp(int customerId, string otp)
         {
             var entry = new CustomerPasswordResetToken
@@ -432,6 +433,22 @@ namespace FameFindsDAL
             }
             return status;
         }
+        //public bool IsVendorEmailRegistered(string email)
+        //{
+        //    return _context.Vendors.Any(c => c.Email == email);
+        //}
+        public bool IsVendorEmailExists(string email)
+        {
+            try
+            {
+                return _context.Vendors.Any(c => c.Email == email);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in IsEmailExists: {ex.Message}");
+                return false;
+            }
+        }
         public Vendor LoginVendor(string email, string passwordHash)
         {
             try
@@ -531,6 +548,8 @@ namespace FameFindsDAL
             }
             return vendor;
         }
+
+
 
         #endregion
 

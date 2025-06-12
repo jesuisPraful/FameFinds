@@ -19,6 +19,8 @@ namespace FameFindsWebServices.Services
             _hasher = new PasswordHasher<Customer>();
             _hasherV = new PasswordHasher<Vendor>();
         }
+
+        #region customer
         public bool Register(Customer customer)
         {
             bool status = false;
@@ -34,7 +36,32 @@ namespace FameFindsWebServices.Services
             status = _repo.RegisterCustomer(customerOne);
             return status;
         }
-        
+
+        public bool Login(Customer customer)
+        {
+            var storedUser = _repo.GetCustomerByUsername(customer.Email);
+            if (storedUser == null)
+                return false;
+
+            var result = _hasher.VerifyHashedPassword(customer, storedUser.PasswordHash, customer.Password);
+            return result == PasswordVerificationResult.Success;
+        }
+
+        public bool UpdatePassword(int userId, string newPassword)
+        {
+            var customer = _repo.GetCustomerById(userId);
+            if (customer == null)
+                return false;
+
+            var tempCustomer = new Customer();
+            var hashedPassword = _hasher.HashPassword(tempCustomer, newPassword);
+
+            return _repo.UpdateUserPassword(userId, hashedPassword);
+        }
+        #endregion
+
+        #region vendor
+
         public bool AddVendor(Vendor vendor)
         {
             bool status = false;
@@ -52,18 +79,7 @@ namespace FameFindsWebServices.Services
             return status;
         }
 
-
-        public bool Login(Customer customer)
-        {
-            var storedUser = _repo.GetCustomerByUsername(customer.Email);
-            if (storedUser == null)
-                return false;
-
-            var result = _hasher.VerifyHashedPassword(customer, storedUser.PasswordHash, customer.Password);
-            return result == PasswordVerificationResult.Success;
-        }
-
-        public bool LoginVendor(Vendor vendor)
+         public bool LoginVendor(Vendor vendor)
         {
             var storedVendor = _repo.GetVendorByUsername(vendor.Email);
             if (storedVendor == null)
@@ -72,17 +88,7 @@ namespace FameFindsWebServices.Services
             var result = _hasherV.VerifyHashedPassword(vendor, storedVendor.PasswordHash, vendor.PasswordHash);
             return result == PasswordVerificationResult.Success;
         }
-        public bool UpdatePassword(int userId, string newPassword)
-        {
-            var customer = _repo.GetCustomerById(userId);
-            if (customer == null)
-                return false;
 
-            var tempCustomer = new Customer();
-            var hashedPassword = _hasher.HashPassword(tempCustomer, newPassword);
-
-            return _repo.UpdateUserPassword(userId, hashedPassword);
-        }
         public bool UpdatePasswordVendor(int vendorId, string newPassword)
         {
             var vendor = _repo.GetVendorById(vendorId);
@@ -95,6 +101,6 @@ namespace FameFindsWebServices.Services
             return _repo.UpdateUserPassword(vendorId, hashedPassword);
         }
 
-
+        #endregion
     }
 }
