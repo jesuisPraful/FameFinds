@@ -15,6 +15,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { VendorService } from './services/vendor.service';
 import { LoginVendorComponent } from './components/login-vendor/login-vendor.component';
 import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RegistrationPage2Component } from './components/registration-page2/regi
     LoginComponent,
     RegistrationPage2Component,
     LandingComponent,
-    LoginVendorComponent
+    LoginVendorComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
