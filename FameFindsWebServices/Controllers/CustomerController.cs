@@ -230,9 +230,14 @@ namespace FameFindsWebServices.Controllers
         }
 
         [HttpPost("request-otp")]
-        public IActionResult RequestOtp([FromBody] string email)
+        public IActionResult RequestOtp([FromBody] EmailRequest request)
         {
-            var customer = _repository.GetCustomerByUsername(email);
+            if (string.IsNullOrWhiteSpace(request.Email))
+            {
+                return BadRequest("Email is required.");
+            }
+
+            var customer = _repository.GetCustomerByUsername(request.Email);
             if (customer == null)
             {
                 return NotFound("Email not found");
@@ -243,10 +248,11 @@ namespace FameFindsWebServices.Controllers
             var otp = _emailService.GenerateOtp();
             _repository.SaveOtp(customerId, otp);
 
-            _emailService.SendOtpEmail(email, otp);
+            _emailService.SendOtpEmail(request.Email, otp);
 
             return Ok("OTP has been sent to your email.");
         }
+
 
         //[HttpPost("verify-otp")]
         //public IActionResult VerifyOtp([FromBody] OtpVerificationRequest request)

@@ -1,0 +1,47 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fefefe;
+}
+
+.otp-container {
+  max-width: 340px;
+  margin: 100px auto;
+  padding: 30px;
+  background: linear-gradient(to bottom right, #ffe6e6, #e6f0ff);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.otp-input {
+  width: 93%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  text-align: center;
+}
+
+.verify-button {
+  width: 98%;
+  padding: 12px;
+  border: none;
+  background-color: #397eff;
+  color: white;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+  .verify-button:hover {
+    background-color: #2f6ce0;
+  }
