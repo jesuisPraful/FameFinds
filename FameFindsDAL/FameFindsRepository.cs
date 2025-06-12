@@ -177,6 +177,97 @@ namespace FameFindsDAL
             }
         }
 
+        public void SaveOtp(int customerId, string otp)
+        {
+            var entry = new CustomerPasswordResetToken
+            {
+                CustomerId = customerId,
+                Token = otp,
+                Expiry = DateTime.Now.AddMinutes(5),
+                IsUsed = false,
+                RequestedAt = DateTime.Now
+            };
+
+            _context.CustomerPasswordResetTokens.Add(entry);
+            _context.SaveChanges();
+        }
+        public CustomerPasswordResetToken GetOtp(int customerId, string otp)
+        {
+            try
+            {
+                return _context.CustomerPasswordResetTokens
+                    .FirstOrDefault(t =>
+                        t.CustomerId == customerId &&
+                        t.Token == otp &&
+                        t.IsUsed != true); 
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        public CustomerPasswordResetToken? GetOtpByEmail(string email, string otp)
+        {
+            try
+            {
+                var customer = _context.Customers.FirstOrDefault(c => c.Email == email);
+                if (customer == null) return null;
+
+                return _context.CustomerPasswordResetTokens.FirstOrDefault(t =>
+                    t.CustomerId == customer.CustomerId &&
+                    t.Token == otp &&
+                    (t.IsUsed == false || t.IsUsed == null) && 
+                    t.Expiry > DateTime.Now);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public void MarkOtpAsUsedByEmail(string email, string otp)
+        {
+            var customer = _context.Customers.FirstOrDefault(c => c.Email == email);
+            if (customer == null) return;
+
+            var token = _context.CustomerPasswordResetTokens.FirstOrDefault(t =>
+                t.CustomerId == customer.CustomerId &&
+                t.Token == otp &&
+                t.IsUsed != true &&
+                t.Expiry > DateTime.Now);
+
+            if (token != null)
+            {
+                token.IsUsed = true;
+                _context.SaveChanges();
+            }
+        }
+        public void MarkOtpAsUsed(int customerId, string otp)
+        {
+            var token = _context.CustomerPasswordResetTokens
+        .FirstOrDefault(t =>
+            t.CustomerId == customerId &&
+            t.Token == otp &&
+            (t.IsUsed == false || t.IsUsed == null) &&
+            t.Expiry > DateTime.Now);
+
+            if (token != null)
+            {
+                token.IsUsed = true;
+                _context.SaveChanges();
+            }
+        }
+
+        public CustomerPasswordResetToken? GetLatestVerifiedOtp(string email)
+        {
+            var customer = _context.Customers.FirstOrDefault(c => c.Email == email);
+            if (customer == null) return null;
+
+            return _context.CustomerPasswordResetTokens
+                .Where(t => t.CustomerId == customer.CustomerId && t.IsUsed == true && t.Expiry > DateTime.Now)
+                .OrderByDescending(t => t.RequestedAt)
+                .FirstOrDefault();
+        }
 
         #endregion
 
