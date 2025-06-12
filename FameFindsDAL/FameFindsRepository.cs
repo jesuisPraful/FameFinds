@@ -14,6 +14,8 @@ namespace FameFindsDAL
     public class FameFindsRepository
     {
         private readonly FameFindsContext _context;
+       
+
         public FameFindsRepository(FameFindsContext Famecontext)
         {
             _context = Famecontext;
@@ -47,6 +49,10 @@ namespace FameFindsDAL
                 Console.WriteLine($"Login failed: {ex.Message}");
                 return null;
             }
+        }
+        public bool IsEmailRegistered(string email)
+        {
+            return _context.Customers.Any(c => c.Email == email);
         }
 
         public Customer GetCustomerById(int customerId)
