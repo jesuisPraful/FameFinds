@@ -1,5 +1,6 @@
 using FameFindsDAL;
 using FameFindsDAL.Models;
+using FameFindsWebServices.Models;
 using FameFindsWebServices.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +16,9 @@ internal class Program
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+        builder.Services.Configure<SmtpSettings>(
+    builder.Configuration.GetSection("SmtpSettings"));
+
 
         builder.Services.AddScoped<FameFindsRepository>();
         builder.Services.AddScoped<FameFindsContext>();
