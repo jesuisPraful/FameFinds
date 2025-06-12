@@ -132,4 +132,4 @@ CREATE TABLE Rating (
 );
 GO
 
-SELECT * FROM CustomerPasswordResetTokens
+SELECT * FROM Vendor
