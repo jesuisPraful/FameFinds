@@ -13,6 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CustomerService } from './services/customer.service';
 import { LandingComponent } from './components/landing/landing.component';
 import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RegistrationPage2Component } from './components/registration-page2/regi
     RegistrationPageComponent,
     LoginComponent,
     RegistrationPage2Component,
-    LandingComponent
+    LandingComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
