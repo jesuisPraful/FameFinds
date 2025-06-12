@@ -6,9 +6,5 @@ import { Injectable } from '@angular/core';
 })
 export class ForgotpasswordService {
 
-  constructor(private http: HttpClient) { }
-
-  sendCustomerOtp(email: string) {
-    return this.http.post('https://localhost:7249/api/Customer/request-otp', { email });
-  }
+  constructor() { }
 }
