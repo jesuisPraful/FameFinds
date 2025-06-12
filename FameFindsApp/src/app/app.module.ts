@@ -12,7 +12,8 @@ import { RegistrationPageComponent } from './components/registration-page/regist
 import { LoginComponent } from './components/login/login.component';
 import { CustomerService } from './services/customer.service';
 import { LandingComponent } from './components/landing/landing.component';
-import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
+import { VendorService } from './services/vendor.service';
+import { LoginVendorComponent } from './components/login-vendor/login-vendor.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +21,9 @@ import { RegistrationPage2Component } from './components/registration-page2/regi
     ViewProductsComponent,
     RegistrationPageComponent,
     LoginComponent,
+    RegistrationPage2Component,
     LandingComponent,
-    RegistrationPage2Component
-
+    LoginVendorComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +31,7 @@ import { RegistrationPage2Component } from './components/registration-page2/regi
     HttpClientModule,
     FormsModule
   ],
-  providers: [ProductService, RegisterService, CustomerService],
+  providers: [ProductService, RegisterService, CustomerService, VendorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

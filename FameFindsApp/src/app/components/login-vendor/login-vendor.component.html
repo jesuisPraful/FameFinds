@@ -2,7 +2,6 @@
   <div class="login-box">
     <h2 class="main-heading">Login</h2>
 
-
     <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
       <label for="email">Email Id</label>
       <input #emailRef="ngModel"
@@ -19,7 +18,7 @@
       <label>Password</label>
       <div class="password-wrapper">
         <input [type]="showPassword ? 'text' : 'password'"
-               name="password"
+               name="passwordHash"
                ngModel
                required
                placeholder="Password"
