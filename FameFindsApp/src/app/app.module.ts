@@ -14,6 +14,7 @@ import { CustomerService } from './services/customer.service';
 import { LandingComponent } from './components/landing/landing.component';
 import { VendorService } from './services/vendor.service';
 import { LoginVendorComponent } from './components/login-vendor/login-vendor.component';
+import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
 
 @NgModule({
   declarations: [
