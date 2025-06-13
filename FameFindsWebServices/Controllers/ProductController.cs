@@ -4,6 +4,7 @@ using FameFindsDAL.Models;
 //using FameFindsWebServices.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FameFindsWebServices.Controllers
 {
@@ -157,5 +158,22 @@ namespace FameFindsWebServices.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+        [HttpGet("GetProductsByCity/{cityId}")]
+        public IActionResult GetProductsByCity(int cityId)
+        {
+            var products = _repository.GetProductsByCity(cityId)
+                .Where(p => p.CityId == cityId)
+                .Select(p => new {
+                    p.ProductId,
+                    p.ProductName,
+                })
+                .ToList();
+
+            if (products.Count == 0)
+                return NotFound("No products found for the selected city.");
+
+            return Ok(products);
+        }
+
     }
 }

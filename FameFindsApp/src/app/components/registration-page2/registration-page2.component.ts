@@ -20,7 +20,7 @@ export class RegistrationPage2Component {
   constructor(private _service: Register2Service) { }
 
   checkEmailExists() {
-    this._service.checkEmailExists(this.user.email).subscribe(
+    this._service.checkEmailExists(this.vendor.email).subscribe(
       (exists: boolean) => {
         this.emailExists = exists;
       },
@@ -36,7 +36,7 @@ export class RegistrationPage2Component {
 
   validatePhoneNumber() {
     this.phoneTouched = true;
-    this.phoneError = !this._service.validatePhoneNumber(this.user.phoneNumber);
+    this.phoneError = !this._service.validatePhoneNumber(this.vendor.phoneNumber);
   }
 
 

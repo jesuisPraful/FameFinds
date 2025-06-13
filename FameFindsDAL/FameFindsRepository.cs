@@ -401,6 +401,23 @@ namespace FameFindsDAL
 
             return products;
         }
+        public List<Product> GetProductsByCity(int cityId)
+        {
+            List<Product> product =new List<Product>();
+            try
+            {
+                var products = (from p in _context.Products
+                                join c in _context.Cities on p.CityId equals c.CityId
+                                where c.CityId == cityId
+                                select p).ToList();
+
+            }
+            catch (Exception ex)
+            {
+                product = null;
+            }
+            return product;
+        }
         #endregion
 
         #region Vendor

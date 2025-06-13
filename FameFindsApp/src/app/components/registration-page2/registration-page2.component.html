@@ -12,14 +12,14 @@
              required />
 
       <label for="email">Email Address</label>
-      <!--<input type="email"
+      <input type="email"
          id="email"
          name="email"
          placeholder="Email Address"
-         [(ngModel)]="user.email"
+         [(ngModel)]="vendor.email"
          required
-         email />-->
-      <input type="email" [(ngModel)]="user.email" id="email" name="email" placeholder="Email Address" (blur)="checkEmailExists()" required email />
+         email />
+      <!--<input type="email" [(ngModel)]="vendor.email" id="email" name="email" placeholder="Email Address" (blur)="checkEmailExists()" required email />
       <div *ngIf="emailExists" style="color: red; font-size: 14px; margin-top: 4px;">Email already exists.</div>
       <input type="email"
              id="email"
@@ -27,7 +27,7 @@
              placeholder="Email Address"
              [(ngModel)]="vendor.email"
              required
-             email />
+             email />-->
 
 
       <label for="phone">Phone Number</label>
@@ -35,7 +35,7 @@
              id="phone"
              name="phoneNumber"
              placeholder="Phone Number"
-             [(ngModel)]="user.phoneNumber"
+             [(ngModel)]="vendor.phoneNumber"
              #phoneInput="ngModel"
              (blur)="validatePhoneNumber()"
              maxlength="10"
