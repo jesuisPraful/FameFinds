@@ -132,5 +132,24 @@ CREATE TABLE Rating (
 );
 GO
 
-SELECT * FROM Vendor
-select * from CustomerPasswordResetTokens
+SELECT * FROM Products
+
+INSERT INTO City VALUES 
+(1,'HYDERABAD'),
+( 2, 'MUMBAI')
+
+select * from City
+
+INSERT INTO Category  VALUES
+( 'Clothing'),
+('Electronics'),
+('Beauty & Personal Care'),
+('Home & Kitchen'),
+('Footwear'),
+('Handicrafts'),
+('Jewelry'),
+('Stationery & Books'),
+( 'Toys & Games'),
+('Local Snacks & Food Items');
+
+Select * from Category 

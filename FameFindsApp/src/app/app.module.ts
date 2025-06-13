@@ -18,6 +18,9 @@ import { RegistrationPage2Component } from './components/registration-page2/regi
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { OtpVerificationComponent } from './components/otp-verification/otp-verification.component';
+import { ForgotPasswordVendorComponent } from './components/forgot-password-vendor/forgot-password-vendor.component';
+import { ForgotpasswordvendorService } from './services/forgotpasswordvendor.service';
+import { ForgotpasswordService } from './services/forgotpassword.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { OtpVerificationComponent } from './components/otp-verification/otp-veri
     LoginVendorComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    OtpVerificationComponent
+    OtpVerificationComponent,
+    ForgotPasswordVendorComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,12 @@ import { OtpVerificationComponent } from './components/otp-verification/otp-veri
     HttpClientModule,
     FormsModule
   ],
-  providers: [ProductService, RegisterService, CustomerService, VendorService],
+  providers: [ProductService,
+    RegisterService,
+    CustomerService,
+    VendorService,
+    ForgotpasswordvendorService,
+    ForgotpasswordService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

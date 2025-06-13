@@ -178,6 +178,7 @@ namespace FameFindsDAL
                 return false;
             }
         }
+        //to save otp in data base
         public void SaveOtp(int customerId, string otp)
         {
             var entry = new CustomerPasswordResetToken
@@ -243,6 +244,7 @@ namespace FameFindsDAL
                 _context.SaveChanges();
             }
         }
+        //did not use since id cannot be used in frontend
         public void MarkOtpAsUsed(int customerId, string otp)
         {
             var token = _context.CustomerPasswordResetTokens
@@ -258,7 +260,7 @@ namespace FameFindsDAL
                 _context.SaveChanges();
             }
         }
-
+        //reset password only with in 5 minutes and only after otp verification.
         public CustomerPasswordResetToken? GetLatestVerifiedOtp(string email)
         {
             var customer = _context.Customers.FirstOrDefault(c => c.Email == email);
@@ -271,6 +273,8 @@ namespace FameFindsDAL
         }
 
         #endregion
+
+    
 
         #region category
         public List<Category> GetAllCategories()
@@ -401,20 +405,22 @@ namespace FameFindsDAL
 
             return products;
         }
-        public List<Product> GetProductsByCity(int cityId)
+
+        public List<Product> GetProductByCity(string cityName)
         {
-            List<Product> product =new List<Product>();
+            City city = _context.Cities.Where(c => c.CityName == cityName).FirstOrDefault();
+            List<Product> product = new List<Product>();
+
             try
             {
-                var products = (from p in _context.Products
-                                join c in _context.Cities on p.CityId equals c.CityId
-                                where c.CityId == cityId
-                                select p).ToList();
-
+                product = _context.Products
+                    .Where(p => p.CityId == city.CityId)
+                    .ToList();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                product = null;
+
+                city = null;
             }
             return product;
         }
@@ -566,8 +572,85 @@ namespace FameFindsDAL
             return vendor;
         }
 
+        //to save otp in data base
+        public void SaveVendorOtp(int vendorId, string otp)
+        {
+            var entry = new VendorPasswordResetToken
+            {
+                VendorId = vendorId,
+                Token = otp,
+                Expiry = DateTime.Now.AddMinutes(5),
+                IsUsed = false,
+                RequestedAt = DateTime.Now
+            };
 
+            _context.VendorPasswordResetTokens.Add(entry);
+            _context.SaveChanges();
+        }
 
+        public VendorPasswordResetToken GetVendorOtp(int vendorId, string otp)
+        {
+            try
+            {
+                return _context.VendorPasswordResetTokens
+                    .FirstOrDefault(t =>
+                        t.VendorId == vendorId &&
+                        t.Token == otp &&
+                        t.IsUsed != true);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public VendorPasswordResetToken? GetVendorOtpByEmail(string email, string otp)
+        {
+            try
+            {
+                var vendor = _context.Vendors.FirstOrDefault(c => c.Email == email);
+                if (vendor == null) return null;
+
+                return _context.VendorPasswordResetTokens.FirstOrDefault(t =>
+                    t.VendorId == vendor.VendorId &&
+                    t.Token == otp &&
+                    (t.IsUsed == false || t.IsUsed == null) &&
+                    t.Expiry > DateTime.Now);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public void MarkVendorOtpAsUsedByEmail(string email, string otp)
+        {
+            var vendor = _context.Vendors.FirstOrDefault(c => c.Email == email);
+            if (vendor == null) return;
+
+            var token = _context.VendorPasswordResetTokens.FirstOrDefault(t =>
+                t.VendorId == vendor.VendorId &&
+                t.Token == otp &&
+                t.IsUsed != true &&
+                t.Expiry > DateTime.Now);
+
+            if (token != null)
+            {
+                token.IsUsed = true;
+                _context.SaveChanges();
+            }
+        }
+        //reset password only with in 5 minutes and only after otp verification.
+        public VendorPasswordResetToken? GetVendorLatestVerifiedOtp(string email)
+        {
+            var Vendor = _context.Vendors.FirstOrDefault(c => c.Email == email);
+            if (Vendor == null) return null;
+
+            return _context.VendorPasswordResetTokens
+                .Where(t => t.VendorId == Vendor.VendorId && t.IsUsed == true && t.Expiry > DateTime.Now)
+                .OrderByDescending(t => t.RequestedAt)
+                .FirstOrDefault();
+        }
         #endregion
 
         #region Ratings
@@ -940,6 +1023,72 @@ namespace FameFindsDAL
             }
             return status;
         }
+        #endregion
+
+
+
+        #region city
+        public List<City> GetAllCities()
+        {
+            List<City> cities = new List<City>();
+            try
+            {
+                cities = _context.Cities.ToList();
+            }
+            catch (Exception ex)
+            {
+                cities = null;
+            }
+            return cities;
+        }
+
+
+        public bool RegisterCity(City city)
+        {
+            bool status = false;
+            try
+            {
+                _context.Cities.Add(city);
+                _context.SaveChanges();
+                status = true;
+            }
+            catch (Exception)
+            {
+                status = false;
+            }
+            return status;
+        }
+
+        public City GetCityById(int cityId)
+        {
+            City city = new City();
+            try
+            {
+                city = _context.Cities.Find(cityId);
+            }
+            catch (Exception ex)
+            {
+                city = null;
+            }
+            return city;
+        }
+
+        public City GetCityByName(string cityName)
+        {
+            City city = new City();
+            try
+            {
+                city = _context.Cities.FirstOrDefault(c => c.CityName.ToLower() == cityName.ToLower());
+            }
+            catch (Exception ex)
+            {
+                city = null;
+            }
+            return city;
+        }
+
+        
+
         #endregion
     }
 
