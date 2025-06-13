@@ -16,6 +16,8 @@ import { VendorService } from './services/vendor.service';
 import { LoginVendorComponent } from './components/login-vendor/login-vendor.component';
 import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { OtpVerificationComponent } from './components/otp-verification/otp-verification.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     RegistrationPage2Component,
     LandingComponent,
     LoginVendorComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    ResetPasswordComponent,
+    OtpVerificationComponent
   ],
   imports: [
     BrowserModule,
