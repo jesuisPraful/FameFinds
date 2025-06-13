@@ -39,7 +39,7 @@ namespace FameFindsWebServices.Services
         {
             bool status = false;
             string hashedPassword = _hasherV.HashPassword(vendor, vendor.PasswordHash); // Hash password
-                                                                                        // Do NOT nullify vendor.PasswordHash here
+                                                                                       // Do NOT nullify vendor.PasswordHash here
 
             FameFindsDAL.Models.Vendor vendor1 = new FameFindsDAL.Models.Vendor()
             {

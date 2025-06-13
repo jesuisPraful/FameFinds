@@ -9,7 +9,8 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./registration-page2.component.css']
 })
 export class RegistrationPage2Component {
-    user: IVendor = {
+  vendor: IVendor = {
+    vendorId: "",
     vendorName: "",
     email: "",
     phoneNumber: "",
@@ -17,8 +18,8 @@ export class RegistrationPage2Component {
   };
   constructor(private _service: Register2Service ) { }
 
-  registerUser(form: NgForm) {
-    this._service.registerVendor(this.user).subscribe(
+  registerVendor(form: NgForm) {
+    this._service.registerVendor(this.vendor).subscribe(
       (res) => {
         alert("Registered Successfully!")
         form.reset();
