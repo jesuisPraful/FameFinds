@@ -11,20 +11,26 @@ import { RegisterService } from './services/register.service';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
 import { LoginComponent } from './components/login/login.component';
 import { CustomerService } from './services/customer.service';
-import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { VendorService } from './services/vendor.service';
 import { LoginVendorComponent } from './components/login-vendor/login-vendor.component';
+import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { OtpVerificationComponent } from './components/otp-verification/otp-verification.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewProductsComponent,
-    RegistrationPageComponent, 
+    RegistrationPageComponent,
     LoginComponent,
     RegistrationPage2Component,
     LandingComponent,
-    LoginVendorComponent
+    LoginVendorComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent,
+    OtpVerificationComponent
   ],
   imports: [
     BrowserModule,

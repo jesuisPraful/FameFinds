@@ -1,0 +1,19 @@
+<div class="otp-container">
+  <h2>Enter OTP</h2>
+  <form #otpForm="ngForm" (ngSubmit)="verifyOtp(otpForm)">
+    <input type="text"
+           maxlength="6"
+           name="otp"
+           class="otp-input"
+           [(ngModel)]="otp"
+           placeholder="Enter 6-digit OTP"
+           required />
+
+    <button type="submit" class="verify-button" [disabled]="otpForm.invalid || isLoading">
+      {{ isLoading ? 'Verifying...' : 'Verify' }}
+    </button>
+
+    <div *ngIf="message" class="success-message">{{ message }}</div>
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+  </form>
+</div>

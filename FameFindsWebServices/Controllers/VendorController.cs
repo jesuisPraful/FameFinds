@@ -84,6 +84,24 @@ namespace FameFindsWebServices.Controllers
                 return BadRequest("Registration Failed");
             }
         }
+        [HttpGet("check-email")]
+        public IActionResult CheckEmailExists([FromQuery] string email)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(email))
+                    return BadRequest("Email must be provided.");
+
+                bool exists = _repository.IsVendorEmailExists(email);
+                return Ok(exists);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in CheckEmailExists: {ex.Message}");
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+
         [HttpPost("login")]
         public IActionResult Login([FromQuery] string email, [FromQuery] string passwordHash)
         {
