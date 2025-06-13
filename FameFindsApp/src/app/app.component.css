@@ -1,0 +1,63 @@
+body {
+  background-color: #f8f9fa; /* Light background for contrast */
+  font-family: 'Arial', sans-serif; /* Clean font */
+}
+
+.container {
+  margin-top: 100px; /* Space from the top */
+}
+
+.card {
+  border: none; /* Remove default border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.card-title {
+  font-size: 1.5rem; /* Larger title */
+  color: #343a40; /* Darker text color */
+}
+
+.form-label {
+  font-weight: bold; /* Bold labels */
+  color: #495057; /* Darker label color */
+}
+
+.form-control {
+  border: 1px solid #ced4da; /* Light border */
+  border-radius: 5px; /* Rounded input fields */
+  transition: border-color 0.3s; /* Smooth transition */
+}
+
+  .form-control:focus {
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Light blue shadow */
+  }
+
+.btn-primary {
+  background-color: #007bff; /* Primary button color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded button */
+  padding: 10px; /* Padding for button */
+  font-size: 1rem; /* Button text size */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+  .btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+
+.alert {
+  border-radius: 5px; /* Rounded alert boxes */
+  font-size: 0.9rem; /* Slightly smaller text */
+}
+
+.alert-success {
+  background-color: #d4edda; /* Light green background */
+  color: #155724; /* Dark green text */
+}
+
+.alert-danger {
+  background-color: #f8d7da; /* Light red background */
+  color: #721c24; /* Dark red text */
+}

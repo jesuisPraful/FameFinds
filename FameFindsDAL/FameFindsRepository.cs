@@ -14,6 +14,8 @@ namespace FameFindsDAL
     public class FameFindsRepository
     {
         private readonly FameFindsContext _context;
+       
+
         public FameFindsRepository(FameFindsContext Famecontext)
         {
             _context = Famecontext;
@@ -48,6 +50,7 @@ namespace FameFindsDAL
                 return null;
             }
         }
+       
 
         public Customer GetCustomerById(int customerId)
         {
@@ -158,6 +161,11 @@ namespace FameFindsDAL
             return status;
         }
 
+        //public bool IsEmailRegistered(string email)
+        //{
+        //    return _context.Customers.Any(c => c.Email == email);
+        //}
+        
         public bool IsEmailExists(string email)
         {
             try
@@ -170,7 +178,97 @@ namespace FameFindsDAL
                 return false;
             }
         }
+        public void SaveOtp(int customerId, string otp)
+        {
+            var entry = new CustomerPasswordResetToken
+            {
+                CustomerId = customerId,
+                Token = otp,
+                Expiry = DateTime.Now.AddMinutes(5),
+                IsUsed = false,
+                RequestedAt = DateTime.Now
+            };
 
+            _context.CustomerPasswordResetTokens.Add(entry);
+            _context.SaveChanges();
+        }
+        public CustomerPasswordResetToken GetOtp(int customerId, string otp)
+        {
+            try
+            {
+                return _context.CustomerPasswordResetTokens
+                    .FirstOrDefault(t =>
+                        t.CustomerId == customerId &&
+                        t.Token == otp &&
+                        t.IsUsed != true); 
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        public CustomerPasswordResetToken? GetOtpByEmail(string email, string otp)
+        {
+            try
+            {
+                var customer = _context.Customers.FirstOrDefault(c => c.Email == email);
+                if (customer == null) return null;
+
+                return _context.CustomerPasswordResetTokens.FirstOrDefault(t =>
+                    t.CustomerId == customer.CustomerId &&
+                    t.Token == otp &&
+                    (t.IsUsed == false || t.IsUsed == null) && 
+                    t.Expiry > DateTime.Now);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public void MarkOtpAsUsedByEmail(string email, string otp)
+        {
+            var customer = _context.Customers.FirstOrDefault(c => c.Email == email);
+            if (customer == null) return;
+
+            var token = _context.CustomerPasswordResetTokens.FirstOrDefault(t =>
+                t.CustomerId == customer.CustomerId &&
+                t.Token == otp &&
+                t.IsUsed != true &&
+                t.Expiry > DateTime.Now);
+
+            if (token != null)
+            {
+                token.IsUsed = true;
+                _context.SaveChanges();
+            }
+        }
+        public void MarkOtpAsUsed(int customerId, string otp)
+        {
+            var token = _context.CustomerPasswordResetTokens
+        .FirstOrDefault(t =>
+            t.CustomerId == customerId &&
+            t.Token == otp &&
+            (t.IsUsed == false || t.IsUsed == null) &&
+            t.Expiry > DateTime.Now);
+
+            if (token != null)
+            {
+                token.IsUsed = true;
+                _context.SaveChanges();
+            }
+        }
+
+        public CustomerPasswordResetToken? GetLatestVerifiedOtp(string email)
+        {
+            var customer = _context.Customers.FirstOrDefault(c => c.Email == email);
+            if (customer == null) return null;
+
+            return _context.CustomerPasswordResetTokens
+                .Where(t => t.CustomerId == customer.CustomerId && t.IsUsed == true && t.Expiry > DateTime.Now)
+                .OrderByDescending(t => t.RequestedAt)
+                .FirstOrDefault();
+        }
 
         #endregion
 
@@ -356,6 +454,61 @@ namespace FameFindsDAL
             }
             return status;
         }
+        //public bool IsVendorEmailRegistered(string email)
+        //{
+        //    return _context.Vendors.Any(c => c.Email == email);
+        //}
+        public bool IsVendorEmailExists(string email)
+        {
+            try
+            {
+                return _context.Vendors.Any(c => c.Email == email);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in IsEmailExists: {ex.Message}");
+                return false;
+            }
+        }
+        public Vendor LoginVendor(string email, string passwordHash)
+        {
+            try
+            {
+                var vendor = _context.Vendors.FirstOrDefault(u => u.Email == email && u.PasswordHash == passwordHash);
+                return vendor;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Login failed: {ex.Message}");
+                return null;
+            }
+        }
+        public Vendor GetVendorById(int vendorId)
+        {
+            Vendor vendor = new Vendor();
+            try
+            {
+                vendor = _context.Vendors.Find(vendorId);
+            }
+            catch (Exception ex)
+            {
+                vendor = null;
+            }
+            return vendor;
+        }
+        public Vendor GetVendorByUsername(string username)
+        {
+            Vendor vendor=new Vendor();
+            try
+            {
+                vendor = _context.Vendors.FirstOrDefault(u => u.Email == username);
+            }
+            catch (Exception ex)
+            {
+                vendor = null;
+            }
+            return vendor;
+        }
         public bool UpdateVendor(Vendor vendor)
         {
             bool status = false;
@@ -416,6 +569,8 @@ namespace FameFindsDAL
             }
             return vendor;
         }
+
+
 
         #endregion
 

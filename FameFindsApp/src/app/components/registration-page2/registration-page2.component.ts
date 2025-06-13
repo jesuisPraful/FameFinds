@@ -15,7 +15,29 @@ export class RegistrationPage2Component {
     phoneNumber: "",
     passwordHash: ""
   };
-  constructor(private _service: Register2Service ) { }
+  emailExists: boolean = false;
+  constructor(private _service: Register2Service) { }
+
+  checkEmailExists() {
+    this._service.checkEmailExists(this.user.email).subscribe(
+      (exists: boolean) => {
+        this.emailExists = exists;
+      },
+      (err) => {
+        console.error("Email check failed:", err);
+        this.emailExists = false;
+      }
+    );
+  }
+
+  phoneError: boolean = false;
+  phoneTouched: boolean = false;
+
+  validatePhoneNumber() {
+    this.phoneTouched = true;
+    this.phoneError = !this._service.validatePhoneNumber(this.user.phoneNumber);
+  }
+
 
   registerUser(form: NgForm) {
     this._service.registerVendor(this.user).subscribe(

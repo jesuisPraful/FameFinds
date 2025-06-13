@@ -3,23 +3,22 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './components/landing/landing.component';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
 import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
-import { ViewShopsComponent } from './components/view-shops/view-shops.component';
-import { ViewCitiesComponent } from './components/view-cities/view-cities.component';
-import { AddShopsComponent } from './components/add-shops/add-shops.component';
-
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { OtpVerificationComponent } from './components/otp-verification/otp-verification.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { LoginComponent } from './components/login/login.component';
+import { LoginVendorComponent } from './components/login-vendor/login-vendor.component';
 
 const routes: Routes = [
-
-  // Default route now shows cities
-  { path: '', component: ViewCitiesComponent },
-  { path: 'add-shops', component: AddShopsComponent },
-  //{ path: 'shops', component: ViewShopsComponent },
-  //{ path: 'login/user', component: LandingComponent},
-  //{ path: 'login/vendor', component: LandingComponent },
-  //{ path: 'register/user', component: RegistrationPageComponent },
-  //{ path: 'register/vendor', component: RegistrationPage2Component },
-  //{ path: '', redirectTo: '/home', pathMatch: 'full' },
-  //{ path: '**', redirectTo: '/home' }
+  { path: '', component: LandingComponent }, 
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'verify-otp', component: OtpVerificationComponent },
+  { path: 'reset-password', component: ResetPasswordComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegistrationPageComponent },
+  { path: 'vendorlogin', component: LoginVendorComponent },
+  { path: 'vendorregister', component: RegistrationPage2Component },
+  { path: '**', component: LandingComponent }
 ];
 
 @NgModule({
