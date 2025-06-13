@@ -19,6 +19,7 @@ namespace FameFindsWebServices.Controllers
         [HttpGet]
         public IActionResult GetAllCities()
         {
+
             try
             {
                 var cities = _repository.GetAllCities();
@@ -41,6 +42,7 @@ namespace FameFindsWebServices.Controllers
                 {
                     City cityOne = new City
                     {
+                        CityId=city.CityId,
                         CityName = city.CityName
                     };
 

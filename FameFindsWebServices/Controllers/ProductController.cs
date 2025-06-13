@@ -20,6 +20,7 @@ namespace FameFindsWebServices.Controllers
         [HttpGet]
         public IActionResult GetAllProducts()
         {
+            
             try
             {
                 var products = _repository.GetAllProducts();
@@ -42,6 +43,7 @@ namespace FameFindsWebServices.Controllers
                     product1.ProductName = product.ProductName;
                     product1.Description = product.Description;
                     product1.CategoryId = product.CategoryId;
+                    product1.CityId=product.CityId;
                     status = _repository.AddProduct(product1);
                     if (status)
                     {
@@ -59,7 +61,7 @@ namespace FameFindsWebServices.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, $"Internal server error:{ex.Message}");
             }
         }
         [HttpPut]
