@@ -29,97 +29,34 @@ namespace FameFindsWebServices.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
-        //[HttpPost]
-        //public IActionResult AddProduct(Models.Product product)
-        //{
-        //    bool status = false;
-        //    try
-        //    {
-        //        //    if (ModelState.IsValid)
-        //        //    {
-        //        //        FameFindsDAL.Models.Product productOne = new FameFindsDAL.Models.Product
-        //        //        {
-        //        //            ProductName = product.ProductName,
-        //        //            Description = product.Description,
-        //        //            CategoryId = product.CategoryId,
-        //        //            CityId = product.CityId
-        //        //        };
-        //        //        status = _repository.AddProduct(productOne);
-        //        //        if (status)
-        //        //        {
-        //        //            return Ok("Product added successfully");
-        //        //        }
-        //        //        else
-        //        //        {
-        //        //            return BadRequest("Failed to add product");
-        //        //        }
-        //        //        var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
-        //        //        return BadRequest(string.Join("; ", errors));
-        //        //    }
-        //        //    else
-        //        //    {
-        //        //        return BadRequest("Model state is not valid");
-        //        //    }
-        //        //}
-        //        //catch (Exception ex)
-        //        //{
-        //        //    return StatusCode(500, $"Internal server error: {ex.Message}");
-        //        //}
-        //        FameFindsDAL.Models.Product dbProduct = new FameFindsDAL.Models.Product
-        //        {
-        //            ProductName = product.ProductName,
-        //            Description = product.Description,
-        //            CategoryId = product.CategoryId,
-        //            CityId = product.CityId
-        //        };
-
-        //        bool status = _repository.AddProduct(dbProduct);
-
-        //        if (status)
-        //        {
-        //            return Ok("Product added successfully");
-        //        }
-        //        else
-        //        {
-        //            return BadRequest("Failed to add product");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, $"Internal server error: {ex.Message}");
-        //    }
-        //}
         [HttpPost]
-        public IActionResult AddProduct(FameFindsWebServices.Models.Product product)
+        public IActionResult AddProduct(Models.Product product)
         {
+            bool status = false;
             try
             {
-                if (!ModelState.IsValid)
+                if (ModelState.IsValid)
                 {
-                    // This returns all validation errors in a readable format
-                    var errors = ModelState.Values.SelectMany(v => v.Errors)
-                                                  .Select(e => e.ErrorMessage);
-                    return BadRequest(string.Join("; ", errors));
-                }
-
-                // Map from API model to DAL model
-                FameFindsDAL.Models.Product dbProduct = new FameFindsDAL.Models.Product
-                {
-                    ProductName = product.ProductName,
-                    Description = product.Description,
-                    CategoryId = product.CategoryId,
-                    CityId = product.CityId
-                };
-
-                bool status = _repository.AddProduct(dbProduct);
-
-                if (status)
-                {
-                    return Ok("Product added successfully");
+                    FameFindsDAL.Models.Product productOne = new FameFindsDAL.Models.Product
+                    {
+                        ProductName = product.ProductName,
+                        Description = product.Description,
+                        CategoryId = product.CategoryId,
+                        CityId = product.CityId
+                    };
+                    status = _repository.AddProduct(productOne);
+                    if (status)
+                    {
+                        return Ok("Product added successfully");
+                    }
+                    else
+                    {
+                        return BadRequest("Failed to add product");
+                    }
                 }
                 else
                 {
-                    return BadRequest("Failed to add product");
+                    return BadRequest("Model state is not valid");
                 }
             }
             catch (Exception ex)
@@ -127,7 +64,6 @@ namespace FameFindsWebServices.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
-
         [HttpPut]
         public IActionResult UpdateProduct(Models.Product product)
         {
