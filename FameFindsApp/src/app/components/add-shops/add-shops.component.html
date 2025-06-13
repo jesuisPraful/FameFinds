@@ -1,0 +1,30 @@
+<div class="add-shop-form">
+  <h2>Add New Shop</h2>
+
+  <form (ngSubmit)="addShop()" #shopForm="ngForm">
+    <input type="text" [(ngModel)]="newShop.shopName" name="shopName" placeholder="Shop Name" required />
+    <input type="email" [(ngModel)]="newShop.emailId" name="emailId" placeholder="Email" required />
+    <input type="number" [(ngModel)]="newShop.cityId" name="cityId" placeholder="City ID" required />
+    <input type="text" [(ngModel)]="newShop.pincode" name="pincode" placeholder="Pincode" required />
+    <input type="text" [(ngModel)]="newShop.contactNumber" name="contactNumber" placeholder="Contact Number" required />
+    <input type="text" [(ngModel)]="newShop.fullAddress" name="fullAddress" placeholder="Full Address" required />
+    <input type="number" [(ngModel)]="newShop.latitude" name="latitude" placeholder="Latitude" />
+    <input type="number" [(ngModel)]="newShop.longitude" name="longitude" placeholder="Longitude" />
+
+    <label>Opening Time:</label>
+    <input type="time" [(ngModel)]="newShop.openingTime" name="openingTime" required />
+
+    <label>Closing Time:</label>
+    <input type="time" [(ngModel)]="newShop.closingTime" name="closingTime" required />
+
+    <label>
+      <input type="checkbox" [(ngModel)]="newShop.isOpen" name="isOpen" /> Is Open?
+    </label>
+
+    <input type="number" [(ngModel)]="newShop.vendorId" name="vendorId" placeholder="Vendor ID" required />
+
+    <button type="submit">Add Shop</button>
+  </form>
+
+  <p *ngIf="message">{{ message }}</p>
+</div>

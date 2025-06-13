@@ -66,23 +66,29 @@ namespace FameFindsWebServices.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Shop shopOne = new Shop();
-                
-                    shopOne.ShopName = shop.ShopName;
-                    shopOne.EmailId = shop.EmailId;
-                    shopOne.CityId = shop.CityId;
-                    shopOne.Pincode = shop.Pincode;
-                    shopOne.ContactNumber = shop.ContactNumber;
-                    shopOne.FullAddress = shop.FullAddress;
-                    shopOne.Latitude = shop.Latitude;
-                    shopOne.Longitude = shop.Longitude;
-                    shopOne.OpeningTime = shop.OpeningTime;
-                    shopOne.ClosingTime = shop.ClosingTime;
-                    shopOne.VendorId = shop.VendorId;
+                    Shop shopOne = new Shop
+                    {
+                        ShopName = shop.ShopName,
+                        EmailId = shop.EmailId,
+                        CityId = shop.CityId,
+                        Pincode = shop.Pincode,
+                        ContactNumber = shop.ContactNumber,
+                        FullAddress = shop.FullAddress,
+                        Latitude = shop.Latitude,
+                        Longitude = shop.Longitude,
+                        OpeningTime = shop.OpeningTime,
+                        ClosingTime = shop.ClosingTime,
+                        IsOpen = shop.IsOpen ?? true, // Set default true if null
+                        CreatedAt = DateTime.Now,     // Auto-set current datetime
+                        VendorId = shop.VendorId
+                    };
 
                     status = _repository.RegisterShop(shopOne);
 
-                    return Ok("Shop Registered Successfully");
+                    if (status)
+                        return Ok("Shop Registered Successfully");
+                    else
+                        return BadRequest("Failed to register shop.");
                 }
                 else
                 {
@@ -91,10 +97,10 @@ namespace FameFindsWebServices.Controllers
             }
             catch (Exception)
             {
-                status = false;
                 return BadRequest("Registration failed.");
             }
         }
+
 
         [HttpGet("shopId")]
         public IActionResult GetShopsByShopId(int shopId)
