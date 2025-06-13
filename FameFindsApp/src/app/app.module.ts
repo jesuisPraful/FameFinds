@@ -18,7 +18,9 @@ import { RegistrationPage2Component } from './components/registration-page2/regi
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { OtpVerificationComponent } from './components/otp-verification/otp-verification.component';
-import { AddProductComponent } from './components/add-product/add-product.component';
+import { ForgotPasswordVendorComponent } from './components/forgot-password-vendor/forgot-password-vendor.component';
+import { ForgotpasswordvendorService } from './services/forgotpasswordvendor.service';
+import { ForgotpasswordService } from './services/forgotpassword.service';
 
 @NgModule({
   declarations: [
@@ -31,8 +33,7 @@ import { AddProductComponent } from './components/add-product/add-product.compon
     LoginVendorComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    OtpVerificationComponent,
-    AddProductComponent
+    OtpVerificationComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +41,12 @@ import { AddProductComponent } from './components/add-product/add-product.compon
     HttpClientModule,
     FormsModule
   ],
-  providers: [ProductService, RegisterService, CustomerService, VendorService],
+  providers: [ProductService,
+    RegisterService,
+    CustomerService,
+    VendorService,
+    ForgotpasswordvendorService,
+    ForgotpasswordService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
