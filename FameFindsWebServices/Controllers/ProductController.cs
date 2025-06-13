@@ -19,6 +19,7 @@ namespace FameFindsWebServices.Controllers
         [HttpGet]
         public IActionResult GetAllProducts()
         {
+            
             try
             {
                 var products = _repository.GetAllProducts();
@@ -37,14 +38,12 @@ namespace FameFindsWebServices.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    FameFindsDAL.Models.Product productOne = new FameFindsDAL.Models.Product
-                    {
-                        ProductName = product.ProductName,
-                        Description = product.Description,
-                        CategoryId = product.CategoryId,
-                        CityId = product.CityId
-                    };
-                    status = _repository.AddProduct(productOne);
+                    Product product1 = new Product();
+                    product1.ProductName = product.ProductName;
+                    product1.Description = product.Description;
+                    product1.CategoryId = product.CategoryId;
+                    product1.CityId=product.CityId;
+                    status = _repository.AddProduct(product1);
                     if (status)
                     {
                         return Ok("Product added successfully");
@@ -61,7 +60,7 @@ namespace FameFindsWebServices.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return StatusCode(500, "Internal server error");
             }
         }
         [HttpPut]
