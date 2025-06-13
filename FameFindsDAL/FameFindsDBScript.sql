@@ -132,4 +132,20 @@ CREATE TABLE Rating (
 );
 GO
 
-SELECT * FROM Vendor
+SELECT * FROM Products
+
+INSERT INTO City VALUES ( 2, 'MUMBAI')
+
+INSERT INTO Category  VALUES
+( 'Clothing'),
+('Electronics'),
+('Beauty & Personal Care'),
+('Home & Kitchen'),
+('Footwear'),
+('Handicrafts'),
+('Jewelry'),
+('Stationery & Books'),
+( 'Toys & Games'),
+('Local Snacks & Food Items');
+
+INSERT INTO Products VALUES (1,'car','special toy',8)

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
+import { IVendor } from '../Models/vendor';
 import { ICategory } from '../Models/category';
 import { IProduct } from '../Models/product';
 
@@ -21,6 +22,10 @@ export class ProductService {
       .pipe(catchError(this.errorHandler));
     return tempVar;
   }
+
+  //addProduct(product: IProduct) {
+  //  var tempVar = this._http.post("",)
+  //}
   getAllCategories() {
     var tempVar = this._http.get<ICategory[]>("https://localhost:7249/api/Category")
       .pipe(catchError(this.errorHandler));
