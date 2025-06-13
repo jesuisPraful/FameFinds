@@ -174,24 +174,7 @@ namespace FameFindsDAL
 
         #endregion
 
-        public List<Product> GetProductByCity(string cityName)
-        {
-            City city  = _context.Cities.Where(c => c.CityName == cityName).FirstOrDefault();
-            List<Product> product = new List<Product>();
-           
-            try
-            {
-                product = _context.Products
-                    .Where(p => p.CityId == city.CityId)
-                    .ToList();
-            }
-            catch (Exception)
-            {
-
-                city = null;
-            }
-            return product;
-        }
+    
 
         #region category
         public List<Category> GetAllCategories()
@@ -321,6 +304,25 @@ namespace FameFindsDAL
             }
 
             return products;
+        }
+
+        public List<Product> GetProductByCity(string cityName)
+        {
+            City city = _context.Cities.Where(c => c.CityName == cityName).FirstOrDefault();
+            List<Product> product = new List<Product>();
+
+            try
+            {
+                product = _context.Products
+                    .Where(p => p.CityId == city.CityId)
+                    .ToList();
+            }
+            catch (Exception)
+            {
+
+                city = null;
+            }
+            return product;
         }
         #endregion
 
@@ -787,6 +789,72 @@ namespace FameFindsDAL
             }
             return status;
         }
+        #endregion
+
+
+
+        #region city
+        public List<City> GetAllCities()
+        {
+            List<City> cities = new List<City>();
+            try
+            {
+                cities = _context.Cities.ToList();
+            }
+            catch (Exception ex)
+            {
+                cities = null;
+            }
+            return cities;
+        }
+
+
+        public bool RegisterCity(City city)
+        {
+            bool status = false;
+            try
+            {
+                _context.Cities.Add(city);
+                _context.SaveChanges();
+                status = true;
+            }
+            catch (Exception)
+            {
+                status = false;
+            }
+            return status;
+        }
+
+        public City GetCityById(int cityId)
+        {
+            City city = new City();
+            try
+            {
+                city = _context.Cities.Find(cityId);
+            }
+            catch (Exception ex)
+            {
+                city = null;
+            }
+            return city;
+        }
+
+        public City GetCityByName(string cityName)
+        {
+            City city = new City();
+            try
+            {
+                city = _context.Cities.FirstOrDefault(c => c.CityName.ToLower() == cityName.ToLower());
+            }
+            catch (Exception ex)
+            {
+                city = null;
+            }
+            return city;
+        }
+
+        
+
         #endregion
     }
 

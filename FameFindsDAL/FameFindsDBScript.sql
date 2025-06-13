@@ -131,3 +131,12 @@ CREATE TABLE Rating (
     FOREIGN KEY (ShopId) REFERENCES Shop(ShopId)
 );
 GO
+INSERT INTO City (CityId, CityName) VALUES (1, 'New Delhi');
+INSERT INTO City (CityId, CityName) VALUES (2, 'Mumbai');
+
+INSERT INTO Vendor (VendorName, Email, PasswordHash, PhoneNumber)
+VALUES ('Amit Traders', 'amit@example.com', 'hashedpassword123', '9876543210');
+
+select * from Vendor;
+
+SELECT * FROM City;
