@@ -7,6 +7,10 @@ namespace FameFindsWebServices.Models
     {
         [Key]
         public int ProductId { get; set; }
+
+        [Required]
+        public int? CityId { get; set; }
+
         [MaxLength(150)]
         public string? ProductName { get; set; }
         [MaxLength(255)]

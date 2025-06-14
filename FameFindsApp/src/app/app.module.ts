@@ -11,13 +11,30 @@ import { RegisterService } from './services/register.service';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
 import { LoginComponent } from './components/login/login.component';
 import { CustomerService } from './services/customer.service';
+import { LandingComponent } from './components/landing/landing.component';
+import { VendorService } from './services/vendor.service';
+import { LoginVendorComponent } from './components/login-vendor/login-vendor.component';
+import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { OtpVerificationComponent } from './components/otp-verification/otp-verification.component';
+import { ForgotPasswordVendorComponent } from './components/forgot-password-vendor/forgot-password-vendor.component';
+import { ForgotpasswordvendorService } from './services/forgotpasswordvendor.service';
+import { ForgotpasswordService } from './services/forgotpassword.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewProductsComponent,
     RegistrationPageComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrationPage2Component,
+    LandingComponent,
+    LoginVendorComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent,
+    OtpVerificationComponent,
+    ForgotPasswordVendorComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +42,12 @@ import { CustomerService } from './services/customer.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [ProductService, RegisterService, CustomerService],
+  providers: [ProductService,
+    RegisterService,
+    CustomerService,
+    VendorService,
+    ForgotpasswordvendorService,
+    ForgotpasswordService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
