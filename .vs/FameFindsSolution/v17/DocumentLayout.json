@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Devp D\\Projects\\Nexturn Training\\Final Project\\FameFinds\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|c:\\devp d\\projects\\nexturn training\\final project\\famefinds\\famefindswebservices\\controllers\\ratingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\controllers\\ratingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|c:\\devp d\\projects\\nexturn training\\final project\\famefinds\\famefindsdal\\famefindsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|solutionrelative:famefindsdal\\famefindsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|c:\\devp d\\projects\\nexturn training\\final project\\famefinds\\famefindsdal\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|solutionrelative:famefindsdal\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|c:\\devp d\\projects\\nexturn training\\final project\\famefinds\\famefindswebservices\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,18 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|c:\\devp d\\projects\\nexturn training\\final project\\famefinds\\famefindswebservices\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|c:\\devp d\\projects\\nexturn training\\final project\\famefinds\\famefindswebservices\\controllers\\ratingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DA53410-4951-4539-89C3-2358288C7E6A}|FameFindsWebServices\\FameFindsWebServices.csproj|solutionrelative:famefindswebservices\\controllers\\ratingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|c:\\devp d\\projects\\nexturn training\\final project\\famefinds\\famefindsdal\\famefindsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|solutionrelative:famefindsdal\\famefindsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|c:\\devp d\\projects\\nexturn training\\final project\\famefinds\\famefindsdal\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4237B96-9556-4AF6-82B5-08430B9CBADF}|FameFindsDAL\\FameFindsDAL.csproj|solutionrelative:famefindsdal\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1234,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,7 +50,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Devp D\\Projects\\Nexturn Training\\Final Project\\FameFinds\\FameFindsDAL\\appsettings.json",
               "RelativeDocumentMoniker": "FameFindsDAL\\appsettings.json",
@@ -62,7 +62,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Devp D\\Projects\\Nexturn Training\\Final Project\\FameFinds\\FameFindsWebServices\\appsettings.json",
               "RelativeDocumentMoniker": "FameFindsWebServices\\appsettings.json",
@@ -74,7 +74,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "app.component.html",
               "DocumentMoniker": "C:\\Devp D\\Projects\\Nexturn Training\\Final Project\\FameFinds\\FameFindsApp\\src\\app\\app.component.html",
               "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\app.component.html",
@@ -87,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "Rating.cs",
               "DocumentMoniker": "C:\\Devp D\\Projects\\Nexturn Training\\Final Project\\FameFinds\\FameFindsDAL\\Models\\Rating.cs",
               "RelativeDocumentMoniker": "FameFindsDAL\\Models\\Rating.cs",
@@ -95,11 +95,12 @@
               "RelativeToolTip": "FameFindsDAL\\Models\\Rating.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T15:19:22.534Z"
+              "WhenOpened": "2025-05-13T15:19:22.534Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Rating.cs",
               "DocumentMoniker": "C:\\Devp D\\Projects\\Nexturn Training\\Final Project\\FameFinds\\FameFindsWebServices\\Models\\Rating.cs",
               "RelativeDocumentMoniker": "FameFindsWebServices\\Models\\Rating.cs",
@@ -112,7 +113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "RatingController.cs",
               "DocumentMoniker": "C:\\Devp D\\Projects\\Nexturn Training\\Final Project\\FameFinds\\FameFindsWebServices\\Controllers\\RatingController.cs",
               "RelativeDocumentMoniker": "FameFindsWebServices\\Controllers\\RatingController.cs",
@@ -120,19 +121,21 @@
               "RelativeToolTip": "FameFindsWebServices\\Controllers\\RatingController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T14:58:01.174Z"
+              "WhenOpened": "2025-05-13T14:58:01.174Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "FameFindsRepository.cs",
               "DocumentMoniker": "C:\\Devp D\\Projects\\Nexturn Training\\Final Project\\FameFinds\\FameFindsDAL\\FameFindsRepository.cs",
               "RelativeDocumentMoniker": "FameFindsDAL\\FameFindsRepository.cs",
               "ToolTip": "C:\\Devp D\\Projects\\Nexturn Training\\Final Project\\FameFinds\\FameFindsDAL\\FameFindsRepository.cs",
               "RelativeToolTip": "FameFindsDAL\\FameFindsRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAL4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAwwL4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T14:48:49.973Z"
+              "WhenOpened": "2025-05-13T14:48:49.973Z",
+              "EditorCaption": ""
             }
           ]
         }
