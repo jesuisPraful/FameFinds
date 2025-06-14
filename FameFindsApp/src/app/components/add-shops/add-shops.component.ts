@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { IShop } from '../../models/shop';
+import { IShop } from '../../Models/shop';
 import { ShopService } from '../../services/shop.service';
 
 @Component({

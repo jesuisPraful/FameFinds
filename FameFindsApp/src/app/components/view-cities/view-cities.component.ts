@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ICity } from '../../models/city';
+import { ICity } from '../../Models/city';
 import { CityService } from '../../services/city.service';
 import { Router } from '@angular/router'; 
 
@@ -42,6 +42,19 @@ export class ViewCitiesComponent implements OnInit {
         console.log("Get Cities executed successfully.");
       }
     );
+
   }
+
+  searchCity(cityName: string): void {
+    if (!cityName.trim()) {
+      this.filteredCities = this.cities;
+    } else {
+      const lowerName = cityName.toLowerCase();
+      this.filteredCities = this.cities.filter(city =>
+        city.cityName.toLowerCase().includes(lowerName)
+      );
+    }
+  }
+
 }
 
