@@ -1,25 +1,34 @@
-<div class="landing-container">
-  <div class="landing-card">
-    <h2>Welcome to</h2>
-    <h1><strong>Fame</strong><span class="highlight">Finds</span></h1>
-
-    <div class="dropdown-group">
-      <!-- Login Dropdown -->
-      <div class="dropdown">
-        <button class="dropbtn">Login</button>
-        <div class="dropdown-content">
-          <a routerLink="/login">Login as User</a>
-          <a routerLink="/vendorlogin">Login as Vendor</a>
+<header role="banner">
+  <div class="container header-inner">
+    <div class="logo" aria-label="FameFinds Logo">FameFinds</div>
+    <nav role="navigation" aria-label="Primary navigation">
+      <div class="dropdown" tabindex="0">
+        <a href="#" aria-haspopup="true" aria-expanded="false" aria-controls="login-menu">
+          <span class="material-icons" aria-hidden="true">login</span> Login
+        </a>
+        <div class="dropdown-menu" id="login-menu" role="menu" aria-label="Login options">
+          <a routerLink="/login" role="menuitem" tabindex="-1">Login as User</a>
+          <a routerLink="/vendorlogin" role="menuitem" tabindex="-1">Login as Vendor</a>
         </div>
       </div>
-
-      <!-- Register Dropdown -->
-      <div class="dropdown">
-        <button class="dropbtn">Register</button>
-        <div class="dropdown-content">
-          <a routerLink="/register">Register as User</a>
-          <a routerLink="/vendorregister">Register as Vendor</a>
+      <div class="dropdown" tabindex="0">
+        <a href="#" aria-haspopup="true" aria-expanded="false" aria-controls="signup-menu">
+          <span class="material-icons" aria-hidden="true">person_add</span> Sign Up
+        </a>
+        <div class="dropdown-menu" id="signup-menu" role="menu" aria-label="Sign Up options">
+          <a routerLink="/register" role="menuitem" tabindex="-1">Sign Up as User</a>
+          <a routerLink="/vendorregister" role="menuitem" tabindex="-1">Sign Up as Vendor</a>
         </div>
       </div>
-    </div>
+    </nav>
   </div>
+</header>
+
+<main>
+  <section class="hero-content" role="main" aria-labelledby="welcome-heading">
+    <h1 id="welcome-heading" class="hero-title">Welcome to FameFinds</h1>
+    <p class="hero-subtitle">
+      
+    </p>
+  </section>
+</main>
