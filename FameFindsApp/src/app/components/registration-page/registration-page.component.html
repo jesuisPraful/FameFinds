@@ -1,4 +1,4 @@
-<!--<div class="register-container">
+<div class="register-container">
   <div class="register-box">
     <h2>User Registration</h2>
 
@@ -12,13 +12,13 @@
              required />
 
       <label for="email">Email Address</label>
-      <!--<input type="email"
+      <input type="email"
          id="email"
          name="email"
          placeholder="Email Address"
          [(ngModel)]="user.email"
          required
-         email />-->
+         email />
       <input type="email" [(ngModel)]="user.email" id="email" name="email" placeholder="Email Address" (blur)="checkEmailExists()" required email />
       <div *ngIf="emailExists" style="color: red; font-size: 14px; margin-top: 4px;">Email already exists.</div>
 
@@ -55,4 +55,4 @@
       <a href="#">Forgot password?</a><br />
       <a href="#">Already have an account? <span>Login here</span></a>
     </div>
-  </div>-->
+  </div>
