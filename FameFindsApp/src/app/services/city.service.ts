@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ICity } from '../models/city';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { throwError } from 'rxjs';
+import { ICity } from '../Models/city';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({
@@ -14,17 +14,32 @@ export class CityService {
     this.cities = [];
   }
 
-  getAllCities() {
+  getAllCities(): Observable<ICity[]> {
+    return this._http.get<ICity[]>('https://localhost:7249/api/City');
+  }
+
+
+  addCity(city: ICity): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'text/plain'
+    });
+    
+    // Send both fields
+    const body = {
+      cityId: city.cityId,
+      cityName: city.cityName
+    };
+
     return this._http
-      .get<ICity[]>("https://localhost:7249/api/City")
+      .post('https://localhost:7249/api/City', body, {
+        headers,
+        responseType: 'text' // because backend returns plain text
+      })
       .pipe(catchError(this.errorHandler));
   }
 
-  addCity(city: ICity) {
-    return this._http
-      .post("https://localhost:7249/api/City", city)
-      .pipe(catchError(this.errorHandler));
-  }
+  
 
   getCityById(cityId: number) {
     return this._http
@@ -37,6 +52,14 @@ export class CityService {
       .get<ICity>(`https://localhost:7249/api/City/name/${cityName}`)
       .pipe(catchError(this.errorHandler));
   }
+  deleteCity(cityId: number): Observable<any> {
+    return this._http
+      .delete(`https://localhost:7249/api/City/${cityId}`, {
+        responseType: 'text' // because the backend returns plain text
+      })
+      .pipe(catchError(this.errorHandler));
+  }
+
 
   private errorHandler(error: HttpErrorResponse) {
     console.error('CityService Error:', error);

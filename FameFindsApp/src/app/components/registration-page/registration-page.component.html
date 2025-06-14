@@ -18,7 +18,7 @@
          placeholder="Email Address"
          [(ngModel)]="user.email"
          required
-         email />-->
+         email />
       <input type="email" [(ngModel)]="user.email" id="email" name="email" placeholder="Email Address" (blur)="checkEmailExists()" required email />
       <div *ngIf="emailExists" style="color: red; font-size: 14px; margin-top: 4px;">Email already exists.</div>
 
@@ -55,4 +55,4 @@
       
       <a href="#">Already have an account? <span>Login here</span></a>
     </div>
-  </div>-->
+  </div>

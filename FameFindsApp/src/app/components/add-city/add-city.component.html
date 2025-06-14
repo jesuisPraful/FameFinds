@@ -1,0 +1,33 @@
+<div class="form-container">
+  <h2>Add New City</h2>
+
+  <form (ngSubmit)="onSubmit()" #cityForm="ngForm">
+    <div class="form-group">
+      <label for="cityId">City ID:</label>
+      <input type="number"
+             id="cityId"
+             name="cityId"
+             [(ngModel)]="city.cityId"
+             required
+             class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="cityName">City Name:</label>
+      <input type="text"
+             id="cityName"
+             name="cityName"
+             [(ngModel)]="city.cityName"
+             required
+             class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!cityForm.form.valid">
+      Add City
+    </button>
+
+    <div *ngIf="message" class="message">
+      {{ message }}
+    </div>
+  </form>
+</div>
