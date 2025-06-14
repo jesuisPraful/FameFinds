@@ -7,15 +7,15 @@
       "RelativeMoniker": "D:0:0:{D23D8A8D-4C92-40C5-A2D8-2AD455F5C6F2}|C:\\Users\\amrut\\source\\repos\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\reset-password\\reset-password.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D23D8A8D-4C92-40C5-A2D8-2AD455F5C6F2}|C:\\Users\\amrut\\source\\repos\\FameFinds\\FameFindsApp|c:\\users\\amrut\\source\\repos\\famefinds\\famefindsapp\\src\\app\\components\\reset-password\\reset-password.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D23D8A8D-4C92-40C5-A2D8-2AD455F5C6F2}|C:\\Users\\amrut\\source\\repos\\FameFinds\\FameFindsApp|C:\\Users\\amrut\\source\\repos\\FameFinds\\famefindsapp\\src\\app\\components\\reset-password\\reset-password.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D23D8A8D-4C92-40C5-A2D8-2AD455F5C6F2}|C:\\Users\\amrut\\source\\repos\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\reset-password\\reset-password.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D23D8A8D-4C92-40C5-A2D8-2AD455F5C6F2}|C:\\Users\\amrut\\source\\repos\\FameFinds\\FameFindsApp|c:\\users\\amrut\\source\\repos\\famefinds\\famefindsapp\\src\\app\\components\\landing\\landing.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D23D8A8D-4C92-40C5-A2D8-2AD455F5C6F2}|C:\\Users\\amrut\\source\\repos\\FameFinds\\FameFindsApp|C:\\Users\\amrut\\source\\repos\\FameFinds\\famefindsapp\\src\\app\\components\\landing\\landing.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D23D8A8D-4C92-40C5-A2D8-2AD455F5C6F2}|C:\\Users\\amrut\\source\\repos\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\landing\\landing.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D23D8A8D-4C92-40C5-A2D8-2AD455F5C6F2}|C:\\Users\\amrut\\source\\repos\\FameFinds\\FameFindsApp|c:\\users\\amrut\\source\\repos\\famefinds\\famefindsapp\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "AbsoluteMoniker": "D:0:0:{D23D8A8D-4C92-40C5-A2D8-2AD455F5C6F2}|C:\\Users\\amrut\\source\\repos\\FameFinds\\FameFindsApp|C:\\Users\\amrut\\source\\repos\\FameFinds\\famefindsapp\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{D23D8A8D-4C92-40C5-A2D8-2AD455F5C6F2}|C:\\Users\\amrut\\source\\repos\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
@@ -99,8 +99,7 @@
               "RelativeToolTip": "FameFindsApp\\src\\app\\components\\reset-password\\reset-password.component.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-06-14T09:19:47.339Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-14T09:19:47.339Z"
             },
             {
               "$type": "Document",
@@ -112,8 +111,7 @@
               "RelativeToolTip": "FameFindsApp\\src\\app\\components\\landing\\landing.component.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-06-14T09:04:02.057Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-14T09:04:02.057Z"
             },
             {
               "$type": "Document",
@@ -125,8 +123,7 @@
               "RelativeToolTip": "FameFindsApp\\src\\app\\app.module.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-06-14T05:59:36.734Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-14T05:59:36.734Z"
             },
             {
               "$type": "Document",
@@ -185,8 +182,7 @@
               "RelativeToolTip": "FameFindsWebServices\\Controllers\\ProductController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T18:48:10.48Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-13T18:48:10.48Z"
             },
             {
               "$type": "Document",
