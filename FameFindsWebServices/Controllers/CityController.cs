@@ -19,6 +19,7 @@ namespace FameFindsWebServices.Controllers
         [HttpGet]
         public IActionResult GetAllCities()
         {
+
             try
             {
                 var cities = _repository.GetAllCities();

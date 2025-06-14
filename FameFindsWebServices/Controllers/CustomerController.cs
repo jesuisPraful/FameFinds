@@ -229,6 +229,9 @@ namespace FameFindsWebServices.Controllers
             }
         }
 
+        //forget password
+        //generating otp, saving in th db, sending to otp to that mail.
+
         [HttpPost("request-otp")]
         public IActionResult RequestOtp([FromBody] EmailRequest request)
         {
