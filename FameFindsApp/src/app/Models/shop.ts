@@ -6,10 +6,8 @@ export interface IShop {
   pincode: string|null;
   contactNumber: string;
   fullAddress: string;
-  latitude: number|null;  
-  longitude: number|null;
-  openingTime: Date;
-  closingTime: Date;
+  latitude: number;
+  longitude: number;
   isOpen: boolean;
   createdAt: Date;
   vendorId: number;

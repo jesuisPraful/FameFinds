@@ -1,63 +1,46 @@
- Layout switching 
-<!--<div *ngIf="commonLayout">
+<!--Layout switching
+<div *ngIf="commonLayout">
   <app-common-layout></app-common-layout>
 </div>
 <div *ngIf="custLayout">
   <app-customer-layout></app-customer-layout>
 </div>-->
-<div style="text-align:center;">
-  <h1>View Shops</h1>
-  <br />
+<div class="container">
+  <h2 style="text-align: center;">All Shops</h2>
 
-   Search bar 
-  <div class="row">
-    <div class="col-md-5" style="text-align:right">
-      <label>Search :</label>
-    </div>
-    <div class="col-md-5">
-      <input type="text"
-             placeholder="Shop name"
-             class="form-control"
-             (input)="searchShop(shopName.value)"
-             #shopName />
-    </div>
-  </div>
-  <br />
-
-   Shops Table 
-  <div class="table-responsive">
-    <table class="table"
-           style="border:5px solid rgba(220,230,242,1);"
-           *ngIf="filteredShops.length > 0">
-      <thead>
-        <tr style="background-color:rgba(220,230,242,1); font-size:12pt">
-          <th style="text-align:center">Shop Id</th>
-          <th style="text-align:center">Shop Name</th>
-          <th style="text-align:center">City Id</th>
-          <th style="text-align:center">Pincode</th>
-          <th style="text-align:center">Contact</th>
-          <th style="text-align:center">Address</th>
-          <th style="text-align:center">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let shop of filteredShops" style="background-color:white">
-          <td style="text-align:center">{{ shop.shopId }}</td>
-          <td style="text-align:center">{{ shop.shopName }}</td>
-          <td style="text-align:center">{{ shop.cityId }}</td>
-          <td style="text-align:center">{{ shop.pincode }}</td>
-          <td style="text-align:center">{{ shop.contactNumber }}</td>
-          <td style="text-align:center">{{ shop.fullAddress }}</td>
-          <td style="text-align:center">
-            <button class="btn btn-primary btn-sm" (click)="viewShopDetails(shop)">View Details</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <!-- Search -->
+  <div class="search-bar" style="margin-bottom: 20px; text-align: center;">
+    <input type="text"
+           class="form-control"
+           style="max-width: 400px; display: inline-block;"
+           placeholder="Search by shop name"
+           (input)="searchShop(searchInput.value)"
+           #searchInput />
   </div>
 
-   No Shops Message 
-  <div *ngIf="showMsgDiv" class="jumbotron" style="text-align:center;">
-    <h4>No shops available</h4>
+  <!-- No shops found message -->
+  <div *ngIf="showMsgDiv" class="alert alert-warning text-center">
+    No shops found.
+  </div>
+
+  <!-- Shops List -->
+  <div class="row" *ngFor="let shop of filteredShops">
+    <div class="col-md-12 card my-3 p-3">
+      <h4>{{ shop.shopName }}</h4>
+      <p><strong>Address:</strong> {{ shop.fullAddress }}</p>
+      <p><strong>Contact:</strong> {{ shop.contactNumber }}</p>
+      <p><strong>Email:</strong> {{ shop.emailId }}</p>
+      <button class="btn btn-primary me-2" (click)="viewShopDetails(shop)">View Details</button>
+      <button class="btn btn-outline-success" (click)="showMap(shop)">View on Map</button>
+    </div>
+  </div>
+
+  <!-- Google Map -->
+  <div *ngIf="selectedShop" class="card mt-4">
+    <div class="card-body">
+      <h5 class="card-title">Map for {{ selectedShop.shopName }}</h5>
+      <div id="map" style="height: 400px; width: 100%;"></div>
+    </div>
   </div>
 </div>
+

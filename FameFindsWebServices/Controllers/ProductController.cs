@@ -1,13 +1,14 @@
 ﻿using FameFindsDAL;
 using FameFindsDAL.Models;
-
-//using FameFindsWebServices.Models;
+using FameFindsWebServices.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Product = FameFindsWebServices.Models.Product;
 
 namespace FameFindsWebServices.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[Action]")]
     [ApiController]
     public class ProductController : Controller
     {
@@ -42,7 +43,7 @@ namespace FameFindsWebServices.Controllers
             return Ok(products);
         }
         [HttpPost]
-        public IActionResult AddProduct(Models.Product product)
+        public IActionResult AddProduct([FromBody] Product product)
         {
             bool status = false;
             try
@@ -82,7 +83,7 @@ namespace FameFindsWebServices.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Product product1 = new Product();
+                    FameFindsDAL.Models.Product product1 = new FameFindsDAL.Models.Product();
                     product1.ProductId = product.ProductId;
                     product1.ProductName = product.ProductName;
                     product1.Description = product.Description;
@@ -169,5 +170,6 @@ namespace FameFindsWebServices.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+
     }
 }

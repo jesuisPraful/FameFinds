@@ -1,50 +1,34 @@
-<div class="register-container">
+<!--<div class="register-container">
   <div class="register-box">
-    <h2>User Registration</h2>
-
+    <h2>📝 Create Your Account</h2>
     <form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm)">
-      <label for="fullname">Full Name</label>
-      <input type="text"
-             id="fullname"
-             name="fullname"
-             placeholder="Full Name"
-             [(ngModel)]="user.fullname"
-             required />
 
-      <label for="email">Email Address</label>
+      <label for="fullname">👤 Full Name</label>
+      <input type="text" id="fullname" name="fullname" placeholder="John Doe" [(ngModel)]="user.fullname" required />
+         name="email"
+         placeholder="Email Address"
+         [(ngModel)]="user.email"
+         required
+         email />
       <input type="email" [(ngModel)]="user.email" id="email" name="email" placeholder="Email Address" (blur)="checkEmailExists()" required email />
       <div *ngIf="emailExists" style="color: red; font-size: 14px; margin-top: 4px;">Email already exists.</div>
 
+      <label for="email">📧 Email Address</label>
+      <input type="email" [(ngModel)]="user.email" id="email" name="email" placeholder="example@domain.com" (blur)="checkEmailExists()" required email />
+      <div *ngIf="emailExists" class="error-msg">⚠️ Email already exists.</div>
 
-      <label for="phone">Phone Number</label>
-      <input type="text"
-             id="phone"
-             name="phoneNumber"
-             placeholder="Phone Number"
-             [(ngModel)]="user.phoneNumber"
-              #phoneInput="ngModel"
-              (blur)="validatePhoneNumber()"
-              maxlength="10"
-             required />
+      <label for="phone">📞 Phone Number</label>
+      <input type="text" id="phone" name="phoneNumber" placeholder="1234567890" [(ngModel)]="user.phoneNumber" #phoneInput="ngModel" (blur)="validatePhoneNumber()" maxlength="10" required />
+      <div *ngIf="phoneError" class="error-msg">⚠️ Phone number must be exactly 10 digits.</div>
 
-      <div *ngIf="phoneError" style="color: red; font-size: 14px; margin-top: 4px;">
-        Phone number must be exactly 10 digits.
-      </div>
-
-
-      <label for="password">Password</label>
-      <input type="password"
-             id="password"
-             name="password"
-             placeholder="Password"
-             [(ngModel)]="user.password"
-             required
-             minlength="6" />
-
-      <button type="submit" [disabled]="registerForm.invalid">Register</button>
+      
+      <a routerLink="/login">Already have an account? <span>Login here</span></a>
+    </div>
+  </div>-->
     </form>
 
     <div class="links">
+      
       <a href="#">Already have an account? <span>Login here</span></a>
     </div>
   </div>

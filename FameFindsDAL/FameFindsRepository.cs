@@ -423,24 +423,6 @@ namespace FameFindsDAL
             return products;
         }
 
-        public List<Product> GetProductByCity(string cityName)
-        {
-            City city = _context.Cities.Where(c => c.CityName == cityName).FirstOrDefault();
-            List<Product> product = new List<Product>();
-
-            try
-            {
-                product = _context.Products
-                    .Where(p => p.CityId == city.CityId)
-                    .ToList();
-            }
-            catch (Exception)
-            {
-
-                city = null;
-            }
-            return product;
-        }
         #endregion
 
         #region Vendor
@@ -679,6 +661,7 @@ namespace FameFindsDAL
             {
                 var shopObj = _context.Shops.Find(rating.ShopId);
                 var customerObj = _context.Customers.Find(rating.CustomerId);
+
                 if (shopObj != null && customerObj != null)
                 {
                     _context.Ratings.Add(rating);
@@ -753,6 +736,22 @@ namespace FameFindsDAL
             }
             return status;
         }
+
+        public List<ShopWithRatingDto> GetShopsSortedByRating()
+        {
+            var result = (from shop in _context.Shops
+                          select new ShopWithRatingDto
+                          {
+                              ShopId = shop.ShopId,
+                              ShopName = shop.ShopName,
+                              AverageRating = shop.Ratings.Any() ? shop.Ratings.Average(r => r.RatingValue) : 0
+                          })
+                          .OrderByDescending(s => s.AverageRating)
+                          .ToList();
+
+            return result;
+        }
+
 
         #endregion
 
@@ -1041,8 +1040,6 @@ namespace FameFindsDAL
             return status;
         }
         #endregion
-
-
 
         #region city
         public List<City> GetAllCities()

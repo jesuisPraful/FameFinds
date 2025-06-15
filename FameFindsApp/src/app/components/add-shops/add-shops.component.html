@@ -1,30 +1,115 @@
-<div class="add-shop-form">
+<div class="container mt-4">
   <h2>Add New Shop</h2>
 
-  <form (ngSubmit)="addShop()" #shopForm="ngForm">
-    <input type="text" [(ngModel)]="newShop.shopName" name="shopName" placeholder="Shop Name" required />
-    <input type="email" [(ngModel)]="newShop.emailId" name="emailId" placeholder="Email" required />
-    <input type="number" [(ngModel)]="newShop.cityId" name="cityId" placeholder="City ID" required />
-    <input type="text" [(ngModel)]="newShop.pincode" name="pincode" placeholder="Pincode" required />
-    <input type="text" [(ngModel)]="newShop.contactNumber" name="contactNumber" placeholder="Contact Number" required />
-    <input type="text" [(ngModel)]="newShop.fullAddress" name="fullAddress" placeholder="Full Address" required />
-    <input type="number" [(ngModel)]="newShop.latitude" name="latitude" placeholder="Latitude" />
-    <input type="number" [(ngModel)]="newShop.longitude" name="longitude" placeholder="Longitude" />
+  <!-- Status Message -->
+  <div *ngIf="message" class="alert"
+       [class.alert-success]="message.includes('successfully')"
+       [class.alert-danger]="message.includes('Error') || message.includes('Please')">
+    {{ message }}
+  </div>
 
-    <label>Opening Time:</label>
-    <input type="time" [(ngModel)]="newShop.openingTime" name="openingTime" required />
+  <form (ngSubmit)="addShop()" class="mt-3">
+    <div class="row">
+      <!-- Left Column - Shop Details -->
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <div class="card-header">Shop Information</div>
+          <div class="card-body">
+            <div class="mb-3">
+              <label for="shopName" class="form-label">Shop Name*</label>
+              <input type="text" class="form-control" id="shopName"
+                     [(ngModel)]="newShop.shopName" name="shopName" required>
+            </div>
 
-    <label>Closing Time:</label>
-    <input type="time" [(ngModel)]="newShop.closingTime" name="closingTime" required />
+            <div class="mb-3">
+              <label for="emailId" class="form-label">Email*</label>
+              <input type="email" class="form-control" id="emailId"
+                     [(ngModel)]="newShop.emailId" name="emailId" required>
+            </div>
 
-    <label>
-      <input type="checkbox" [(ngModel)]="newShop.isOpen" name="isOpen" /> Is Open?
-    </label>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="cityId" class="form-label">City ID*</label>
+                <input type="number" class="form-control" id="cityId"
+                       [(ngModel)]="newShop.cityId" name="cityId" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="vendorId" class="form-label">Vendor ID*</label>
+                <input type="number" class="form-control" id="vendorId"
+                       [(ngModel)]="newShop.vendorId" name="vendorId" required>
+              </div>
+            </div>
 
-    <input type="number" [(ngModel)]="newShop.vendorId" name="vendorId" placeholder="Vendor ID" required />
+            <div class="mb-3">
+              <label for="contactNumber" class="form-label">Contact Number*</label>
+              <input type="tel" class="form-control" id="contactNumber"
+                     [(ngModel)]="newShop.contactNumber" name="contactNumber" required>
+            </div>
 
-    <button type="submit">Add Shop</button>
+            <div class="mb-3">
+              <label for="pincode" class="form-label">Pincode*</label>
+              <input type="text" class="form-control" id="pincode"
+                     [(ngModel)]="newShop.pincode" name="pincode" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="fullAddress" class="form-label">Full Address*</label>
+              <textarea class="form-control" id="fullAddress" rows="3"
+                        [(ngModel)]="newShop.fullAddress" name="fullAddress" required></textarea>
+            </div>
+
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="isOpen"
+                     [(ngModel)]="newShop.isOpen" name="isOpen">
+              <label class="form-check-label" for="isOpen">Shop is currently open</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column - Map and Coordinates -->
+      <div class="col-md-6">
+        <div class="card mb-4">
+          <div class="card-header">Shop Location</div>
+          <div class="card-body">
+            <div class="mb-3">
+              <label class="form-label">Click on the map to set location*</label>
+              <div class="map-container">
+                <google-map height="400px" width="100%"
+                            [center]="center"
+                            [zoom]="zoom"
+                            (mapClick)="onMapClick($event)">
+                  <map-marker *ngIf="markerPosition"
+                              [position]="markerPosition"></map-marker>
+                </google-map>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Latitude</label>
+                <input type="number" class="form-control" readonly
+                       [value]="newShop.latitude">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Longitude</label>
+                <input type="number" class="form-control" readonly
+                       [value]="newShop.longitude">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-end">
+      <button type="button" class="btn btn-secondary me-2"
+              (click)="_router.navigate(['/view-shops'])">
+        Cancel
+      </button>
+      <button type="submit" class="btn btn-primary">
+        Add Shop
+      </button>
+    </div>
   </form>
-
-  <p *ngIf="message">{{ message }}</p>
 </div>
