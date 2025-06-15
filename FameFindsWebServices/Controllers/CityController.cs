@@ -19,6 +19,7 @@ namespace FameFindsWebServices.Controllers
         [HttpGet]
         public IActionResult GetAllCities()
         {
+
             try
             {
                 var cities = _repository.GetAllCities();
@@ -33,35 +34,30 @@ namespace FameFindsWebServices.Controllers
         [HttpPost]
         public IActionResult RegisterCity(Models.City city)
         {
-            bool status = false;
-
             try
             {
                 if (ModelState.IsValid)
                 {
-                    City cityOne = new City
+                    var status = _repository.RegisterCity(new City
                     {
                         CityId = city.CityId,
                         CityName = city.CityName
-                    };
-
-                    status = _repository.RegisterCity(cityOne);
+                    });
 
                     if (status)
                         return Ok("City Registered Successfully");
                     else
                         return BadRequest("Failed to register city.");
                 }
-                else
-                {
-                    return BadRequest("Invalid Data");
-                }
+
+                return BadRequest("Invalid data.");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return BadRequest("Registration failed.");
+                return BadRequest("Registration failed: " + ex.Message);
             }
         }
+
 
         // GET: api/City/id/5
         [HttpGet("id/{cityId}")]
@@ -98,6 +94,22 @@ namespace FameFindsWebServices.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+        [HttpDelete("{cityId}")]
+        public IActionResult DeleteCity(int cityId)
+        {
+            try
+            {
+                var status = _repository.DeleteCity(cityId);
+                if (status)
+                    return Ok("City deleted successfully.");
+                else
+                    return NotFound("City not found or could not be deleted.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error while deleting city: " + ex.Message);
+            }
+        }
 
-    }
+        }
 }

@@ -1039,6 +1039,27 @@ namespace FameFindsDAL
             return status;
         }
 
+        public bool DeleteCity(int cityId)
+        {
+            bool status = false;
+            try
+            {
+                City cityToDelete = _context.Cities.Find(cityId);
+                if (cityToDelete != null)
+                {
+                    _context.Cities.Remove(cityToDelete);
+                    _context.SaveChanges();
+                    status = true;
+                }
+            }
+            catch (Exception)
+            {
+                status = false;
+            }
+            return status;
+        }
+
+
         public City GetCityById(int cityId)
         {
             City city = new City();
