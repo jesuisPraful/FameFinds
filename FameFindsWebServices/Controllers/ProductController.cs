@@ -1,10 +1,10 @@
 ﻿using FameFindsDAL;
 using FameFindsDAL.Models;
-using FameFindsWebServices.Models;
+//using FameFindsWebServices.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Product = FameFindsWebServices.Models.Product;
+//using Product = FameFindsWebServices.Models.Product;
 
 namespace FameFindsWebServices.Controllers
 {
