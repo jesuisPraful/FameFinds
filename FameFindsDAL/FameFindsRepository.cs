@@ -406,24 +406,6 @@ namespace FameFindsDAL
             return products;
         }
 
-        public List<Product> GetProductByCity(string cityName)
-        {
-            City city = _context.Cities.Where(c => c.CityName == cityName).FirstOrDefault();
-            List<Product> product = new List<Product>();
-
-            try
-            {
-                product = _context.Products
-                    .Where(p => p.CityId == city.CityId)
-                    .ToList();
-            }
-            catch (Exception)
-            {
-
-                city = null;
-            }
-            return product;
-        }
         #endregion
 
         #region Vendor
@@ -1042,8 +1024,6 @@ namespace FameFindsDAL
         }
         #endregion
 
-
-
         #region city
         public List<City> GetAllCities()
         {
@@ -1075,6 +1055,27 @@ namespace FameFindsDAL
             }
             return status;
         }
+
+        public bool DeleteCity(int cityId)
+        {
+            bool status = false;
+            try
+            {
+                City cityToDelete = _context.Cities.Find(cityId);
+                if (cityToDelete != null)
+                {
+                    _context.Cities.Remove(cityToDelete);
+                    _context.SaveChanges();
+                    status = true;
+                }
+            }
+            catch (Exception)
+            {
+                status = false;
+            }
+            return status;
+        }
+
 
         public City GetCityById(int cityId)
         {

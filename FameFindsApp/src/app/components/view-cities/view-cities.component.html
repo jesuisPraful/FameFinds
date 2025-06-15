@@ -1,11 +1,14 @@
-<div class="city-container">
+<!--<div class="city-container">
   <h2>All Cities</h2>
+
+  <input type="text"
+         [(ngModel)]="searchByName"
+         (input)="searchCity(searchByName)"
+         placeholder="Search city by name" />
 
   <div *ngFor="let city of filteredCities" class="city-card">
     <p class="city-name">{{ city.cityName }}</p>
-    <!-- You can add other details like cityId if needed -->
-    <!-- <p>ID: {{ city.cityId }}</p> -->
   </div>
 
   <p *ngIf="showMessage">No cities found.</p>
-</div>
+</div>-->

@@ -167,9 +167,8 @@ public partial class FameFindsContext : DbContext
                 .HasColumnType("text")
                 .HasColumnName("Full_Address");
             entity.Property(e => e.IsOpen).HasDefaultValue(true);
-            entity.Property(e => e.Latitude).HasColumnType("decimal(10, 8)");
-            entity.Property(e => e.Longitude).HasColumnType("decimal(11, 8)");
-            entity.Property(e => e.OpeningTime).HasColumnName("Opening_time");
+            entity.Property(e => e.Latitude).HasColumnType("decimal");
+            entity.Property(e => e.Longitude).HasColumnType("decimal");
             entity.Property(e => e.Pincode)
                 .HasMaxLength(6)
                 .IsUnicode(false)

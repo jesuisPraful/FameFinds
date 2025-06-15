@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { IShop } from '../../models/shop';
+import { IShop } from '../../Models/shop';
 import { ShopService } from '../../services/shop.service';
 
 @Component({
@@ -19,28 +19,84 @@ export class AddShopsComponent {
     fullAddress: '',
     latitude: 0,
     longitude: 0,
-    openingTime: new Date(),
-    closingTime: new Date(),
     isOpen: false,
     createdAt: new Date(),
     vendorId: 0
   };
 
   message: string = '';
+  center: google.maps.LatLngLiteral = { lat: 20.5937, lng: 78.9629 };
+  zoom = 5;
+  markerPosition: google.maps.LatLngLiteral | null = null;
 
-  constructor(private _shopService: ShopService, private _router: Router) { }
+  constructor(public _shopService: ShopService, public _router: Router) { }
 
-  addShop() {
-    this._shopService.addShop(this.newShop).subscribe(
-      (response) => {
+  onMapClick(event: google.maps.MapMouseEvent): void {
+    if (event.latLng) {
+      const lat = event.latLng.lat();
+      const lng = event.latLng.lng();
+      this.newShop.latitude = lat;
+      this.newShop.longitude = lng;
+      this.markerPosition = { lat, lng };
+    }
+  }
+
+  //addShop(): void {
+  //  if (!this.newShop.latitude || !this.newShop.longitude) {
+  //    this.message = 'Please select a location on the map.';
+  //    return;
+  //  }
+
+  //  this.newShop.createdAt = new Date();
+
+  //  this._shopService.addShop(this.newShop).subscribe(
+  //    (response) => {
+  //      console.log('Shop added successfully:', response);
+  //      this.message = 'Shop added successfully!';
+  //      this._router.navigate(['/view-shops']);
+  //    },
+  //    (error) => {
+  //      console.error('Error adding shop:', error);
+  //      this.message = 'Error adding shop. Please try again.';
+  //    }
+  //  );
+  //}
+  addShop(): void {
+    if (!this.newShop.latitude || !this.newShop.longitude) {
+      this.message = 'Please select a location on the map.';
+      return;
+    }
+
+    this.newShop.createdAt = new Date();
+
+    this._shopService.addShop(this.newShop).subscribe({
+      next: (response) => {
         console.log('Shop added successfully:', response);
         this.message = 'Shop added successfully!';
-        this._router.navigate(['/view-shops']); // redirect if needed
+        this._router.navigate(['/view-shops']);
       },
-      (error) => {
+      error: (error) => {
         console.error('Error adding shop:', error);
-        this.message = 'Error adding shop. Please try again.';
+        if (error.error instanceof ErrorEvent) {
+          // Client-side error
+          this.message = 'Network error occurred. Please check your connection.';
+        } else {
+          // Server-side error
+          if (error.status === 0) {
+            this.message = 'Could not connect to server. Please try again later.';
+          } else if (error.error) {
+            // Try to get server error message
+            try {
+              const errorObj = typeof error.error === 'string' ? JSON.parse(error.error) : error.error;
+              this.message = errorObj.message || 'An unexpected error occurred.';
+            } catch (e) {
+              this.message = error.statusText || 'An unexpected error occurred.';
+            }
+          } else {
+            this.message = `Server returned code ${error.status}`;
+          }
+        }
       }
-    );
+    });
   }
 }

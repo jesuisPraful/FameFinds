@@ -9,6 +9,7 @@ namespace FameFindsWebServices.Models
         public int ProductId { get; set; }
 
         [Required]
+        [ForeignKey("CityId")]
         public int? CityId { get; set; }
 
         [MaxLength(150)]
