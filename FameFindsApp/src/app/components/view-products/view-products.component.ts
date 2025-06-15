@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { IProduct } from '../../Models/product';
 import { ICategory } from '../../Models/category';
-import { IProduct } from '../../Models/product';
 import { Router } from '@angular/router';
 
 
@@ -29,7 +28,7 @@ export class ViewProductsComponent implements OnInit {
     console.log("Navigating to:", productName);
     localStorage.setItem('selectedProduct', productName);
     // add this line accordingly
-    this._router.navigate(['/']);
+    this._router.navigate(['/view-shops']);
 
   }
 

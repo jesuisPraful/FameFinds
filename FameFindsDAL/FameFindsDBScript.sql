@@ -118,8 +118,6 @@ CREATE TABLE ShopProduct (
 );
 GO
 
-INSERT INTO ShopProduct (ShopId, ProductId)
-VALUES (10,8)
 
 -- 7. Rating Table
 CREATE TABLE Rating (
@@ -133,8 +131,6 @@ CREATE TABLE Rating (
     FOREIGN KEY (ShopId) REFERENCES Shop(ShopId)
 );
 GO
-
-SELECT * FROM Products
 
 --Final categories
 INSERT INTO Category  VALUES
@@ -158,7 +154,8 @@ INSERT INTO City VALUES
 (4, 'BANGALORE'),
 (5, 'DELHI'),
 (6, 'CHENNAI');
-select * from City
+
+
 
 --Hyderabad
 INSERT INTO Products (CityId, ProductName, Description, CategoryId)
@@ -194,4 +191,60 @@ VALUES
 (5, 'Spices', 'Aromatic spices from Asia’s biggest market', 10),
 (5, 'Ittar (Old Delhi)', 'Natural oil-based long-lasting perfumes', 8);
 
-Select * from Category 
+
+INSERT INTO Shop (
+    ShopName,
+    EmailId,
+    CityId,
+    PINCODE,
+    ContactNumber,
+    Full_Address,
+    Latitude,
+    Longitude,
+    Opening_time,
+    ClosingTime,
+    VendorId
+)
+VALUES (
+    'Bandra Electronics Hub',
+    'bandra.electronics@example.com',
+    1,                  -- CityId (e.g., Mumbai)
+    '400050',           -- PINCODE
+    '9876543210',       -- Contact Number
+    'Near Bandra Station, Mumbai',
+    19.06000000,        -- Latitude
+    72.83000000,        -- Longitude
+    '10:00:00',         -- Opening time
+    '21:00:00',         -- Closing time
+    1                   -- VendorId
+);
+
+INSERT INTO Vendor (
+    VendorName,
+    Email,
+    PasswordHash,
+    PhoneNumber
+)
+VALUES (
+    'Ravi Enterprises',
+    'ravi@example.com',
+    'hashed_password_123', -- Replace with actual hash
+    '9876543210'
+);
+INSERT INTO ShopProduct(
+    ShopId,
+    ProductId,
+    Price,
+    Stock
+)
+VALUES (
+    2,
+    1,
+    79999.00,
+    25
+);
+Select * from ShopProduct
+select * from City
+select * from Shop
+SELECT * FROM Vendor
+SELECT * FROM Products

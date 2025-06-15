@@ -421,11 +421,6 @@ namespace FameFindsDAL
             }
 
             return products;
-        }
-
-                city = null;
-            }
-            return product;
         }      
         #endregion
 

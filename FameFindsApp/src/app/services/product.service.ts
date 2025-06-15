@@ -31,7 +31,7 @@ export class ProductService {
     return tempVar;
   }
   getProductsByCity(cityName: string): Observable<any[]> {
-    return this._http.get<any[]>(`https://localhost:7249/api/Product/GetProductsByCityName?cityName=${cityName}`);
+    return this._http.get<any[]>(`https://localhost:7249/api/Product/GetProductsByCity/GetProductsByCityName?cityName=${cityName}`);
   }
 
   errorHandler(error:HttpErrorResponse) {

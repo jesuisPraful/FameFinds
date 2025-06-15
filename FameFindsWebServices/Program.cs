@@ -3,6 +3,7 @@ using FameFindsDAL.Models;
 using FameFindsWebServices.Models;
 using FameFindsWebServices.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 internal class Program
@@ -23,7 +24,6 @@ internal class Program
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
-
 
         builder.Services.AddSwaggerGen();
         builder.Services.Configure<SmtpSettings>(
