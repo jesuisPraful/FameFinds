@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { IShop } from '../../Models/shop';
 import { ShopService } from '../../services/shop.service';
 import { Router } from '@angular/router';
+/// <reference types="google.maps" />
+
 
 @Component({
   selector: 'app-view-shops',
@@ -76,7 +78,7 @@ export class ViewShopsComponent implements OnInit {
     this.selectedShop = shop;
 
     setTimeout(() => {
-      const map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
+      const map =new google.maps.Map(document.getElementById("map") as HTMLElement, {
         center: { lat: shop.latitude, lng: shop.longitude },
         zoom: 15
       });
