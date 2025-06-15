@@ -97,47 +97,6 @@ namespace FameFindsWebServices.Controllers
 
 
 
-        //public IActionResult RegisterShop(Models.Shop shop)
-        //{
-        //    if (shop == null)
-        //        return BadRequest("Shop data is required.");
-
-        //    if (!ModelState.IsValid)
-        //        return BadRequest("Invalid shop data.");
-
-        //    try
-        //    {
-        //        var newShop = new Shop
-        //        {
-        //            ShopName = shop.ShopName,
-        //            EmailId = shop.EmailId,
-        //            CityId = shop.CityId,
-        //            Pincode = shop.Pincode,
-        //            ContactNumber = shop.ContactNumber,
-        //            FullAddress = shop.FullAddress,
-        //            Latitude = shop.Latitude,
-        //            Longitude = shop.Longitude,
-        //            OpeningTime = shop.OpeningTime,
-        //            ClosingTime = shop.ClosingTime,
-        //            IsOpen = shop.IsOpen ?? true,
-        //            CreatedAt = DateTime.UtcNow,
-        //            VendorId = shop.VendorId
-        //        };
-
-        //        bool isRegistered = _repository.RegisterShop(newShop);
-
-        //        if (isRegistered)
-        //            return Ok(new { message = "Shop registered successfully." });
-
-        //        return StatusCode(500, "An error occurred while registering the shop.");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        // In production, log the exception
-        //        return StatusCode(500, $"Internal server error: {ex.Message}");
-        //    }
-        //}
-
 
         [HttpGet("shopId")]
         public IActionResult GetShopsByShopId(int shopId)
