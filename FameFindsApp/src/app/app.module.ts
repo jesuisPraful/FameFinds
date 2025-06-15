@@ -9,25 +9,25 @@ import { RegisterService } from './services/register.service';
 import { CustomerService } from './services/customer.service';
 import { VendorService } from './services/vendor.service';
 import { ShopService } from './services/shop.service';
-//import { ViewProductsComponent } from './components/view-products/view-products.component';
-//import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
-//import { LoginComponent } from './components/login/login.component';
-//import { LandingComponent } from './components/landing/landing.component';
-//import { LoginVendorComponent } from './components/login-vendor/login-vendor.component';
+import { ViewProductsComponent } from './components/view-products/view-products.component';
+import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
+import { LoginComponent } from './components/login/login.component';
+import { LandingComponent } from './components/landing/landing.component';
+import { LoginVendorComponent } from './components/login-vendor/login-vendor.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-//import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
-//import { OtpVerificationComponent } from './components/otp-verification/otp-verification.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { OtpVerificationComponent } from './components/otp-verification/otp-verification.component';
 import { ViewShopsComponent } from './components/view-shops/view-shops.component';
-//import { ViewCitiesComponent } from './components/view-cities/view-cities.component';
-//import { UpdateShopComponent } from './components/update-shop/update-shop.component';
-//import { IsOpenComponent } from './components/is-open/is-open.component';
-//import { RemoveShopComponent } from './components/remove-shop/remove-shop.component';
+import { ViewCitiesComponent } from './components/view-cities/view-cities.component';
+import { UpdateShopComponent } from './components/update-shop/update-shop.component';
+import { IsOpenComponent } from './components/is-open/is-open.component';
+import { RemoveShopComponent } from './components/remove-shop/remove-shop.component';
 import { AddCityComponent } from './components/add-city/add-city.component';
-//import { RemoveCityComponent } from './components/remove-city/remove-city.component';
+import { RemoveCityComponent } from './components/remove-city/remove-city.component';
 import { AddShopsComponent } from './components/add-shops/add-shops.component';
-//import { ForgotPasswordVendorComponent } from './components/forgot-password-vendor/forgot-password-vendor.component';
-//import { ForgotpasswordvendorService } from './services/forgotpasswordvendor.service';
-//import { ForgotpasswordService } from './services/forgotpassword.service';
+import { ForgotPasswordVendorComponent } from './components/forgot-password-vendor/forgot-password-vendor.component';
+import { ForgotpasswordvendorService } from './services/forgotpasswordvendor.service';
+import { ForgotpasswordService } from './services/forgotpassword.service';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { CommonModule } from '@angular/common';
 
@@ -36,23 +36,23 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
-    //ViewProductsComponent,
-    //RegistrationPageComponent,
-    //LoginComponent,
-    //LandingComponent,
-    //LoginVendorComponent,
+    ViewProductsComponent,
+    RegistrationPageComponent,
+    LoginComponent,
+    LandingComponent,
+    LoginVendorComponent,
     ForgotPasswordComponent,
-    //ResetPasswordComponent,
-    //OtpVerificationComponent,
+    ResetPasswordComponent,
+    OtpVerificationComponent,
     ViewShopsComponent,
-    //ViewCitiesComponent,
-    //UpdateShopComponent,
-    //IsOpenComponent,
-    //RemoveShopComponent,
+    ViewCitiesComponent,
+    UpdateShopComponent,
+    IsOpenComponent,
+    RemoveShopComponent,
     AddCityComponent,
-    //RemoveCityComponent,
+    RemoveCityComponent,
     AddShopsComponent,
-    //ForgotPasswordVendorComponent,
+    ForgotPasswordVendorComponent,
   ],
   imports: [
     BrowserModule,
