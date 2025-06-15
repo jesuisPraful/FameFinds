@@ -19,6 +19,8 @@ export class ViewShopsComponent implements OnInit {
   userName: string = "";
   errMsg: string = "";
 
+  selectedShop: IShop | null = null; // Used for map
+
   constructor(private _shopService: ShopService, private _router: Router) {
     this.role = sessionStorage.getItem("Role") || "NA";
     this.userName = sessionStorage.getItem("Email") || "NA";
@@ -68,5 +70,22 @@ export class ViewShopsComponent implements OnInit {
 
   viewShopDetails(shop: IShop) {
     this._router.navigate(['/shop-details', shop.shopId]);
+  }
+
+  showMap(shop: IShop) {
+    this.selectedShop = shop;
+
+    setTimeout(() => {
+      const map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
+        center: { lat: shop.latitude, lng: shop.longitude },
+        zoom: 15
+      });
+
+      new google.maps.Marker({
+        position: { lat: shop.latitude, lng: shop.longitude },
+        map,
+        title: shop.shopName
+      });
+    }, 0);
   }
 }

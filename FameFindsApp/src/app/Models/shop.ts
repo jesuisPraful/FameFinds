@@ -8,8 +8,6 @@ export interface IShop {
   fullAddress: string;
   latitude: number;
   longitude: number;
-  openingTime: Date;
-  closingTime: Date;
   isOpen: boolean;
   createdAt: Date;
   vendorId: number;

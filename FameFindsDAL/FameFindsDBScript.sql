@@ -70,16 +70,13 @@ CREATE TABLE Shop (
     PINCODE VARCHAR(6) NOT NULL,
     ContactNumber VARCHAR(15) NOT NULL,
     Full_Address TEXT NOT NULL,
-    Latitude DECIMAL(10, 8) NOT NULL,
-    Longitude DECIMAL(11, 8) NOT NULL,
-    Opening_time TIME,
-    ClosingTime TIME,
+    Latitude DECIMAL NOT NULL,
+    Longitude DECIMAL NOT NULL,
     IsOpen BIT DEFAULT 1,
     CreatedAt DATETIME DEFAULT GETDATE(),
     VendorId INT NOT NULL,
     FOREIGN KEY (VendorId) REFERENCES Vendor(VendorId),
     FOREIGN KEY (CityId) REFERENCES City(CityId)
-     
 );
 GO
 

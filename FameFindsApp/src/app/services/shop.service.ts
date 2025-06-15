@@ -31,9 +31,15 @@ export class ShopService {
   addShop(shop: IShop) {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this._http
-      .post("https://localhost:7249/api/Shop/Register", shop, { headers })
+      .post<{ message: string }>(
+        'https://localhost:7249/api/Shop/Register',
+        shop,
+        { headers }
+      )
       .pipe(catchError(this.errorHandler));
   }
+
+
 
   updateShopContactNumber(shopId: number, contactNumber: string) {
     const params = new HttpParams()
