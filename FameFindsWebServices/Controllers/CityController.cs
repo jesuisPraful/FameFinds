@@ -41,6 +41,7 @@ namespace FameFindsWebServices.Controllers
                 {
                     City cityOne = new City
                     {
+                        CityId = city.CityId,
                         CityName = city.CityName
                     };
 
@@ -49,7 +50,7 @@ namespace FameFindsWebServices.Controllers
                     if (status)
                         return Ok("City Registered Successfully");
                     else
-                        return BadRequest("Failed to register shop.");
+                        return BadRequest("Failed to register city.");
                 }
                 else
                 {

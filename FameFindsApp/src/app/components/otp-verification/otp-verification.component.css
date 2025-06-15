@@ -1,3 +1,11 @@
+/* Full screen layout */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('/assets/images/otpImg.png');
+  background-size: cover;
+}
 
 body {
   margin: 0;
@@ -6,24 +14,30 @@ body {
 }
 
 .otp-container {
-  max-width: 340px;
-  margin: 100px auto;
+/*  max-width: 340px;
+*/  margin-top: 100px auto;
   padding: 30px;
-  background: linear-gradient(to bottom right, #ffe6e6, #e6f0ff);
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('/assets/images/otpImg.png');
+  background-size: cover;
 }
 
 h2 {
-  margin-bottom: 20px;
+  margin-top: 230px;
   color: #333;
 }
 
 .otp-input {
-  width: 93%;
-  padding: 12px;
-  margin-bottom: 20px;
+  width: 60%;
+  padding: 20px;
+  margin-top: 300px;
+  margin-right: 40px;
   border-radius: 10px;
   border: 1px solid #ccc;
   font-size: 16px;
@@ -31,9 +45,11 @@ h2 {
 }
 
 .verify-button {
-  width: 98%;
-  padding: 12px;
+  width: 70%;
+  padding: 20px;
   border: none;
+  margin-top: 40px;
+  margin-right: 40px;
   background-color: #397eff;
   color: white;
   font-size: 16px;

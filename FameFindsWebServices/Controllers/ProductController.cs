@@ -1,14 +1,14 @@
 ﻿using FameFindsDAL;
 using FameFindsDAL.Models;
-
-//using FameFindsWebServices.Models;
+using FameFindsWebServices.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Product = FameFindsWebServices.Models.Product;
 
 namespace FameFindsWebServices.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[Action]")]
     [ApiController]
     public class ProductController : Controller
     {
@@ -32,17 +32,21 @@ namespace FameFindsWebServices.Controllers
             }
         }
         [HttpPost]
-        public IActionResult AddProduct(Models.Product product)
+        public IActionResult AddProduct([FromBody] Product product)
         {
             bool status = false;
             try
             {
                 if (ModelState.IsValid)
                 {
-                    Product product1 = new Product();
-                    product1.ProductName = product.ProductName;
-                    product1.Description = product.Description;
-                    product1.CategoryId = product.CategoryId;
+                    var product1 = new FameFindsDAL.Models.Product
+                    {
+                        ProductId = product.ProductId,
+                        CityId = product.CityId,
+                        ProductName = product.ProductName,
+                        Description = product.Description,
+                        CategoryId = product.CategoryId
+                    };
                     status = _repository.AddProduct(product1);
                     if (status)
                     {
@@ -60,7 +64,8 @@ namespace FameFindsWebServices.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, $"Internal server error:{ ex.Message}");
+              
             }
         }
         [HttpPut]
@@ -71,7 +76,7 @@ namespace FameFindsWebServices.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Product product1 = new Product();
+                    FameFindsDAL.Models.Product product1 = new FameFindsDAL.Models.Product();
                     product1.ProductId = product.ProductId;
                     product1.ProductName = product.ProductName;
                     product1.Description = product.Description;
@@ -157,22 +162,6 @@ namespace FameFindsWebServices.Controllers
             {
                 return StatusCode(500, "Internal server error");
             }
-        }
-        [HttpGet("GetProductsByCity/{cityId}")]
-        public IActionResult GetProductsByCity(int cityId)
-        {
-            var products = _repository.GetProductsByCity(cityId)
-                .Where(p => p.CityId == cityId)
-                .Select(p => new {
-                    p.ProductId,
-                    p.ProductName,
-                })
-                .ToList();
-
-            if (products.Count == 0)
-                return NotFound("No products found for the selected city.");
-
-            return Ok(products);
         }
 
     }

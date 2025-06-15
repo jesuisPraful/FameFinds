@@ -1,9 +1,9 @@
-<!--<div class="register-container">
+<div class="register-container">
   <div class="register-box">
-    <h2>Vendor Registration</h2>
+    <h2>🛍️ Vendor Registration</h2>
 
     <form #registerForm="ngForm" (ngSubmit)="registerVendor(registerForm)">
-      <label for="fullname">Full Name</label>
+      <label for="fullname">👤 Full Name</label>
       <input type="text"
              id="fullname"
              name="fullname"
@@ -11,26 +11,12 @@
              [(ngModel)]="vendor.vendorName"
              required />
 
-      <label for="email">Email Address</label>
-      <input type="email"
-         id="email"
-         name="email"
-         placeholder="Email Address"
-         [(ngModel)]="vendor.email"
-         required
-         email />
-      <!--<input type="email" [(ngModel)]="vendor.email" id="email" name="email" placeholder="Email Address" (blur)="checkEmailExists()" required email />
+      <label for="email">📧 Email Address</label>
+
+      <input type="email" [(ngModel)]="vendor.email" id="email" name="email" placeholder="Email Address" (blur)="checkEmailExists()" required email />
       <div *ngIf="emailExists" style="color: red; font-size: 14px; margin-top: 4px;">Email already exists.</div>
-      <input type="email"
-             id="email"
-             name="email"
-             placeholder="Email Address"
-             [(ngModel)]="vendor.email"
-             required
-             email />-->
 
-
-      <label for="phone">Phone Number</label>
+      <label for="phone">📞 Phone Number</label>
       <input type="text"
              id="phone"
              name="phoneNumber"
@@ -39,14 +25,13 @@
              #phoneInput="ngModel"
              (blur)="validatePhoneNumber()"
              maxlength="10"
-             [(ngModel)]="vendor.phoneNumber"
              required />
       <div *ngIf="phoneError" style="color: red; font-size: 14px; margin-top: 4px;">
         Phone number must be exactly 10 digits.
       </div>
 
 
-      <label for="passwordHash">Password</label>
+      <label for="passwordHash">🔒 Password</label>
       <input type="password"
              id="password"
              name="password"
@@ -55,11 +40,11 @@
              required
              minlength="6" />
 
-      <button type="submit" [disabled]="registerForm.invalid">Register</button>
+      <button type="submit" [disabled]="registerForm.invalid">🚀 Register</button>
     </form>
 
     <div class="links">
-      
+
       <a routerLink="/vendorlogin">Already have an account? <span>Login here</span></a>
     </div>
-  </div>-->
+  </div>

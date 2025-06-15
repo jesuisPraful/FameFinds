@@ -34,7 +34,7 @@ import { ForgotpasswordService } from './services/forgotpassword.service';
     ForgotPasswordComponent,
     ResetPasswordComponent,
     OtpVerificationComponent,
-    ForgotPasswordVendorComponent
+    ForgotPasswordVendorComponent,
   ],
   imports: [
     BrowserModule,

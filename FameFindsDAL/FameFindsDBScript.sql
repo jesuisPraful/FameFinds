@@ -152,4 +152,5 @@ INSERT INTO Category  VALUES
 ( 'Toys & Games'),
 ('Local Snacks & Food Items');
 
-Select * from Category 
+Select * from city
+select * from category
