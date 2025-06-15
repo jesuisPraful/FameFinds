@@ -20,7 +20,11 @@ export class ViewCitiesComponent implements OnInit {
     this.cities = [];
     this.filteredCities = [];
   }
-
+  goToProducts(cityName: string) {
+    console.log("Navigating to:", cityName);
+    localStorage.setItem('selectedCity', cityName);
+    this._router.navigate(['/view-products']);
+  }
   ngOnInit() {
     this._cityService.getAllCities().subscribe(
       (resSuccess: ICity[]) => {

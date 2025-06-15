@@ -3,6 +3,7 @@ import { ICity } from '../Models/city';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +11,16 @@ import { catchError } from 'rxjs/operators';
 export class CityService {
   cities: ICity[];
 
-  constructor(private _http: HttpClient) {
+  constructor(private _http: HttpClient,private _router:Router) {
     this.cities = [];
   }
 
   getAllCities(): Observable<ICity[]> {
     return this._http.get<ICity[]>('https://localhost:7249/api/City');
   }
-
+  goToProducts(cityName: string) {
+    this._router.navigate(['/view-products', { queryParams: { city: cityName } }]);
+  }
 
   addCity(city: ICity): Observable<any> {
     const headers = new HttpHeaders({

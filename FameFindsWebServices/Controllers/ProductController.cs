@@ -3,6 +3,8 @@ using FameFindsDAL.Models;
 //using FameFindsWebServices.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+//using Product = FameFindsWebServices.Models.Product;
 
 namespace FameFindsWebServices.Controllers
 {
@@ -16,7 +18,7 @@ namespace FameFindsWebServices.Controllers
             _repository = repository;
         }
 
-        [HttpGet]
+        [HttpGet("GetProducts")]
         public IActionResult GetAllProducts()
         {
             
@@ -30,8 +32,18 @@ namespace FameFindsWebServices.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+        [HttpGet("GetProductsByCityName")]
+        public IActionResult GetProductsByCity(string cityName)
+        {
+            var products = _repository.GetProductsByCity(cityName);
+
+            if (products.Count == 0)
+                return NotFound("No products found for the selected city.");
+
+            return Ok(products);
+        }
         [HttpPost]
-        public IActionResult AddProduct(Models.Product product)
+        public IActionResult AddProduct([FromBody] Product product)
         {
             bool status = false;
             try
@@ -158,5 +170,6 @@ namespace FameFindsWebServices.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+
     }
 }

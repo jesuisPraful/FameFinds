@@ -25,7 +25,13 @@ import { RemoveShopComponent } from './components/remove-shop/remove-shop.compon
 import { AddCityComponent } from './components/add-city/add-city.component';
 import { RemoveCityComponent } from './components/remove-city/remove-city.component';
 import { AddShopsComponent } from './components/add-shops/add-shops.component';
+import { ForgotPasswordVendorComponent } from './components/forgot-password-vendor/forgot-password-vendor.component';
+import { ForgotpasswordvendorService } from './services/forgotpasswordvendor.service';
 import { ForgotpasswordService } from './services/forgotpassword.service';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { CommonModule } from '@angular/common';
+
+ 
 
 @NgModule({
   declarations: [
@@ -46,13 +52,15 @@ import { ForgotpasswordService } from './services/forgotpassword.service';
     AddCityComponent,
     RemoveCityComponent,
     AddShopsComponent,
-    
+    ForgotPasswordVendorComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    GoogleMapsModule
   ],
   providers: [
     ProductService,
@@ -60,7 +68,8 @@ import { ForgotpasswordService } from './services/forgotpassword.service';
     CustomerService,
     VendorService,
     ShopService,
-    ForgotpasswordService
+    //ForgotpasswordvendorService,
+    //ForgotpasswordService
   ],
   bootstrap: [AppComponent]
 })

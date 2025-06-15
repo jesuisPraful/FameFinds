@@ -136,8 +136,7 @@ GO
 
 SELECT * FROM Products
 
-INSERT INTO City VALUES ( 2, 'MUMBAI')
-
+--Final categories
 INSERT INTO Category  VALUES
 ( 'Clothing'),
 ('Electronics'),
@@ -149,19 +148,50 @@ INSERT INTO Category  VALUES
 ('Stationery & Books'),
 ( 'Toys & Games'),
 ('Local Snacks & Food Items');
+Select * from Category 
 
-INSERT INTO City VALUES (3, 'Bangalore');
+--Final cities
+INSERT INTO City VALUES
+(1, 'HYDERABAD'),
+(2, 'MUMBAI'),
+(3, 'KOLKATA'),
+(4, 'BANGALORE'),
+(5, 'DELHI'),
+(6, 'CHENNAI');
+select * from City
 
-INSERT INTO Shop (ShopName, EmailId, CityId, PINCODE, ContactNumber, Full_Address, Latitude, Longitude, Opening_time, ClosingTime, VendorId) VALUES
-('Fashion Fiesta', 'ff@example.com', 1, '110001', '9876543210', 'Connaught Place, Delhi', 28.6315, 77.2167, '10:00', '21:00',1),
-('Tech Bazaar', 'tb@example.com', 2, '400001', '9123456780', 'Colaba, Mumbai', 18.9218, 72.8333, '09:00', '20:00', 2),
-('Art Emporium', 'ae@example.com', 3, '560001', '9988776655', 'MG Road, Bangalore', 12.9716, 77.5946, '11:00', '19:00', 3);
+--Hyderabad
+INSERT INTO Products (CityId, ProductName, Description, CategoryId)
+VALUES 
+(1, 'Hyderabadi Biryani', 'Spicy layered rice delicacy', 10),
+(1, 'Irani Chai', 'Strong tea with creamy milk', 10),
+(1, 'Pearls', 'Elegant white Hyderabad pearls', 7),
+(1, 'Pochampally Sarees', 'Traditional Ikat woven sarees', 1),
+(1, 'Mutton Haleem', 'Ramzan special meat porridge', 10),
+(1, 'Attar', 'Natural fragrant oil perfumes', 3),
+(1, 'Laad Bazaar Bangles', 'Colorful traditional glass bangles', 7),
+(1, 'Maska Bun', 'Soft bun with fresh butter', 10);
 
-INSERT INTO Vendor (VendorName, Email, PasswordHash, PhoneNumber) VALUES
-('Fashion Hub', 'fashion@example.com', 'vendor_pw1', '9012345678'),
-('Gadget Zone', 'gadget@example.com', 'vendor_pw2', '8899776655'),
-('Crafts Corner', 'crafts@example.com', 'vendor_pw3', '7788996655');
+--Mumbai
+INSERT INTO Products (CityId, ProductName, Description, CategoryId)
+VALUES
+(2, 'Kolhapuri Chappals', 'Traditional handcrafted leather sandals', 5),
+(2, 'Spices and Dry Fruits', 'Rich aromatic blends and nuts', 4),
+(2, 'Pav Bhaji', 'Spicy mashed veggies with bread', 10),
+(2, 'Ragda Pattice', 'Potato patties with white pea curry', 10),
+(2, 'Paithani Sarees', 'Rich silk sarees with zari work', 1),
+(2, 'Copper & Brass Kitchenware', 'Traditional utensils with antique look', 4),
+(2, 'Worli Paintings', 'Traditional tribal art of Maharashtra', 3);
 
-SELECT * FROM shop
+--Delhi
+INSERT INTO Products (CityId, ProductName, Description, CategoryId)
+VALUES
+(5, 'Silver Jewelry', 'Delicate silver jewelry with ethnic flair', 2),
+(5, 'Juttis', 'Embroidered Punjabi leather footwear', 5),
+(5, 'Hand-painted Pottery', 'Artisanal pottery with folk designs', 4),
+(5, 'Ethnic Dupattas & Shawls', 'Colorful wraps with embroidery and prints', 1),
+(5, 'Handicrafts (Dilli Haat)', 'All-India crafts under one roof', 3),
+(5, 'Spices', 'Aromatic spices from Asia’s biggest market', 10),
+(5, 'Ittar (Old Delhi)', 'Natural oil-based long-lasting perfumes', 8);
 
-SELECT * FROM ShopProduct
+Select * from Category 

@@ -40,8 +40,6 @@ namespace FameFindsWebServices.Controllers
                         shopOne.FullAddress = shop.FullAddress;
                         shopOne.Latitude = shop.Latitude;
                         shopOne.Longitude = shop.Longitude;
-                        shopOne.OpeningTime = shop.OpeningTime;
-                        shopOne.ClosingTime = shop.ClosingTime;
                         shopOne.VendorId = shop.VendorId;
 
                         shops.Add(shopOne);
@@ -57,13 +55,9 @@ namespace FameFindsWebServices.Controllers
             return Ok(shops);
         }
 
-         
-
         [HttpPost("Register")]
         public IActionResult RegisterShop(Models.Shop shop)
         {
-            bool status = false;
-
             try
             {
                 if (ModelState.IsValid)
@@ -78,30 +72,32 @@ namespace FameFindsWebServices.Controllers
                         FullAddress = shop.FullAddress,
                         Latitude = shop.Latitude,
                         Longitude = shop.Longitude,
-                        OpeningTime = shop.OpeningTime,
-                        ClosingTime = shop.ClosingTime,
-                        IsOpen = shop.IsOpen ?? true, // Set default true if null
-                        CreatedAt = DateTime.Now,     // Auto-set current datetime
+                        IsOpen = shop.IsOpen ?? true,
+                        CreatedAt = DateTime.Now,
                         VendorId = shop.VendorId
                     };
 
-                    status = _repository.RegisterShop(shopOne);
+                    bool status = _repository.RegisterShop(shopOne);
 
                     if (status)
-                        return Ok("Shop Registered Successfully");
+                        return Ok(new { message = "Shop Registered Successfully" });
                     else
-                        return BadRequest("Failed to register shop.");
+                        return BadRequest(new { message = "Failed to register shop." });
                 }
                 else
                 {
-                    return BadRequest("Invalid Data");
+                    return BadRequest(new { message = "Invalid Data" });
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return BadRequest("Registration failed.");
+                return BadRequest(new { message = "Registration failed.", error = ex.Message });
             }
         }
+
+
+
+
 
 
         [HttpGet("shopId")]
@@ -126,8 +122,6 @@ namespace FameFindsWebServices.Controllers
                     shopOne.FullAddress = shop.FullAddress;
                     shopOne.Latitude = shop.Latitude;
                     shopOne.Longitude = shop.Longitude;
-                    shopOne.OpeningTime = shop.OpeningTime;
-                    shopOne.ClosingTime = shop.ClosingTime;
                     shopOne.VendorId = shop.VendorId;
 
 
@@ -169,8 +163,6 @@ namespace FameFindsWebServices.Controllers
                         shopOne.FullAddress = shop.FullAddress;
                         shopOne.Latitude = shop.Latitude;
                         shopOne.Longitude = shop.Longitude;
-                        shopOne.OpeningTime = shop.OpeningTime;
-                        shopOne.ClosingTime = shop.ClosingTime;
                         shopOne.VendorId = shop.VendorId;
 
                         shops.Add(shopOne);
@@ -210,8 +202,6 @@ namespace FameFindsWebServices.Controllers
                         shopOne.FullAddress = shop.FullAddress;
                         shopOne.Latitude = shop.Latitude;
                         shopOne.Longitude = shop.Longitude;
-                        shopOne.OpeningTime = shop.OpeningTime;
-                        shopOne.ClosingTime = shop.ClosingTime;
                         shopOne.VendorId = shop.VendorId;
 
                         shops.Add(shopOne);
@@ -251,8 +241,6 @@ namespace FameFindsWebServices.Controllers
                         shopOne.FullAddress = shop.FullAddress;
                         shopOne.Latitude = shop.Latitude;
                         shopOne.Longitude = shop.Longitude;
-                        shopOne.OpeningTime = shop.OpeningTime;
-                        shopOne.ClosingTime = shop.ClosingTime;
                         shopOne.VendorId = shop.VendorId;
 
                         shops.Add(shopOne);
@@ -290,8 +278,6 @@ namespace FameFindsWebServices.Controllers
                         shopOne.FullAddress = shop.FullAddress;
                         shopOne.Latitude = shop.Latitude;
                         shopOne.Longitude = shop.Longitude;
-                        shopOne.OpeningTime = shop.OpeningTime;
-                        shopOne.ClosingTime = shop.ClosingTime;
                         shopOne.VendorId = shop.VendorId;
 
                         shops.Add(shopOne);
@@ -470,6 +456,21 @@ namespace FameFindsWebServices.Controllers
             }
         }
 
+        // For Ratings
+
+        [HttpGet("sorted-by-rating")]
+        public IActionResult GetShopsSortedByRating()
+        {
+            try
+            {
+                var sortedShops = _repository.GetShopsSortedByRating();
+                return Ok(sortedShops);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
 
 
     }

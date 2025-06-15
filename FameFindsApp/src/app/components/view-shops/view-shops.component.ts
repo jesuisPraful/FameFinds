@@ -37,4 +37,21 @@ export class ViewShopsComponent implements OnInit {
         this.shops = data;
       });
   }
+
+  showMap(shop: IShop) {
+    this.selectedShop = shop;
+
+    setTimeout(() => {
+      const map =new google.maps.Map(document.getElementById("map") as HTMLElement, {
+        center: { lat: shop.latitude, lng: shop.longitude },
+        zoom: 15
+      });
+
+      new google.maps.Marker({
+        position: { lat: shop.latitude, lng: shop.longitude },
+        map,
+        title: shop.shopName
+      });
+    }, 0);
+  }
 }

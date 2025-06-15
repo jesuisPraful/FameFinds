@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CustomerService } from '../../services/customer.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent {
   passwordLength: number;
   highlightLogin: boolean;
   showPassword: boolean;
-  constructor(private _customerService: CustomerService) {
+  constructor(private _customerService: CustomerService,private _router:Router) {
     this.message = "";
     this.showDiv = false;
     this.passwordLength = 0;
@@ -31,7 +32,8 @@ export class LoginComponent {
           if (resSuccess==true) {
             sessionStorage.setItem("Email", form.value.email);
             sessionStorage.setItem("value", resSuccess);
-            alert("Login Successfull!\n Welcome to FameFinds " + form.value.email);
+            this._router.navigate(['/view-cities']);
+            //alert("Login Successfull!\n Welcome to FameFinds " + form.value.email);
             //sessionStorage.setItem("Role", resSuccess.toString());  in this if credentials are true api method is returning true are false but not the role of user wether it is vendor or customer so no need to store this.
             /*this._router.navigate(["/home"]);*/
           }

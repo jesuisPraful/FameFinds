@@ -1,7 +1,30 @@
+<!--Layout switching
+<div *ngIf="commonLayout">
+  <app-common-layout></app-common-layout>
+</div>
+<div *ngIf="custLayout">
+  <app-customer-layout></app-customer-layout>
+</div>-->
+<div class="container">
+  <h2 style="text-align: center;">All Shops</h2>
 <header>
   <div class="logo" tabindex="0">CityFamous</div>
 </header>
 
+  <!-- Search -->
+  <div class="search-bar" style="margin-bottom: 20px; text-align: center;">
+    <input type="text"
+           class="form-control"
+           style="max-width: 400px; display: inline-block;"
+           placeholder="Search by shop name"
+           (input)="searchShop(searchInput.value)"
+           #searchInput />
+  </div>
+
+  <!-- No shops found message -->
+  <div *ngIf="showMsgDiv" class="alert alert-warning text-center">
+    No shops found.
+  </div>
 <main role="main" aria-label="Shops selling selected product">
   <h1 class="page-title" id="pageTitle">
     Shops Selling {{ productName }}
@@ -22,10 +45,30 @@
         </div>
       </div>
 
+  <!-- Shops List -->
+  <div class="row" *ngFor="let shop of filteredShops">
+    <div class="col-md-12 card my-3 p-3">
+      <h4>{{ shop.shopName }}</h4>
+      <p><strong>Address:</strong> {{ shop.fullAddress }}</p>
+      <p><strong>Contact:</strong> {{ shop.contactNumber }}</p>
+      <p><strong>Email:</strong> {{ shop.emailId }}</p>
+      <button class="btn btn-primary me-2" (click)="viewShopDetails(shop)">View Details</button>
+      <button class="btn btn-outline-success" (click)="showMap(shop)">View on Map</button>
+    </div>
+  </div>
       <div class="contact-item" title="Phone">
         <span class="material-icons md-18" aria-hidden="true">phone</span>
         <span>{{ shop.contactNumber }}</span>
       </div>
+
+  <!-- Google Map -->
+  <div *ngIf="selectedShop" class="card mt-4">
+    <div class="card-body">
+      <h5 class="card-title">Map for {{ selectedShop.shopName }}</h5>
+      <div id="map" style="height: 400px; width: 100%;"></div>
+    </div>
+  </div>
+</div>
 
       <div class="contact-item" title="Email">
         <span class="material-icons md-18" aria-hidden="true">email</span>

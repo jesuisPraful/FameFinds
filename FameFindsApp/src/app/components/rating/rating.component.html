@@ -1,0 +1,23 @@
+<div class="rating-container" @fadeIn>
+  <h2>Rate This Shop</h2>
+  <div class="stars">
+    <span *ngFor="let star of stars; let i = index"
+          class="star"
+          [class.filled]="i < rating"
+          (click)="setRating(i + 1)"
+          (mouseenter)="hoverRating = i + 1"
+          (mouseleave)="hoverRating = 0"
+          [class.hovered]="i < hoverRating">
+      ★
+    </span>
+  </div>
+
+  <p *ngIf="rating">You rated: {{ rating }} star{{ rating > 1 ? 's' : '' }}</p>
+
+  <textarea [(ngModel)]="feedback"
+            placeholder="Write your feedback here..."
+            rows="4"
+            class="feedback-box"></textarea>
+
+  <button (click)="submitFeedback()">Submit Rating</button>
+</div>

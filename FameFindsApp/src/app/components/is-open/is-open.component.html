@@ -1,13 +1,13 @@
 <div class="is-open-container">
   <h3>Update Shop Open Status</h3>
 
-  <!-- Shop ID Input -->
+   Shop ID Input 
   <div class="form-group">
     <label for="shopId">Shop ID:</label>
     <input type="number" [(ngModel)]="shopId" id="shopId" name="shopId" class="form-control" required />
   </div>
 
-  <!-- Toggle Open Status -->
+   Toggle Open Status 
   <div class="form-group">
     <label>Shop Status:</label>
     <button class="btn btn-secondary" (click)="toggleOpenStatus()">
@@ -15,9 +15,9 @@
     </button>
   </div>
 
-  <!-- Submit -->
+   Submit 
   <button class="btn btn-primary" (click)="updateIsOpenStatus()">Update Status</button>
 
-  <!-- Status Message -->
+   Status Message 
   <p *ngIf="updateStatusMessage" style="margin-top: 10px;">{{ updateStatusMessage }}</p>
 </div>
