@@ -662,6 +662,7 @@ namespace FameFindsDAL
             {
                 var shopObj = _context.Shops.Find(rating.ShopId);
                 var customerObj = _context.Customers.Find(rating.CustomerId);
+
                 if (shopObj != null && customerObj != null)
                 {
                     _context.Ratings.Add(rating);
@@ -736,6 +737,22 @@ namespace FameFindsDAL
             }
             return status;
         }
+
+        public List<ShopWithRatingDto> GetShopsSortedByRating()
+        {
+            var result = (from shop in _context.Shops
+                          select new ShopWithRatingDto
+                          {
+                              ShopId = shop.ShopId,
+                              ShopName = shop.ShopName,
+                              AverageRating = shop.Ratings.Any() ? shop.Ratings.Average(r => r.RatingValue) : 0
+                          })
+                          .OrderByDescending(s => s.AverageRating)
+                          .ToList();
+
+            return result;
+        }
+
 
         #endregion
 

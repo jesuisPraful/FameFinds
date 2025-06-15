@@ -8,6 +8,7 @@ import { OtpVerificationComponent } from './components/otp-verification/otp-veri
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginVendorComponent } from './components/login-vendor/login-vendor.component';
+import { RatingComponent } from './components/rating/rating.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent }, 
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'register', component: RegistrationPageComponent },
   { path: 'vendorlogin', component: LoginVendorComponent },
   { path: 'vendorregister', component: RegistrationPage2Component },
+  { path: 'ratings', component: RatingComponent },
   { path: '**', component: LandingComponent }
 ];
 

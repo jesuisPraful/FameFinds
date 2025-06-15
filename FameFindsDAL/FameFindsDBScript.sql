@@ -152,4 +152,6 @@ INSERT INTO Category  VALUES
 ( 'Toys & Games'),
 ('Local Snacks & Food Items');
 
-Select * from Category 
+Select * from CustomerPasswordResetTokens
+
+Select * from Shop
