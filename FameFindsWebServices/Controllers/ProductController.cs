@@ -17,7 +17,7 @@ namespace FameFindsWebServices.Controllers
             _repository = repository;
         }
 
-        [HttpGet]
+        [HttpGet("GetProducts")]
         public IActionResult GetAllProducts()
         {
             
@@ -30,6 +30,16 @@ namespace FameFindsWebServices.Controllers
             {
                 return StatusCode(500, "Internal server error");
             }
+        }
+        [HttpGet("GetProductsByCityName")]
+        public IActionResult GetProductsByCity(string cityName)
+        {
+            var products = _repository.GetProductsByCity(cityName);
+
+            if (products.Count == 0)
+                return NotFound("No products found for the selected city.");
+
+            return Ok(products);
         }
         [HttpPost]
         public IActionResult AddProduct(Models.Product product)

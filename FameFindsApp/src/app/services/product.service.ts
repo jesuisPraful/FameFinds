@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, throwError } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { IProduct } from '../Models/product';
 import { ICategory } from '../Models/category';
 
@@ -17,7 +17,7 @@ export class ProductService {
   }
 
   getAllProducts(){
-    var tempVar = this._http.get<IProduct[]>("https://localhost:7249/api/Product")
+    var tempVar = this._http.get<IProduct[]>("https://localhost:7249/api/Product/GetProducts")
       .pipe(catchError(this.errorHandler));
     return tempVar;
   }
@@ -26,6 +26,10 @@ export class ProductService {
       .pipe(catchError(this.errorHandler));
     return tempVar;
   }
+  getProductsByCity(cityName: string): Observable<any[]> {
+    return this._http.get<any[]>(`https://localhost:7249/api/Product/GetProductsByCityName?cityName=${cityName}`);
+  }
+
   errorHandler(error:HttpErrorResponse) {
     console.error(error);
     return throwError(error.message || "Server Error")

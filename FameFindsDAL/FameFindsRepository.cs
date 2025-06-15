@@ -306,10 +306,27 @@ namespace FameFindsDAL
             }
             return products;
         }
+        public List<Product> GetProductsByCity(string cityName)
+        {
+            List<Product> products = new List<Product>();
+            try
+            {
+                products = (from p in _context.Products
+                            join c in _context.Cities on p.CityId equals c.CityId
+                            where c.CityName == cityName
+                            select p).ToList();
+
+            }
+            catch (Exception ex)
+            {
+                products = null;
+            }
+            return products;
+        }
         public bool AddProduct(Product product)
         {
             var name = (from p in _context.Products
-                        where p.ProductName == product.ProductName
+                        where p.ProductName == product.ProductName && p.CityId == product.CityId
                         select p).FirstOrDefault();
             bool status = false;
             if ((name == null))

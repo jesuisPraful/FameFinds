@@ -134,12 +134,7 @@ GO
 
 SELECT * FROM Products
 
-INSERT INTO City VALUES 
-(1,'HYDERABAD'),
-( 2, 'MUMBAI')
-
-select * from City
-
+--Final categories
 INSERT INTO Category  VALUES
 ( 'Clothing'),
 ('Electronics'),
@@ -151,5 +146,86 @@ INSERT INTO Category  VALUES
 ('Stationery & Books'),
 ( 'Toys & Games'),
 ('Local Snacks & Food Items');
-
 Select * from Category 
+
+--Final cities
+INSERT INTO City VALUES
+(1, 'HYDERABAD'),
+(2, 'MUMBAI'),
+(3, 'KOLKATA'),
+(4, 'BANGALORE'),
+(5, 'DELHI'),
+(6, 'CHENNAI');
+select * from City
+
+--Hyderabad
+INSERT INTO Products (CityId, ProductName, Description, CategoryId)
+VALUES 
+(1, 'Hyderabadi Biryani', 'Spicy layered rice delicacy', 10),
+(1, 'Irani Chai', 'Strong tea with creamy milk', 10),
+(1, 'Pearls', 'Elegant white Hyderabad pearls', 7),
+(1, 'Pochampally Sarees', 'Traditional Ikat woven sarees', 1),
+(1, 'Mutton Haleem', 'Ramzan special meat porridge', 10),
+(1, 'Attar', 'Natural fragrant oil perfumes', 3),
+(1, 'Laad Bazaar Bangles', 'Colorful traditional glass bangles', 7),
+(1, 'Maska Bun', 'Soft bun with fresh butter', 10);
+
+--Mumbai
+INSERT INTO Products (CityId, ProductName, Description, CategoryId)
+VALUES
+(2, 'Kolhapuri Chappals', 'Traditional handcrafted leather sandals', 5),
+(2, 'Spices and Dry Fruits', 'Rich aromatic blends and nuts', 4),
+(2, 'Pav Bhaji', 'Spicy mashed veggies with bread', 10),
+(2, 'Ragda Pattice', 'Potato patties with white pea curry', 10),
+(2, 'Paithani Sarees', 'Rich silk sarees with zari work', 1),
+(2, 'Copper & Brass Kitchenware', 'Traditional utensils with antique look', 4),
+(2, 'Worli Paintings', 'Traditional tribal art of Maharashtra', 3);
+
+--Delhi
+INSERT INTO Products (CityId, ProductName, Description, CategoryId)
+VALUES
+(5, 'Silver Jewelry', 'Delicate silver jewelry with ethnic flair', 2),
+(5, 'Juttis', 'Embroidered Punjabi leather footwear', 5),
+(5, 'Hand-painted Pottery', 'Artisanal pottery with folk designs', 4),
+(5, 'Ethnic Dupattas & Shawls', 'Colorful wraps with embroidery and prints', 1),
+(5, 'Handicrafts (Dilli Haat)', 'All-India crafts under one roof', 3),
+(5, 'Spices', 'Aromatic spices from Asia’s biggest market', 10),
+(5, 'Ittar (Old Delhi)', 'Natural oil-based long-lasting perfumes', 8);
+
+--KOLKATA
+INSERT INTO Products (CityId, ProductName, Description, CategoryId)
+VALUES
+(3, 'Tant Sarees', 'Lightweight, handwoven cotton Bengali sarees', 1),
+(3, 'Jute Handicrafts', 'Eco-friendly bags, mats, and home items', 3),
+(3, 'Books (College Street)', 'Affordable and rare books from book hub', 9),
+(3, 'Terracotta & Clay Idols', 'Handmade Durga idols & figurines', 3),
+(3, 'Rasgulla & Sandesh', 'Iconic soft Bengali milk-based sweets', 10),
+(3, 'Kantha Embroidered Items', 'Hand-stitched quilts, sarees, and dupattas', 1);
+
+--chennai
+INSERT INTO Products (CityId, ProductName, Description, CategoryId)
+VALUES
+(6, 'Kanchipuram Silk Sarees', 'Luxurious handwoven silk with gold borders', 1),
+(6, 'Herbal Hair Oils', 'Natural oils for hair growth and shine', 7),
+(6, 'Temple Jewellery', 'Traditional, ornate temple-style jewellery', 2),
+(6, 'Filter Coffee Powder', 'Strong, aromatic South Indian coffee blend', 10),
+(6, 'Wooden Toys (Maduravoyal)', 'Handcrafted eco-friendly wooden toys', 5),
+(6, 'Handmade Incense Sticks', 'Fragrant incense for prayers and peace', 6),
+(6, 'Brass Lamps & Utensils', 'Polished brassware for decor and rituals', 6),
+(6, 'Tanjore Paintings', 'Classical South Indian gold-leaf artwork', 3);
+
+--Bangalore
+INSERT INTO Products (CityId, ProductName, Description, CategoryId)
+VALUES
+(4, 'Mysore Silk Sarees', 'Rich silk sarees with golden borders', 1),
+(4, 'Channapatna Toys', 'Colorful wooden toys, safe and natural', 5),
+(4, 'Traditional Footwear (Kolhapuris)', 'Comfortable and handmade ethnic footwear', 4),
+(4, 'Sandalwood Products', 'Fragrant soaps, oils and perfumes', 7),
+(4, 'Handmade Soaps & Oils', 'Organic skincare from local artisans', 7),
+(4, 'Electronics', 'Affordable electronic items and gadgets', 9);
+
+select * from Products
+
+--to reset identtity value 
+DBCC CHECKIDENT ('Products', RESEED, 0);
+
