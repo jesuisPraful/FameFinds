@@ -1,63 +1,44 @@
- Layout switching 
-<!--<div *ngIf="commonLayout">
-  <app-common-layout></app-common-layout>
-</div>
-<div *ngIf="custLayout">
-  <app-customer-layout></app-customer-layout>
-</div>-->
-<div style="text-align:center;">
-  <h1>View Shops</h1>
-  <br />
+<header>
+  <div class="logo" tabindex="0">CityFamous</div>
+</header>
 
-   Search bar 
-  <div class="row">
-    <div class="col-md-5" style="text-align:right">
-      <label>Search :</label>
+<main role="main" aria-label="Shops selling selected product">
+  <h1 class="page-title" id="pageTitle">
+    Shops Selling {{ productName }}
+  </h1>
+
+  <section class="shop-cards" id="shopsContainer" aria-label="List of shops">
+    <article class="shop-card"
+             role="region"
+             *ngFor="let shop of shops"
+             [attr.aria-label]="'Shop: ' + shop.shopName">
+      <div class="shop-header">
+        <div class="shop-thumb" aria-hidden="true">
+          <span class="material-icons md-36">storefront</span>
+        </div>
+        <div class="shop-info">
+          <h3 class="shop-name">{{ shop.shopName }}</h3>
+          <address class="shop-address">{{ shop.fullAddress }}</address>
+        </div>
+      </div>
+
+      <div class="contact-item" title="Phone">
+        <span class="material-icons md-18" aria-hidden="true">phone</span>
+        <span>{{ shop.contactNumber }}</span>
+      </div>
+
+      <div class="contact-item" title="Email">
+        <span class="material-icons md-18" aria-hidden="true">email</span>
+        <span>{{ shop.emailId }}</span>
+      </div>
+
+      <button class="btn-action" [attr.aria-label]="'View details about ' + shop.shopName">
+        View Details
+      </button>
+    </article>
+
+    <div *ngIf="shops && shops.length === 0" class="no-shops-msg">
+      No shops found for "{{ productName }}"
     </div>
-    <div class="col-md-5">
-      <input type="text"
-             placeholder="Shop name"
-             class="form-control"
-             (input)="searchShop(shopName.value)"
-             #shopName />
-    </div>
-  </div>
-  <br />
-
-   Shops Table 
-  <div class="table-responsive">
-    <table class="table"
-           style="border:5px solid rgba(220,230,242,1);"
-           *ngIf="filteredShops.length > 0">
-      <thead>
-        <tr style="background-color:rgba(220,230,242,1); font-size:12pt">
-          <th style="text-align:center">Shop Id</th>
-          <th style="text-align:center">Shop Name</th>
-          <th style="text-align:center">City Id</th>
-          <th style="text-align:center">Pincode</th>
-          <th style="text-align:center">Contact</th>
-          <th style="text-align:center">Address</th>
-          <th style="text-align:center">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let shop of filteredShops" style="background-color:white">
-          <td style="text-align:center">{{ shop.shopId }}</td>
-          <td style="text-align:center">{{ shop.shopName }}</td>
-          <td style="text-align:center">{{ shop.cityId }}</td>
-          <td style="text-align:center">{{ shop.pincode }}</td>
-          <td style="text-align:center">{{ shop.contactNumber }}</td>
-          <td style="text-align:center">{{ shop.fullAddress }}</td>
-          <td style="text-align:center">
-            <button class="btn btn-primary btn-sm" (click)="viewShopDetails(shop)">View Details</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-   No Shops Message 
-  <div *ngIf="showMsgDiv" class="jumbotron" style="text-align:center;">
-    <h4>No shops available</h4>
-  </div>
-</div>
+  </section>
+</main>

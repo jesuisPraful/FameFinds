@@ -118,6 +118,8 @@ CREATE TABLE ShopProduct (
 );
 GO
 
+INSERT INTO ShopProduct (ShopId, ProductId)
+VALUES (10,8)
 
 -- 7. Rating Table
 CREATE TABLE Rating (
@@ -133,7 +135,7 @@ CREATE TABLE Rating (
 GO
 
 SELECT * FROM Products
-SELECT * FROM 
+
 INSERT INTO City VALUES ( 2, 'MUMBAI')
 
 INSERT INTO Category  VALUES
@@ -148,4 +150,18 @@ INSERT INTO Category  VALUES
 ( 'Toys & Games'),
 ('Local Snacks & Food Items');
 
-INSERT INTO Products VALUES (1,'car','special toy',8)
+INSERT INTO City VALUES (3, 'Bangalore');
+
+INSERT INTO Shop (ShopName, EmailId, CityId, PINCODE, ContactNumber, Full_Address, Latitude, Longitude, Opening_time, ClosingTime, VendorId) VALUES
+('Fashion Fiesta', 'ff@example.com', 1, '110001', '9876543210', 'Connaught Place, Delhi', 28.6315, 77.2167, '10:00', '21:00',1),
+('Tech Bazaar', 'tb@example.com', 2, '400001', '9123456780', 'Colaba, Mumbai', 18.9218, 72.8333, '09:00', '20:00', 2),
+('Art Emporium', 'ae@example.com', 3, '560001', '9988776655', 'MG Road, Bangalore', 12.9716, 77.5946, '11:00', '19:00', 3);
+
+INSERT INTO Vendor (VendorName, Email, PasswordHash, PhoneNumber) VALUES
+('Fashion Hub', 'fashion@example.com', 'vendor_pw1', '9012345678'),
+('Gadget Zone', 'gadget@example.com', 'vendor_pw2', '8899776655'),
+('Crafts Corner', 'crafts@example.com', 'vendor_pw3', '7788996655');
+
+SELECT * FROM shop
+
+SELECT * FROM ShopProduct

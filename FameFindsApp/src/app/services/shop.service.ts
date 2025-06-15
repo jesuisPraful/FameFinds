@@ -67,7 +67,11 @@ export class ShopService {
       .delete("https://localhost:7249/api/Shop", { params, responseType: 'text' })
       .pipe(catchError(this.errorHandler));
   }
-   
+
+  getShopsByProduct(productName: string) {
+    const params = new HttpParams().set('productName', productName);
+    return this._http.get<IShop[]>("https://localhost:7249/api/Shop/productName", { params });
+  }
 
 
   errorHandler(error: HttpErrorResponse) {

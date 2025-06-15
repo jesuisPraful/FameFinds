@@ -25,6 +25,7 @@ import { RemoveShopComponent } from './components/remove-shop/remove-shop.compon
 import { AddCityComponent } from './components/add-city/add-city.component';
 import { RemoveCityComponent } from './components/remove-city/remove-city.component';
 import { AddShopsComponent } from './components/add-shops/add-shops.component';
+import { ForgotpasswordService } from './services/forgotpassword.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { AddShopsComponent } from './components/add-shops/add-shops.component';
     RemoveShopComponent,
     AddCityComponent,
     RemoveCityComponent,
-    AddShopsComponent
+    AddShopsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { AddShopsComponent } from './components/add-shops/add-shops.component';
     RegisterService,
     CustomerService,
     VendorService,
-    ShopService
+    ShopService,
+    ForgotpasswordService
   ],
   bootstrap: [AppComponent]
 })
