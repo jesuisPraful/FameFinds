@@ -1,10 +1,10 @@
 ﻿using FameFindsDAL;
 using FameFindsDAL.Models;
-using FameFindsWebServices.Models;
+//using FameFindsWebServices.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Product = FameFindsWebServices.Models.Product;
+//using Product = FameFindsWebServices.Models.Product;
 
 namespace FameFindsWebServices.Controllers
 {
@@ -18,7 +18,7 @@ namespace FameFindsWebServices.Controllers
             _repository = repository;
         }
 
-        [HttpGet]
+        [HttpGet("GetProducts")]
         public IActionResult GetAllProducts()
         {
             
@@ -31,6 +31,16 @@ namespace FameFindsWebServices.Controllers
             {
                 return StatusCode(500, "Internal server error");
             }
+        }
+        [HttpGet("GetProductsByCityName")]
+        public IActionResult GetProductsByCity(string cityName)
+        {
+            var products = _repository.GetProductsByCity(cityName);
+
+            if (products.Count == 0)
+                return NotFound("No products found for the selected city.");
+
+            return Ok(products);
         }
         [HttpPost]
         public IActionResult AddProduct([FromBody] Product product)
@@ -62,42 +72,42 @@ namespace FameFindsWebServices.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error:{ex.Message}");
+                return StatusCode(500, "Internal server error");
             }
         }
-        //[HttpPut]
-        //public IActionResult UpdateProduct(Models.Product product)
-        //{
-        //    bool status = false;
-        //    try
-        //    {
-        //        if (ModelState.IsValid)
-        //        {
-        //            FameFindsDAL.Models.Product product1 = new FameFindsDAL.Models.Product();
-        //            product1.ProductId = product.ProductId;
-        //            product1.ProductName = product.ProductName;
-        //            product1.Description = product.Description;
-        //            product1.CategoryId = product.CategoryId;
-        //            status = _repository.UpdateProduct(product1);
-        //            if (status)
-        //            {
-        //                return Ok("Product updated successfully");
-        //            }
-        //            else
-        //            {
-        //                return BadRequest("Failed to update product");
-        //            }
-        //        }
-        //        else
-        //        {
-        //            return BadRequest("Model state is not valid");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, "Internal server error");
-        //    }
-        //}
+        [HttpPut]
+        public IActionResult UpdateProduct(Models.Product product)
+        {
+            bool status = false;
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    Product productOne = new Product();
+                    productOne.ProductId = product.ProductId;
+                    productOne.ProductName = product.ProductName;
+                    productOne.Description = product.Description;
+                    productOne.CategoryId = product.CategoryId;
+                    status = _repository.UpdateProduct(productOne);
+                    if (status)
+                    {
+                        return Ok("Product updated successfully");
+                    }
+                    else
+                    {
+                        return BadRequest("Failed to update product");
+                    }
+                }
+                else
+                {
+                    return BadRequest("Model state is not valid");
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error");
+            }
+        }
         [HttpDelete]
         public IActionResult DeleteProduct(int ProductId)
         {

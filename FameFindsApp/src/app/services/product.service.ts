@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, throwError } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { IProduct } from '../Models/product';
 import { ICategory } from '../Models/category';
 
@@ -16,11 +16,14 @@ export class ProductService {
     this.categories = [];
   }
 
-  getAllProducts() {
-    return this._http.get<IProduct[]>("https://localhost:7249/api/Product")
+  getAllProducts(){
+    var tempVar = this._http.get<IProduct[]>("https://localhost:7249/api/Product/GetProducts")
       .pipe(catchError(this.errorHandler));
   }
 
+  //addProduct(product: IProduct) {
+  //  var tempVar = this._http.post("",)
+  //}
   getAllCategories() {
     return this._http.get<ICategory[]>("https://localhost:7249/api/Category")
       .pipe(catchError(this.errorHandler));
@@ -30,8 +33,11 @@ export class ProductService {
     return this._http.post<IProduct>("https://localhost:7249/api/Product", product)
       .pipe(catchError(this.errorHandler));
   }
+  getProductsByCity(cityName: string): Observable<any[]> {
+    return this._http.get<any[]>(`https://localhost:7249/api/Product/GetProductsByCity/GetProductsByCityName?cityName=${cityName}`);
+  }
 
-  errorHandler(error: HttpErrorResponse) {
+  errorHandler(error:HttpErrorResponse) {
     console.error(error);
     return throwError(error.message || "Server Error");
   }
