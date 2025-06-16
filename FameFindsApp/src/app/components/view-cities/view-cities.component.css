@@ -1,4 +1,4 @@
-/*.city-container {
+.city-container {
   padding: 30px;
   background-color: #f9f9f9;
   border-radius: 10px;
@@ -19,6 +19,9 @@
   font-weight: bold;
   font-size: 18px;
 }
+<<<<<<< HEAD
+
+=======
 */
 /*body {
   margin: 0;
@@ -146,3 +149,4 @@
     color: #666;
     margin: 0 10px;
   }
+>>>>>>> 6fd2d00a5a39d6d0b543ae401113af0d0be00092

@@ -17,6 +17,7 @@ import { RemoveCityComponent } from './components/remove-city/remove-city.compon
 import { AddShopsComponent } from './components/add-shops/add-shops.component';
 import { ViewProductsComponent } from './components/view-products/view-products.component';
 import { ShopDetailsComponent } from './components/shop-details/shop-details.component';
+import { RatingComponent } from './components/rating/rating.component';
 import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
 
 const routes: Routes = [
@@ -39,6 +40,7 @@ const routes: Routes = [
   { path: 'add-shops', component: AddShopsComponent },
   { path: 'view-products', component: ViewProductsComponent },
   { path: 'shop-details', component: ShopDetailsComponent },
+  { path: 'rate-shop', component: RatingComponent },
   { path: '**', component: LandingComponent }, // wildcard should come last
 
 ];

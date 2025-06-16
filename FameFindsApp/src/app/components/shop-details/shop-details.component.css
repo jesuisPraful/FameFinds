@@ -76,3 +76,18 @@ header {
   .btn-back:hover {
     background-color: #2980b9;
   }
+
+.btn-rating {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+  .btn-rating:hover {
+    background-color: #e68900;
+  }

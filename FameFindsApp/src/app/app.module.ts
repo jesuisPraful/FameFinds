@@ -31,6 +31,9 @@ import { ForgotpasswordService } from './services/forgotpassword.service';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { CommonModule } from '@angular/common';
 import { ShopDetailsComponent } from './components/shop-details/shop-details.component';
+import { RatingComponent } from './components/rating/rating.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
 
  
@@ -57,6 +60,8 @@ import { RegistrationPage2Component } from './components/registration-page2/regi
     AddShopsComponent,
     ForgotPasswordVendorComponent,
     ShopDetailsComponent,
+    //ForgotPasswordVendorComponent,
+    RatingComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,11 +69,13 @@ import { RegistrationPage2Component } from './components/registration-page2/regi
     CommonModule,
     HttpClientModule,
     FormsModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ProductService,
     RegisterService,
+    Register2Service,
     CustomerService,
     VendorService,
     ShopService,
