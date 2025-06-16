@@ -30,6 +30,9 @@ import { AddShopsComponent } from './components/add-shops/add-shops.component';
 //import { ForgotpasswordService } from './services/forgotpassword.service';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { CommonModule } from '@angular/common';
+import { RatingComponent } from './components/rating/rating.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
  
 
@@ -53,6 +56,7 @@ import { CommonModule } from '@angular/common';
     //RemoveCityComponent,
     AddShopsComponent,
     //ForgotPasswordVendorComponent,
+    RatingComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +64,8 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     HttpClientModule,
     FormsModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ProductService,

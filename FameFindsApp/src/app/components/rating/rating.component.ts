@@ -24,8 +24,8 @@ export class RatingComponent {
   stars = new Array(5);
   feedback = '';
 
-  customerId = 1; // 🔁 Replace with actual logged-in user ID
-  shopId = 101;   // 🔁 Replace with actual shop ID being rated
+  customerId = 1; 
+  shopId = 101;   
 
   constructor(private http: HttpClient) { }
 

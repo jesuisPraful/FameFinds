@@ -15,6 +15,8 @@ import { ViewShopsComponent } from './components/view-shops/view-shops.component
 //import { AddCityComponent } from './components/add-city/add-city.component';
 //import { RemoveCityComponent } from './components/remove-city/remove-city.component';
 import { AddShopsComponent } from './components/add-shops/add-shops.component';
+import { RatingComponent } from './components/rating/rating.component';
+
 
 const routes: Routes = [
   //{ path: '', component: LandingComponent },
@@ -34,6 +36,7 @@ const routes: Routes = [
   //{ path: 'add-city', component: AddCityComponent },
   //{ path: 'remove-city', component: RemoveCityComponent },
   { path: 'add-shops', component: AddShopsComponent },
+  { path: 'rate-shop', component: RatingComponent },
 
 
 ];
