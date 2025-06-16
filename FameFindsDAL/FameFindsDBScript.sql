@@ -132,8 +132,6 @@ CREATE TABLE Rating (
 );
 GO
 
-SELECT * FROM Products
-
 --Final categories
 INSERT INTO Category  VALUES
 ( 'Clothing'),
@@ -156,7 +154,8 @@ INSERT INTO City VALUES
 (4, 'BANGALORE'),
 (5, 'DELHI'),
 (6, 'CHENNAI');
-select * from City
+
+
 
 --Hyderabad
 INSERT INTO Products (CityId, ProductName, Description, CategoryId)
@@ -192,40 +191,60 @@ VALUES
 (5, 'Spices', 'Aromatic spices from Asia’s biggest market', 10),
 (5, 'Ittar (Old Delhi)', 'Natural oil-based long-lasting perfumes', 8);
 
---KOLKATA
-INSERT INTO Products (CityId, ProductName, Description, CategoryId)
-VALUES
-(3, 'Tant Sarees', 'Lightweight, handwoven cotton Bengali sarees', 1),
-(3, 'Jute Handicrafts', 'Eco-friendly bags, mats, and home items', 3),
-(3, 'Books (College Street)', 'Affordable and rare books from book hub', 9),
-(3, 'Terracotta & Clay Idols', 'Handmade Durga idols & figurines', 3),
-(3, 'Rasgulla & Sandesh', 'Iconic soft Bengali milk-based sweets', 10),
-(3, 'Kantha Embroidered Items', 'Hand-stitched quilts, sarees, and dupattas', 1);
 
---chennai
-INSERT INTO Products (CityId, ProductName, Description, CategoryId)
-VALUES
-(6, 'Kanchipuram Silk Sarees', 'Luxurious handwoven silk with gold borders', 1),
-(6, 'Herbal Hair Oils', 'Natural oils for hair growth and shine', 7),
-(6, 'Temple Jewellery', 'Traditional, ornate temple-style jewellery', 2),
-(6, 'Filter Coffee Powder', 'Strong, aromatic South Indian coffee blend', 10),
-(6, 'Wooden Toys (Maduravoyal)', 'Handcrafted eco-friendly wooden toys', 5),
-(6, 'Handmade Incense Sticks', 'Fragrant incense for prayers and peace', 6),
-(6, 'Brass Lamps & Utensils', 'Polished brassware for decor and rituals', 6),
-(6, 'Tanjore Paintings', 'Classical South Indian gold-leaf artwork', 3);
+INSERT INTO Shop (
+    ShopName,
+    EmailId,
+    CityId,
+    PINCODE,
+    ContactNumber,
+    Full_Address,
+    Latitude,
+    Longitude,
+    Opening_time,
+    ClosingTime,
+    VendorId
+)
+VALUES (
+    'Bandra Electronics Hub',
+    'bandra.electronics@example.com',
+    1,                  -- CityId (e.g., Mumbai)
+    '400050',           -- PINCODE
+    '9876543210',       -- Contact Number
+    'Near Bandra Station, Mumbai',
+    19.06000000,        -- Latitude
+    72.83000000,        -- Longitude
+    '10:00:00',         -- Opening time
+    '21:00:00',         -- Closing time
+    1                   -- VendorId
+);
 
---Bangalore
-INSERT INTO Products (CityId, ProductName, Description, CategoryId)
-VALUES
-(4, 'Mysore Silk Sarees', 'Rich silk sarees with golden borders', 1),
-(4, 'Channapatna Toys', 'Colorful wooden toys, safe and natural', 5),
-(4, 'Traditional Footwear (Kolhapuris)', 'Comfortable and handmade ethnic footwear', 4),
-(4, 'Sandalwood Products', 'Fragrant soaps, oils and perfumes', 7),
-(4, 'Handmade Soaps & Oils', 'Organic skincare from local artisans', 7),
-(4, 'Electronics', 'Affordable electronic items and gadgets', 9);
-
-select * from Products
-
---to reset identtity value 
-DBCC CHECKIDENT ('Products', RESEED, 0);
-
+INSERT INTO Vendor (
+    VendorName,
+    Email,
+    PasswordHash,
+    PhoneNumber
+)
+VALUES (
+    'Ravi Enterprises',
+    'ravi@example.com',
+    'hashed_password_123', -- Replace with actual hash
+    '9876543210'
+);
+INSERT INTO ShopProduct(
+    ShopId,
+    ProductId,
+    Price,
+    Stock
+)
+VALUES (
+    2,
+    1,
+    79999.00,
+    25
+);
+Select * from ShopProduct
+select * from City
+select * from Shop
+SELECT * FROM Vendor
+SELECT * FROM Products

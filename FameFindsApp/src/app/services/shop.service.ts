@@ -64,7 +64,7 @@ export class ShopService {
       `https://localhost:7249/api/Shop/isOpen?shopId=${shopId}&isOpen=${isOpen}`,
       {},
       { responseType: 'text' }
-    );
+    ).pipe(catchError(this.errorHandler))
   }
 
   deleteShop(shopId: number) {
@@ -73,7 +73,19 @@ export class ShopService {
       .delete("https://localhost:7249/api/Shop", { params, responseType: 'text' })
       .pipe(catchError(this.errorHandler));
   }
-   
+
+  getShopsByProduct(productName: string) {
+    const params = new HttpParams().set('productName', productName);
+    return this._http.get<IShop[]>("https://localhost:7249/api/Shop/productName", { params }).pipe(catchError(this.errorHandler))
+  }
+
+  getShopsByProductAndCityNames(productName: string, cityName: string) {
+    const params = new HttpParams()
+      .set('productName', productName)
+      .set('cityName', cityName);
+    return this._http.get<IShop[]>("https://localhost:7249/api/Shop/GetShops", { params }).pipe(catchError(this.errorHandler))
+
+  }
 
 
   errorHandler(error: HttpErrorResponse) {

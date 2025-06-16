@@ -8,5 +8,6 @@ namespace FameFindsWebServices.Models
         public int CityId { get; set; }
         [Required]
         public string CityName { get; set; } = null!;
+
     }
 }

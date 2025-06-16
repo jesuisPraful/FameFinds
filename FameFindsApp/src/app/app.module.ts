@@ -30,6 +30,7 @@ import { ForgotpasswordvendorService } from './services/forgotpasswordvendor.ser
 import { ForgotpasswordService } from './services/forgotpassword.service';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { CommonModule } from '@angular/common';
+import { ShopDetailsComponent } from './components/shop-details/shop-details.component';
 
  
 
@@ -53,6 +54,7 @@ import { CommonModule } from '@angular/common';
     RemoveCityComponent,
     AddShopsComponent,
     ForgotPasswordVendorComponent,
+    ShopDetailsComponent,
   ],
   imports: [
     BrowserModule,

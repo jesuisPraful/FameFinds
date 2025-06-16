@@ -1,7 +1,9 @@
 ﻿using FameFindsDAL;
 using FameFindsDAL.Models;
+//using FameFindsWebServices.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace FameFindsWebServices.Controllers
@@ -262,7 +264,7 @@ namespace FameFindsWebServices.Controllers
             try
             {
                 var shopList = _repository.GetShopsByProduct(productName);
-                if (shopList != null || !shopList.Any())
+                if (shopList != null || shopList.Any())
                 {
                     foreach (var shop in shopList)
                     {
@@ -305,7 +307,7 @@ namespace FameFindsWebServices.Controllers
                 var shopList = _repository.GetShopByCategoryName(categoryName);
                 if (shopList != null || !shopList.Any())
                 {
-                    foreach(var shop in shopList)
+                    foreach (var shop in shopList)
                     {
                         shops.Add(shop);
 
@@ -324,7 +326,42 @@ namespace FameFindsWebServices.Controllers
             }
         }
 
+        [HttpGet("GetShops")]
+        public IActionResult GetShopsByProductAndCity([FromQuery] string productName, [FromQuery] string cityName)
+        {
+            try
+            {
+                var shops = _repository.GetShopsByProductAndCity(productName, cityName);
 
+                if (shops == null || shops.Count == 0)
+                {
+                    return NotFound("No shops found for the given product and city.");
+                }
+
+                // Map to DTOs
+                var shopDTOs = shops.Select(shop => new Models.ShopDTO
+                {
+                    ShopId = shop.ShopId,
+                    ShopName = shop.ShopName,
+                    EmailId = shop.EmailId,
+                    CityId = shop.CityId,
+                    Pincode = shop.Pincode,
+                    ContactNumber = shop.ContactNumber,
+                    FullAddress = shop.FullAddress,
+                    Latitude = shop.Latitude,
+                    Longitude = shop.Longitude,
+                    IsOpen = shop.IsOpen,
+                    CreatedAt = shop.CreatedAt,
+                    VendorId = shop.VendorId
+                }).ToList();
+
+                return Ok(shopDTOs);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
         [HttpDelete]
         public IActionResult RemoveShop(int shopId)
         {
@@ -349,6 +386,7 @@ namespace FameFindsWebServices.Controllers
                 return BadRequest("Failed to Remove Shop");
             }
         }
+
 
         [HttpPut("contactNumber")]
         public IActionResult UpdateShopContactNumber(int shopId, string contactNumber)
