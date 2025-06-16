@@ -1,0 +1,93 @@
+.shop-details-container {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.shop-details-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+.shop-name {
+  font-size: 2rem;
+  color: #34495e;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.shop-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+  .shop-section label {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+
+  .shop-section span {
+    color: #555;
+  }
+
+.open {
+  color: green;
+  font-weight: bold;
+}
+
+.closed {
+  color: red;
+  font-weight: bold;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.btn-back,
+.btn-map {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+  .btn-map:hover,
+  .btn-back:hover {
+    background-color: #2980b9;
+  }
+
+.btn-rating {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+  .btn-rating:hover {
+    background-color: #e68900;
+  }

@@ -306,10 +306,27 @@ namespace FameFindsDAL
             }
             return products;
         }
+        public List<Product> GetProductsByCity(string cityName)
+        {
+            List<Product> products = new List<Product>();
+            try
+            {
+                products = (from p in _context.Products
+                            join c in _context.Cities on p.CityId equals c.CityId
+                            where c.CityName == cityName
+                            select p).ToList();
+
+            }
+            catch (Exception ex)
+            {
+                products = null;
+            }
+            return products;
+        }
         public bool AddProduct(Product product)
         {
             var name = (from p in _context.Products
-                        where p.ProductName == product.ProductName
+                        where p.ProductName == product.ProductName && p.CityId == product.CityId
                         select p).FirstOrDefault();
             bool status = false;
             if ((name == null))
@@ -404,8 +421,7 @@ namespace FameFindsDAL
             }
 
             return products;
-        }
-
+        }      
         #endregion
 
         #region Vendor
@@ -644,6 +660,7 @@ namespace FameFindsDAL
             {
                 var shopObj = _context.Shops.Find(rating.ShopId);
                 var customerObj = _context.Customers.Find(rating.CustomerId);
+
                 if (shopObj != null && customerObj != null)
                 {
                     _context.Ratings.Add(rating);
@@ -718,6 +735,22 @@ namespace FameFindsDAL
             }
             return status;
         }
+
+        public List<ShopWithRatingDto> GetShopsSortedByRating()
+        {
+            var result = (from shop in _context.Shops
+                          select new ShopWithRatingDto
+                          {
+                              ShopId = shop.ShopId,
+                              ShopName = shop.ShopName,
+                              AverageRating = shop.Ratings.Any() ? shop.Ratings.Average(r => r.RatingValue) : 0
+                          })
+                          .OrderByDescending(s => s.AverageRating)
+                          .ToList();
+
+            return result;
+        }
+
 
         #endregion
 
@@ -854,39 +887,87 @@ namespace FameFindsDAL
             List<Shop> shops = new List<Shop>();
             try
             {
-                Product product = _context.Products.Where(P => P.ProductName == productName).FirstOrDefault();
+                Product product = _context.Products
+                    .Where(P => P.ProductName.ToLower() == productName.ToLower())
+                    .FirstOrDefault();
 
-                List<ShopProduct> ListShopsProducts = new List<ShopProduct>();
-                ListShopsProducts = _context.ShopProducts
-                                        .Where(sp => sp.ProductId == product.ProductId)
-                                        .GroupBy(sp => sp.ShopId)
-                                        .Select(g => g.First())
-                                        .ToList();
+                if (product == null)
+                {
+                    Console.WriteLine("No matching product found.");
+                    return shops;
+                }
 
-
-
+                List<ShopProduct> ListShopsProducts = _context.ShopProducts
+                    .Where(sp => sp.ProductId == product.ProductId)
+                    .GroupBy(sp => sp.ShopId)
+                    .Select(g => g.First())
+                    .ToList();
 
                 foreach (var shopProduct in ListShopsProducts)
                 {
-                    Shop shop = new Shop();
-                    shop = _context.Shops.Find(shopProduct.ShopId);
+                    Shop shop = _context.Shops.Find(shopProduct.ShopId);
+
                     if (shop != null)
                     {
                         shops.Add(shop);
                     }
                 }
-
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine("Exception: " + ex.Message);
                 shops = null;
             }
             return shops;
         }
 
+        // ADDED TO FETCH PRODUCTS AND CITIES.
+        public List<Shop> GetShopsByProductAndCity(string productName, string cityName)
+        {
+            List<Shop> shops = new List<Shop>();
+            try
+            {
+                // Get City
+                City city = _context.Cities.FirstOrDefault(c => c.CityName.ToLower() == cityName.ToLower());
+                if (city == null)
+                {
+                    Console.WriteLine("No matching city found.");
+                    return shops;
+                }
 
+                // Get Product
+                Product product = _context.Products
+                    .FirstOrDefault(p => p.ProductName.ToLower() == productName.ToLower());
 
+                if (product == null)
+                {
+                    Console.WriteLine("No matching product found.");
+                    return shops;
+                }
 
+                // Get Shop-Product links
+                List<ShopProduct> shopProducts = _context.ShopProducts
+                    .Where(sp => sp.ProductId == product.ProductId)
+                    .GroupBy(sp => sp.ShopId)
+                    .Select(g => g.First())
+                    .ToList();
+
+                foreach (var sp in shopProducts)
+                {
+                    Shop shop = _context.Shops.FirstOrDefault(s => s.ShopId == sp.ShopId && s.CityId == city.CityId);
+                    if (shop != null)
+                    {
+                        shops.Add(shop);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                shops = null;
+            }
+            return shops;
+        }
         public List<Shop> GetShopByCategoryName(string categoryName)
         {
 

@@ -23,10 +23,6 @@ public partial class Shop
 
     public decimal Longitude { get; set; }
 
-    public TimeOnly? OpeningTime { get; set; }
-
-    public TimeOnly? ClosingTime { get; set; }
-
     public bool? IsOpen { get; set; }
 
     public DateTime? CreatedAt { get; set; }

@@ -1,0 +1,57 @@
+<div class="shop-details-container">
+  <header>
+    <div class="logo" tabindex="0">CityFamous</div>
+  </header>
+
+  <div class="shop-details-card">
+    <h2 class="shop-name">{{ shop?.shopName }}</h2>
+
+    <div class="shop-section">
+      <label>Email:</label>
+      <span>{{ shop?.emailId }}</span>
+    </div>
+
+    <div class="shop-section">
+      <label>Contact:</label>
+      <span>{{ shop?.contactNumber }}</span>
+    </div>
+
+    <div class="shop-section">
+      <label>Address:</label>
+      <span>{{ shop?.fullAddress }}</span>
+    </div>
+
+    <div class="shop-section">
+      <label>PINCODE:</label>
+      <span>{{ shop?.pincode }}</span>
+    </div>
+
+    <div class="shop-section">
+      <label>Status:</label>
+      <span [class.open]="shop?.isOpen" [class.closed]="!shop?.isOpen">
+        {{ shop?.isOpen ? 'Open' : 'Closed' }}
+      </span>
+    </div>
+
+    <!-- Average Rating -->
+    <div class="shop-section" *ngIf="shop?.averageRating">
+      <label>Rating:</label>
+      <span class="rating-stars">
+        <ng-container *ngFor="let star of [1,2,3,4,5]; let i = index">
+          <span class="star" [class.filled]="i < Math.round(shop?.averageRating || 0)">★</span>
+        </ng-container>
+        <span class="rating-value">({{ (shop?.averageRating || 0).toFixed(1) }})</span>
+      </span>
+    </div>
+
+    <!-- Give Rating Button -->
+    <div class="shop-section">
+      <button class="btn-rate" (click)="giveRating()">Give Rating</button>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn-back" (click)="goBack()">Back</button>
+      <button class="btn-map" (click)="openInMap()">View on Map</button>
+    </div>
+  </div>
+</div>

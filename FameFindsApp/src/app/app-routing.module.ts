@@ -15,7 +15,14 @@ import { RemoveShopComponent } from './components/remove-shop/remove-shop.compon
 import { AddCityComponent } from './components/add-city/add-city.component';
 import { RemoveCityComponent } from './components/remove-city/remove-city.component';
 import { AddShopsComponent } from './components/add-shops/add-shops.component';
+<<<<<<< HEAD
 import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
+=======
+import { ViewProductsComponent } from './components/view-products/view-products.component';
+import { ShopDetailsComponent } from './components/shop-details/shop-details.component';
+import { RatingComponent } from './components/rating/rating.component';
+
+>>>>>>> 6fd2d00a5a39d6d0b543ae401113af0d0be00092
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -34,9 +41,17 @@ const routes: Routes = [
   { path: 'add-city', component: AddCityComponent },
   { path: 'remove-city', component: RemoveCityComponent },
   { path: 'add-shops', component: AddShopsComponent },
+<<<<<<< HEAD
   { path: 'vendorregister', component: RegistrationPage2Component },
   { path: '**', component: LandingComponent }, // wildcard should come last
 
+=======
+  { path: 'view-products', component: ViewProductsComponent },
+  { path: 'shop-details', component: ShopDetailsComponent },
+  { path: 'rate-shop', component: RatingComponent },
+  { path: '**', component: LandingComponent }, // wildcard should come last
+  
+>>>>>>> 6fd2d00a5a39d6d0b543ae401113af0d0be00092
 
 
 ];

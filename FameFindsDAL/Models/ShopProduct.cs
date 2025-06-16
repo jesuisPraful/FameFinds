@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FameFindsDAL.Models;
 
@@ -15,7 +16,9 @@ public partial class ShopProduct
 
     public int? Stock { get; set; }
 
+    [ForeignKey("ProductId")]
     public virtual Product? Product { get; set; }
 
+    [ForeignKey("ShopId")]
     public virtual Shop? Shop { get; set; }
 }

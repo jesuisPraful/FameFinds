@@ -8,11 +8,11 @@
 
       <label for="email">📧 Email Address</label>
       <input type="email" [(ngModel)]="user.email" id="email" name="email" placeholder="example@domain.com" (blur)="checkEmailExists()" required email />
-      <div *ngIf="emailExists" class="error-msg">⚠️ Email already exists.</div>
+      <div *ngIf="emailExists" class="error-msg">⚠ Email already exists.</div>
 
       <label for="phone">📞 Phone Number</label>
       <input type="text" id="phone" name="phoneNumber" placeholder="1234567890" [(ngModel)]="user.phoneNumber" #phoneInput="ngModel" (blur)="validatePhoneNumber()" maxlength="10" required />
-      <div *ngIf="phoneError" class="error-msg">⚠️ Phone number must be exactly 10 digits.</div>
+      <div *ngIf="phoneError" class="error-msg">⚠ Phone number must be exactly 10 digits.</div>
 
       <label for="password">🔒 Password</label>
       <input type="password" id="password" name="password" placeholder="••••••••" [(ngModel)]="user.password" required minlength="6" />
@@ -24,5 +24,5 @@
       <a href="#">Already have an account? <span>Login here</span> 🔑</a>
     </div>
   </div>
-
-  
+  </div>
+        
