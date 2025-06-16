@@ -11,4 +11,64 @@
   </div>
 
   <p *ngIf="showMessage">No cities found.</p>
-</div>-->
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Top Cities</title>-->
+<!--<link rel="stylesheet" href="style.css">-->
+<!--</head>
+<body>
+
+  <div class="city-container">
+    <h2 class="heading">Top Cities</h2>
+    <div class="search-bar">
+      <input type="text" placeholder="Search" />
+    </div>
+
+    <div class="city-grid">
+      <div class="city-card">
+        <img src="../../../assets/images/Mumbai.jpg"  >
+        <h3>Mumbai</h3>
+        <p>City of dreams and skyscrapers.</p>
+      </div>
+      <div class="city-card">
+        <img src="images/los-angeles.jpg" alt="Los Angeles">
+        <h3>Los Angeles</h3>
+        <p>Entertainment capital of the world.</p>
+      </div>
+      <div class="city-card">
+        <img src="images/hyderabad.jpg" alt="Hyderabad">
+        <h3>Hyderabad</h3>
+        <p>City of pearls and biryani.</p>
+      </div>
+      <div class="city-card">
+        <img src="images/pune.jpg" alt="Pune">
+        <h3>Pune</h3>
+        <p>Education and IT hub.</p>
+      </div>
+      <div class="city-card">
+        <img src="images/kolkata.jpg" alt="Kolkata">
+        <h3>Kolkata</h3>
+        <p>Cultural capital of India.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>-->
+
+<div class="city-container">
+  <h2>All Cities</h2>
+  <input type="text"
+         [(ngModel)]="searchByName"
+         (input)="searchCity(searchByName)"
+         placeholder="Search city by name" />
+  <div class="city-grid">
+    <div *ngFor="let city of filteredCities" class="city-card" (click)="goToProducts(city.cityName)">
+      <img [src]="'assets/images/' + city.cityName + '.jpg'" />
+      <h3>{{ city.cityName }}</h3>
+    </div>
+  </div>
+</div>

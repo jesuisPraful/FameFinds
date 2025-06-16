@@ -132,14 +132,7 @@ CREATE TABLE Rating (
 );
 GO
 
-SELECT * FROM Products
-
-INSERT INTO City VALUES 
-(1,'HYDERABAD'),
-( 2, 'MUMBAI')
-
-select * from City
-
+--Final categories
 INSERT INTO Category  VALUES
 ( 'Clothing'),
 ('Electronics'),
@@ -151,9 +144,110 @@ INSERT INTO Category  VALUES
 ('Stationery & Books'),
 ( 'Toys & Games'),
 ('Local Snacks & Food Items');
+Select * from Category 
 
-Select * from CustomerPasswordResetTokens
+--Final cities
+INSERT INTO City VALUES
+(1, 'HYDERABAD'),
+(2, 'MUMBAI'),
+(3, 'KOLKATA'),
+(4, 'BANGALORE'),
+(5, 'DELHI'),
+(6, 'CHENNAI');
 
+
+
+--Hyderabad
+INSERT INTO Products (CityId, ProductName, Description, CategoryId)
+VALUES 
+(1, 'Hyderabadi Biryani', 'Spicy layered rice delicacy', 10),
+(1, 'Irani Chai', 'Strong tea with creamy milk', 10),
+(1, 'Pearls', 'Elegant white Hyderabad pearls', 7),
+(1, 'Pochampally Sarees', 'Traditional Ikat woven sarees', 1),
+(1, 'Mutton Haleem', 'Ramzan special meat porridge', 10),
+(1, 'Attar', 'Natural fragrant oil perfumes', 3),
+(1, 'Laad Bazaar Bangles', 'Colorful traditional glass bangles', 7),
+(1, 'Maska Bun', 'Soft bun with fresh butter', 10);
+
+--Mumbai
+INSERT INTO Products (CityId, ProductName, Description, CategoryId)
+VALUES
+(2, 'Kolhapuri Chappals', 'Traditional handcrafted leather sandals', 5),
+(2, 'Spices and Dry Fruits', 'Rich aromatic blends and nuts', 4),
+(2, 'Pav Bhaji', 'Spicy mashed veggies with bread', 10),
+(2, 'Ragda Pattice', 'Potato patties with white pea curry', 10),
+(2, 'Paithani Sarees', 'Rich silk sarees with zari work', 1),
+(2, 'Copper & Brass Kitchenware', 'Traditional utensils with antique look', 4),
+(2, 'Worli Paintings', 'Traditional tribal art of Maharashtra', 3);
+
+--Delhi
+INSERT INTO Products (CityId, ProductName, Description, CategoryId)
+VALUES
+(5, 'Silver Jewelry', 'Delicate silver jewelry with ethnic flair', 2),
+(5, 'Juttis', 'Embroidered Punjabi leather footwear', 5),
+(5, 'Hand-painted Pottery', 'Artisanal pottery with folk designs', 4),
+(5, 'Ethnic Dupattas & Shawls', 'Colorful wraps with embroidery and prints', 1),
+(5, 'Handicrafts (Dilli Haat)', 'All-India crafts under one roof', 3),
+(5, 'Spices', 'Aromatic spices from Asia’s biggest market', 10),
+(5, 'Ittar (Old Delhi)', 'Natural oil-based long-lasting perfumes', 8);
+
+
+INSERT INTO Shop (
+    ShopName,
+    EmailId,
+    CityId,
+    PINCODE,
+    ContactNumber,
+    Full_Address,
+    Latitude,
+    Longitude,
+    Opening_time,
+    ClosingTime,
+    VendorId
+)
+VALUES (
+    'Bandra Electronics Hub',
+    'bandra.electronics@example.com',
+    1,                  -- CityId (e.g., Mumbai)
+    '400050',           -- PINCODE
+    '9876543210',       -- Contact Number
+    'Near Bandra Station, Mumbai',
+    19.06000000,        -- Latitude
+    72.83000000,        -- Longitude
+    '10:00:00',         -- Opening time
+    '21:00:00',         -- Closing time
+    1                   -- VendorId
+);
+
+INSERT INTO Vendor (
+    VendorName,
+    Email,
+    PasswordHash,
+    PhoneNumber
+)
+VALUES (
+    'Ravi Enterprises',
+    'ravi@example.com',
+    'hashed_password_123', -- Replace with actual hash
+    '9876543210'
+);
+INSERT INTO ShopProduct(
+    ShopId,
+    ProductId,
+    Price,
+    Stock
+)
+VALUES (
+    2,
+    1,
+    79999.00,
+    25
+);
+Select * from ShopProduct
+select * from City
+select * from Shop
+SELECT * FROM Vendor
+SELECT * FROM Products
 Select * from Shop
 
 

@@ -3,6 +3,8 @@ using FameFindsDAL.Models;
 using FameFindsWebServices.Models;
 using FameFindsWebServices.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 internal class Program
 {
@@ -13,8 +15,17 @@ internal class Program
         // Add services to the container.
 
         builder.Services.AddControllers();
+        builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+        options.JsonSerializerOptions.WriteIndented = true;
+    });
+
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
+
+        builder.Services.AddSwaggerGen();
         builder.Services.AddSwaggerGen(options =>
         {
             options.CustomSchemaIds(type => type.ToString());
@@ -23,6 +34,11 @@ internal class Program
         builder.Services.Configure<SmtpSettings>(
     builder.Configuration.GetSection("SmtpSettings"));
 
+        builder.Services.AddSwaggerGen(options =>
+        {
+            options.CustomSchemaIds(type => type.ToString());
+        }
+        );
 
         builder.Services.AddScoped<FameFindsRepository>();
         builder.Services.AddScoped<FameFindsContext>();

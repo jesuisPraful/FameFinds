@@ -1,63 +1,64 @@
-//import { Component } from '@angular/core';
-//import { VendorService } from '../../services/vendor.service';
-//import { NgForm } from '@angular/forms';
+import { Component } from '@angular/core';
+import { VendorService } from '../../services/vendor.service';
+import { NgForm } from '@angular/forms';
 
-//@Component({
-//  selector: 'app-login-vendor',
-//  templateUrl: './login-vendor.component.html',
-//  styleUrls: ['./login-vendor.component.css']
-//})
-//export class LoginVendorComponent {
-//  message: string;
-//  showDiv: boolean;
-//  passwordLength: number;
-//  highlightLogin: boolean;
-//  showPassword: boolean;
-//  constructor(private _vendorService: VendorService) {
-//    this.message = "";
-//    this.showDiv = false;
-//    this.passwordLength = 0;
-//    this.highlightLogin = false;
-//    this.showPassword = false;
-//  }
-//  login(form: NgForm) {
-//    this._vendorService
-//      .validateCredentials(form.value.email, form.value.passwordHash)
-//      .subscribe(
-//        (resSuccess) => {
-//          console.log(resSuccess);
-//          //admin, customer or invalid credentials
-//          if (resSuccess == true) {
-//            sessionStorage.setItem("Email", form.value.email);
-//            sessionStorage.setItem("value", resSuccess);
-//            alert("Login Successfull!\n Welcome to FameFinds " + form.value.email);
-//            //sessionStorage.setItem("Role", resSuccess.toString());  in this if credentials are true api method is returning true are false but not the role of user wether it is vendor or customer so no need to store this.
-//            /*this._router.navigate(["/home"]);*/
-//          }
-//          else {
-//            alert("Invalid credentials! Please try again.")
-//            //this.message = "Invalid credentials! Please try again.";
-//            //this.showDiv = true;
-//          }
-//        },
-//        (resError) => {
-//          console.log(resError);
-//          this.message = "Some error occured.";
-//          this.showDiv = true;
-//        },//exception in calling the API i.e this method
-//        () => { console.log("validate credentials executed"); }
-//      );
-//  }
+@Component({
+  selector: 'app-login-vendor',
+  templateUrl: './login-vendor.component.html',
+  styleUrls: ['./login-vendor.component.css']
+})
+export class LoginVendorComponent {
+  message: string;
+  showDiv: boolean;
+  passwordLength: number;
+  highlightLogin: boolean;
+  showPassword: boolean;
+  constructor(private _vendorService: VendorService) {
+    this.message = "";
+    this.showDiv = false;
+    this.passwordLength = 0;
+    this.highlightLogin = false;
+    this.showPassword = false;
+  }
+  login(form: NgForm) {
+    this._vendorService
+      .validateCredentials(form.value.email, form.value.passwordHash)
+      .subscribe(
+        (resSuccess) => {
+          console.log(resSuccess);
+          //admin, customer or invalid credentials
+          if (resSuccess == true) {
+            sessionStorage.setItem("Email", form.value.email);
+            sessionStorage.setItem("value", resSuccess);
+            alert("Login Successfull!\n Welcome to FameFinds " + form.value.email);
+            localStorage.setItem('vendorId', resSuccess.vendorId);
+            //sessionStorage.setItem("Role", resSuccess.toString());  in this if credentials are true api method is returning true are false but not the role of user wether it is vendor or customer so no need to store this.
+            /*this._router.navigate(["/home"]);*/
+          }
+          else {
+            alert("Invalid credentials! Please try again.")
+            //this.message = "Invalid credentials! Please try again.";
+            //this.showDiv = true;
+          }
+        },
+        (resError) => {
+          console.log(resError);
+          this.message = "Some error occured.";
+          this.showDiv = true;
+        },//exception in calling the API i.e this method
+        () => { console.log("validate credentials executed"); }
+      );
+  }
 
-//  onPasswordInput(event: any) {
-//    const value = event.target.value || '';
-//    this.passwordLength = value.length;
-//    this.highlightLogin = this.passwordLength >= 8;
-//  }
+  onPasswordInput(event: any) {
+    const value = event.target.value || '';
+    this.passwordLength = value.length;
+    this.highlightLogin = this.passwordLength >= 8;
+  }
 
-//  togglePasswordVisibility() {
-//    this.showPassword = !this.showPassword;
-//  }
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
 
 
-//}
+}

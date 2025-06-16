@@ -1,5 +1,6 @@
 export interface IProduct {
-  productId:number,
+  productId: number,
+  cityId:number,
 productName: string,
   description: string,
     categoryId: number
