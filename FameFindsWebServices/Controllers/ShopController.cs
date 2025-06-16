@@ -420,19 +420,19 @@ namespace FameFindsWebServices.Controllers
 
         // For Ratings
 
-        [HttpGet("sorted-by-rating")]
-        public IActionResult GetShopsSortedByRating()
-        {
-            try
-            {
-                var sortedShops = _repository.GetShopsSortedByRating();
-                return Ok(sortedShops);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
-            }
-        }
+        //[HttpGet("sorted-by-rating")]
+        //public IActionResult GetShopsSortedByRating()
+        //{
+        //    try
+        //    {
+        //        var sortedShops = _repository.GetShopsSortedByRating();
+        //        return Ok(sortedShops);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+        //    }
+        //}
 
 
     }
