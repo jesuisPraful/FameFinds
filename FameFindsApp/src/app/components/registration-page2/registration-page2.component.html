@@ -2,7 +2,7 @@
   <div class="register-box">
     <h2>🛍️ Vendor Registration</h2>
 
-    <form #registerForm="ngForm" (ngSubmit)="registerVendor(registerForm)">
+    <form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm)">
       <label for="fullname">👤 Full Name</label>
       <input type="text"
              id="fullname"
@@ -47,4 +47,4 @@
 
       <a routerLink="/vendorlogin">Already have an account? <span>Login here</span></a>
     </div>
-  </div
+  </div>

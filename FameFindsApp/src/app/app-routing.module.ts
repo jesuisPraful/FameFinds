@@ -16,6 +16,7 @@ import { AddCityComponent } from './components/add-city/add-city.component';
 import { RemoveCityComponent } from './components/remove-city/remove-city.component';
 import { AddShopsComponent } from './components/add-shops/add-shops.component';
 import { ViewProductsComponent } from './components/view-products/view-products.component';
+import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistrationPageComponent },
   { path: 'vendorlogin', component: LoginVendorComponent },
+  { path:'vendorregister',component:RegistrationPage2Component},
   { path: 'view-shops', component: ViewShopsComponent },
   { path: 'view-cities', component: ViewCitiesComponent },
   { path: 'update-shop', component: UpdateShopComponent }, // optional version without route param
