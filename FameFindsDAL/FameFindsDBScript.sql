@@ -154,3 +154,4 @@ INSERT INTO Category  VALUES
 
 Select * from city
 select * from category
+select * from products

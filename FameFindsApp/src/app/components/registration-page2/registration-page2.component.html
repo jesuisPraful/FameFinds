@@ -3,9 +3,8 @@
     <h2>🛍️ Vendor Registration</h2>
 
     <form #registerForm="ngForm" (ngSubmit)="registerVendor(registerForm)">
-      <label for="fullname">👤 Full Name</label>
+      <label for="vendorName">👤 Full Name</label>
       <input type="text"
-             id="fullname"
              name="fullname"
              placeholder="Full Name"
              [(ngModel)]="vendor.vendorName"

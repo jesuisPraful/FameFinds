@@ -1,4 +1,3 @@
-/* Full screen layout */
 body, html {
   height: 100%;
   margin: 0;
@@ -14,7 +13,6 @@ body, html {
   min-height: 100vh;
   background-image: url('/assets/images/login-form-template.png');
   background-size: cover;
-  /*  background-color: #f9f9f9;*/
 }
 
 .login-box {
@@ -43,7 +41,6 @@ body, html {
   text-align: left;
   color: #333;
 }
-
 
 .login-box input {
   width: 100%;
@@ -99,8 +96,7 @@ button {
 }
 
 .highlight {
-  background-color: #28a745 !important; /* Green */
-  /*  color: white;*/
+  background-color: #28a745 !important;
   border: 2px solid #155724;
 }
 
@@ -117,7 +113,7 @@ button.dull {
 
   .password-wrapper input {
     width: 100%;
-    padding-right: 35px; /* space for the eye icon */
+    padding-right: 35px; 
   }
 
 .eye-icon {

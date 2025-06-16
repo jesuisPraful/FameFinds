@@ -15,6 +15,7 @@ import { RemoveShopComponent } from './components/remove-shop/remove-shop.compon
 import { AddCityComponent } from './components/add-city/add-city.component';
 import { RemoveCityComponent } from './components/remove-city/remove-city.component';
 import { AddShopsComponent } from './components/add-shops/add-shops.component';
+import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -29,11 +30,13 @@ const routes: Routes = [
   { path: 'update-shop', component: UpdateShopComponent }, // optional version without route param
   { path: 'update-shop/:id', component: UpdateShopComponent }, // version with route param
   { path: 'is-open', component: IsOpenComponent }, // new route for is-open component
-  { path: '**', component: LandingComponent }, // wildcard should come last
   { path: 'remove-shop', component: RemoveShopComponent },
   { path: 'add-city', component: AddCityComponent },
   { path: 'remove-city', component: RemoveCityComponent },
   { path: 'add-shops', component: AddShopsComponent },
+  { path: 'vendorregister', component: RegistrationPage2Component },
+  { path: '**', component: LandingComponent }, // wildcard should come last
+
 
 
 ];

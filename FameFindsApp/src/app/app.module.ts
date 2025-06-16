@@ -25,12 +25,15 @@ import { RemoveShopComponent } from './components/remove-shop/remove-shop.compon
 import { AddCityComponent } from './components/add-city/add-city.component';
 import { RemoveCityComponent } from './components/remove-city/remove-city.component';
 import { AddShopsComponent } from './components/add-shops/add-shops.component';
+import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
+import { Register2Service } from './services/register2.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewProductsComponent,
     RegistrationPageComponent,
+    RegistrationPage2Component,
     LoginComponent,
     LandingComponent,
     LoginVendorComponent,
@@ -55,6 +58,7 @@ import { AddShopsComponent } from './components/add-shops/add-shops.component';
   providers: [
     ProductService,
     RegisterService,
+    Register2Service,
     CustomerService,
     VendorService,
     ShopService
