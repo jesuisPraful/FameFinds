@@ -180,6 +180,26 @@ VALUES
 (2, 'Copper & Brass Kitchenware', 'Traditional utensils with antique look', 4),
 (2, 'Worli Paintings', 'Traditional tribal art of Maharashtra', 3);
 
+--KOLKATA
+INSERT INTO Products (CityId, ProductName, Description, CategoryId)
+VALUES
+(3, 'Tant Sarees', 'Lightweight, handwoven cotton Bengali sarees', 1),
+(3, 'Jute Handicrafts', 'Eco-friendly bags, mats, and home items', 3),
+(3, 'Books (College Street)', 'Affordable and rare books from book hub', 9),
+(3, 'Terracotta & Clay Idols', 'Handmade Durga idols & figurines', 3),
+(3, 'Rasgulla & Sandesh', 'Iconic soft Bengali milk-based sweets', 10),
+(3, 'Kantha Embroidered Items', 'Hand-stitched quilts, sarees, and dupattas', 1);
+
+--BANGALORE
+INSERT INTO Products (CityId, ProductName, Description, CategoryId)
+VALUES
+(4, 'Mysore Silk Sarees', 'Rich silk sarees with golden borders', 1),
+(4, 'Channapatna Toys', 'Colorful wooden toys, safe and natural', 5),
+(4, 'Traditional Footwear (Kolhapuris)', 'Comfortable and handmade ethnic footwear', 4),
+(4, 'Sandalwood Products', 'Fragrant soaps, oils and perfumes', 7),
+(4, 'Handmade Soaps & Oils', 'Organic skincare from local artisans', 7),
+(4, 'Electronics', 'Affordable electronic items and gadgets', 9);
+
 --Delhi
 INSERT INTO Products (CityId, ProductName, Description, CategoryId)
 VALUES
@@ -190,6 +210,19 @@ VALUES
 (5, 'Handicrafts (Dilli Haat)', 'All-India crafts under one roof', 3),
 (5, 'Spices', 'Aromatic spices from Asia’s biggest market', 10),
 (5, 'Ittar (Old Delhi)', 'Natural oil-based long-lasting perfumes', 8);
+
+--CHENNAI
+INSERT INTO Products (CityId, ProductName, Description, CategoryId)
+VALUES
+(6, 'Kanchipuram Silk Sarees', 'Luxurious handwoven silk with gold borders', 1),
+(6, 'Herbal Hair Oils', 'Natural oils for hair growth and shine', 7),
+(6, 'Temple Jewellery', 'Traditional, ornate temple-style jewellery', 2),
+(6, 'Filter Coffee Powder', 'Strong, aromatic South Indian coffee blend', 10),
+(6, 'Wooden Toys (Maduravoyal)', 'Handcrafted eco-friendly wooden toys', 5),
+(6, 'Handmade Incense Sticks', 'Fragrant incense for prayers and peace', 6),
+(6, 'Brass Lamps & Utensils', 'Polished brassware for decor and rituals', 6),
+(6, 'Tanjore Paintings', 'Classical South Indian gold-leaf artwork', 3);
+
 
 
 INSERT INTO Shop (
@@ -208,7 +241,7 @@ INSERT INTO Shop (
 VALUES (
     'Bandra Electronics Hub',
     'bandra.electronics@example.com',
-    1,                  -- CityId (e.g., Mumbai)
+    2,                  -- CityId (e.g., Mumbai)
     '400050',           -- PINCODE
     '9876543210',       -- Contact Number
     'Near Bandra Station, Mumbai',
@@ -238,8 +271,8 @@ INSERT INTO ShopProduct(
     Stock
 )
 VALUES (
-    2,
     1,
+    10,
     79999.00,
     25
 );
