@@ -1158,6 +1158,22 @@ namespace FameFindsDAL
             }
         }
 
+        // For vendor rating
+        public List<object> GetRatingsByVendor(int vendorId)
+        {
+            var ratings = (from r in _context.Ratings
+                           where r.Shop != null && r.Shop.VendorId == vendorId
+                           select new
+                           {
+                               CustomerName = r.Customer != null ? r.Customer.FullName : "Unknown",
+                               RatingValue = r.RatingValue ?? 0,
+                               Review = r.Review,
+                               CreatedAt = r.CreatedAt
+                           }).ToList<object>();
+
+            return ratings;
+        }
+
         #endregion
 
         #region city

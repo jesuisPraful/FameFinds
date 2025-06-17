@@ -27,6 +27,7 @@ import { ShowShopproductComponent } from './components/show-shopproduct/show-sho
 import { UpdateShopproductpriceComponent } from './components/update-shopproductprice/update-shopproductprice.component';
 import { UpdateShopproductstockComponent } from './components/update-shopproductstock/update-shopproductstock.component';
 import { MapPickerComponent } from './components/map-picker/map-picker.component';
+import { ViewRatingComponent } from './components/view-rating/view-rating.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -54,7 +55,7 @@ const routes: Routes = [
   { path: 'update-contact-number', component: UpdateShopContactnumberComponent },
   { path: 'update-email', component: UpdateshopEmailComponent },
   { path: 'update-name', component: UpdateshopNameComponent },
-  { path: '**', component: LandingComponent },
+  { path: 'view-rating', component: ViewRatingComponent },
   { path: 'map-picker', component: MapPickerComponent },
   { path: '**', component: LandingComponent }, // wildcard should come last
   { path: 'shop-products', component: ShowShopproductComponent },

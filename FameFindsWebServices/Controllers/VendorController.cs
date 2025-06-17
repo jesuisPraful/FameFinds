@@ -3,6 +3,7 @@ using FameFindsWebServices.Models;
 using FameFindsWebServices.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ResetModel = FameFindsWebServices.Models.ResetPasswordRequest;
 
 
@@ -278,6 +279,15 @@ namespace FameFindsWebServices.Controllers
                 return StatusCode(500, "Error updating password.");
 
             return Ok("Password reset successful.");
+        }
+
+        // for view-ratings
+
+        [HttpGet("RatingsByVendor/{vendorId}")]
+        public IActionResult GetRatingsByVendor(int vendorId)
+        {
+            var ratings = _repository.GetRatingsByVendor(vendorId);
+            return Ok(ratings);
         }
 
 
