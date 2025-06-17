@@ -122,3 +122,27 @@ header {
   .btn-view-map:hover {
     background-color: #27ae60;
   }
+
+
+.rating-stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 18px;
+  color: #ccc;
+}
+
+  .rating-stars .star {
+    cursor: default;
+    transition: color 0.3s;
+  }
+
+    .rating-stars .star.filled {
+      color: #FFD700; /* Gold color for filled stars */
+    }
+
+.rating-value {
+  font-size: 14px;
+  margin-left: 6px;
+  color: #444;
+}

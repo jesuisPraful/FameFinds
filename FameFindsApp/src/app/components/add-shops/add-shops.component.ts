@@ -1,102 +1,158 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { IShop } from '../../Models/shop';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ShopService } from '../../services/shop.service';
-import { MapInfoWindow, MapMarker } from '@angular/google-maps';
+import { Router } from '@angular/router';
+import { ICity } from '../../Models/city';
+import { IShop } from '../../Models/shop';
 
 @Component({
   selector: 'app-add-shops',
   templateUrl: './add-shops.component.html',
   styleUrls: ['./add-shops.component.css']
 })
-export class AddShopsComponent {
-  newShop: IShop = {
-    shopId: 0,
-    shopName: '',
-    emailId: '',
-    cityId: 0,
-    pincode: '',
-    contactNumber: '',
-    fullAddress: '',
-    latitude: 0,
-    longitude: 0,
-    isOpen: false,
-    createdAt: new Date(),
-    vendorId: 0
-  };
-
+export class AddShopsComponent implements OnInit {
+  shopForm!: FormGroup;
+  cities: ICity[] = [];
+  cityNotInDb: boolean = false;
   message: string = '';
-  center: google.maps.LatLngLiteral = { lat: 20.5937, lng: 78.9629 };
-  zoom = 5;
-  markerPosition: google.maps.LatLngLiteral | null = null;
+  loading = false;
+  vendorId: string;
 
-  constructor(public _shopService: ShopService, public _router: Router) { }
+  constructor(
+    private fb: FormBuilder,
+    private shopService: ShopService,
+    private router: Router
+  ) {
+    this.vendorId = '';
+  }
 
-  onMapClick(event: google.maps.MapMouseEvent): void {
-    if (event.latLng) {
-      const lat = event.latLng.lat();
-      const lng = event.latLng.lng();
-      this.newShop.latitude = lat;
-      this.newShop.longitude = lng;
-      this.markerPosition = { lat, lng };
+  ngOnInit(): void {
+    this.shopForm = this.fb.group({
+      shopName: ['', Validators.required],
+      emailId: ['', [Validators.required, Validators.email]],
+      cityId: ['', Validators.required],
+      pincode: ['', Validators.required],
+      contactNumber: ['', Validators.required],
+      fullAddress: ['', Validators.required],
+      latitude: [''],
+      longitude: [''],
+      isOpen: [true],
+      openingTime: [''],
+      closingTime: ['']
+    });
+
+    this.getAllCities();
+
+    const storedLat = localStorage.getItem('selectedLat');
+    const storedLng = localStorage.getItem('selectedLng');
+
+    if (storedLat && storedLng) {
+      this.shopForm.patchValue({
+        latitude: parseFloat(storedLat),
+        longitude: parseFloat(storedLng)
+      });
+
+      // Auto-fetch address if lat/lng exists from map-picker
+      this.fetchLocationDetails(parseFloat(storedLat), parseFloat(storedLng));
     }
   }
 
-  //addShop(): void {
-  //  if (!this.newShop.latitude || !this.newShop.longitude) {
-  //    this.message = 'Please select a location on the map.';
-  //    return;
-  //  }
+  getAllCities(): void {
+    this.shopService.getCities().subscribe({
+      next: (res) => {
+        this.cities = res;
+      },
+      error: (err) => {
+        console.error('Error fetching cities:', err);
+      }
+    });
+  }
 
-  //  this.newShop.createdAt = new Date();
-
-  //  this._shopService.addShop(this.newShop).subscribe(
-  //    (response) => {
-  //      console.log('Shop added successfully:', response);
-  //      this.message = 'Shop added successfully!';
-  //      this._router.navigate(['/view-shops']);
-  //    },
-  //    (error) => {
-  //      console.error('Error adding shop:', error);
-  //      this.message = 'Error adding shop. Please try again.';
-  //    }
-  //  );
-  //}
-  addShop(): void {
-    if (!this.newShop.latitude || !this.newShop.longitude) {
-      this.message = 'Please select a location on the map.';
+  useMyLocation(): void {
+    if (!navigator.geolocation) {
+      this.message = 'Geolocation is not supported by your browser.';
       return;
     }
 
-    this.newShop.createdAt = new Date();
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
 
-    this._shopService.addShop(this.newShop).subscribe({
-      next: (response) => {
-        console.log('Shop added successfully:', response);
+        this.shopForm.patchValue({
+          latitude: lat,
+          longitude: lng
+        });
+
+        this.fetchLocationDetails(lat, lng);
+      },
+      () => {
+        this.message = 'Unable to retrieve your location.';
+      }
+    );
+  }
+
+  fetchLocationDetails(lat: number, lng: number): void {
+    fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`)
+      .then((res) => res.json())
+      .then((data) => {
+        const address = data.address;
+        const fullAddress = data.display_name || '';
+        const pincode = address.postcode || '';
+        const cityFromLocation = address.city || address.town || address.village || '';
+
+        this.shopForm.patchValue({
+          fullAddress: fullAddress,
+          pincode: pincode
+        });
+
+        const matchedCity = this.cities.find(
+          (c) => c.cityName.toLowerCase() === cityFromLocation.toLowerCase()
+        );
+
+        if (matchedCity) {
+          this.cityNotInDb = false;
+          this.shopForm.patchValue({ cityId: matchedCity.cityId });
+        } else {
+          this.cityNotInDb = true;
+          alert("🌍 We're expanding and will be serving in this area soon!\nPlease select a city manually.");
+        }
+      })
+      .catch((err) => {
+        console.error('Error fetching location details:', err);
+        this.message = 'Could not fetch address from coordinates.';
+      });
+  }
+
+  navigateToMap(): void {
+    this.router.navigate(['/map-picker']);
+  }
+
+  addShop(): void {
+    if (this.shopForm.invalid) {
+      this.message = 'Please fill all required fields.';
+      return;
+    }
+
+    const newShop: IShop = {
+      ...this.shopForm.value,
+      shopId: 0,
+      createdAt: new Date(),
+      vendorId: this.shopService.getIdByEmail(localStorage.getItem("Email") ?? '')
+    };
+
+    this.loading = true;
+
+    this.shopService.addShop(newShop).subscribe({
+      next: () => {
+        this.loading = false;
         this.message = 'Shop added successfully!';
-        this._router.navigate(['/view-shops']);
+        this.router.navigate(['/view-shops']);
       },
       error: (error) => {
+        this.loading = false;
         console.error('Error adding shop:', error);
-        if (error.error instanceof ErrorEvent) {
-          // Client-side error
-          this.message = 'Network error occurred. Please check your connection.';
-        } else {
-          // Server-side error
-          if (error.status === 0) {
-            this.message = 'Could not connect to server. Please try again later.';
-          } else if (error.error) {
-            // Try to get server error message
-            try {
-              const errorObj = typeof error.error === 'string' ? JSON.parse(error.error) : error.error;
-              this.message = errorObj.message || 'An unexpected error occurred.';
-            } catch (e) {
-              this.message = error.statusText || 'An unexpected error occurred.';
-            }
-          } else {
-            this.message = `Server returned code ${error.status}`;
-          }
-        }
+        this.message = 'Error adding shop. Please try again.';
       }
     });
   }

@@ -16,6 +16,6 @@ namespace FameFindsWebServices.Models
         [MaxLength(500)]
         public string? Review { get; set; }
         [DataType(DataType.DateTime)]
-        public DateTime? CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; } = DateTime.Now;
     }
 }

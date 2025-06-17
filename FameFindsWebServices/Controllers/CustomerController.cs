@@ -52,6 +52,15 @@ namespace FameFindsWebServices.Controllers
             return Ok(customers);
         }
 
+        [HttpGet("customerIdByEmail/{email}")]
+        public IActionResult GetCustomerIdByEmail(string email)
+        {
+            var id = _repository.GetCustomerIdByEmail(email);
+            if (id == 0)
+                return NotFound("Customer not found");
+            return Ok(id);
+        }
+
         [HttpPost("Register")]
         public IActionResult RegisterCustomer([FromBody] CustomerRegister customer)
         {

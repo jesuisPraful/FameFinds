@@ -185,11 +185,11 @@ namespace FameFindsWebServices.Controllers
 
         }
         [HttpGet]
-        public IActionResult GetVendorByName(string VendorName)
+        public IActionResult GetVendorByEmail(string Email)
         {
             try
             {
-                var vendor = _repository.GetVendorByName(VendorName);
+                var vendor = _repository.GetVendorByUsername(Email);
                 if (vendor != null)
                 {
                     return Ok(vendor);

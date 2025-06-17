@@ -43,8 +43,8 @@ export class RegistrationPageComponent {
   registerUser(form: NgForm) {
     this._service.registerCustomer(this.user).subscribe(
         (res) => {
-        alert("Registered Successfully!");
-        this._router.navigate(['/login']);
+        alert("Registered Successfully!")
+        this._router.navigate(['/login'])
         form.reset();
       },
         (err) => {

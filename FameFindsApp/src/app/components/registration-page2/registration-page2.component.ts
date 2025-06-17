@@ -17,8 +17,8 @@ export class RegistrationPage2Component {
     passwordHash: ""
   };
   emailExists: boolean = false;
-  constructor(private _service: Register2Service, private _router: Router) {
-  }
+  constructor(private _service: Register2Service, private _router: Router) { }
+  
 
   checkEmailExists() {
     this._service.checkEmailExists(this.vendor.email).subscribe(

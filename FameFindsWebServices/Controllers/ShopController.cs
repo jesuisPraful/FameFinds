@@ -24,8 +24,8 @@ namespace FameFindsWebServices.Controllers
             List<Shop> shops = new List<Shop>();
 
             try
-            { 
-               var shopList = _repository.GetAllShops();
+            {
+                var shopList = _repository.GetAllShops();
                 if (shopList != null)
                 {
                     foreach (var shop in shopList)
@@ -44,7 +44,7 @@ namespace FameFindsWebServices.Controllers
 
                         shops.Add(shopOne);
                     }
-                }                
+                }
 
             }
             catch (Exception)
@@ -494,6 +494,13 @@ namespace FameFindsWebServices.Controllers
         //        return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
         //    }
         //}
+
+        [HttpGet("GetAverageRating")]
+        public IActionResult GetAverageRating(int shopId)
+        {
+            var avg = _repository.GetAverageRatingByShopId(shopId);
+            return Ok(avg);
+        }
 
 
     }

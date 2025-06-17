@@ -65,6 +65,13 @@ namespace FameFindsDAL
             }
             return customer;
         }
+        public int GetCustomerIdByEmail(string email)
+        {
+            var customer = _context.Customers.FirstOrDefault(c => c.Email == email);
+            return customer?.CustomerId ?? 0;
+        }
+
+
         public Customer GetCustomerByUsername(string username)
         {
             Customer customer = new Customer();
@@ -494,12 +501,12 @@ namespace FameFindsDAL
             }
             return vendor;
         }
-        public Vendor GetVendorByUsername(string username)
+        public Vendor GetVendorByUsername(string Email)
         {
             Vendor vendor=new Vendor();
             try
             {
-                vendor = _context.Vendors.FirstOrDefault(u => u.Email == username);
+                vendor = _context.Vendors.FirstOrDefault(u => u.Email == Email);
             }
             catch (Exception ex)
             {
@@ -1106,6 +1113,24 @@ namespace FameFindsDAL
             }
             return status;
         }
+
+        // To show ratings for shop
+        public double GetAverageRatingByShopId(int shopId)
+        {
+            try
+            {
+                return (double)_context.Ratings
+                    .Where(r => r.ShopId == shopId)
+                    .Select(r => r.RatingValue)
+                    .DefaultIfEmpty(0)
+                    .Average();
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
         #endregion
 
         #region city
