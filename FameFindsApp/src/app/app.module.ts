@@ -25,22 +25,11 @@ import { RemoveShopComponent } from './components/remove-shop/remove-shop.compon
 import { AddCityComponent } from './components/add-city/add-city.component';
 import { RemoveCityComponent } from './components/remove-city/remove-city.component';
 import { AddShopsComponent } from './components/add-shops/add-shops.component';
-<<<<<<< HEAD
 import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
 import { Register2Service } from './services/register2.service';
-=======
-import { ForgotPasswordVendorComponent } from './components/forgot-password-vendor/forgot-password-vendor.component';
-import { ForgotpasswordvendorService } from './services/forgotpasswordvendor.service';
-import { ForgotpasswordService } from './services/forgotpassword.service';
-import { GoogleMapsModule } from '@angular/google-maps';
-import { CommonModule } from '@angular/common';
-import { ShopDetailsComponent } from './components/shop-details/shop-details.component';
-import { RatingComponent } from './components/rating/rating.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
  
->>>>>>> 6fd2d00a5a39d6d0b543ae401113af0d0be00092
 
 @NgModule({
   declarations: [
