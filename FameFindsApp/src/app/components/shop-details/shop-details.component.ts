@@ -19,7 +19,7 @@ export class ShopDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const storedShopId = localStorage.getItem('selectedShopId');
+    const storedShopId = localStorage.getItem('shopId');
 
     if (storedShopId) {
       const shopId = parseInt(storedShopId, 10);
@@ -61,9 +61,8 @@ export class ShopDetailsComponent implements OnInit {
       alert('Customer not logged in.');
       return;
     }
-
-    localStorage.setItem('selectedShopId', this.shop.shopId.toString());
-    localStorage.setItem('customerId', customerId); // optional if already stored
+    //localStorage.setItem('selectedShopId', this.shop.shopId.toString());
+    //localStorage.setItem('customerId', customerId); // optional if already stored
 
     this.router.navigate(['/rate-shop']);
   }
