@@ -55,23 +55,45 @@ export class ShopService {
 
 
 
-  updateShopContactNumber(shopId: number, contactNumber: string) {
-    const params = new HttpParams()
-      .set('shopId', shopId.toString())
-      .set('contactNumber', contactNumber);
-    return this._http
-      .put('https://localhost:7249/api/Shop/contactNumber', null, { params })
-      .pipe(catchError(this.errorHandler));
+  updateShopContactNumber(shopId: number, contactNumber: string, nContactNumber: string) {
+    const params = {
+      shopId: shopId.toString(),
+      contactNumber: contactNumber,
+      nContactNumber: nContactNumber
+    };
+
+    return this._http.put(`https://localhost:7249/api/Shop/contactNumber`, null, { params });
   }
 
-  updateShopEmail(shopId: number, emailId: string) {
-    const params = new HttpParams()
-      .set('shopId', shopId.toString())
-      .set('emailId', emailId);
-    return this._http
-      .put("https://localhost:7249/api/Shop/emailId", null, { params })
-      .pipe(catchError(this.errorHandler));
+  updateShopName(shopId: number, shopName: string, nshopName: string) {
+    const params = {
+      shopId: shopId.toString(),
+      shopName,
+      nshopName
+    };
+
+    return this._http.put('https://localhost:7249/api/Shop/UpdateShopName', null, {
+      params,
+      responseType: 'text'  // <-- Critical for handling the plain string response
+    }).pipe(catchError(this.errorHandler));
   }
+
+
+  updateShopEmail(shopId: number, emailId: string, nemailId: string) {
+    const params = {
+      shopId: shopId.toString(),
+      emailId: emailId,
+      nemailId: nemailId
+    };
+
+    return this._http.put(`https://localhost:7249/api/Shop/emailId`, null, {
+      params,
+      responseType: 'text'  // expect string response from backend
+    }).pipe(catchError(this.errorHandler));
+
+  }
+
+   
 
   updateShopIsOpenStatus(shopId: number, isOpen: boolean) {
     return this._http.put(

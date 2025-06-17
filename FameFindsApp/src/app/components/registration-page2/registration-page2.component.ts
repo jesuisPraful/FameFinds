@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Register2Service } from '../../services/register2.service';
 import { IVendor } from '../../Models/vendor';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration-page2',
@@ -16,8 +17,8 @@ export class RegistrationPage2Component {
     passwordHash: ""
   };
   emailExists: boolean = false;
-  constructor(private _service: Register2Service) {
-  }
+  constructor(private _service: Register2Service, private _router: Router) { }
+  
 
   checkEmailExists() {
     this._service.checkEmailExists(this.vendor.email).subscribe(
@@ -44,6 +45,7 @@ export class RegistrationPage2Component {
     this._service.registerVendor(this.vendor).subscribe(
       (res) => {
         alert("Registered Successfully!")
+        this._router.navigate(['/vendorlogin']);
         form.reset();
       },
       (err) => {

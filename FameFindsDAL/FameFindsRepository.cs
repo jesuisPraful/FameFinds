@@ -1026,18 +1026,39 @@ namespace FameFindsDAL
             }
             return status;
         }
+        //Change ShopName
+        public bool UpdateShopName(int ShopId, string shopName,string nshopName)
+        {
+            bool status = false;
+            try
+            {
+                Shop shop = _context.Shops.Find(ShopId);
+                if (shop != null && shop.ShopName == shopName && shopName!=nshopName)
+                {
+                    shop.ShopName = nshopName;
+                    _context.SaveChanges();
+                    status = true;
+                }
+            }
+            catch (Exception)
+            {
+                status = false;
+            }
+            return status;
+        }
 
 
         //Update Operations on Shops
-        public bool UpdateShopContactNumber(int shopId, string contactNumber)
+        public bool UpdateShopContactNumber(int shopId, string nContactNumber, string contactNumber)
         {
             bool status = false;
             try
             {
                 Shop shop = _context.Shops.Find(shopId);
-                if (shop != null)
+                if (shop != null && shop.ContactNumber==contactNumber && nContactNumber!=contactNumber)
                 {
-                    shop.ContactNumber = contactNumber;
+                    
+                    shop.ContactNumber = nContactNumber;
                     _context.SaveChanges();
                     status = true;
                 }
@@ -1050,16 +1071,17 @@ namespace FameFindsDAL
 
         }
 
+        
         //Change EmailId
-        public bool UpdateShopEmailId(int ShopId, string emailId)
+        public bool UpdateShopEmailId(int ShopId, string nemailId,string emailId)
         {
             bool status = false;
             try
             {
                 Shop shop = _context.Shops.Find(ShopId);
-                if (shop != null)
+                if (shop != null && shop.EmailId==emailId)
                 {
-                    shop.EmailId = emailId;
+                    shop.EmailId = nemailId;
                     _context.SaveChanges();
                     status = true;
                 }

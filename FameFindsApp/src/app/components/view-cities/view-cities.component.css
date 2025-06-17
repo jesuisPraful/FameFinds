@@ -1,4 +1,4 @@
-.city-container {
+/*.city-container {
   padding: 30px;
   background-color: #f9f9f9;
   border-radius: 10px;
@@ -110,9 +110,10 @@ body {
 
 .city-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Always 3 per row */
+  grid-template-columns: repeat(3, 1fr); /* Always 3 per row 
   gap: 20px;
 }
+*/
 
 
 .city-card {

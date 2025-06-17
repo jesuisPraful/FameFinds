@@ -1,0 +1,24 @@
+<!-- Header -->
+<header class="header">
+  <div class="menu-icon" (click)="toggleSidebar()">&#9776;</div>
+  <h2 class="brand">FameFinds</h2>
+</header>
+
+<!-- Sidebar Menu -->
+<nav class="sidebar" [class.open]="isSidebarOpen">
+  <ul>
+    <li><a routerLink="/vendor/home">Home</a></li>
+    <li><a routerLink="/vendor/view-shops">View Shops</a></li>
+    <li><a (click)="logout()">Logout</a></li>
+  </ul>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <button (click)="goBack()">⬅ Back</button>
+</footer>
