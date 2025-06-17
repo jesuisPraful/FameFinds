@@ -19,7 +19,7 @@ namespace FameFindsWebServices.Controllers
         }
 
 
-        [HttpPost("getCityByShop")]
+        [HttpGet("getCityByShop")]
         public IActionResult GetCityByShop(FameFindsDAL.Models.Shop shop)
         {
             try
@@ -52,7 +52,7 @@ namespace FameFindsWebServices.Controllers
         {
             try
             {
-                var city = _repository.CityByShoIdp(shopId);
+                var city = _repository.CityByShopId(shopId);  // Fixed method name
                 if (city != null)
                 {
                     return Ok(city);
@@ -67,7 +67,6 @@ namespace FameFindsWebServices.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
-
 
         [HttpGet]
         public IActionResult GetAllCities()
