@@ -496,12 +496,12 @@ namespace FameFindsDAL
             }
             return vendor;
         }
-        public Vendor GetVendorByUsername(string username)
+        public Vendor GetVendorByUsername(string Email)
         {
             Vendor vendor=new Vendor();
             try
             {
-                vendor = _context.Vendors.FirstOrDefault(u => u.Email == username);
+                vendor = _context.Vendors.FirstOrDefault(u => u.Email == Email);
             }
             catch (Exception ex)
             {

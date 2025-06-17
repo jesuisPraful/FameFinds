@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ProductService } from './services/product.service';
 import { RegisterService } from './services/register.service';
@@ -31,6 +31,7 @@ import { ForgotpasswordService } from './services/forgotpassword.service';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { CommonModule } from '@angular/common';
 import { ShopDetailsComponent } from './components/shop-details/shop-details.component';
+import { MapPickerComponent } from './components/map-picker/map-picker.component';
 
  
 
@@ -55,12 +56,15 @@ import { ShopDetailsComponent } from './components/shop-details/shop-details.com
     AddShopsComponent,
     ForgotPasswordVendorComponent,
     ShopDetailsComponent,
+    AddShopsComponent,
+    MapPickerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
     GoogleMapsModule
   ],
@@ -70,8 +74,8 @@ import { ShopDetailsComponent } from './components/shop-details/shop-details.com
     CustomerService,
     VendorService,
     ShopService,
-    //ForgotpasswordvendorService,
-    //ForgotpasswordService
+    ForgotpasswordvendorService,
+    ForgotpasswordService
   ],
   bootstrap: [AppComponent]
 })

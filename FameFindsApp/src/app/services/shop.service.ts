@@ -86,7 +86,15 @@ export class ShopService {
     return this._http.get<IShop[]>("https://localhost:7249/api/Shop/GetShops", { params }).pipe(catchError(this.errorHandler))
 
   }
+  getCities()  {
+    return this._http.get<any[]>("https://localhost:7249/api/City");
+  }
 
+  getIdByEmail(email:string) {
+    const params = new HttpParams()
+      .set('email', email)
+    return this._http.get<any[]>("https://localhost:7249/api/Vendor/GetVendorByEmail", { params }).pipe(catchError(this.errorHandler))
+  }
 
   errorHandler(error: HttpErrorResponse) {
     console.error(error);

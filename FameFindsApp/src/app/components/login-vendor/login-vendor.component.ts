@@ -28,10 +28,10 @@ export class LoginVendorComponent {
           console.log(resSuccess);
           //admin, customer or invalid credentials
           if (resSuccess == true) {
-            sessionStorage.setItem("Email", form.value.email);
+            localStorage.setItem("Email", form.value.email);
             sessionStorage.setItem("value", resSuccess);
             alert("Login Successfull!\n Welcome to FameFinds " + form.value.email);
-            localStorage.setItem('vendorId', resSuccess.vendorId);
+            
             //sessionStorage.setItem("Role", resSuccess.toString());  in this if credentials are true api method is returning true are false but not the role of user wether it is vendor or customer so no need to store this.
             /*this._router.navigate(["/home"]);*/
           }

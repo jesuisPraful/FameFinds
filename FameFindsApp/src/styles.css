@@ -1,10 +1,12 @@
-html, body {
+body, html {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #B8E3E9;
-  overflow: hidden; /* Prevent scrollbars */
+  overflow-y: auto; /* enable vertical scroll */
 }
 
-
-
+/* Ensure the form container does not block scroll */
+.shop-form-container {
+  max-height: none;
+  overflow: visible;
+}

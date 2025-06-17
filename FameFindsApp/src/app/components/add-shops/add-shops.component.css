@@ -1,21 +1,107 @@
-.map-container {
-  height: 400px;
+.add-shop-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background: linear-gradient(to bottom right, #f6f8ff, #d9e9ff);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #2d3e50;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 6px;
+}
+
+input, select, textarea {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+  input:focus, textarea:focus, select:focus {
+    border-color: #5b9bd5;
+    outline: none;
+  }
+
+textarea {
+  resize: none;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.location-btn, .map-btn {
+  flex: 1;
+  padding: 10px;
+  background-color: #4a90e2;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+  .location-btn:hover, .map-btn:hover {
+    background-color: #3b78c4;
+  }
+
+.form-actions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
   width: 100%;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  overflow: hidden;
+  transition: background-color 0.3s;
 }
 
-google-map {
-  height: 100%;
-  width: 100%;
+  button[type="submit"]:hover {
+    background-color: #218838;
+  }
+
+button[disabled] {
+  background-color: #aaa;
+  cursor: not-allowed;
 }
 
-.card {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+.alert-message {
+  color: #e74c3c;
+  font-weight: bold;
+  margin-top: 6px;
 }
 
-.card-header {
+.status-message {
+  margin-top: 15px;
+  text-align: center;
   font-weight: 500;
-  background-color: #f8f9fa;
+  color: #2c3e50;
 }
