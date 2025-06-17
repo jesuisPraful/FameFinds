@@ -40,7 +40,9 @@ internal class Program
 
         builder.Services.AddScoped<IFameFindsDAL,FameFindsRepository>();
         builder.Services.AddScoped<FameFindsContext>();
-        builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+        //builder.Services.AddScoped<AuthenticationService>();
+
+       builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
         builder.Services.AddScoped<IEmailService, EmailService>();
 
 

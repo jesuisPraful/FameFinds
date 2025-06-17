@@ -14,6 +14,7 @@ namespace FameFindsDAL
         Customer LoginCustomer(string email, string passwordHash);
         Customer GetCustomerById(int customerId);
         Customer GetCustomerByUsername(string username);
+        int GetCustomerIdByEmail(string email);
         List<Customer> GetAllCustomers();
         int UpdateCustomer(Customer customer);
         int DeleteCustomer(int customerId);
@@ -87,7 +88,7 @@ namespace FameFindsDAL
         bool UpdateShopContactNumber(int shopId, string nContactNumber, string contactNumber);
         bool UpdateShopEmailId(int ShopId, string nemailId, string emailId);
         bool UpdateShopIsOpen(int ShopId, bool isOpen);
-
+        double GetAverageRatingByShopId(int shopId);
         #endregion
 
         #region city
