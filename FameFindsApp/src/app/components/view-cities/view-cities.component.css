@@ -111,9 +111,10 @@
 
 .city-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Always 3 per row */
+  grid-template-columns: repeat(3, 1fr); /* Always 3 per row 
   gap: 20px;
 }
+*/
 
 
 .city-card {

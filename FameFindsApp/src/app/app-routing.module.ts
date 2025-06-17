@@ -45,8 +45,6 @@ const routes: Routes = [
   { path: 'view-products', component: ViewProductsComponent },
   { path: 'shop-details', component: ShopDetailsComponent },
   { path: 'rate-shop', component: RatingComponent },
-  { path: '**', component: LandingComponent }, // wildcard should come last
-
   { path: 'vendor-dashboard', component: VendorDashboardComponent },
   { path: 'update-contact-number', component: UpdateShopContactnumberComponent },
   { path: 'update-email', component: UpdateshopEmailComponent },

@@ -45,7 +45,7 @@ import { VendorDashboardComponent } from './components/vendor-dashboard/vendor-d
 import { UpdateShopContactnumberComponent } from './components/updateshop-contactnumber/updateshop-contactnumber.component';
 import { UpdateshopEmailComponent } from './components/updateshop-email/updateshop-email.component';
 import { UpdateshopNameComponent } from './components/updateshop-name/updateshop-name.component';
-import { Register2Service } from './services/register2.service';
+
 
 @NgModule({
   declarations: [
