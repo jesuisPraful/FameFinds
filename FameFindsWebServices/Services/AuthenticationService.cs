@@ -7,13 +7,22 @@ using Microsoft.AspNetCore.Identity.Data;
 
 namespace FameFindsWebServices.Services
 {
-    public class AuthenticationService
+    public interface IAuthenticationService
     {
-        private readonly FameFindsRepository _repo;
+        bool Register(Customer customer);
+        bool Login(Customer customer);
+        bool UpdatePassword(int userId, string newPassword);
+        bool AddVendor(Vendor vendor);
+        bool LoginVendor(Vendor vendor);
+        bool UpdatePasswordVendor(int vendorId, string newPassword);
+    }
+    public class AuthenticationService:IAuthenticationService
+    {
+        private readonly IFameFindsDAL _repo;
         private readonly PasswordHasher<Customer> _hasher;
         private readonly PasswordHasher<Vendor> _hasherV;
 
-        public AuthenticationService(FameFindsRepository repo)
+        public AuthenticationService(IFameFindsDAL repo)
         {
             _repo = repo;
             _hasher = new PasswordHasher<Customer>();

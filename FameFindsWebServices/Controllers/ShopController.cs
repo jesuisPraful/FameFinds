@@ -12,8 +12,8 @@ namespace FameFindsWebServices.Controllers
     [ApiController]
     public class ShopController : Controller
     {
-        private readonly FameFindsRepository _repository;
-        public ShopController(FameFindsRepository repository)
+        private readonly IFameFindsDAL _repository;
+        public ShopController(IFameFindsDAL repository)
         {
             _repository = repository;
         }
@@ -178,6 +178,29 @@ namespace FameFindsWebServices.Controllers
             return Ok(shops);
 
         }
+
+        [HttpGet("shopIds/{vendorId}")]
+        public IActionResult GetShopIdsByVendorId(int vendorId)
+        {
+            List<int> shopIds = new List<int>();
+
+            try
+            {
+                shopIds = _repository.GetShopIdsByVendorId(vendorId);
+
+                if (shopIds == null || shopIds.Count == 0)
+                {
+                    return NotFound("No shops found for the given vendor.");
+                }
+            }
+            catch (Exception)
+            {
+                return BadRequest("Failed to retrieve shop IDs.");
+            }
+
+            return Ok(shopIds);
+        }
+
 
 
         [HttpGet("shopName")]

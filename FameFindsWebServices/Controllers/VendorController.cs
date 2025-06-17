@@ -13,10 +13,10 @@ namespace FameFindsWebServices.Controllers
     [ApiController]
     public class VendorController : Controller
     {
-        private readonly FameFindsRepository _repository;
+        private readonly IFameFindsDAL _repository;
         private readonly AuthenticationService _authService;
         private readonly EmailService _emailService;
-        public VendorController(FameFindsRepository repository, AuthenticationService authService, EmailService emailService)
+        public VendorController(IFameFindsDAL repository, AuthenticationService authService, EmailService emailService)
         {
             _repository = repository;
             _authService = authService;

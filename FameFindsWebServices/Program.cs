@@ -38,10 +38,10 @@ internal class Program
         }
         );
 
-        builder.Services.AddScoped<FameFindsRepository>();
+        builder.Services.AddScoped<IFameFindsDAL,FameFindsRepository>();
         builder.Services.AddScoped<FameFindsContext>();
-        builder.Services.AddScoped<AuthenticationService>();
-        builder.Services.AddScoped<EmailService>();
+        builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+        builder.Services.AddScoped<IEmailService, EmailService>();
 
 
         builder.Services.AddCors(options =>

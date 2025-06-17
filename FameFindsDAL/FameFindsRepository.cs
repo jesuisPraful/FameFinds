@@ -11,7 +11,7 @@ using static System.Formats.Asn1.AsnWriter;
 
 namespace FameFindsDAL
 {
-    public class FameFindsRepository
+    public class FameFindsRepository:IFameFindsDAL
     {
         private readonly FameFindsContext _context;
        
@@ -643,7 +643,7 @@ namespace FameFindsDAL
                 _context.SaveChanges();
             }
         }
-        //reset password only with in 5 minutes and only after otp verification.
+
         public VendorPasswordResetToken? GetVendorLatestVerifiedOtp(string email)
         {
             var Vendor = _context.Vendors.FirstOrDefault(c => c.Email == email);
@@ -654,6 +654,11 @@ namespace FameFindsDAL
                 .OrderByDescending(t => t.RequestedAt)
                 .FirstOrDefault();
         }
+
+         
+
+
+
         #endregion
 
         #region Ratings
@@ -820,7 +825,9 @@ namespace FameFindsDAL
         }
 
 
-        //Get Shop by Vendor Id
+        //Get ShopId by Vendor Id
+
+
         public List<Shop> GetShopsByVendorId(int vendorId)
         {
 
@@ -828,7 +835,7 @@ namespace FameFindsDAL
             try
             {
                 shops = _context.Shops
-                    .Where(s => s.VendorId == vendorId).Select(s => s)
+                    .Where(s => s.VendorId == vendorId).Select(s =>s)
                     .ToList();
             }
 
@@ -838,6 +845,26 @@ namespace FameFindsDAL
 
             }
             return shops;
+        }
+
+
+        public List<int> GetShopIdsByVendorId(int vendorId)
+        {
+
+            List<int> shopsId = new List<int>();
+            try
+            {
+                shopsId = _context.Shops
+                    .Where(s => s.VendorId == vendorId).Select(s => s.ShopId)
+                    .ToList();
+            }
+
+            catch (Exception ex)
+            {
+                shopsId = null;
+
+            }
+            return shopsId;
         }
 
 
@@ -1150,6 +1177,39 @@ namespace FameFindsDAL
         #endregion
 
         #region city
+
+        //City by shop
+        public City CityByShop(Shop shop)
+        {
+            City city = new City();
+            try
+            {
+                city = _context.Cities.Where(C=>C.CityId==shop.CityId).FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                city = null;
+            }
+            return city;
+        }
+
+
+        //City by shopId
+
+        public City CityByShoIdp(int shopId)
+        {
+            Shop shop = _context.Shops.Find(shopId);
+            City city = new City();
+            try
+            {
+                city = _context.Cities.Where(C => C.CityId == shop.CityId).FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                city = null;
+            }
+            return city;
+        }
         public List<City> GetAllCities()
         {
             List<City> cities = new List<City>();
@@ -1346,6 +1406,7 @@ namespace FameFindsDAL
             return shopProducts;
         }
         #endregion
+
     }
 
 }

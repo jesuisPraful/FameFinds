@@ -1,8 +1,10 @@
 ﻿using FameFindsDAL;
 using FameFindsDAL.Models;
+using FameFindsWebServices.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Diagnostics.Eventing.Reader;
 
 namespace FameFindsWebServices.Controllers
 {
@@ -10,11 +12,62 @@ namespace FameFindsWebServices.Controllers
     [Route("api/[controller]")]
     public class CityController : ControllerBase
     {
-        private readonly FameFindsRepository _repository;
-        public CityController(FameFindsRepository repository)
+        private readonly IFameFindsDAL _repository;
+        public CityController(IFameFindsDAL repository)
         {
             _repository = repository;
         }
+
+
+        [HttpPost("getCityByShop")]
+        public IActionResult GetCityByShop(FameFindsDAL.Models.Shop shop)
+        {
+            try
+            {
+                if (shop == null)
+                {
+                    return BadRequest("Invalid shop data.");
+                }
+
+                var city = _repository.CityByShop(shop);
+                if (city != null)
+                {
+                    return Ok(city);
+                }
+                else
+                {
+                    return BadRequest("City Not Found");
+                }
+
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("getCityByShopId/{shopId}")]
+        public IActionResult GetCityByShopId(int shopId)
+        {
+            try
+            {
+                var city = _repository.CityByShoIdp(shopId);
+                if (city != null)
+                {
+                    return Ok(city);
+                }
+                else
+                {
+                    return BadRequest("City Not Found");
+                }
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
 
         [HttpGet]
         public IActionResult GetAllCities()
@@ -38,7 +91,7 @@ namespace FameFindsWebServices.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var status = _repository.RegisterCity(new City
+                    var status = _repository.RegisterCity(new FameFindsDAL.Models.City
                     {
                         CityId = city.CityId,
                         CityName = city.CityName
@@ -110,6 +163,5 @@ namespace FameFindsWebServices.Controllers
                 return StatusCode(500, "Error while deleting city: " + ex.Message);
             }
         }
-
     }
 }

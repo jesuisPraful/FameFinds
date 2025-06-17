@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>Update Shop Product</h2>
+
+  <button class="btn btn-primary m-2" (click)="showComponent('stock')">Update Stock</button>
+  <button class="btn btn-secondary m-2" (click)="showComponent('price')">Update Price</button>
+
+  <app-update-shopproductstock *ngIf="showStockComponent"></app-update-shopproductstock>
+  <app-update-shopproductprice *ngIf="showPriceComponent"></app-update-shopproductprice>
+</div>

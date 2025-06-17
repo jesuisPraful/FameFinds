@@ -22,7 +22,10 @@ import { RatingComponent } from './components/rating/rating.component';
 import { VendorDashboardComponent } from './components/vendor-dashboard/vendor-dashboard.component';
 import { UpdateShopContactnumberComponent } from './components/updateshop-contactnumber/updateshop-contactnumber.component';
 import { UpdateshopEmailComponent } from './components/updateshop-email/updateshop-email.component';
-import { UpdateshopNameComponent } from './components/updateshop-name/updateshop-name.component'; // <-- Import added
+import { UpdateshopNameComponent } from './components/updateshop-name/updateshop-name.component';
+import { ShowShopproductComponent } from './components/show-shopproduct/show-shopproduct.component';
+import { UpdateShopproductpriceComponent } from './components/update-shopproductprice/update-shopproductprice.component';
+import { UpdateShopproductstockComponent } from './components/update-shopproductstock/update-shopproductstock.component';
 import { MapPickerComponent } from './components/map-picker/map-picker.component';
 import { ViewRatingComponent } from './components/view-rating/view-rating.component';
 
@@ -35,6 +38,7 @@ const routes: Routes = [
   { path: 'register', component: RegistrationPageComponent },
   { path: 'vendorlogin', component: LoginVendorComponent },
   { path: 'vendorregister',component:RegistrationPage2Component},
+  { path: 'vendorregister', component: RegistrationPage2Component },
   { path: 'view-shops', component: ViewShopsComponent },
   { path: 'view-cities', component: ViewCitiesComponent },
   { path: 'update-shop', component: UpdateShopComponent },
@@ -54,6 +58,11 @@ const routes: Routes = [
   { path: 'view-rating', component: ViewRatingComponent },
   { path: 'map-picker', component: MapPickerComponent },
   { path: '**', component: LandingComponent }, // wildcard should come last
+  { path: 'shop-products', component: ShowShopproductComponent },
+  { path: '**', component: LandingComponent },
+  { path: 'update-shopproduct', component: UpdateShopComponent },
+  { path: 'update-shopproductstock', component: UpdateShopproductstockComponent },
+  { path: 'update-shopproductprice', component: UpdateShopproductpriceComponent }
 ];
 
 @NgModule({
