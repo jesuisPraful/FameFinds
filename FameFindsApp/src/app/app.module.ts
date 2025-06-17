@@ -42,6 +42,7 @@ import { UpdateshopNameComponent } from './components/updateshop-name/updateshop
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Register2Service } from './services/register2.service';
 import { RouterModule } from '@angular/router';
+import { ViewRatingComponent } from './components/view-rating/view-rating.component';
 
 
 @NgModule({
@@ -73,7 +74,8 @@ import { RouterModule } from '@angular/router';
     UpdateShopContactnumberComponent,
     UpdateshopEmailComponent,
     UpdateshopNameComponent,
-    VendorCommonlayoutComponent
+    VendorCommonlayoutComponent,
+    ViewRatingComponent
   ],
   imports: [
     BrowserModule,
