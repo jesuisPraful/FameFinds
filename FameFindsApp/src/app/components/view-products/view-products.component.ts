@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
-import { IProduct } from '../../Models/product';
+import { IProduct } from '../../Models/Product';
 import { ICategory } from '../../Models/category';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -32,6 +33,37 @@ export class ViewProductsComponent implements OnInit {
 
   }
 
+  //ngOnInit() {
+  //  const city = localStorage.getItem('selectedCity');
+  //  if (city) {
+  //    console.log("City in view-products:", city);
+  //    this.cityName = city;
+  //    document.title = 'Products for ' + city;
+
+  //    this._productservice.getProductsByCity(city).subscribe(
+  //      res => {
+  //        this.products = res;
+  //      },
+  //      err => {
+  //        this.showMessage = true;
+  //        this.products = [];
+  //        console.error(err);
+  //      }
+  //    );
+  //  } else {
+  //    this._productservice.getAllProducts().subscribe(
+  //        (resSuccess) => {
+  //          this.products = resSuccess;
+  //        },
+  //        (resError) => {
+  //          this.showMessage = true;
+  //          this.products = [];
+  //          console.error(resError);
+  //        },
+  //          () => { console.log("Get products executed successfully!"); }
+  //      );
+  //  }
+  //}
   ngOnInit() {
     const city = localStorage.getItem('selectedCity');
     if (city) {
@@ -40,10 +72,10 @@ export class ViewProductsComponent implements OnInit {
       document.title = 'Products for ' + city;
 
       this._productservice.getProductsByCity(city).subscribe(
-        res => {
+        (res: IProduct[]) => {
           this.products = res;
         },
-        err => {
+        (err: any) => {
           this.showMessage = true;
           this.products = [];
           console.error(err);
@@ -51,17 +83,20 @@ export class ViewProductsComponent implements OnInit {
       );
     } else {
       this._productservice.getAllProducts().subscribe(
-          (resSuccess) => {
-            this.products = resSuccess;
-          },
-          (resError) => {
-            this.showMessage = true;
-            this.products = [];
-            console.error(resError);
-          },
-            () => { console.log("Get products executed successfully!"); }
-        );
+        (resSuccess: IProduct[]) => {
+          this.products = resSuccess;
+        },
+        (resError: any) => {
+          this.showMessage = true;
+          this.products = [];
+          console.error(resError);
+        },
+        () => {
+          console.log("Get products executed successfully!");
+        }
+      );
     }
   }
+
 
 }
