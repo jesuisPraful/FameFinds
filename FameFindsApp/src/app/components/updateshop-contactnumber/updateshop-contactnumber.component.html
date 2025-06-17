@@ -1,0 +1,13 @@
+<div class="form-container">
+  <label>Shop ID:</label>
+  <input type="number" [(ngModel)]="shopId" placeholder="Enter Shop ID" />
+
+  <label>Current Contact Number:</label>
+  <input type="text" [(ngModel)]="oldContactNumber" placeholder="Enter current contact number" />
+
+  <label>New Contact Number:</label>
+  <input type="text" [(ngModel)]="newContactNumber" placeholder="Enter new contact number" />
+
+  <button (click)="updateContactNumber()">Update Contact Number</button>
+
+</div>

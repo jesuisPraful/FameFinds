@@ -1,25 +1,113 @@
-
-/* Full screen layout */
 body, html {
   height: 100%;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url('/assets/images/bckImg.jpg');
-  background-size: cover;
 }
-
 
 .landing-container {
+  height: 100vh;
+  background-image: url('/assets/images/landing.png');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.navbar {
+  background-color: transparent;
+  color: black;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: black;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 16px;
+  font-weight: 500;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+  .dropdown-content a {
+    color: #333;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+  }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.main-content {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('/assets/images/bckImg.jpg');
-  background-size: cover;
-  height: 100vh;
+  height: calc(100vh - 80px); 
+  text-align: center;
 }
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
-*, *::before, *::after {
+  .main-content h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    margin: 0;
+    margin-top: -100px;
+  }
+
+.s-content {
+  text-align: center;
+  margin-top: -30px;
+}
+
+  .s-content h3 {
+    font-size: 24px;
+    font-weight: normal;
+    color: black;
+  }
+
+
+
+/**, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -189,3 +277,4 @@ main {
   margin-bottom: 40px;
   color: #0B2E33DD;
 }
+*/

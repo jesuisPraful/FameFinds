@@ -86,7 +86,7 @@
     font-size: 14px;
     color: #666;
     margin: 0 15px;
-  }*/
+  }
 
 .city-container {
   padding: 20px;
@@ -111,9 +111,10 @@
 
 .city-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Always 3 per row */
+  grid-template-columns: repeat(3, 1fr); /* Always 3 per row 
   gap: 20px;
 }
+*/
 
 
 .city-card {
@@ -146,3 +147,4 @@
     color: #666;
     margin: 0 10px;
   }
+
