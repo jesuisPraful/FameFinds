@@ -1,10 +1,4 @@
 <div class="container">
-  <!--<h2 style="text-align: center;">All Shops</h2>-->
-
-  <!--<header>
-    <div class="logo" tabindex="0">CityFamous</div>
-  </header>-->
-
   <!-- No Shops Found -->
   <div *ngIf="showMsgDiv" class="alert alert-warning text-center">
     No shops found.
@@ -44,7 +38,8 @@
         </div>
 
         <!-- Rating Stars -->
-        <div class="contact-item rating-stars" *ngIf="shop.averageRating !== undefined" title="Average Rating">
+        <div class="contact-item rating-stars" *ngIf="shop.averageRating !== null && shop.averageRating !== undefined"
+ title="Average Rating">
           <ng-container *ngFor="let star of [1,2,3,4,5]; let i = index">
             <span class="star" [class.filled]="i < Math.round(shop.averageRating)">★</span>
           </ng-container>

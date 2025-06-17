@@ -8,8 +8,8 @@ namespace FameFindsWebServices.Controllers
     [ApiController]
     public class CategoryController : Controller
     {
-        private readonly FameFindsRepository _repository;
-        public CategoryController(FameFindsRepository repository)
+        private readonly IFameFindsDAL _repository;
+        public CategoryController(IFameFindsDAL repository)
         {
             _repository = repository;
         }
@@ -18,8 +18,7 @@ namespace FameFindsWebServices.Controllers
         {
             try
             {
-                // Assuming you have a method to get all categories from the database
-                var categories = _repository.GetAllCategories(); // Replace with actual method
+                var categories = _repository.GetAllCategories(); 
                 return Ok(categories);
             }
             catch (Exception ex)

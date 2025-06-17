@@ -1,0 +1,33 @@
+<div class="vendor-rating-container">
+  <h2 class="title">Vendor Ratings</h2>
+
+  <div *ngIf="ratings.length > 0; else noRatings">
+    <table>
+      <thead>
+        <tr>
+          <th>Customer Name</th>
+          <th>Rating</th>
+          <th>Comment</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rating of ratings">
+          <td>{{ rating.customerName }}</td>
+          <td>
+            <span *ngFor="let star of getStars(rating.ratingValue)">
+              <i class="star">&#9733;</i>
+            </span>
+            ({{ rating.ratingValue }})
+          </td>
+          <td>{{ rating.review }}</td>
+          <td>{{ rating.createdAt | date:'short' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noRatings>
+    <p>No ratings found.</p>
+  </ng-template>
+</div>

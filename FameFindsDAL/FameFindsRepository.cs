@@ -11,7 +11,7 @@ using static System.Formats.Asn1.AsnWriter;
 
 namespace FameFindsDAL
 {
-    public class FameFindsRepository
+    public class FameFindsRepository:IFameFindsDAL
     {
         private readonly FameFindsContext _context;
        
@@ -643,7 +643,7 @@ namespace FameFindsDAL
                 _context.SaveChanges();
             }
         }
-        //reset password only with in 5 minutes and only after otp verification.
+
         public VendorPasswordResetToken? GetVendorLatestVerifiedOtp(string email)
         {
             var Vendor = _context.Vendors.FirstOrDefault(c => c.Email == email);
@@ -654,6 +654,11 @@ namespace FameFindsDAL
                 .OrderByDescending(t => t.RequestedAt)
                 .FirstOrDefault();
         }
+
+         
+
+
+
         #endregion
 
         #region Ratings
@@ -820,7 +825,9 @@ namespace FameFindsDAL
         }
 
 
-        //Get Shop by Vendor Id
+        //Get ShopId by Vendor Id
+
+
         public List<Shop> GetShopsByVendorId(int vendorId)
         {
 
@@ -828,7 +835,7 @@ namespace FameFindsDAL
             try
             {
                 shops = _context.Shops
-                    .Where(s => s.VendorId == vendorId).Select(s => s)
+                    .Where(s => s.VendorId == vendorId).Select(s =>s)
                     .ToList();
             }
 
@@ -838,6 +845,26 @@ namespace FameFindsDAL
 
             }
             return shops;
+        }
+
+
+        public List<int> GetShopIdsByVendorId(int vendorId)
+        {
+
+            List<int> shopsId = new List<int>();
+            try
+            {
+                shopsId = _context.Shops
+                    .Where(s => s.VendorId == vendorId).Select(s => s.ShopId)
+                    .ToList();
+            }
+
+            catch (Exception ex)
+            {
+                shopsId = null;
+
+            }
+            return shopsId;
         }
 
 
@@ -1113,9 +1140,79 @@ namespace FameFindsDAL
             }
             return status;
         }
+
+        // To show ratings for shop
+        public double GetAverageRatingByShopId(int shopId)
+        {
+            try
+            {
+                return (double)_context.Ratings
+                    .Where(r => r.ShopId == shopId)
+                    .Select(r => r.RatingValue)
+                    .DefaultIfEmpty(0)
+                    .Average();
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
+        // For vendor rating
+        public List<object> GetRatingsByVendor(int vendorId)
+        {
+            var ratings = (from r in _context.Ratings
+                           where r.Shop != null && r.Shop.VendorId == vendorId
+                           select new
+                           {
+                               CustomerName = r.Customer != null ? r.Customer.FullName : "Unknown",
+                               RatingValue = r.RatingValue ?? 0,
+                               Review = r.Review,
+                               CreatedAt = r.CreatedAt
+                           }).ToList<object>();
+
+            return ratings;
+        }
+
         #endregion
 
         #region city
+
+        //City by shop
+        public City CityByShop(Shop shop)
+        {
+            City city = new City();
+            try
+            {
+                city = _context.Cities.Where(C=>C.CityId==shop.CityId).FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                city = null;
+            }
+            return city;
+        }
+
+
+        //City by shopId
+
+        public City CityByShopId(int shopId)
+        {
+            Shop shop = _context.Shops.Find(shopId);
+            if (shop == null) return null;
+
+            City city = null;
+            try
+            {
+                city = _context.Cities.FirstOrDefault(c => c.CityId == shop.CityId);
+            }
+            catch (Exception)
+            {
+                city = null;
+            }
+            return city;
+        }
+
         public List<City> GetAllCities()
         {
             List<City> cities = new List<City>();
@@ -1312,6 +1409,7 @@ namespace FameFindsDAL
             return shopProducts;
         }
         #endregion
+
     }
 
 }
