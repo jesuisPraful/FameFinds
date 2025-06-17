@@ -31,7 +31,7 @@ export class LoginVendorComponent {
           if (resSuccess == true) {
             localStorage.setItem("Email", form.value.email);
             sessionStorage.setItem("value", resSuccess);
-            alert("Login Successfull!\n Welcome to FameFinds " + form.value.email);
+ 
             this._router.navigate(['/vendor-dashboard']);
           }
           else {

@@ -84,7 +84,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     GoogleMapsModule,
     RouterModule,
-  //  BrowserAnimationsModule
+    BrowserAnimationsModule
   ],
   providers: [
     ProductService,

@@ -41,14 +41,6 @@ export class ShopDetailsComponent implements OnInit {
     this.router.navigate(['/view-shops']);
   }
 
-  openInMap() {
-    if (this.shop) {
-      localStorage.setItem('mapLat', this.shop.latitude.toString());
-      localStorage.setItem('mapLng', this.shop.longitude.toString());
-      this.router.navigate(['/map-picker']);
-    }
-  }
-
   giveRating() {
     const customerId = localStorage.getItem('customerId'); // should be set on login
 

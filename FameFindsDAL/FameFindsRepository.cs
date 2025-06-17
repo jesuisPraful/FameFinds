@@ -506,7 +506,7 @@ namespace FameFindsDAL
             Vendor vendor=new Vendor();
             try
             {
-                vendor = _context.Vendors.FirstOrDefault(u => u.Email == Email);
+               vendor = _context.Vendors.FirstOrDefault(u => u.Email == Email);
             }
             catch (Exception ex)
             {
