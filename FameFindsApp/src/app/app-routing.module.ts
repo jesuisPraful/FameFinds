@@ -59,7 +59,7 @@ const routes: Routes = [
   { path: 'map-picker', component: MapPickerComponent },
   { path: '**', component: LandingComponent }, // wildcard should come last
   { path: 'shop-products', component: ShowShopproductComponent },
-  { path: '**', component: LandingComponent },
+ 
   { path: 'update-shopproduct', component: UpdateShopComponent },
   { path: 'update-shopproductstock', component: UpdateShopproductstockComponent },
   { path: 'update-shopproductprice', component: UpdateShopproductpriceComponent }
