@@ -91,7 +91,7 @@ namespace FameFindsWebServices.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var status = _repository.RegisterCity(new City
+                    var status = _repository.RegisterCity(new FameFindsDAL.Models.City
                     {
                         CityId = city.CityId,
                         CityName = city.CityName

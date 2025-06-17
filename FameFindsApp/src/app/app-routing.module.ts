@@ -26,6 +26,7 @@ import { UpdateshopNameComponent } from './components/updateshop-name/updateshop
 import { ShowShopproductComponent } from './components/show-shopproduct/show-shopproduct.component';
 import { UpdateShopproductpriceComponent } from './components/update-shopproductprice/update-shopproductprice.component';
 import { UpdateShopproductstockComponent } from './components/update-shopproductstock/update-shopproductstock.component';
+import { MapPickerComponent } from './components/map-picker/map-picker.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
