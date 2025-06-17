@@ -1,10 +1,9 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IShop } from '../Models/shop';
-import { catchError, throwError } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { IVendor } from '../Models/vendor';
 import { ICity } from '../Models/city';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -32,26 +31,17 @@ export class ShopService {
   getShopById(shopId: number) {
     return this._http
       .get<IShop>(`https://localhost:7249/api/Shop/shopId?shopId=${shopId}`)
-      .pipe(catchError(this.errorHandler)); 
+      .pipe(catchError(this.errorHandler));
 
   }
 
-  //getShopById(shopId: number) {
-  //  const params = new HttpParams().set('shopId', shopId.toString());
-  //  return this._http
-  //    .get<IShop>("https://localhost:7249/api/Shop", { params })
-  //    .pipe(catchError(this.errorHandler));
-  //}
-
-
   addShop(shop: IShop) {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    console.log("Sending shop:", shop); // Debug log
+
     return this._http
-      .post<{ message: string }>(
-        'https://localhost:7249/api/Shop/Register',
-        shop,
-        { headers }
-      )
+      .post<any>('https://localhost:7249/api/Shop/Register', shop, { headers })
       .pipe(catchError(this.errorHandler));
   }
 
@@ -76,7 +66,7 @@ export class ShopService {
 
     return this._http.put('https://localhost:7249/api/Shop/UpdateShopName', null, {
       params,
-      responseType: 'text'  // <-- Critical for handling the plain string response
+      responseType: 'text'  
     }).pipe(catchError(this.errorHandler));
   }
 
@@ -90,12 +80,12 @@ export class ShopService {
 
     return this._http.put(`https://localhost:7249/api/Shop/emailId`, null, {
       params,
-      responseType: 'text'  // expect string response from backend
+      responseType: 'text'  
     }).pipe(catchError(this.errorHandler));
 
   }
 
-   
+
 
   updateShopIsOpenStatus(shopId: number, isOpen: boolean) {
     return this._http.put(
@@ -124,23 +114,17 @@ export class ShopService {
     return this._http.get<IShop[]>("https://localhost:7249/api/Shop/GetShops", { params }).pipe(catchError(this.errorHandler))
 
   }
-  getCities()  {
+  getCities() {
     return this._http.get<any[]>("https://localhost:7249/api/City");
   }
 
-  getIdByEmail(email:string) {
-    const params = new HttpParams()
-      .set('email', email)
-    return this._http.get<any[]>("https://localhost:7249/api/Vendor/GetVendorByEmail", { params }).pipe(catchError(this.errorHandler))
+  getIdByEmail(email: string): Observable<{ vendorId: number }> {
+    const params = new HttpParams().set('email', email);
+    return this._http.get<{ vendorId: number }>(
+      'https://localhost:7249/api/Vendor/GetVendorByEmail',
+      { params }
+    );
   }
-
-  // For rating
-
-  getAverageRating(shopId: number): Observable<number> {
-  return this._http.get<number>(
-    `https://localhost:7249/api/Shop/GetAverageRating?shopId=${shopId}`
-  );
-}
 
 
   errorHandler(error: HttpErrorResponse) {

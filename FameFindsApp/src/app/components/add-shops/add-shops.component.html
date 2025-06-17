@@ -42,6 +42,11 @@
       <button type="button" class="map-btn" (click)="navigateToMap()">🗺️ Select on Map</button>
     </div>
 
+    <div *ngIf="showToast" class="toast-success">
+      📍 Location selected from map loaded!
+    </div>
+
+
     <div class="form-group">
       <label>Opening Time</label>
       <input type="time" formControlName="openingTime" />
