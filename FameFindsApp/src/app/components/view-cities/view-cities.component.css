@@ -19,11 +19,7 @@
   font-weight: bold;
   font-size: 18px;
 }
-<<<<<<< HEAD
-
-=======
-*/
-/*body {
+body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #fefefe;
@@ -89,7 +85,7 @@
     font-size: 14px;
     color: #666;
     margin: 0 15px;
-  }*/
+  }
 
 .city-container {
   padding: 20px;
@@ -149,4 +145,3 @@
     color: #666;
     margin: 0 10px;
   }
->>>>>>> 6fd2d00a5a39d6d0b543ae401113af0d0be00092

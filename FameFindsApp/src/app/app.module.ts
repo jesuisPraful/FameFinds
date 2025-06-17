@@ -12,8 +12,8 @@ import { RegisterService } from './services/register.service';
 import { CustomerService } from './services/customer.service';
 import { VendorService } from './services/vendor.service';
 import { ShopService } from './services/shop.service';
-// import { ForgotpasswordvendorService } from './services/forgotpasswordvendor.service';
-// import { ForgotpasswordService } from './services/forgotpassword.service';
+ import { ForgotpasswordvendorService } from './services/forgotpasswordvendor.service';
+ import { ForgotpasswordService } from './services/forgotpassword.service';
 
 import { ViewProductsComponent } from './components/view-products/view-products.component';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
@@ -44,6 +44,7 @@ import { VendorDashboardComponent } from './components/vendor-dashboard/vendor-d
 import { UpdateShopContactnumberComponent } from './components/updateshop-contactnumber/updateshop-contactnumber.component';
 import { UpdateshopEmailComponent } from './components/updateshop-email/updateshop-email.component';
 import { UpdateshopNameComponent } from './components/updateshop-name/updateshop-name.component';
+import { Register2Service } from './services/register2.service';
 
 @NgModule({
   declarations: [
