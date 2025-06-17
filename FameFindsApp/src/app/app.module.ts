@@ -9,7 +9,6 @@ import { RegisterService } from './services/register.service';
 import { CustomerService } from './services/customer.service';
 import { VendorService } from './services/vendor.service';
 import { ShopService } from './services/shop.service';
-import { ViewProductsComponent } from './components/view-products/view-products.component';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
 import { LoginComponent } from './components/login/login.component';
 import { LandingComponent } from './components/landing/landing.component';
@@ -19,6 +18,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { OtpVerificationComponent } from './components/otp-verification/otp-verification.component';
 import { ViewShopsComponent } from './components/view-shops/view-shops.component';
 import { ViewCitiesComponent } from './components/view-cities/view-cities.component';
+import { ViewProductsComponent } from './components/view-products/view-products.component';
 import { UpdateShopComponent } from './components/update-shop/update-shop.component';
 import { IsOpenComponent } from './components/is-open/is-open.component';
 import { RemoveShopComponent } from './components/remove-shop/remove-shop.component';
@@ -27,6 +27,14 @@ import { RemoveCityComponent } from './components/remove-city/remove-city.compon
 import { AddShopsComponent } from './components/add-shops/add-shops.component';
 import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
 import { Register2Service } from './services/register2.service';
+import { ForgotPasswordVendorComponent } from './components/forgot-password-vendor/forgot-password-vendor.component';
+import { ShopDetailsComponent } from './components/shop-details/shop-details.component';
+import { RatingComponent } from './components/rating/rating.component';
+import { CommonModule } from '@angular/common';
+import { ForgotpasswordvendorService } from './services/forgotpasswordvendor.service';
+import { ForgotpasswordService } from './services/forgotpassword.service';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { VendorCommonlayoutComponent } from './components/vendor-commonlayout/vendor-commonlayout.component';
 
 
  
@@ -45,6 +53,7 @@ import { Register2Service } from './services/register2.service';
     OtpVerificationComponent,
     ViewShopsComponent,
     ViewCitiesComponent,
+    ViewProductsComponent,
     UpdateShopComponent,
     IsOpenComponent,
     RemoveShopComponent,
@@ -53,8 +62,9 @@ import { Register2Service } from './services/register2.service';
     AddShopsComponent,
     ForgotPasswordVendorComponent,
     ShopDetailsComponent,
-    //ForgotPasswordVendorComponent,
+    ForgotPasswordVendorComponent,
     RatingComponent,
+    VendorCommonlayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +73,7 @@ import { Register2Service } from './services/register2.service';
     HttpClientModule,
     FormsModule,
     GoogleMapsModule,
-    BrowserAnimationsModule
+  //  BrowserAnimationsModule
   ],
   providers: [
     ProductService,
@@ -72,8 +82,8 @@ import { Register2Service } from './services/register2.service';
     CustomerService,
     VendorService,
     ShopService,
-    //ForgotpasswordvendorService,
-    //ForgotpasswordService
+    ForgotpasswordvendorService,
+    ForgotpasswordService
   ],
   bootstrap: [AppComponent]
 })

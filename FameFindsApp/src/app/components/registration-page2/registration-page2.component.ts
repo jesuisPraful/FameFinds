@@ -1,8 +1,8 @@
-<<<<<<< HEAD
 import { Component } from '@angular/core';
 import { IVendor } from '../../Models/vendor';
 import { Register2Service } from '../../services/register2.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration-page2',
@@ -18,7 +18,7 @@ export class RegistrationPage2Component {
      
   };
   emailExists: boolean = false;
-  constructor(private _service: Register2Service) { }
+  constructor(private _service: Register2Service, private _router: Router) { }
   
 
   checkEmailExists() {
@@ -34,7 +34,6 @@ export class RegistrationPage2Component {
   }
     phoneError: boolean = false;
     phoneTouched: boolean = false;
-=======
 //import { Component } from '@angular/core';
 
 ////@Component({
@@ -90,7 +89,7 @@ export class RegistrationPage2Component {
 //      }
 //    );
 //  }
->>>>>>> 6fd2d00a5a39d6d0b543ae401113af0d0be00092
+
 
     validatePhoneNumber() {
       this.phoneTouched = true;
@@ -100,6 +99,7 @@ export class RegistrationPage2Component {
       this._service.registerVendor(this.vendor).subscribe(
         (res) => {
           alert("Registered Successfully!")
+          this._router.navigate(['/login'])
           form.reset();
         },
         (err) => {

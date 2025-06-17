@@ -32,13 +32,13 @@ export class LoginVendorComponent {
             sessionStorage.setItem("value", resSuccess);
             alert("Login Successfull!\n Welcome to FameFinds " + form.value.email);
             localStorage.setItem('vendorId', resSuccess.vendorId);
-            //sessionStorage.setItem("Role", resSuccess.toString());  in this if credentials are true api method is returning true are false but not the role of user wether it is vendor or customer so no need to store this.
-            /*this._router.navigate(["/home"]);*/
+            sessionStorage.setItem("Role", resSuccess.toString()); // in this if credentials are true api method is returning true are false but not the role of user wether it is vendor or customer so no need to store this.
+          //  this._router.navigate(["/home"]);
           }
           else {
             alert("Invalid credentials! Please try again.")
-            //this.message = "Invalid credentials! Please try again.";
-            //this.showDiv = true;
+            this.message = "Invalid credentials! Please try again.";
+            this.showDiv = true;
           }
         },
         (resError) => {
