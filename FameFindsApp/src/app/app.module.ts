@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { GoogleMapsModule } from '@angular/google-maps';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ProductService } from './services/product.service';
 import { RegisterService } from './services/register.service';
@@ -42,11 +43,17 @@ import { ForgotpasswordvendorService } from './services/forgotpasswordvendor.ser
 import { ForgotpasswordService } from './services/forgotpassword.service';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { VendorCommonlayoutComponent } from './components/vendor-commonlayout/vendor-commonlayout.component';
+import { CommonModule } from '@angular/common';
+import { ShopDetailsComponent } from './components/shop-details/shop-details.component';
+import { RatingComponent } from './components/rating/rating.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MapPickerComponent } from './components/map-picker/map-picker.component';
 
 import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
 import { Register2Service } from './services/register2.service';
 
  
+import { Register2Service } from './services/register2.service';
 
 import { VendorDashboardComponent } from './components/vendor-dashboard/vendor-dashboard.component';
 import { UpdateShopContactnumberComponent } from './components/updateshop-contactnumber/updateshop-contactnumber.component';
@@ -79,16 +86,13 @@ import { UpdateshopNameComponent } from './components/updateshop-name/updateshop
     ShopDetailsComponent,
     ForgotPasswordVendorComponent,
     RatingComponent,
-    VendorDashboardComponent,
-    UpdateShopContactnumberComponent,
-    UpdateshopEmailComponent,
-    UpdateshopNameComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
     GoogleMapsModule,
   //  BrowserAnimationsModule

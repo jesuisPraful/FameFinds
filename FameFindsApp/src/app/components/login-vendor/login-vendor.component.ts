@@ -29,7 +29,7 @@ export class LoginVendorComponent {
           console.log(resSuccess);
           //admin, customer or invalid credentials
           if (resSuccess == true) {
-            sessionStorage.setItem("Email", form.value.email);
+            localStorage.setItem("Email", form.value.email);
             sessionStorage.setItem("value", resSuccess);
             alert("Login Successfull!\n Welcome to FameFinds " + form.value.email);
             this._router.navigate(['/vendor-dashboard']);

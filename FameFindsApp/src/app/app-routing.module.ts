@@ -26,6 +26,7 @@ import { VendorDashboardComponent } from './components/vendor-dashboard/vendor-d
 import { UpdateShopContactnumberComponent } from './components/updateshop-contactnumber/updateshop-contactnumber.component';
 import { UpdateshopEmailComponent } from './components/updateshop-email/updateshop-email.component';
 import { UpdateshopNameComponent } from './components/updateshop-name/updateshop-name.component'; // <-- Import added
+import { MapPickerComponent } from './components/map-picker/map-picker.component';
 
 
 
@@ -60,6 +61,9 @@ const routes: Routes = [
   { path: 'update-email', component: UpdateshopEmailComponent },
   { path: 'update-name', component: UpdateshopNameComponent },
   { path: '**', component: LandingComponent } 
+  { path: 'map-picker', component: MapPickerComponent },
+  { path: '**', component: LandingComponent }, // wildcard should come last
+
 ];
 
 @NgModule({

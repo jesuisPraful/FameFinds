@@ -24,8 +24,8 @@ namespace FameFindsWebServices.Controllers
             List<Shop> shops = new List<Shop>();
 
             try
-            { 
-               var shopList = _repository.GetAllShops();
+            {
+                var shopList = _repository.GetAllShops();
                 if (shopList != null)
                 {
                     foreach (var shop in shopList)
@@ -44,7 +44,7 @@ namespace FameFindsWebServices.Controllers
 
                         shops.Add(shopOne);
                     }
-                }                
+                }
 
             }
             catch (Exception)
