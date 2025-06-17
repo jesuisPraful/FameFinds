@@ -17,6 +17,8 @@ import { RemoveCityComponent } from './components/remove-city/remove-city.compon
 import { AddShopsComponent } from './components/add-shops/add-shops.component';
 import { ViewProductsComponent } from './components/view-products/view-products.component';
 import { ShopDetailsComponent } from './components/shop-details/shop-details.component';
+import { RatingComponent } from './components/rating/rating.component';
+import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
 import { VendorDashboardComponent } from './components/vendor-dashboard/vendor-dashboard.component';
 import { UpdateShopContactnumberComponent } from './components/updateshop-contactnumber/updateshop-contactnumber.component';
 import { UpdateshopEmailComponent } from './components/updateshop-email/updateshop-email.component';
@@ -30,6 +32,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistrationPageComponent },
   { path: 'vendorlogin', component: LoginVendorComponent },
+  { path:'vendorregister',component:RegistrationPage2Component},
   { path: 'view-shops', component: ViewShopsComponent },
   { path: 'view-cities', component: ViewCitiesComponent },
   { path: 'update-shop', component: UpdateShopComponent },
@@ -41,6 +44,9 @@ const routes: Routes = [
   { path: 'add-shops', component: AddShopsComponent },
   { path: 'view-products', component: ViewProductsComponent },
   { path: 'shop-details', component: ShopDetailsComponent },
+  { path: 'rate-shop', component: RatingComponent },
+  { path: '**', component: LandingComponent }, // wildcard should come last
+
   { path: 'vendor-dashboard', component: VendorDashboardComponent },
   { path: 'update-contact-number', component: UpdateShopContactnumberComponent },
   { path: 'update-email', component: UpdateshopEmailComponent },

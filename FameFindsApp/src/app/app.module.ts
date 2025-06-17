@@ -33,6 +33,13 @@ import { RemoveCityComponent } from './components/remove-city/remove-city.compon
 import { AddShopsComponent } from './components/add-shops/add-shops.component';
 import { ForgotPasswordVendorComponent } from './components/forgot-password-vendor/forgot-password-vendor.component';
 import { ShopDetailsComponent } from './components/shop-details/shop-details.component';
+import { RatingComponent } from './components/rating/rating.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
+
+ 
+
 import { VendorDashboardComponent } from './components/vendor-dashboard/vendor-dashboard.component';
 import { UpdateShopContactnumberComponent } from './components/updateshop-contactnumber/updateshop-contactnumber.component';
 import { UpdateshopEmailComponent } from './components/updateshop-email/updateshop-email.component';
@@ -43,6 +50,7 @@ import { UpdateshopNameComponent } from './components/updateshop-name/updateshop
     AppComponent,
     ViewProductsComponent,
     RegistrationPageComponent,
+    RegistrationPage2Component,
     LoginComponent,
     LandingComponent,
     LoginVendorComponent,
@@ -59,6 +67,8 @@ import { UpdateshopNameComponent } from './components/updateshop-name/updateshop
     AddShopsComponent,
     ForgotPasswordVendorComponent,
     ShopDetailsComponent,
+    //ForgotPasswordVendorComponent,
+    RatingComponent,
     VendorDashboardComponent,
     UpdateShopContactnumberComponent,
     UpdateshopEmailComponent,
@@ -70,16 +80,18 @@ import { UpdateshopNameComponent } from './components/updateshop-name/updateshop
     CommonModule,
     HttpClientModule,
     FormsModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ProductService,
     RegisterService,
+    Register2Service,
     CustomerService,
     VendorService,
     ShopService,
-    // ForgotpasswordvendorService,
-    // ForgotpasswordService
+    ForgotpasswordvendorService,
+    ForgotpasswordService
   ],
   bootstrap: [AppComponent]
 })
