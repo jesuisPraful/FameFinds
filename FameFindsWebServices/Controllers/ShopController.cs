@@ -179,6 +179,29 @@ namespace FameFindsWebServices.Controllers
 
         }
 
+        [HttpGet("shopIds/{vendorId}")]
+        public IActionResult GetShopIdsByVendorId(int vendorId)
+        {
+            List<int> shopIds = new List<int>();
+
+            try
+            {
+                shopIds = _repository.GetShopIdsByVendorId(vendorId);
+
+                if (shopIds == null || shopIds.Count == 0)
+                {
+                    return NotFound("No shops found for the given vendor.");
+                }
+            }
+            catch (Exception)
+            {
+                return BadRequest("Failed to retrieve shop IDs.");
+            }
+
+            return Ok(shopIds);
+        }
+
+
 
         [HttpGet("shopName")]
         

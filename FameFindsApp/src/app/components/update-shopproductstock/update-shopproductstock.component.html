@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Update Shop Product Stock</h2>
+
+  <!-- Success Message -->
+  <div *ngIf="message" class="alert alert-success">{{ message }}</div>
+
+  <!-- Error Message -->
+  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+  <form (ngSubmit)="updateStock()">
+    <div class="form-group">
+      <label>Shop Product ID:</label>
+      <input type="number" class="form-control" [(ngModel)]="shopProductId" name="shopProductId" required />
+    </div>
+
+    <div class="form-group">
+      <label>New Stock:</label>
+      <input type="number" class="form-control" [(ngModel)]="newStock" name="newStock" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Update Stock</button>
+  </form>
+</div>

@@ -5,15 +5,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { ProductService } from './services/product.service';
 import { RegisterService } from './services/register.service';
+import { Register2Service } from './services/register2.service';
 import { CustomerService } from './services/customer.service';
 import { VendorService } from './services/vendor.service';
 import { ShopService } from './services/shop.service';
- import { ForgotpasswordvendorService } from './services/forgotpasswordvendor.service';
- import { ForgotpasswordService } from './services/forgotpassword.service';
+import { ForgotpasswordvendorService } from './services/forgotpasswordvendor.service';
+import { ForgotpasswordService } from './services/forgotpassword.service';
 
 import { ViewProductsComponent } from './components/view-products/view-products.component';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
@@ -34,17 +36,15 @@ import { AddShopsComponent } from './components/add-shops/add-shops.component';
 import { ForgotPasswordVendorComponent } from './components/forgot-password-vendor/forgot-password-vendor.component';
 import { ShopDetailsComponent } from './components/shop-details/shop-details.component';
 import { RatingComponent } from './components/rating/rating.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
-
- 
-
 import { VendorDashboardComponent } from './components/vendor-dashboard/vendor-dashboard.component';
 import { UpdateShopContactnumberComponent } from './components/updateshop-contactnumber/updateshop-contactnumber.component';
 import { UpdateshopEmailComponent } from './components/updateshop-email/updateshop-email.component';
 import { UpdateshopNameComponent } from './components/updateshop-name/updateshop-name.component';
-import { Register2Service } from './services/register2.service';
+import { ShowShopproductComponent } from './components/show-shopproduct/show-shopproduct.component';
+import { UpdateShopproductComponent } from './components/update-shopproduct/update-shopproduct.component';
+import { UpdateShopproductpriceComponent } from './components/update-shopproductprice/update-shopproductprice.component';
+import { UpdateShopproductstockComponent } from './components/update-shopproductstock/update-shopproductstock.component';
 
 @NgModule({
   declarations: [
@@ -68,12 +68,15 @@ import { Register2Service } from './services/register2.service';
     AddShopsComponent,
     ForgotPasswordVendorComponent,
     ShopDetailsComponent,
-    //ForgotPasswordVendorComponent,
     RatingComponent,
     VendorDashboardComponent,
     UpdateShopContactnumberComponent,
     UpdateshopEmailComponent,
-    UpdateshopNameComponent
+    UpdateshopNameComponent,
+    ShowShopproductComponent,
+    UpdateShopproductComponent,
+    UpdateShopproductpriceComponent,
+    UpdateShopproductstockComponent
   ],
   imports: [
     BrowserModule,

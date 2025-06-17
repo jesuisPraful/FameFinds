@@ -1,8 +1,10 @@
 ﻿using FameFindsDAL;
 using FameFindsDAL.Models;
+using FameFindsWebServices.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Diagnostics.Eventing.Reader;
 
 namespace FameFindsWebServices.Controllers
 {
@@ -15,6 +17,57 @@ namespace FameFindsWebServices.Controllers
         {
             _repository = repository;
         }
+
+
+        [HttpPost("getCityByShop")]
+        public IActionResult GetCityByShop(FameFindsDAL.Models.Shop shop)
+        {
+            try
+            {
+                if (shop == null)
+                {
+                    return BadRequest("Invalid shop data.");
+                }
+
+                var city = _repository.CityByShop(shop);
+                if (city != null)
+                {
+                    return Ok(city);
+                }
+                else
+                {
+                    return BadRequest("City Not Found");
+                }
+
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("getCityByShopId/{shopId}")]
+        public IActionResult GetCityByShopId(int shopId)
+        {
+            try
+            {
+                var city = _repository.CityByShoIdp(shopId);
+                if (city != null)
+                {
+                    return Ok(city);
+                }
+                else
+                {
+                    return BadRequest("City Not Found");
+                }
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
 
         [HttpGet]
         public IActionResult GetAllCities()
