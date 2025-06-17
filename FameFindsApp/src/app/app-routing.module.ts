@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistrationPageComponent },
   { path: 'vendorlogin', component: LoginVendorComponent },
-  { path:'vendorregister',component:RegistrationPage2Component},
+  { path: 'vendorregister',component:RegistrationPage2Component},
   { path: 'view-shops', component: ViewShopsComponent },
   { path: 'view-cities', component: ViewCitiesComponent },
   { path: 'update-shop', component: UpdateShopComponent },
