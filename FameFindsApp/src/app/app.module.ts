@@ -31,7 +31,11 @@ import { ForgotpasswordService } from './services/forgotpassword.service';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { CommonModule } from '@angular/common';
 import { ShopDetailsComponent } from './components/shop-details/shop-details.component';
+import { RatingComponent } from './components/rating/rating.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapPickerComponent } from './components/map-picker/map-picker.component';
+
+import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
 
  
 
@@ -40,6 +44,7 @@ import { MapPickerComponent } from './components/map-picker/map-picker.component
     AppComponent,
     ViewProductsComponent,
     RegistrationPageComponent,
+    RegistrationPage2Component,
     LoginComponent,
     LandingComponent,
     LoginVendorComponent,
@@ -56,6 +61,8 @@ import { MapPickerComponent } from './components/map-picker/map-picker.component
     AddShopsComponent,
     ForgotPasswordVendorComponent,
     ShopDetailsComponent,
+    //ForgotPasswordVendorComponent,
+    RatingComponent,
     AddShopsComponent,
     MapPickerComponent
   ],
@@ -66,11 +73,13 @@ import { MapPickerComponent } from './components/map-picker/map-picker.component
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ProductService,
     RegisterService,
+    Register2Service,
     CustomerService,
     VendorService,
     ShopService,

@@ -5,16 +5,6 @@
     <div class="logo" tabindex="0">CityFamous</div>
   </header>
 
-  <!-- Search Bar -->
-  <!--<div class="search-bar" style="margin-bottom: 20px; text-align: center;">
-    <input type="text"
-           class="form-control"
-           style="max-width: 400px; display: inline-block;"
-           placeholder="Search by shop name"
-           (input)="searchShop(searchInput.value)"
-           #searchInput />
-  </div>-->
-
   <!-- No Shops Found -->
   <div *ngIf="showMsgDiv" class="alert alert-warning text-center">
     No shops found.
@@ -53,6 +43,14 @@
           <span>{{ shop.emailId }}</span>
         </div>
 
+        <!-- Rating Stars -->
+        <div class="contact-item rating-stars" *ngIf="shop.averageRating !== undefined" title="Average Rating">
+          <ng-container *ngFor="let star of [1,2,3,4,5]; let i = index">
+            <span class="star" [class.filled]="i < Math.round(shop.averageRating)">★</span>
+          </ng-container>
+          <span class="rating-value">({{ shop.averageRating.toFixed(1) }})</span>
+        </div>
+
         <button class="btn btn-primary me-2" (click)="viewShopDetails(shop)">View Details</button>
         <button class="btn btn-outline-success" (click)="showMap(shop)">View on Map</button>
       </article>
@@ -62,13 +60,5 @@
         No shops found for "{{ productName }}"
       </div>
     </section>
-
-    <!-- Google Map -->
-    <!--<div *ngIf="selectedShop" class="card mt-4">
-      <div class="card-body">
-        <h5 class="card-title">Map for {{ selectedShop.shopName }}</h5>
-        <div id="map" style="height: 400px; width: 100%;"></div>
-      </div>
-    </div>
   </main>
-</div>-->
+</div>

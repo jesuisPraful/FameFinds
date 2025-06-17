@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./view-shops.component.css']
 })
 export class ViewShopsComponent implements OnInit {
-  shops: IShop[] = [];
-  filteredShops: IShop[] = [];
+  shops: (IShop & { averageRating?: number })[] = [];
+  filteredShops: (IShop & { averageRating?: number })[] = [];
   productName: string = '';
   cityName: string = '';
   selectedShop: IShop | null = null;
@@ -28,8 +28,12 @@ export class ViewShopsComponent implements OnInit {
 
       this._service.getShopsByProductAndCityNames(this.productName, this.cityName).subscribe({
         next: (data) => {
-          this.shops = data;
-          this.filteredShops = data;
+          this.shops = data.map(shop => ({
+            ...shop,
+            averageRating: (shop as any).averageRating ?? 0
+          }));
+
+          this.filteredShops = this.shops;
           this.showMsgDiv = this.filteredShops.length === 0;
         },
         error: (err) => {
@@ -44,24 +48,6 @@ export class ViewShopsComponent implements OnInit {
       this.showMsgDiv = true;
     }
   }
-  
-
-  //showMap(shop: IShop) {
-  //  this.selectedShop = shop;
-
-  //  setTimeout(() => {
-  //    const map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
-  //      center: { lat: shop.latitude, lng: shop.longitude },
-  //      zoom: 15
-  //    });
-
-  //    new google.maps.Marker({
-  //      position: { lat: shop.latitude, lng: shop.longitude },
-  //      map,
-  //      title: shop.shopName
-  //    });
-  //  }, 0);
-  //}
 
   viewShopDetails(shop: IShop) {
     this._router.navigate(['/shop-details'], { state: { shop } });
@@ -71,4 +57,6 @@ export class ViewShopsComponent implements OnInit {
     const mapUrl = `https://www.google.com/maps/search/?api=1&query=${shop.latitude},${shop.longitude}`;
     window.open(mapUrl, '_blank');
   }
+
+  Math = Math; // Allow Math usage in template
 }
