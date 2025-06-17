@@ -65,6 +65,13 @@ namespace FameFindsDAL
             }
             return customer;
         }
+        public int GetCustomerIdByEmail(string email)
+        {
+            var customer = _context.Customers.FirstOrDefault(c => c.Email == email);
+            return customer?.CustomerId ?? 0;
+        }
+
+
         public Customer GetCustomerByUsername(string username)
         {
             Customer customer = new Customer();

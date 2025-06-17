@@ -36,6 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapPickerComponent } from './components/map-picker/map-picker.component';
 
 import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
+import { Register2Service } from './services/register2.service';
 
  
 

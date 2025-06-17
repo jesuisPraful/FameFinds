@@ -11,4 +11,5 @@ export interface IShop {
   isOpen: boolean;
   createdAt: Date;
   vendorId: number;
+  averageRating?: number;
 }

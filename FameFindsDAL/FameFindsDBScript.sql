@@ -282,6 +282,7 @@ select * from Shop
 SELECT * FROM Vendor
 SELECT * FROM Products
 Select * from Shop
+SELECT * From Rating
 
 
 --INSERT INTO Vendor (VendorName, Email, PasswordHash, PhoneNumber)

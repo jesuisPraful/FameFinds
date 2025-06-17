@@ -28,6 +28,20 @@ export class ShopService {
       .pipe(catchError(this.errorHandler));
   }
 
+  getShopById(shopId: number) {
+    return this._http
+      .get<IShop>(`https://localhost:7249/api/Shop/${shopId}`)
+      .pipe(catchError(this.errorHandler));
+  }
+
+  //getShopById(shopId: number) {
+  //  const params = new HttpParams().set('shopId', shopId.toString());
+  //  return this._http
+  //    .get<IShop>("https://localhost:7249/api/Shop", { params })
+  //    .pipe(catchError(this.errorHandler));
+  //}
+
+
   addShop(shop: IShop) {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this._http
