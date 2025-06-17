@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
-import { IProduct } from '../../Models/Product';
+import { IProduct } from '../../Models/product';
 import { ICategory } from '../../Models/category';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -28,43 +28,10 @@ export class ViewProductsComponent implements OnInit {
   goToFamousProducts(productName: string) {
     console.log("Navigating to:", productName);
     localStorage.setItem('selectedProduct', productName);
-    // add this line accordingly
     this._router.navigate(['/view-shops']);
 
   }
-
-  //ngOnInit() {
-  //  const city = localStorage.getItem('selectedCity');
-  //  if (city) {
-  //    console.log("City in view-products:", city);
-  //    this.cityName = city;
-  //    document.title = 'Products for ' + city;
-
-  //    this._productservice.getProductsByCity(city).subscribe(
-  //      res => {
-  //        this.products = res;
-  //      },
-  //      err => {
-  //        this.showMessage = true;
-  //        this.products = [];
-  //        console.error(err);
-  //      }
-  //    );
-  //  } else {
-  //    this._productservice.getAllProducts().subscribe(
-  //        (resSuccess) => {
-  //          this.products = resSuccess;
-  //        },
-  //        (resError) => {
-  //          this.showMessage = true;
-  //          this.products = [];
-  //          console.error(resError);
-  //        },
-  //          () => { console.log("Get products executed successfully!"); }
-  //      );
-  //  }
-  //}
-  ngOnInit() {
+ngOnInit() {
     const city = localStorage.getItem('selectedCity');
     if (city) {
       console.log("City in view-products:", city);

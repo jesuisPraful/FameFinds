@@ -5,7 +5,12 @@ using Microsoft.Extensions.Options;
 
 namespace FameFindsWebServices.Services
 {
-    public class EmailService
+    public interface IEmailService
+    {
+        void SendOtpEmail(string toEmail, string otp);
+        string GenerateOtp();
+    }
+    public class EmailService: IEmailService
     {
         private readonly SmtpSettings _smtpSettings;
 

@@ -11,8 +11,8 @@ namespace FameFindsWebServices.Controllers
     [ApiController]
     public class ShopProductController : ControllerBase
     {
-        private readonly FameFindsRepository _repository;
-        public ShopProductController(FameFindsRepository repository)
+        private readonly IFameFindsDAL _repository;
+        public ShopProductController(IFameFindsDAL repository)
         {
             _repository = repository;
         }

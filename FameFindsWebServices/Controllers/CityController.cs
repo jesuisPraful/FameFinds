@@ -10,8 +10,8 @@ namespace FameFindsWebServices.Controllers
     [ApiController]
     public class CityController : ControllerBase
     {
-        private readonly FameFindsRepository _repository;
-        public CityController(FameFindsRepository repository)
+        private readonly IFameFindsDAL _repository;
+        public CityController(IFameFindsDAL repository)
         {
             _repository = repository;
         }
@@ -110,6 +110,5 @@ namespace FameFindsWebServices.Controllers
                 return StatusCode(500, "Error while deleting city: " + ex.Message);
             }
         }
-
-        }
+    }
 }
