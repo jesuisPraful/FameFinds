@@ -50,7 +50,7 @@ const routes: Routes = [
   { path: 'update-contact-number', component: UpdateShopContactnumberComponent },
   { path: 'update-email', component: UpdateshopEmailComponent },
   { path: 'update-name', component: UpdateshopNameComponent },
-  { path: '**', component: LandingComponent } 
+  { path: '**', component: LandingComponent },
   { path: 'map-picker', component: MapPickerComponent },
   { path: '**', component: LandingComponent }, // wildcard should come last
 ];
