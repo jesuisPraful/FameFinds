@@ -495,6 +495,13 @@ namespace FameFindsWebServices.Controllers
         //    }
         //}
 
+        [HttpGet("GetAverageRating")]
+        public IActionResult GetAverageRating(int shopId)
+        {
+            var avg = _repository.GetAverageRatingByShopId(shopId);
+            return Ok(avg);
+        }
+
 
     }
 }

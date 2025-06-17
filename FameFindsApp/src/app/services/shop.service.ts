@@ -4,6 +4,7 @@ import { IShop } from '../Models/shop';
 import { catchError, throwError } from 'rxjs';
 import { IVendor } from '../Models/vendor';
 import { ICity } from '../Models/city';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -131,6 +132,15 @@ export class ShopService {
       .set('email', email)
     return this._http.get<any[]>("https://localhost:7249/api/Vendor/GetVendorByEmail", { params }).pipe(catchError(this.errorHandler))
   }
+
+  // For rating
+
+  getAverageRating(shopId: number): Observable<number> {
+  return this._http.get<number>(
+    `https://localhost:7249/api/Shop/GetAverageRating?shopId=${shopId}`
+  );
+}
+
 
   errorHandler(error: HttpErrorResponse) {
     console.error(error);

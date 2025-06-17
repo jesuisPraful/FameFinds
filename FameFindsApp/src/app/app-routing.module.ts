@@ -16,7 +16,7 @@ import { AddCityComponent } from './components/add-city/add-city.component';
 import { RemoveCityComponent } from './components/remove-city/remove-city.component';
 import { AddShopsComponent } from './components/add-shops/add-shops.component';
 
-import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
+//import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
 
 import { ViewProductsComponent } from './components/view-products/view-products.component';
 import { ShopDetailsComponent } from './components/shop-details/shop-details.component';
@@ -60,7 +60,7 @@ const routes: Routes = [
   { path: 'update-contact-number', component: UpdateShopContactnumberComponent },
   { path: 'update-email', component: UpdateshopEmailComponent },
   { path: 'update-name', component: UpdateshopNameComponent },
-  { path: '**', component: LandingComponent } 
+  { path: '**', component: LandingComponent },
   { path: 'map-picker', component: MapPickerComponent },
   { path: '**', component: LandingComponent }, // wildcard should come last
 

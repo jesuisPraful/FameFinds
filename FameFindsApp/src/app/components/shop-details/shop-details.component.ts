@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { IShop } from '../../Models/shop';
 import { ShopService } from '../../services/shop.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shop-details',
@@ -9,62 +9,47 @@ import { ShopService } from '../../services/shop.service';
   styleUrls: ['./shop-details.component.css']
 })
 export class ShopDetailsComponent implements OnInit {
-  shop: IShop | null = null;
-  Math = Math;
+  shop!: IShop & { averageRating?: number };
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private shopService: ShopService
-  ) { }
+  constructor(private _service: ShopService, private _router: Router) { }
 
   ngOnInit(): void {
-    const storedShopId = localStorage.getItem('selectedShopId');
+    const shopData = history.state.shop;
 
-    if (storedShopId) {
-      const shopId = parseInt(storedShopId, 10);
-      this.shopService.getShopById(shopId).subscribe({
-        next: (data) => {
-          this.shop = data;
+    if (shopData && shopData.shopId) {
+      this.shop = { ...shopData, averageRating: 0 };
+
+      // Fetch average rating from backend
+      this._service.getAverageRating(this.shop.shopId).subscribe({
+        next: (avg: number) => {
+          this.shop.averageRating = avg;
         },
         error: (err) => {
-          console.error('Error loading shop:', err);
+          console.error(`Failed to fetch average rating for shop ${this.shop.shopId}`, err);
         }
       });
+
     } else {
-      console.warn('No shop ID found in localStorage.');
-      this.router.navigate(['/view-shops']);
+      console.warn('No shop data passed. Redirecting...');
+      this._router.navigate(['/view-shops']);
     }
   }
 
-  goBack() {
-    this.router.navigate(['/view-shops']);
+  goBack(): void {
+    this._router.navigate(['/view-shops']);
   }
 
-  openInMap() {
-    if (this.shop) {
-      localStorage.setItem('mapLat', this.shop.latitude.toString());
-      localStorage.setItem('mapLng', this.shop.longitude.toString());
-      this.router.navigate(['/map-picker']);
+  giveRating(): void {
+    if (this.shop && this.shop.shopId) {
+      localStorage.setItem('shopId', this.shop.shopId.toString());
+      this._router.navigate(['/rate-shop']);
     }
   }
 
-  giveRating() {
-    const customerId = localStorage.getItem('customerId'); // should be set on login
-
-    if (!this.shop || this.shop.shopId === undefined || this.shop.shopId === null) {
-      alert('Shop details not available yet.');
-      return;
-    }
-
-    if (!customerId) {
-      alert('Customer not logged in.');
-      return;
-    }
-
-    localStorage.setItem('selectedShopId', this.shop.shopId.toString());
-    localStorage.setItem('customerId', customerId); // optional if already stored
-
-    this.router.navigate(['/rate-shop']);
+  openInMap(): void {
+    const url = `https://www.google.com/maps/search/?api=1&query=${this.shop.latitude},${this.shop.longitude}`;
+    window.open(url, '_blank');
   }
+
+  Math = Math; // For template usage
 }

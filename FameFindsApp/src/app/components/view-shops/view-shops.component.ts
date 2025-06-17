@@ -35,6 +35,14 @@ export class ViewShopsComponent implements OnInit {
 
           this.filteredShops = this.shops;
           this.showMsgDiv = this.filteredShops.length === 0;
+
+          // Fetch average ratings for each shop
+          this.filteredShops.forEach((shop) => {
+            this._service.getAverageRating(shop.shopId).subscribe({
+              next: avg => shop.averageRating = avg,
+              error: err => console.error(`Failed to load rating for shop ${shop.shopId}`, err)
+            });
+          });
         },
         error: (err) => {
           console.error('Error fetching shops:', err);
@@ -59,5 +67,5 @@ export class ViewShopsComponent implements OnInit {
     window.open(mapUrl, '_blank');
   }
 
-  Math = Math; // Allow Math usage in template
+  Math = Math;
 }

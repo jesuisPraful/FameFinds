@@ -1113,6 +1113,24 @@ namespace FameFindsDAL
             }
             return status;
         }
+
+        // To show ratings for shop
+        public double GetAverageRatingByShopId(int shopId)
+        {
+            try
+            {
+                return (double)_context.Ratings
+                    .Where(r => r.ShopId == shopId)
+                    .Select(r => r.RatingValue)
+                    .DefaultIfEmpty(0)
+                    .Average();
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
         #endregion
 
         #region city
