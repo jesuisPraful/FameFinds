@@ -15,6 +15,9 @@ import { RemoveShopComponent } from './components/remove-shop/remove-shop.compon
 import { AddCityComponent } from './components/add-city/add-city.component';
 import { RemoveCityComponent } from './components/remove-city/remove-city.component';
 import { AddShopsComponent } from './components/add-shops/add-shops.component';
+
+import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
+
 import { ViewProductsComponent } from './components/view-products/view-products.component';
 import { ShopDetailsComponent } from './components/shop-details/shop-details.component';
 import { RatingComponent } from './components/rating/rating.component';
@@ -23,6 +26,8 @@ import { VendorDashboardComponent } from './components/vendor-dashboard/vendor-d
 import { UpdateShopContactnumberComponent } from './components/updateshop-contactnumber/updateshop-contactnumber.component';
 import { UpdateshopEmailComponent } from './components/updateshop-email/updateshop-email.component';
 import { UpdateshopNameComponent } from './components/updateshop-name/updateshop-name.component'; // <-- Import added
+
+
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -42,6 +47,11 @@ const routes: Routes = [
   { path: 'add-city', component: AddCityComponent },
   { path: 'remove-city', component: RemoveCityComponent },
   { path: 'add-shops', component: AddShopsComponent },
+
+  { path: 'vendorregister', component: RegistrationPage2Component },
+  { path: '**', component: LandingComponent }, // wildcard should come last
+
+
   { path: 'view-products', component: ViewProductsComponent },
   { path: 'shop-details', component: ShopDetailsComponent },
   { path: 'rate-shop', component: RatingComponent },

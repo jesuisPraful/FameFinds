@@ -36,8 +36,8 @@ export class LoginVendorComponent {
           }
           else {
             alert("Invalid credentials! Please try again.")
-            //this.message = "Invalid credentials! Please try again.";
-            //this.showDiv = true;
+            this.message = "Invalid credentials! Please try again.";
+            this.showDiv = true;
           }
         },
         (resError) => {
