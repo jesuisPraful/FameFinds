@@ -35,6 +35,7 @@ import { RatingComponent } from './components/rating/rating.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
+import { Register2Service } from './services/register2.service';
 
  
 

@@ -10,9 +10,8 @@ body, html {
   background-size: cover;
   background-position: center;
 }
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
-<<<<<<< HEAD
+
 .navbar {
   background-color: transparent;
   color: black;
@@ -107,8 +106,8 @@ body, html {
   }
 
 
-=======
-*, *::before, *::after {
+
+/**, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -278,4 +277,4 @@ main {
   margin-bottom: 40px;
   color: #0B2E33DD;
 }
->>>>>>> 6fd2d00a5a39d6d0b543ae401113af0d0be00092
+*/

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RegisterService } from '../../services/register.service';
 import { ICustomer } from '../../Models/customer';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration-page',
@@ -16,7 +17,7 @@ export class RegistrationPageComponent {
     password: ""
   };
     emailExists: boolean = false;
-  constructor(private _service: RegisterService) { }
+  constructor(private _service: RegisterService, private _router: Router) { }
 
   checkEmailExists() {
     this._service.checkEmailExists(this.user.email).subscribe(
@@ -42,7 +43,8 @@ export class RegistrationPageComponent {
   registerUser(form: NgForm) {
     this._service.registerCustomer(this.user).subscribe(
         (res) => {
-        alert("Registered Successfully!")
+        alert("Registered Successfully!");
+        this._router.navigate(['/login']);
         form.reset();
       },
         (err) => {
