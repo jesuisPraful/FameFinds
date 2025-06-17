@@ -1,0 +1,15 @@
+<div class="form-container">
+  <label>Shop ID:</label>
+  <input type="number" [(ngModel)]="shopId" placeholder="Enter Shop ID" />
+
+  <label>Current Shop Name:</label>
+  <input type="text" [(ngModel)]="currentShopName" placeholder="Enter current Shop Name" />
+
+  <label>New Shop Name:</label>
+  <input type="text" [(ngModel)]="newShopName" placeholder="Enter new Shop Name" />
+
+  <button (click)="updateShopName()">Update Shop Name</button>
+  <!-- Success and Error Messages -->
+  <div *ngIf="message" class="success">{{ message }}</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+</div>

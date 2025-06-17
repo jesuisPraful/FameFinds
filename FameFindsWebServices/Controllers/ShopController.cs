@@ -387,36 +387,59 @@ namespace FameFindsWebServices.Controllers
             }
         }
 
-
-        [HttpPut("contactNumber")]
-        public IActionResult UpdateShopContactNumber(int shopId, string contactNumber)
+        [HttpPut("UpdateShopName")]
+        public IActionResult UpdateShopName(int shopId, string shopName, string nshopName)
         {
             try
             {
-                var status = _repository.UpdateShopContactNumber(shopId, contactNumber);
-                if (status==true)
+                var status = _repository.UpdateShopName(shopId, shopName, nshopName);
+                if (status)
                 {
-                    return Ok("Shop Update Shop ContactNumber Successfully");
+                    return Ok("Shop Name Updated Successfully");
                 }
                 else
                 {
-                    return NotFound("Shop Not Update");
+                    return NotFound("ShopName Not Updated");
                 }
-              
             }
             catch (Exception)
             {
-                return BadRequest("Failed to Update Shop");
+                return BadRequest("Failed to Update Shop Name");
+            }
+            
+        }
+
+
+
+        [HttpPut("contactNumber")]
+        public IActionResult UpdateShopContactNumber(int shopId, string contactNumber, string nContactNumber)
+        {
+            try
+            {
+                var status = _repository.UpdateShopContactNumber(shopId, nContactNumber, contactNumber);
+                if (status)
+                {
+                    return Ok("Shop Contact Number Updated Successfully");
+                }
+                else
+                {
+                    return NotFound("Shop Not Updated - Existing Contact Number Mismatch or Shop Not Found");
+                }
+            }
+            catch (Exception)
+            {
+                return BadRequest("Failed to Update Shop Contact Number");
             }
         }
 
 
+
         [HttpPut("emailId")]
-        public IActionResult UpdateShopEmailId(int shopId, string emailId)
+        public IActionResult UpdateShopEmailId(int shopId, string nemailId,string emailId)
         {
             try
             {
-                var status = _repository.UpdateShopEmailId(shopId, emailId);
+                var status = _repository.UpdateShopEmailId(shopId, nemailId,emailId);
                 if (status == true)
                 {
                     return Ok("Shop Update Shop EmailId Successfully");
@@ -458,19 +481,19 @@ namespace FameFindsWebServices.Controllers
 
         // For Ratings
 
-        [HttpGet("sorted-by-rating")]
-        public IActionResult GetShopsSortedByRating()
-        {
-            try
-            {
-                var sortedShops = _repository.GetShopsSortedByRating();
-                return Ok(sortedShops);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
-            }
-        }
+        //[HttpGet("sorted-by-rating")]
+        //public IActionResult GetShopsSortedByRating()
+        //{
+        //    try
+        //    {
+        //        var sortedShops = _repository.GetShopsSortedByRating();
+        //        return Ok(sortedShops);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+        //    }
+        //}
 
 
     }

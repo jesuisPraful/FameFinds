@@ -3,12 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { GoogleMapsModule } from '@angular/google-maps';
+
 import { AppComponent } from './app.component';
 import { ProductService } from './services/product.service';
 import { RegisterService } from './services/register.service';
 import { CustomerService } from './services/customer.service';
 import { VendorService } from './services/vendor.service';
 import { ShopService } from './services/shop.service';
+ import { ForgotpasswordvendorService } from './services/forgotpasswordvendor.service';
+ import { ForgotpasswordService } from './services/forgotpassword.service';
+
+import { ViewProductsComponent } from './components/view-products/view-products.component';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
 import { LoginComponent } from './components/login/login.component';
 import { LandingComponent } from './components/landing/landing.component';
@@ -36,8 +43,16 @@ import { ForgotpasswordService } from './services/forgotpassword.service';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { VendorCommonlayoutComponent } from './components/vendor-commonlayout/vendor-commonlayout.component';
 
+import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
+import { Register2Service } from './services/register2.service';
 
  
+
+import { VendorDashboardComponent } from './components/vendor-dashboard/vendor-dashboard.component';
+import { UpdateShopContactnumberComponent } from './components/updateshop-contactnumber/updateshop-contactnumber.component';
+import { UpdateshopEmailComponent } from './components/updateshop-email/updateshop-email.component';
+import { UpdateshopNameComponent } from './components/updateshop-name/updateshop-name.component';
+
 
 @NgModule({
   declarations: [
@@ -64,7 +79,10 @@ import { VendorCommonlayoutComponent } from './components/vendor-commonlayout/ve
     ShopDetailsComponent,
     ForgotPasswordVendorComponent,
     RatingComponent,
-    VendorCommonlayoutComponent,
+    VendorDashboardComponent,
+    UpdateShopContactnumberComponent,
+    UpdateshopEmailComponent,
+    UpdateshopNameComponent
   ],
   imports: [
     BrowserModule,

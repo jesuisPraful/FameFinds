@@ -274,8 +274,6 @@ namespace FameFindsDAL
 
         #endregion
 
-    
-
         #region category
         public List<Category> GetAllCategories()
         {
@@ -1021,18 +1019,39 @@ namespace FameFindsDAL
             }
             return status;
         }
+        //Change ShopName
+        public bool UpdateShopName(int ShopId, string shopName,string nshopName)
+        {
+            bool status = false;
+            try
+            {
+                Shop shop = _context.Shops.Find(ShopId);
+                if (shop != null && shop.ShopName == shopName && shopName!=nshopName)
+                {
+                    shop.ShopName = nshopName;
+                    _context.SaveChanges();
+                    status = true;
+                }
+            }
+            catch (Exception)
+            {
+                status = false;
+            }
+            return status;
+        }
 
 
         //Update Operations on Shops
-        public bool UpdateShopContactNumber(int shopId, string contactNumber)
+        public bool UpdateShopContactNumber(int shopId, string nContactNumber, string contactNumber)
         {
             bool status = false;
             try
             {
                 Shop shop = _context.Shops.Find(shopId);
-                if (shop != null)
+                if (shop != null && shop.ContactNumber==contactNumber && nContactNumber!=contactNumber)
                 {
-                    shop.ContactNumber = contactNumber;
+                    
+                    shop.ContactNumber = nContactNumber;
                     _context.SaveChanges();
                     status = true;
                 }
@@ -1045,16 +1064,17 @@ namespace FameFindsDAL
 
         }
 
+        
         //Change EmailId
-        public bool UpdateShopEmailId(int ShopId, string emailId)
+        public bool UpdateShopEmailId(int ShopId, string nemailId,string emailId)
         {
             bool status = false;
             try
             {
                 Shop shop = _context.Shops.Find(ShopId);
-                if (shop != null)
+                if (shop != null && shop.EmailId==emailId)
                 {
-                    shop.EmailId = emailId;
+                    shop.EmailId = nemailId;
                     _context.SaveChanges();
                     status = true;
                 }
@@ -1169,8 +1189,121 @@ namespace FameFindsDAL
             return city;
         }
 
-        
 
+
+        #endregion
+
+        #region shopProduct
+        public bool AddShopProduct(ShopProduct shopProduct)
+        {
+            bool status = false;
+            try
+            {
+                _context.ShopProducts.Add(shopProduct);
+                _context.SaveChanges();
+                status = true;
+            }
+            catch (Exception)
+            {
+                status = false;
+            }
+            return status;
+        }
+
+        public bool UpdateShopProductPrice(int shopProductId,decimal price)
+        {
+            bool status = false;
+            try
+            {
+                var product = _context.ShopProducts.FirstOrDefault(p => p.ShopProductId == shopProductId);
+                if (product == null) status= false;
+
+                product.Price = price;
+                _context.SaveChanges();
+                status = true;
+            }
+            catch (Exception)
+            {
+                status = false;
+            }
+            return status;
+        }
+        public bool UpdateShopProductStock(int shopProductId, int stock)
+        {
+            bool status = false;
+            try
+            {
+                var product = _context.ShopProducts.FirstOrDefault(p => p.ShopProductId == shopProductId);
+                if (product == null) status=false;
+
+                product.Stock = stock;
+                _context.SaveChanges();
+                status = true;
+            }
+            catch (Exception)
+            {
+                status = false;
+            }
+            return status;
+        }
+
+        //single code that can change both or even individual
+        public bool UpdateShopProduct(int shopProductId, decimal? price = null, int? stock = null)
+        {
+            bool status=false;
+            try
+            {
+                var product = _context.ShopProducts.FirstOrDefault(p => p.ShopProductId == shopProductId);
+                if (product == null) status= false;
+
+                if (price.HasValue)
+                    product.Price = price.Value;
+
+                if (stock.HasValue)
+                    product.Stock = stock.Value;
+
+                _context.SaveChanges();
+                status= true;
+            }
+            catch (Exception)
+            {
+                status = true;
+            }
+            return status;
+        }
+        public bool DeleteShopProduct(int shopProductId)
+        {
+            bool status = false;
+            try
+            {
+                var product = _context.ShopProducts.Find(shopProductId);
+                if (product == null) status= false;
+
+                _context.ShopProducts.Remove(product);
+                _context.SaveChanges();
+                status = true;
+            }
+            catch (Exception)
+            {
+                status = false;
+            }
+            return status;
+        }
+        public List<ShopProduct> GetProductsByShopId(int shopId)
+        {
+            List<ShopProduct> shopProducts= new List<ShopProduct>();
+            try
+            {
+                shopProducts=_context.ShopProducts
+                          .Where(sp => sp.ShopId == shopId)
+                          .ToList();
+            }
+            catch (Exception)
+            {
+                shopProducts = null;
+            }
+            return shopProducts;
+        }
         #endregion
     }
 

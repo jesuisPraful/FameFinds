@@ -11,6 +11,7 @@ body, html {
   background-position: center;
 }
 
+
 .navbar {
   background-color: transparent;
   color: black;
@@ -105,7 +106,8 @@ body, html {
   }
 
 
-*, *::before, *::after {
+
+/**, *::before, *::after {
   box-sizing: border-box;
 }
 
