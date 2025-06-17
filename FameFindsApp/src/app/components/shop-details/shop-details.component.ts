@@ -14,6 +14,7 @@ export class ShopDetailsComponent implements OnInit {
   constructor(private _service: ShopService, private _router: Router) { }
 
   ngOnInit(): void {
+    const storedShopId = localStorage.getItem('shopId');
     const shopData = history.state.shop;
 
     if (shopData && shopData.shopId) {
@@ -46,6 +47,15 @@ export class ShopDetailsComponent implements OnInit {
     }
   }
 
+    if (!customerId) {
+      alert('Customer not logged in.');
+      return;
+    }
+    //localStorage.setItem('selectedShopId', this.shop.shopId.toString());
+    //localStorage.setItem('customerId', customerId); // optional if already stored
+
+    this.router.navigate(['/rate-shop']);
+  }
   openInMap(): void {
     const url = `https://www.google.com/maps/search/?api=1&query=${this.shop.latitude},${this.shop.longitude}`;
     window.open(url, '_blank');

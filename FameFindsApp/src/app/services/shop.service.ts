@@ -31,8 +31,9 @@ export class ShopService {
 
   getShopById(shopId: number) {
     return this._http
-      .get<IShop>(`https://localhost:7249/api/Shop/${shopId}`)
-      .pipe(catchError(this.errorHandler));
+      .get<IShop>(`https://localhost:7249/api/Shop/shopId?shopId=${shopId}`)
+      .pipe(catchError(this.errorHandler)); 
+
   }
 
   //getShopById(shopId: number) {

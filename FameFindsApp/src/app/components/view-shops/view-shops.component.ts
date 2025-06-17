@@ -58,7 +58,7 @@ export class ViewShopsComponent implements OnInit {
   }
 
   viewShopDetails(shop: IShop) {
-    localStorage.setItem('selectedShopId', shop.shopId.toString());
+    localStorage.setItem('shopId', shop.shopId.toString());
     this._router.navigate(['/shop-details'], { state: { shop } });
   }
 
