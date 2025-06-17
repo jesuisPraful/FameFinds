@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { VendorService } from '../../services/vendor.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-vendor',
@@ -13,7 +14,7 @@ export class LoginVendorComponent {
   passwordLength: number;
   highlightLogin: boolean;
   showPassword: boolean;
-  constructor(private _vendorService: VendorService) {
+  constructor(private _vendorService: VendorService,private _router:Router) {
     this.message = "";
     this.showDiv = false;
     this.passwordLength = 0;
@@ -28,17 +29,15 @@ export class LoginVendorComponent {
           console.log(resSuccess);
           //admin, customer or invalid credentials
           if (resSuccess == true) {
-            sessionStorage.setItem("Email", form.value.email);
+            localStorage.setItem("Email", form.value.email);
             sessionStorage.setItem("value", resSuccess);
             alert("Login Successfull!\n Welcome to FameFinds " + form.value.email);
-            localStorage.setItem('vendorId', resSuccess.vendorId);
-            //sessionStorage.setItem("Role", resSuccess.toString());  in this if credentials are true api method is returning true are false but not the role of user wether it is vendor or customer so no need to store this.
-            /*this._router.navigate(["/home"]);*/
+            this._router.navigate(['/vendor-dashboard']);
           }
           else {
             alert("Invalid credentials! Please try again.")
-            //this.message = "Invalid credentials! Please try again.";
-            //this.showDiv = true;
+            this.message = "Invalid credentials! Please try again.";
+            this.showDiv = true;
           }
         },
         (resError) => {

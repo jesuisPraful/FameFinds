@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ShopDetailsComponent } from './shop-details.component';
 import { Router } from '@angular/router';
+import { IShop } from '../../Models/shop';
 
 describe('ShopDetailsComponent', () => {
   let component: ShopDetailsComponent;
@@ -30,7 +31,7 @@ describe('ShopDetailsComponent', () => {
       longitude: 73.8567,
       // If averageRating is used in template:
       averageRating: 4.2
-    };
+    } as unknown as IShop;
 
     fixture.detectChanges();
   });

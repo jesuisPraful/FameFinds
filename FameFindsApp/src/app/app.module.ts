@@ -34,17 +34,29 @@ import { AddCityComponent } from './components/add-city/add-city.component';
 import { RemoveCityComponent } from './components/remove-city/remove-city.component';
 import { AddShopsComponent } from './components/add-shops/add-shops.component';
 import { ForgotPasswordVendorComponent } from './components/forgot-password-vendor/forgot-password-vendor.component';
+import { ForgotpasswordvendorService } from './services/forgotpasswordvendor.service';
+import { ForgotpasswordService } from './services/forgotpassword.service';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { VendorCommonlayoutComponent } from './components/vendor-commonlayout/vendor-commonlayout.component';
+import { CommonModule } from '@angular/common';
 import { ShopDetailsComponent } from './components/shop-details/shop-details.component';
 import { RatingComponent } from './components/rating/rating.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MapPickerComponent } from './components/map-picker/map-picker.component';
 import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
 import { VendorDashboardComponent } from './components/vendor-dashboard/vendor-dashboard.component';
 import { UpdateShopContactnumberComponent } from './components/updateshop-contactnumber/updateshop-contactnumber.component';
 import { UpdateshopEmailComponent } from './components/updateshop-email/updateshop-email.component';
 import { UpdateshopNameComponent } from './components/updateshop-name/updateshop-name.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { Register2Service } from './services/register2.service';
 import { ShowShopproductComponent } from './components/show-shopproduct/show-shopproduct.component';
 import { UpdateShopproductComponent } from './components/update-shopproduct/update-shopproduct.component';
 import { UpdateShopproductpriceComponent } from './components/update-shopproductprice/update-shopproductprice.component';
 import { UpdateShopproductstockComponent } from './components/update-shopproductstock/update-shopproductstock.component';
+import { RouterModule } from '@angular/router';
+import { ViewRatingComponent } from './components/view-rating/view-rating.component';
+
 
 @NgModule({
   declarations: [
@@ -60,6 +72,7 @@ import { UpdateShopproductstockComponent } from './components/update-shopproduct
     OtpVerificationComponent,
     ViewShopsComponent,
     ViewCitiesComponent,
+    ViewProductsComponent,
     UpdateShopComponent,
     IsOpenComponent,
     RemoveShopComponent,
@@ -68,24 +81,29 @@ import { UpdateShopproductstockComponent } from './components/update-shopproduct
     AddShopsComponent,
     ForgotPasswordVendorComponent,
     ShopDetailsComponent,
+    //ForgotPasswordVendorComponent,
     RatingComponent,
-    VendorDashboardComponent,
-    UpdateShopContactnumberComponent,
+    UpdateShopComponent,
     UpdateshopEmailComponent,
+    UpdateshopNameComponent
+  ],
+  imports: [
+  ],
+  imports: [
+    BrowserModule,
     UpdateshopNameComponent,
     ShowShopproductComponent,
     UpdateShopproductComponent,
     UpdateShopproductpriceComponent,
     UpdateShopproductstockComponent
-  ],
-  imports: [
-    BrowserModule,
     AppRoutingModule,
     CommonModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
     GoogleMapsModule,
-    BrowserAnimationsModule
+    RouterModule,
+  //  BrowserAnimationsModule
   ],
   providers: [
     ProductService,

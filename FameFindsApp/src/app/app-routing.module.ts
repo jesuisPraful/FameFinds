@@ -15,10 +15,10 @@ import { RemoveShopComponent } from './components/remove-shop/remove-shop.compon
 import { AddCityComponent } from './components/add-city/add-city.component';
 import { RemoveCityComponent } from './components/remove-city/remove-city.component';
 import { AddShopsComponent } from './components/add-shops/add-shops.component';
+import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
 import { ViewProductsComponent } from './components/view-products/view-products.component';
 import { ShopDetailsComponent } from './components/shop-details/shop-details.component';
 import { RatingComponent } from './components/rating/rating.component';
-import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
 import { VendorDashboardComponent } from './components/vendor-dashboard/vendor-dashboard.component';
 import { UpdateShopContactnumberComponent } from './components/updateshop-contactnumber/updateshop-contactnumber.component';
 import { UpdateshopEmailComponent } from './components/updateshop-email/updateshop-email.component';
@@ -35,6 +35,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistrationPageComponent },
   { path: 'vendorlogin', component: LoginVendorComponent },
+  { path: 'vendorregister',component:RegistrationPage2Component},
   { path: 'vendorregister', component: RegistrationPage2Component },
   { path: 'view-shops', component: ViewShopsComponent },
   { path: 'view-cities', component: ViewCitiesComponent },
@@ -52,6 +53,9 @@ const routes: Routes = [
   { path: 'update-contact-number', component: UpdateShopContactnumberComponent },
   { path: 'update-email', component: UpdateshopEmailComponent },
   { path: 'update-name', component: UpdateshopNameComponent },
+  { path: '**', component: LandingComponent },
+  { path: 'map-picker', component: MapPickerComponent },
+  { path: '**', component: LandingComponent }, // wildcard should come last
   { path: 'shop-products', component: ShowShopproductComponent },
   { path: '**', component: LandingComponent },
   { path: 'update-shopproduct', component: UpdateShopComponent },

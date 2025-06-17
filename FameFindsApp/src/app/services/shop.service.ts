@@ -4,6 +4,7 @@ import { IShop } from '../Models/shop';
 import { catchError, throwError } from 'rxjs';
 import { IVendor } from '../Models/vendor';
 import { ICity } from '../Models/city';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,21 @@ export class ShopService {
       .get<IShop[]>(`https://localhost:7249/api/Shop/shopName`, { params })
       .pipe(catchError(this.errorHandler));
   }
+
+  getShopById(shopId: number) {
+    return this._http
+      .get<IShop>(`https://localhost:7249/api/Shop/shopId?shopId=${shopId}`)
+      .pipe(catchError(this.errorHandler)); 
+
+  }
+
+  //getShopById(shopId: number) {
+  //  const params = new HttpParams().set('shopId', shopId.toString());
+  //  return this._http
+  //    .get<IShop>("https://localhost:7249/api/Shop", { params })
+  //    .pipe(catchError(this.errorHandler));
+  //}
+
 
   addShop(shop: IShop) {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
@@ -108,6 +124,23 @@ export class ShopService {
     return this._http.get<IShop[]>("https://localhost:7249/api/Shop/GetShops", { params }).pipe(catchError(this.errorHandler))
 
   }
+  getCities()  {
+    return this._http.get<any[]>("https://localhost:7249/api/City");
+  }
+
+  getIdByEmail(email:string) {
+    const params = new HttpParams()
+      .set('email', email)
+    return this._http.get<any[]>("https://localhost:7249/api/Vendor/GetVendorByEmail", { params }).pipe(catchError(this.errorHandler))
+  }
+
+  // For rating
+
+  getAverageRating(shopId: number): Observable<number> {
+  return this._http.get<number>(
+    `https://localhost:7249/api/Shop/GetAverageRating?shopId=${shopId}`
+  );
+}
 
 
   errorHandler(error: HttpErrorResponse) {

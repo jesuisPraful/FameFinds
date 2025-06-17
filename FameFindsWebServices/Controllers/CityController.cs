@@ -8,8 +8,8 @@ using System.Diagnostics.Eventing.Reader;
 
 namespace FameFindsWebServices.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class CityController : ControllerBase
     {
         private readonly FameFindsRepository _repository;
@@ -78,7 +78,7 @@ namespace FameFindsWebServices.Controllers
                 var cities = _repository.GetAllCities();
                 return Ok(cities);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return StatusCode(500, "Internal server error");
             }
@@ -164,5 +164,5 @@ namespace FameFindsWebServices.Controllers
             }
         }
 
-        }
+    }
 }
