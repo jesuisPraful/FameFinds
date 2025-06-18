@@ -1,0 +1,16 @@
+<!-- Header -->
+<header class="user-header">
+  <a routerLink="/user/home" class="header-left"> Home</a>
+  <div class="header-right">FameFinds</div>
+</header>
+
+<!-- Main Content -->
+<main class="user-main">
+  <router-outlet></router-outlet>
+</main>
+
+<!-- Footer -->
+<footer class="user-footer">
+  <button (click)="goBack()" class="footer-left"> Back</button>
+  <button (click)="logout()" class="footer-right"> Log out</button>
+</footer>

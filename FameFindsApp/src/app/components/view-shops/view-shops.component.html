@@ -1,64 +1,64 @@
 <div class="container">
-  <h2 style="text-align: center;">All Shops</h2>
+    <h2 style="text-align: center;">All Shops</h2>
 
-  <header>
-    <div class="logo" tabindex="0">CityFamous</div>
-  </header>
+    <header>
+      <div class="logo" tabindex="0">CityFamous</div>
+    </header>
 
-  <!-- No Shops Found -->
-  <div *ngIf="showMsgDiv" class="alert alert-warning text-center">
-    No shops found.
+    <!-- No Shops Found -->
+    <div *ngIf="showMsgDiv" class="alert alert-warning text-center">
+      No shops found.
+    </div>
+
+    <!-- Page Title -->
+    <main role="main" aria-label="Shops selling selected product">
+      <h1 class="page-title" id="pageTitle">
+        Shops Selling {{ productName }}
+      </h1>
+
+      <!-- Shops List -->
+      <section class="shop-cards" id="shopsContainer" aria-label="List of shops">
+        <article class="shop-card"
+                 role="region"
+                 *ngFor="let shop of filteredShops"
+                 [attr.aria-label]="'Shop: ' + shop.shopName">
+
+          <div class="shop-header">
+            <div class="shop-thumb" aria-hidden="true">
+              <span class="material-icons md-36">storefront</span>
+            </div>
+            <div class="shop-info">
+              <h3 class="shop-name">{{ shop.shopName }}</h3>
+              <address class="shop-address">{{ shop.fullAddress }}</address>
+            </div>
+          </div>
+
+          <div class="contact-item" title="Phone">
+            <span class="material-icons md-18" aria-hidden="true">phone</span>
+            <span>{{ shop.contactNumber }}</span>
+          </div>
+
+          <div class="contact-item" title="Email">
+            <span class="material-icons md-18" aria-hidden="true">email</span>
+            <span>{{ shop.emailId }}</span>
+          </div>
+
+          <!-- Rating Stars -->
+          <div class="contact-item rating-stars" *ngIf="shop.averageRating !== undefined" title="Average Rating">
+            <ng-container *ngFor="let star of [1,2,3,4,5]; let i = index">
+              <span class="star" [class.filled]="i < Math.round(shop.averageRating)">★</span>
+            </ng-container>
+            <span class="rating-value">({{ shop.averageRating.toFixed(1) }})</span>
+          </div>
+
+          <button class="btn btn-primary me-2" (click)="viewShopDetails(shop)">View Details</button>
+          <button class="btn btn-outline-success" (click)="showMap(shop)">View on Map</button>
+        </article>
+
+        <!-- No Shops Message -->
+        <div *ngIf="filteredShops.length === 0" class="no-shops-msg">
+          No shops found for "{{ productName }}"
+        </div>
+      </section>
+    </main>
   </div>
-
-  <!-- Page Title -->
-  <main role="main" aria-label="Shops selling selected product">
-    <h1 class="page-title" id="pageTitle">
-      Shops Selling {{ productName }}
-    </h1>
-
-    <!-- Shops List -->
-    <section class="shop-cards" id="shopsContainer" aria-label="List of shops">
-      <article class="shop-card"
-               role="region"
-               *ngFor="let shop of filteredShops"
-               [attr.aria-label]="'Shop: ' + shop.shopName">
-
-        <div class="shop-header">
-          <div class="shop-thumb" aria-hidden="true">
-            <span class="material-icons md-36">storefront</span>
-          </div>
-          <div class="shop-info">
-            <h3 class="shop-name">{{ shop.shopName }}</h3>
-            <address class="shop-address">{{ shop.fullAddress }}</address>
-          </div>
-        </div>
-
-        <div class="contact-item" title="Phone">
-          <span class="material-icons md-18" aria-hidden="true">phone</span>
-          <span>{{ shop.contactNumber }}</span>
-        </div>
-
-        <div class="contact-item" title="Email">
-          <span class="material-icons md-18" aria-hidden="true">email</span>
-          <span>{{ shop.emailId }}</span>
-        </div>
-
-        <!-- Rating Stars -->
-        <div class="contact-item rating-stars" *ngIf="shop.averageRating !== undefined" title="Average Rating">
-          <ng-container *ngFor="let star of [1,2,3,4,5]; let i = index">
-            <span class="star" [class.filled]="i < Math.round(shop.averageRating)">★</span>
-          </ng-container>
-          <span class="rating-value">({{ shop.averageRating.toFixed(1) }})</span>
-        </div>
-
-        <button class="btn btn-primary me-2" (click)="viewShopDetails(shop)">View Details</button>
-        <button class="btn btn-outline-success" (click)="showMap(shop)">View on Map</button>
-      </article>
-
-      <!-- No Shops Message -->
-      <div *ngIf="filteredShops.length === 0" class="no-shops-msg">
-        No shops found for "{{ productName }}"
-      </div>
-    </section>
-  </main>
-</div>

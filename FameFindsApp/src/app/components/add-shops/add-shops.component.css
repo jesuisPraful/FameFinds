@@ -1,21 +1,167 @@
-.map-container {
-  height: 400px;
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('/assets/images/addshopimg.png');
+  background-size: cover;
+}
+
+.add-shop-container {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  min-height: 100vh;
+  background-image: url('/assets/images/addshopimg.png');
+  background-size: cover;
+  align-items: center;
+  padding: 2rem;
+  padding-top: 20px; /* adjust how high it appears */
+  height: 40vh;
+  margin-bottom:50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.add-shop-box {
+  max-width: 90%;
+  width: 420px;
+  margin: 30px 0 30px 40px;
+  padding:  4rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  margin-left: 5px;
+  min-height: 650px;
+  margin-bottom: 20px;
+  text-align: left;
+  background: #d0e6f7;
+  margin-top: 10px;
+  
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 25px;
+  color: #333;
+  margin-left: 50px;
+}
+
+input, textarea {
   width: 100%;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  overflow: hidden;
+  padding: 8px;
+  margin: 4px 0;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-top: -40px;
+  margin-bottom: 15px; /* space between fields */
+}
+
+.location-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+  .location-buttons button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background-color: #2996d8;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  font-size: 14px;
+  white-space: nowrap;
+  margin-bottom: 16px;
+  gap: 10px;
+}
+
+  .checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px; /* Minimal gap between checkbox and text */
+    margin-top: -20px;
+  }
+
+  .checkbox label {
+    margin-right: 200px;
+    margin-bottom: 18px;
+    margin-top: -5px;
+  }
+
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #2aa74b;
+  color: white;
+  border: none;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: -5px;
+}
+
+.error-message {
+  color: red;
+  text-align: left;
+  margin-top: -0.5rem;
+  font-size: 0.85rem;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: -10px;
+  font-size: 18px;
+  text-align: left;
+  display: block;
+  margin-top: -3px;
+
+}
+
+.form-row {
+  margin-top: 100px; /* optional: controls gap between rows */
+}
+
+
+.map-section {
+  margin:  0;
+}
+
+
+.map-container {
+  width: 100%; /* or any fixed size like 400px */
+  height: 180px; /* reduce this to shrink map height */
+  margin: auto; /* center it */
+  margin-top: 15px; /* spacing */
 }
 
 google-map {
-  height: 100%;
-  width: 100%;
+  width: 100% !important;
+  height: 20% !important;
+  border-radius: 12px; /* optional for rounded corners */
+  margin-top:15px;
 }
 
-.card {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+.time-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 10px;
 }
 
-.card-header {
-  font-weight: 500;
-  background-color: #f8f9fa;
-}
+  .time-row > div {
+    flex: 1;
+
+  }
+
+
+

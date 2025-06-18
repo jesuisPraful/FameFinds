@@ -42,26 +42,6 @@ export class AddShopsComponent {
     }
   }
 
-  //addShop(): void {
-  //  if (!this.newShop.latitude || !this.newShop.longitude) {
-  //    this.message = 'Please select a location on the map.';
-  //    return;
-  //  }
-
-  //  this.newShop.createdAt = new Date();
-
-  //  this._shopService.addShop(this.newShop).subscribe(
-  //    (response) => {
-  //      console.log('Shop added successfully:', response);
-  //      this.message = 'Shop added successfully!';
-  //      this._router.navigate(['/view-shops']);
-  //    },
-  //    (error) => {
-  //      console.error('Error adding shop:', error);
-  //      this.message = 'Error adding shop. Please try again.';
-  //    }
-  //  );
-  //}
   addShop(): void {
     if (!this.newShop.latitude || !this.newShop.longitude) {
       this.message = 'Please select a location on the map.';
@@ -101,3 +81,4 @@ export class AddShopsComponent {
     });
   }
 }
+

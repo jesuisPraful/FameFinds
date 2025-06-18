@@ -12,7 +12,7 @@ export class Register2Service {
     this.vendor = [];
   }
   registerVendor(vendor: IVendor) {
-    let response = this._http.post("https://localhost:7249/api/Vendor/AddVendor" ,vendor, {
+    let response = this._http.post("https://localhost:7249/api/Vendor/AddVendor/Register" ,vendor, {
       responseType: 'text'
     }).pipe(catchError(this.errorHandler))
     return response;
