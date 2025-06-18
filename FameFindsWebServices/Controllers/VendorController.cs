@@ -14,9 +14,9 @@ namespace FameFindsWebServices.Controllers
     public class VendorController : Controller
     {
         private readonly IFameFindsDAL _repository;
-        private readonly AuthenticationService _authService;
-        private readonly EmailService _emailService;
-        public VendorController(IFameFindsDAL repository, AuthenticationService authService, EmailService emailService)
+        private readonly IAuthenticationService _authService;
+        private readonly IEmailService _emailService;
+        public VendorController(IFameFindsDAL repository, IAuthenticationService authService, IEmailService emailService)
         {
             _repository = repository;
             _authService = authService;
@@ -62,12 +62,12 @@ namespace FameFindsWebServices.Controllers
                     var vendorOne = new Vendor
                     {
                         VendorName = vendor.VendorName,
-                        Email=vendor.Email,
+                        Email = vendor.Email,
                         PasswordHash = vendor.PasswordHash,
                         PhoneNumber = vendor.PhoneNumber
                     };
                     result = _authService.AddVendor(vendorOne);
-                    if(result)
+                    if (result)
                     {
                         return Ok("Vendor Registered Successfully");
                     }
@@ -78,10 +78,10 @@ namespace FameFindsWebServices.Controllers
                 }
                 else
                 {
-                    var errors=ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage);
-                    return BadRequest(new {message="Invalid Data",errors});
+                    var errors = ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage);
+                    return BadRequest(new { message = "Invalid Data", errors });
                 }
-               
+
             }
             catch (Exception ex)
             {
@@ -118,7 +118,7 @@ namespace FameFindsWebServices.Controllers
                     PasswordHash = passwordHash
                 });
 
-                if (vendor != null)
+                if (vendor)
                     return Ok(vendor);
 
                 return Unauthorized("Invalid email or password.");
@@ -194,7 +194,7 @@ namespace FameFindsWebServices.Controllers
                 var vendor = _repository.GetVendorByUsername(Email);
                 if (vendor != null)
                 {
-                    return Ok(vendor);
+                    return Ok(new { vendor.VendorId } );
                 }
                 else
                 {
@@ -284,12 +284,20 @@ namespace FameFindsWebServices.Controllers
 
         // for view-ratings
 
-        [HttpGet("RatingsByVendor/{vendorId}")]
-        public IActionResult GetRatingsByVendor(int vendorId)
+        [HttpGet("GetVendorRatings/{vendorId}")]
+        public IActionResult GetVendorRatings(int vendorId)
         {
-            var ratings = _repository.GetRatingsByVendor(vendorId);
-            return Ok(ratings);
+            try
+            {
+                var ratings = _repository.GetRatingsByVendor(vendorId);
+                return Ok(ratings);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
         }
+
 
 
     }

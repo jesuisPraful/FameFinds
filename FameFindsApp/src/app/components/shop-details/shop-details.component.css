@@ -62,7 +62,8 @@ header {
 }
 
 .btn-back,
-.btn-map {
+.btn-map,
+.btn-rate {
   background-color: #3498db;
   color: white;
   border: none;

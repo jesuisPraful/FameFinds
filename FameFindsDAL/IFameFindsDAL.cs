@@ -1,4 +1,5 @@
-﻿using FameFindsDAL.Models;
+﻿using FameFindsDAL.DTOs;
+using FameFindsDAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace FameFindsDAL
         Customer LoginCustomer(string email, string passwordHash);
         Customer GetCustomerById(int customerId);
         Customer GetCustomerByUsername(string username);
+        int GetCustomerIdByEmail(string email);
         List<Customer> GetAllCustomers();
         int UpdateCustomer(Customer customer);
         int DeleteCustomer(int customerId);
@@ -72,11 +74,18 @@ namespace FameFindsDAL
         List<Rating> GetRatings();
         bool RemoveRating(int ratingId);
         List<ShopWithRatingDto> GetShopsSortedByRating();
+        double GetAverageRatingByShopId(int shopId);
+        List<RatingDto> GetRatingsByVendor(int vendorId);
+
+
+
         #endregion
 
         #region shop
 
         bool RegisterShop(Shop shop);
+        City CityByShop(Shop shop);
+        List<int> GetShopIdsByVendorId(int vendorId);
         List<Shop> GetAllShops();
         Shop GetShopsByShopId(int shopId);
         List<Shop> GetShopsByVendorId(int vendorId);

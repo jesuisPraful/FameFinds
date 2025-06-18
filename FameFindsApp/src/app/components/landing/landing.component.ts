@@ -1,5 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-landing',
@@ -7,23 +6,42 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent implements AfterViewInit {
-  ngAfterViewInit(): void {
-    const dropdowns = document.querySelectorAll('nav .dropdown');
+  constructor(private elRef: ElementRef, private renderer: Renderer2) { }
 
-    dropdowns.forEach(dropdown => {
+  ngAfterViewInit(): void {
+    const dropdowns = this.elRef.nativeElement.querySelectorAll('nav .dropdown');
+
+    dropdowns.forEach((dropdown: HTMLElement) => {
       const trigger = dropdown.querySelector('a');
       const menu = dropdown.querySelector('.dropdown-menu');
       const links = Array.from(menu?.querySelectorAll('a') || []);
 
-      trigger?.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+      if (!trigger || !menu) return;
+
+      // Hover effects
+      this.renderer.listen(dropdown, 'mouseenter', () => {
+        this.renderer.setStyle(menu, 'visibility', 'visible');
+        this.renderer.setStyle(menu, 'opacity', '1');
+        this.renderer.setStyle(menu, 'transform', 'translateY(0)');
+      });
+
+      this.renderer.listen(dropdown, 'mouseleave', () => {
+        this.renderer.setStyle(menu, 'visibility', 'hidden');
+        this.renderer.setStyle(menu, 'opacity', '0');
+        this.renderer.setStyle(menu, 'transform', 'translateY(10px)');
+      });
+
+      // Trigger keyboard navigation
+      this.renderer.listen(trigger, 'keydown', (e: KeyboardEvent) => {
+        if (['ArrowDown', 'Enter', ' '].includes(e.key)) {
           e.preventDefault();
           (links[0] as HTMLElement)?.focus();
         }
       });
 
+      // Menu item navigation
       links.forEach((link, index) => {
-        link.addEventListener('keydown', (e) => {
+        this.renderer.listen(link, 'keydown', (e: KeyboardEvent) => {
           if (e.key === 'ArrowDown') {
             e.preventDefault();
             const next = links[(index + 1) % links.length] as HTMLElement;
@@ -35,25 +53,12 @@ export class LandingComponent implements AfterViewInit {
           } else if (e.key === 'Escape') {
             e.preventDefault();
             (trigger as HTMLElement)?.focus();
-            (menu as HTMLElement).style.visibility = 'hidden';
-            (menu as HTMLElement).style.opacity = '0';
-            (menu as HTMLElement).style.transform = 'translateY(10px)';
+            this.renderer.setStyle(menu, 'visibility', 'hidden');
+            this.renderer.setStyle(menu, 'opacity', '0');
+            this.renderer.setStyle(menu, 'transform', 'translateY(10px)');
           }
         });
-      });
-
-      dropdown.addEventListener('mouseleave', () => {
-        (menu as HTMLElement).style.visibility = 'hidden';
-        (menu as HTMLElement).style.opacity = '0';
-        (menu as HTMLElement).style.transform = 'translateY(10px)';
-      });
-
-      dropdown.addEventListener('mouseenter', () => {
-        (menu as HTMLElement).style.visibility = 'visible';
-        (menu as HTMLElement).style.opacity = '1';
-        (menu as HTMLElement).style.transform = 'translateY(0)';
       });
     });
   }
 }
-

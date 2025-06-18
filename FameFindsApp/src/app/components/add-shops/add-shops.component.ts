@@ -17,6 +17,7 @@ export class AddShopsComponent implements OnInit {
   message: string = '';
   loading = false;
   vendorId: string;
+  showToast: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -38,7 +39,7 @@ export class AddShopsComponent implements OnInit {
       longitude: [''],
       isOpen: [true],
       openingTime: [''],
-      closingTime: ['']
+      closingTime: [''],
     });
 
     this.getAllCities();
@@ -47,13 +48,23 @@ export class AddShopsComponent implements OnInit {
     const storedLng = localStorage.getItem('selectedLng');
 
     if (storedLat && storedLng) {
+      const lat = parseFloat(storedLat);
+      const lng = parseFloat(storedLng);
+
       this.shopForm.patchValue({
-        latitude: parseFloat(storedLat),
-        longitude: parseFloat(storedLng)
+        latitude: lat,
+        longitude: lng
       });
 
-      // Auto-fetch address if lat/lng exists from map-picker
-      this.fetchLocationDetails(parseFloat(storedLat), parseFloat(storedLng));
+      this.fetchLocationDetails(lat, lng);
+
+      localStorage.removeItem('selectedLat');
+      localStorage.removeItem('selectedLng');
+
+      this.showToast = true;
+      setTimeout(() => {
+        this.showToast = false;
+      }, 3000);
     }
   }
 
@@ -69,27 +80,50 @@ export class AddShopsComponent implements OnInit {
   }
 
   useMyLocation(): void {
-    if (!navigator.geolocation) {
-      this.message = 'Geolocation is not supported by your browser.';
-      return;
-    }
+    localStorage.removeItem('selectedLat');
+    localStorage.removeItem('selectedLng');
 
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const lat = position.coords.latitude;
-        const lng = position.coords.longitude;
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+
+          this.shopForm.patchValue({
+            latitude: lat,
+            longitude: lng
+          });
+
+          this.reverseGeocode(lat, lng);
+        },
+        (error) => {
+          console.error('Location error:', error);
+          alert('Failed to get your current location.');
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000
+        }
+      );
+    } else {
+      alert('Geolocation is not supported by your browser.');
+    }
+  }
+
+  reverseGeocode(lat: number, lng: number): void {
+    const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`;
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const address = data.display_name || '';
+        const postcode = data.address.postcode || '';
 
         this.shopForm.patchValue({
-          latitude: lat,
-          longitude: lng
+          fullAddress: address,
+          pincode: postcode
         });
-
-        this.fetchLocationDetails(lat, lng);
-      },
-      () => {
-        this.message = 'Unable to retrieve your location.';
-      }
-    );
+      })
+      .catch(err => console.error('Reverse geocoding error:', err));
   }
 
   fetchLocationDetails(lat: number, lng: number): void {
@@ -138,7 +172,7 @@ export class AddShopsComponent implements OnInit {
       ...this.shopForm.value,
       shopId: 0,
       createdAt: new Date(),
-      vendorId: this.shopService.getIdByEmail(localStorage.getItem("Email") ?? '')
+      vendorId: localStorage.getItem('vendorId')
     };
 
     this.loading = true;

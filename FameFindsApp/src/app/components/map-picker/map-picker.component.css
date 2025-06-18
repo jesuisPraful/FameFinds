@@ -1,4 +1,4 @@
-/*.map-container {
+.map-container {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -8,10 +8,9 @@
 #map {
   width: 100%;
   height: 100%;
-}*/
+}
 
-/* Confirm Location Button */
-/*.confirm-btn {
+.confirm-btn {
   position: absolute;
   bottom: 30px;
   left: 50%;
@@ -29,10 +28,9 @@
 
   .confirm-btn:hover {
     background-color: #45a049;
-  }*/
+  }
 
-/* Locate Me Button */
-/*.locate-btn {
+.locate-btn {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -49,4 +47,4 @@
 
   .locate-btn:hover {
     background-color: #1976D2;
-  }*/
+  }
