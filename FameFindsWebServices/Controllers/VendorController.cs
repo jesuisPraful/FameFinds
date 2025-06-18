@@ -283,12 +283,20 @@ namespace FameFindsWebServices.Controllers
 
         // for view-ratings
 
-        [HttpGet("RatingsByVendor/{vendorId}")]
-        public IActionResult GetRatingsByVendor(int vendorId)
+        [HttpGet("GetVendorRatings/{vendorId}")]
+        public IActionResult GetVendorRatings(int vendorId)
         {
-            var ratings = _repository.GetRatingsByVendor(vendorId);
-            return Ok(ratings);
+            try
+            {
+                var ratings = _repository.GetRatingsByVendor(vendorId);
+                return Ok(ratings);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
         }
+
 
 
     }

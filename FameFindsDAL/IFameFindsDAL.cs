@@ -1,4 +1,5 @@
-﻿using FameFindsDAL.Models;
+﻿using FameFindsDAL.DTOs;
+using FameFindsDAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,9 +71,11 @@ namespace FameFindsDAL
         bool AddRating(Rating rating);
         List<Rating> GetRatings();
         bool RemoveRating(int ratingId);
-        List<object> GetRatingsByVendor(int vendorId);
         List<ShopWithRatingDto> GetShopsSortedByRating();
         double GetAverageRatingByShopId(int shopId);
+        List<RatingDto> GetRatingsByVendor(int vendorId);
+
+
 
         #endregion
 
@@ -116,7 +119,6 @@ namespace FameFindsDAL
         bool UpdateShopProduct(int shopProductId, decimal? price = null, int? stock = null);
         bool DeleteShopProduct(int shopProductId);
         List<ShopProduct> GetProductsByShopId(int shopId);
-        object GetAverageRatingByShopId(int shopId);
 
         #endregion
     }

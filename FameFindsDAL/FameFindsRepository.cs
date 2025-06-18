@@ -1,4 +1,5 @@
-﻿using FameFindsDAL.Models;
+﻿using FameFindsDAL.DTOs;
+using FameFindsDAL.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ using static System.Formats.Asn1.AsnWriter;
 
 namespace FameFindsDAL
 {
-    public class FameFindsRepository:IFameFindsDAL
+    public class FameFindsRepository : IFameFindsDAL
     {
         private readonly FameFindsContext _context;
        
@@ -761,6 +762,29 @@ namespace FameFindsDAL
             return result;
         }
 
+        public List<RatingDto> GetRatingsByVendor(int vendorId)
+        {
+            var ratings = (from r in _context.Ratings
+                           where r.Shop != null && r.Shop.VendorId == vendorId
+                           select new RatingDto
+                           {
+                               CustomerName = r.Customer != null ? r.Customer.FullName : "Unknown",
+                               RatingValue = r.RatingValue ?? 0,
+                               Review = r.Review,
+                               CreatedAt = r.CreatedAt
+                           }).ToList();
+
+            return ratings;
+        }
+        public double GetAverageRatingByShopId(int shopId)
+        {
+            return _context.Ratings
+                .Where(r => r.ShopId == shopId)
+                .Select(r => r.RatingValue ?? 0)
+                .DefaultIfEmpty(0)
+                .Average();
+        }
+
 
         #endregion
 
@@ -1141,38 +1165,8 @@ namespace FameFindsDAL
             return status;
         }
 
-        // To show ratings for shop
-        public double GetAverageRatingByShopId(int shopId)
-        {
-            try
-            {
-                return (double)_context.Ratings
-                    .Where(r => r.ShopId == shopId)
-                    .Select(r => r.RatingValue)
-                    .DefaultIfEmpty(0)
-                    .Average();
-            }
-            catch
-            {
-                return 0;
-            }
-        }
 
-        // For vendor rating
-        public List<object> GetRatingsByVendor(int vendorId)
-        {
-            var ratings = (from r in _context.Ratings
-                           where r.Shop != null && r.Shop.VendorId == vendorId
-                           select new
-                           {
-                               CustomerName = r.Customer != null ? r.Customer.FullName : "Unknown",
-                               RatingValue = r.RatingValue ?? 0,
-                               Review = r.Review,
-                               CreatedAt = r.CreatedAt
-                           }).ToList<object>();
 
-            return ratings;
-        }
 
         #endregion
 
