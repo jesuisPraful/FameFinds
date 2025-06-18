@@ -282,21 +282,7 @@ namespace FameFindsWebServices.Controllers
             return Ok("Password reset successful.");
         }
 
-        // for view-ratings
 
-        [HttpGet("GetVendorRatings/{vendorId}")]
-        public IActionResult GetVendorRatings(int vendorId)
-        {
-            try
-            {
-                var ratings = _repository.GetRatingsByVendor(vendorId);
-                return Ok(ratings);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
-            }
-        }
 
 
 

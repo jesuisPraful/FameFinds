@@ -19,34 +19,7 @@ namespace FameFindsWebServices.Controllers
         }
 
 
-        [HttpGet("getCityByShop")]
-        public IActionResult GetCityByShop(FameFindsDAL.Models.Shop shop)
-        {
-            try
-            {
-                if (shop == null)
-                {
-                    return BadRequest("Invalid shop data.");
-                }
-
-                var city = _repository.CityByShop(shop);
-                if (city != null)
-                {
-                    return Ok(city);
-                }
-                else
-                {
-                    return BadRequest("City Not Found");
-                }
-
-            }
-            catch (Exception)
-            {
-
-                return StatusCode(500, "Internal server error");
-            }
-        }
-
+       
         [HttpGet("getCityByShopId/{shopId}")]
         public IActionResult GetCityByShopId(int shopId)
         {

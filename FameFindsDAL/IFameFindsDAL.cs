@@ -69,14 +69,11 @@ namespace FameFindsDAL
         #endregion
 
         #region Ratings
-        double GetAverageRatingByShopId(int shopId);
         bool AddRating(Rating rating);
         List<Rating> GetRatings();
         bool RemoveRating(int ratingId);
-        List<ShopWithRatingDto> GetShopsSortedByRating();
-        List<RatingDto> GetRatingsByVendor(int vendorId);
+        AverageRatingDTO GetAverageRatingByShop(int shopId);
 
-        
 
         #endregion
 

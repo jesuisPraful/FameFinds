@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IShop } from '../../Models/shop';
 import { ShopService } from '../../services/shop.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-shop-details',
@@ -15,8 +16,16 @@ export class ShopDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private shopService: ShopService
+    private shopService: ShopService,
+    private location: Location
   ) { }
+  goBackin() {
+    this.location.back();
+  }
+
+  logout() {
+    this.router.navigate(['/login']);
+  }
 
   ngOnInit(): void {
     const storedShopId = localStorage.getItem('shopId');

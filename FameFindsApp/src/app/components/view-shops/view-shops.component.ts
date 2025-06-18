@@ -3,6 +3,7 @@ import { IShop } from '../../Models/shop';
 import { ShopService } from '../../services/shop.service';
 import { Router } from '@angular/router';
 import { RatingService } from '../../services/rating.service';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-view-shops',
@@ -17,7 +18,17 @@ export class ViewShopsComponent implements OnInit {
   selectedShop: IShop | null = null;
   showMsgDiv: boolean = false;
 
-  constructor(private _service: ShopService, private _router: Router, private _ratingService: RatingService) { }
+  constructor(private _service: ShopService, private _router: Router, private _ratingService: RatingService, private location: Location
+) { }
+
+
+  goBack() {
+    this.location.back();
+  }
+
+  logout() {
+    this._router.navigate(['/login']);
+  }
 
   ngOnInit(): void {
     const storedProduct = localStorage.getItem('selectedProduct');
@@ -40,7 +51,11 @@ export class ViewShopsComponent implements OnInit {
           // Fetch average ratings for each shop
           this.filteredShops.forEach(shop => {
             this._ratingService.getAverageRating(shop.shopId).subscribe({
-              next: avg => shop.averageRating = avg,
+              next: avg => {
+                shop.averageRating = avg.averageRating;
+                shop.totalRating = avg.totalRatings; // optional
+              },
+
               error: err => console.error(`Failed to load rating for shop ${shop.shopId}`, err)
             });
           });

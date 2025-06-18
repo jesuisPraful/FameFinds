@@ -8,7 +8,9 @@ import { Router } from '@angular/router';
 })
 export class VendorDashboardComponent {
   constructor(private router: Router) { }
-
+  logout() {
+    this.router.navigate(['/vendorlogin']);
+  }
   navigateTo(path: string): void {
     this.router.navigate([`/${path}`]);
   }
