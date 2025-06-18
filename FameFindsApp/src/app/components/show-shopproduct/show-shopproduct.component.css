@@ -1,0 +1,14 @@
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+button.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.alert {
+  max-width: 600px;
+  margin: 0 auto;
+}

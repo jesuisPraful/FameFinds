@@ -14,15 +14,23 @@ export class ShopProductService {
 
   constructor(private http: HttpClient) { }
 
+
+
   getProductsByShopId(shopId: number): Observable<ShopProduct[]> {
-    return this.http.get<ShopProduct[]>(`${this.baseUrl}/shop/${shopId}`)
+    return this.http.get<ShopProduct[]>(`https://localhost:7249/api/ShopProduct/shop/${shopId}`)
       .pipe(catchError(this.handleError));
   }
 
-  addShopProduct(product: ShopProduct): Observable<ShopProduct> {
-    return this.http.post<ShopProduct>(`${this.baseUrl}/add`, product)
-      .pipe(catchError(this.handleError));
+  //addShopProduct(product: ShopProduct): Observable<ShopProduct> {
+  //  return this.http.post<ShopProduct>(`${this.baseUrl}/add`, product)
+  //    .pipe(catchError(this.handleError));
+  //}
+
+ 
+  addShopProduct(shopProduct: any): Observable<any> {
+    return this.http.post('https://localhost:7249/api/ShopProduct/add', shopProduct);
   }
+
 
   updateShopProduct(id: number, product: ShopProduct): Observable<string> {
     return this.http.put<string>(`${this.baseUrl}/update/${id}`, product)
@@ -44,6 +52,7 @@ export class ShopProductService {
       .pipe(catchError(this.handleError));
   }
 
+  
   private handleError(error: HttpErrorResponse) {
     let errorMessage = 'An unknown error occurred!';
     if (error.error instanceof ErrorEvent) {

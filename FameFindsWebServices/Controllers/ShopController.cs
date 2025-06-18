@@ -52,6 +52,24 @@ namespace FameFindsWebServices.Controllers
             }
             return Ok(shops);
         }
+        [HttpGet("GetCityIdByShopId/{shopId}")]
+        public IActionResult GetCityIdByShopId(int shopId)
+        {
+            try
+            {
+                var cityId = _repository.GetCityIdByShopId(shopId);
+                if (cityId == null)
+                {
+                    return NotFound($"No shop found with ID {shopId}");
+                }
+                return Ok(cityId);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error: " + ex.Message);
+            }
+        }
+
 
         
         [HttpPost("Register")]
