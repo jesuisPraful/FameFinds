@@ -20,6 +20,7 @@ export class ShowShopproductComponent implements OnInit {
   }
 
   getProducts(): void {
+    this.shopId = Number(localStorage.getItem("selectedShopId"));
     this.shopProductService.getProductsByShopId(this.shopId).subscribe({
       next: (products) => {
         this.shopProducts = products;
@@ -33,16 +34,37 @@ export class ShowShopproductComponent implements OnInit {
     });
   }
 
+
+
   // ✅ ADD THIS METHOD
+  //deleteProduct(shopProductId: number): void {
+  //  if (confirm('Are you sure you want to delete this product?')) {
+  //    this.shopProductService.deleteShopProduct(shopProductId).subscribe({
+  //      next: (res:string) => {
+  //        this.message = res;
+  //        this.error = '';
+  //        this.getProducts(); // refresh list
+
+  //      },
+  //      error: () => {
+  //        this.error = 'Delete failed.';
+  //        this.message = '';
+  //      }
+  //    });
+  // }
+  //}
+
   deleteProduct(shopProductId: number): void {
     if (confirm('Are you sure you want to delete this product?')) {
       this.shopProductService.deleteShopProduct(shopProductId).subscribe({
-        next: (res) => {
-          this.message = res;
+        next: (res: any) => {
+          console.log('Delete response:', res);
+          this.message = res.message;  // ✅ Extract 'message' from JSON object
           this.error = '';
-          this.getProducts(); // refresh list
+          this.getProducts(); // Refresh list
         },
-        error: () => {
+        error: (err) => {
+          console.error('Delete error:', err);
           this.error = 'Delete failed.';
           this.message = '';
         }

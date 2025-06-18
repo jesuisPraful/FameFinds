@@ -77,6 +77,7 @@ namespace FameFindsDAL
 
         bool RegisterShop(Shop shop);
         City CityByShop(Shop shop);
+        int? GetCityIdByShopId(int shopId);
         List<int> GetShopIdsByVendorId(int vendorId);
         List<Shop> GetAllShops();
         Shop GetShopsByShopId(int shopId);

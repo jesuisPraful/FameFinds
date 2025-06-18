@@ -28,6 +28,9 @@ import { UpdateShopproductpriceComponent } from './components/update-shopproduct
 import { UpdateShopproductstockComponent } from './components/update-shopproductstock/update-shopproductstock.component';
 import { MapPickerComponent } from './components/map-picker/map-picker.component';
 import { ViewRatingComponent } from './components/view-rating/view-rating.component';
+import { ViewVendorShopsComponent } from './components/view-vendor-shops/view-vendor-shops.component';
+import { AddShopProductComponent } from './components/add-shop-product/add-shop-product.component';
+import { VendorShopOptionsComponent } from './components/vendor-shop-options/vendor-shop-options.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -56,9 +59,11 @@ const routes: Routes = [
   { path: 'update-name', component: UpdateshopNameComponent },
   { path: 'view-rating', component: ViewRatingComponent },
   { path: 'map-picker', component: MapPickerComponent },
-  
+  { path: 'add-shop-product', component: AddShopProductComponent },
   { path: 'shop-products', component: ShowShopproductComponent },
- 
+  { path: 'view-shop-products', component: ShowShopproductComponent },
+  { path: 'vendor-shops', component: ViewVendorShopsComponent },
+  { path: 'vendor-shop-options', component: VendorShopOptionsComponent },
   { path: 'update-shopproduct', component: UpdateShopComponent },
   { path: 'update-shopproductstock', component: UpdateShopproductstockComponent },
   { path: 'update-shopproductprice', component: UpdateShopproductpriceComponent },

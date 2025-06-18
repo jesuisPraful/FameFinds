@@ -1,27 +1,29 @@
-<div class="dashboard-container">
-  <h2>Welcome</h2>
-  <div class="card-container">
 
-    <div class="card add" (click)="navigateTo('add-shops')">
-      <span class="icon">➕</span>
-      <p>Add New Shop</p>
+  <div class="dashboard-container">
+    <h2>Welcome</h2>
+    <div class="card-container">
+
+      <div class="card add" (click)="navigateTo('add-shops')">
+        <span class="icon">➕</span>
+        <p>Add New Shop</p>
+      </div>
+
+      <div class="card edit" (click)="navigateTo('update-shop')">
+        <span class="icon">📝</span>
+        <p>Update Shop</p>
+      </div>
+
+      <div class="card rating" (click)="navigateTo('shop-details')">
+        <span class="icon">⭐</span>
+        <p>View Ratings</p>
+      </div>
+
+      <div class="card rating" (click)="navigateTo('vendor-shops')">
+        <span class="icon">🏬</span>
+        <p>View Shops</p>
+      </div>
+
+
     </div>
-
-    <div class="card edit" (click)="navigateTo('update-shop')">
-      <span class="icon">📝</span>
-      <p>Update Shop</p>
-    </div>
-
-    <div class="card rating" (click)="navigateTo('shop-details')">
-      <span class="icon">⭐</span>
-      <p>View Ratings</p>
-    </div>
-
-    <div class="card rating">
-      <span class="icon">🏬</span>
-      <p>View Shops</p>
-    </div>
-
-
   </div>
-</div>
+

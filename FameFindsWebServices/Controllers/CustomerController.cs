@@ -1,5 +1,4 @@
 ﻿using FameFindsDAL;
-using FameFindsDAL.Models;
 using FameFindsWebServices.Models;
 using FameFindsWebServices.Services;
 using Microsoft.AspNetCore.Http;
@@ -7,7 +6,6 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Customer = FameFindsWebServices.Models.Customer;
 using ResetModel = FameFindsWebServices.Models.ResetPasswordRequest;
 
 
@@ -74,7 +72,7 @@ namespace FameFindsWebServices.Controllers
                         FullName = customer.FullName,
                         Email = customer.Email,
                         PhoneNumber = customer.PhoneNumber,
-                        PasswordHash = customer.Password
+                        Password = customer.Password
                     };
                     status = _authService.Register(customerOne);
                     if (status)

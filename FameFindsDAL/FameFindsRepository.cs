@@ -911,7 +911,14 @@ namespace FameFindsDAL
             return shops;
         }
 
-
+        //get cityid by shopid
+        public int? GetCityIdByShopId(int shopId)
+        {
+            return _context.Shops
+                .Where(s => s.ShopId == shopId)
+                .Select(s => (int?)s.CityId)
+                .FirstOrDefault();
+        }
 
         //Get Shop By ProductName
         public List<Shop> GetShopsByProduct(string productName)
@@ -1304,11 +1311,13 @@ namespace FameFindsDAL
             try
             {
                 _context.ShopProducts.Add(shopProduct);
+                Console.WriteLine("done added sp");
                 _context.SaveChanges();
                 status = true;
             }
             catch (Exception)
             {
+                Console.WriteLine("exception caught");
                 status = false;
             }
             return status;
