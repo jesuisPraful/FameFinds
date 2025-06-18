@@ -1,18 +1,29 @@
+/* Wrapper to center the card */
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* full screen height */
+  background-color: #f4f4f4;
+}
+
+/* The card itself */
 .rating-container {
   padding: 20px;
+  width: 90%;
   max-width: 500px;
-  margin: auto;
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 10px;
   background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Text & star styles */
 h2 {
   font-size: 24px;
-  color: #333;
   margin-bottom: 15px;
+  color: #333;
 }
 
 .stars {
@@ -26,13 +37,13 @@ h2 {
 
 .fa-star,
 .fa-star-half-alt {
-  margin: 0 2px;
+  margin: 0 3px;
 }
 
 .rating-value {
   font-size: 16px;
-  color: #555;
   margin-left: 10px;
+  color: #444;
 }
 
 .review-count {
@@ -42,7 +53,6 @@ h2 {
 }
 
 .no-ratings {
-  text-align: center;
   margin-top: 20px;
   font-size: 16px;
   color: #888;
