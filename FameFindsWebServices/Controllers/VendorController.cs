@@ -117,7 +117,7 @@ namespace FameFindsWebServices.Controllers
                     PasswordHash = passwordHash
                 });
 
-                if (vendor != null)
+                if (vendor)
                     return Ok(vendor);
 
                 return Unauthorized("Invalid email or password.");

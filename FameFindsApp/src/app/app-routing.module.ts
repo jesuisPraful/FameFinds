@@ -38,7 +38,6 @@ const routes: Routes = [
   { path: 'register', component: RegistrationPageComponent },
   { path: 'vendorlogin', component: LoginVendorComponent },
   { path: 'vendorregister',component:RegistrationPage2Component},
-  { path: 'vendorregister', component: RegistrationPage2Component },
   { path: 'view-shops', component: ViewShopsComponent },
   { path: 'view-cities', component: ViewCitiesComponent },
   { path: 'update-shop', component: UpdateShopComponent },
@@ -57,12 +56,13 @@ const routes: Routes = [
   { path: 'update-name', component: UpdateshopNameComponent },
   { path: 'view-rating', component: ViewRatingComponent },
   { path: 'map-picker', component: MapPickerComponent },
-  { path: '**', component: LandingComponent }, // wildcard should come last
+  
   { path: 'shop-products', component: ShowShopproductComponent },
  
   { path: 'update-shopproduct', component: UpdateShopComponent },
   { path: 'update-shopproductstock', component: UpdateShopproductstockComponent },
-  { path: 'update-shopproductprice', component: UpdateShopproductpriceComponent }
+  { path: 'update-shopproductprice', component: UpdateShopproductpriceComponent },
+   { path: '**', component: LandingComponent }
 ];
 
 @NgModule({
