@@ -1,77 +1,61 @@
 <div class="add-shop-container">
-  <h2>Add Your Shop</h2>
+  <div class="add-shop-box">
+    <h2>Add Your Shop</h2>
 
-  <form [formGroup]="shopForm" (ngSubmit)="addShop()" novalidate>
-    <div class="form-group">
-      <label>Shop Name</label>
-      <input formControlName="shopName" type="text" placeholder="e.g. The Trendy Store" />
-    </div>
+    <form (ngSubmit)="addShop()" #addShopForm="ngForm">
 
-    <div class="form-group">
-      <label>Email</label>
-      <input formControlName="emailId" type="email" placeholder="e.g. trendy@email.com" />
-    </div>
+      <label for="shopName">Shop Name</label>
+      <input type="text" id="shopName" name="shopName" [(ngModel)]="newShop.shopName" required />
 
-    <div class="form-group">
-      <label>Contact Number</label>
-      <input formControlName="contactNumber" type="tel" placeholder="e.g. 9876543210" />
-    </div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" [(ngModel)]="newShop.emailId" required />
 
-    <div class="form-group">
-      <label>City</label>
-      <select formControlName="cityId">
-        <option value="">Select City</option>
-        <option *ngFor="let city of cities" [value]="city.cityId">
-          {{ city.cityName }}
-        </option>
-      </select>
-    </div>
+      <label for="contact">Contact Number</label>
+      <input type="tel" id="contact" name="contact" [(ngModel)]="newShop.contactNumber" required />
 
-    <div class="form-group">
-      <label>Pin Code</label>
-      <input formControlName="pincode" type="text" placeholder="e.g. 500081" />
-    </div>
+      <label for="city">City</label>
+      <input type="text" id="city" name="cityId" [(ngModel)]="newShop.cityId" required />
 
-    <div class="form-group">
-      <label>Address</label>
-      <textarea formControlName="fullAddress" rows="2" placeholder="Full Address"></textarea>
-    </div>
+      <label for="pinCode">Pin Code</label>
+      <input type="text" id="pinCode" name="pincode" [(ngModel)]="newShop.pincode" required />
 
-    <div class="form-buttons">
-      <button type="button" class="location-btn" (click)="useMyLocation()">📍 Use My Location</button>
-      <button type="button" class="map-btn" (click)="navigateToMap()">🗺️ Select on Map</button>
-    </div>
+      <label for="address">Address</label>
+      <!--<inputtextarea id="address" name="fullAddress" [(ngModel)]="newShop.fullAddress" required></inputtextarea>-->
+      <input type="text" id="Address" name="address" [(ngModel)]="newShop.fullAddress" required />
 
-    <div *ngIf="showToast" class="toast-success">
-      📍 Location selected from map loaded!
-    </div>
+      <div class="location-buttons">
+        <button type="button" (click)="message='Please click on the map to select a location.'">📍 Use My Location</button>
+        <button type="button" (click)="message='Please click on the map to select a location.'">🗺️ Select on Map</button>
+      </div>
 
 
-    <div class="form-group">
-      <label>Opening Time</label>
-      <input type="time" formControlName="openingTime" />
-    </div>
+      <div class="map-section">
+        <google-map height="60px" width="100%" [center]="center" [zoom]="zoom" (mapClick)="onMapClick($event)">
+          <map-marker *ngIf="markerPosition" [position]="markerPosition"></map-marker>
+        </google-map>
+      </div>
 
-    <div class="form-group">
-      <label>Closing Time</label>
-      <input type="time" formControlName="closingTime" />
-    </div>
+      <div class="time-row">
+        <div>
+          <label for="openingTime">Opening Time</label>
+          <input type="time" id="openingTime" name="openingTime" [(ngModel)]="newShop.openingTime" required />
+        </div>
+        <div>
+          <label for="closingTime">Closing Time</label>
+          <input type="time" id="closingTime" name="closingTime" [(ngModel)]="newShop.closingTime" required />
+        </div>
+      </div>
 
-    <div class="mb-3 form-check">
-      <input type="checkbox"
-             class="form-check-input"
-             id="isOpen"
-             formControlName="isOpen">
-      <label class="form-check-label" for="isOpen">Shop is currently open</label>
-    </div>
+      <div class="checkbox">
+        <input type="checkbox" id="isOpen" name="isOpen" [(ngModel)]="newShop.isOpen" />
+        <label for="isOpen">Shop is currently open</label>
+      </div>
 
+      <button type="submit" class="submit-btn">Add Shop</button>
 
-    <div class="form-actions">
-      <button type="submit" [disabled]="loading">
-        {{ loading ? 'Adding...' : 'Add Shop' }}
-      </button>
-    </div>
+      <div *ngIf="message" class="error-message">{{ message }}</div>
 
-    <div class="status-message" *ngIf="message">{{ message }}</div>
-  </form>
+    </form>
+  </div>
 </div>
+

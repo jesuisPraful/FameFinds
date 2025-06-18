@@ -1,116 +1,167 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('/assets/images/addshopimg.png');
+  background-size: cover;
+}
+
 .add-shop-container {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 30px;
-  background: linear-gradient(to bottom right, #f6f8ff, #d9e9ff);
-  border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  min-height: 100vh;
+  background-image: url('/assets/images/addshopimg.png');
+  background-size: cover;
+  align-items: center;
+  padding: 2rem;
+  padding-top: 20px; /* adjust how high it appears */
+  height: 40vh;
+  margin-bottom:50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.add-shop-box {
+  max-width: 90%;
+  width: 420px;
+  margin: 30px 0 30px 40px;
+  padding:  4rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  margin-left: 5px;
+  min-height: 650px;
+  margin-bottom: 20px;
+  text-align: left;
+  background: #d0e6f7;
+  margin-top: 10px;
+  
 }
 
 h2 {
   text-align: center;
-  color: #2d3e50;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  color: #333;
+  margin-left: 50px;
 }
 
-.form-group {
-  margin-bottom: 15px;
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 4px 0;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-top: -40px;
+  margin-bottom: 15px; /* space between fields */
+}
+
+.location-buttons {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+  .location-buttons button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background-color: #2996d8;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  font-size: 14px;
+  white-space: nowrap;
+  margin-bottom: 16px;
+  gap: 10px;
+}
+
+  .checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px; /* Minimal gap between checkbox and text */
+    margin-top: -20px;
+  }
+
+  .checkbox label {
+    margin-right: 200px;
+    margin-bottom: 18px;
+    margin-top: -5px;
+  }
+
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #2aa74b;
+  color: white;
+  border: none;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: -5px;
+}
+
+.error-message {
+  color: red;
+  text-align: left;
+  margin-top: -0.5rem;
+  font-size: 0.85rem;
 }
 
 label {
   font-weight: 600;
-  color: #34495e;
-  margin-bottom: 6px;
+  margin-bottom: -10px;
+  font-size: 18px;
+  text-align: left;
+  display: block;
+  margin-top: -3px;
+
 }
 
-input, select, textarea {
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 15px;
-  transition: border-color 0.3s ease;
+.form-row {
+  margin-top: 100px; /* optional: controls gap between rows */
 }
 
-  input:focus, textarea:focus, select:focus {
-    border-color: #5b9bd5;
-    outline: none;
-  }
 
-textarea {
-  resize: none;
+.map-section {
+  margin:  0;
 }
 
-.form-buttons {
+
+.map-container {
+  width: 100%; /* or any fixed size like 400px */
+  height: 180px; /* reduce this to shrink map height */
+  margin: auto; /* center it */
+  margin-top: 15px; /* spacing */
+}
+
+google-map {
+  width: 100% !important;
+  height: 20% !important;
+  border-radius: 12px; /* optional for rounded corners */
+  margin-top:15px;
+}
+
+.time-row {
   display: flex;
-  gap: 12px;
   justify-content: space-between;
-  margin: 20px 0;
-}
-
-.location-btn, .map-btn {
-  flex: 1;
-  padding: 10px;
-  background-color: #4a90e2;
-  color: white;
-  font-weight: 600;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-  .location-btn:hover, .map-btn:hover {
-    background-color: #3b78c4;
-  }
-
-.form-actions {
-  margin-top: 20px;
-  text-align: center;
-}
-
-button[type="submit"] {
-  background-color: #28a745;
-  color: white;
-  font-weight: bold;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 16px;
-  width: 100%;
-  transition: background-color 0.3s;
-}
-
-  button[type="submit"]:hover {
-    background-color: #218838;
-  }
-
-button[disabled] {
-  background-color: #aaa;
-  cursor: not-allowed;
-}
-
-.alert-message {
-  color: #e74c3c;
-  font-weight: bold;
-  margin-top: 6px;
-}
-
-.status-message {
-  margin-top: 15px;
-  text-align: center;
-  font-weight: 500;
-  color: #2c3e50;
-}
-.toast-success {
-  background-color: #d4edda;
-  color: #155724;
-  padding: 10px;
+  gap: 40px;
   margin-top: 10px;
-  border-radius: 5px;
-  font-weight: bold;
 }
+
+  .time-row > div {
+    flex: 1;
+
+  }
+
+
 

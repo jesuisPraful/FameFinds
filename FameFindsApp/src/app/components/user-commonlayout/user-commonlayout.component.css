@@ -1,0 +1,38 @@
+/* Header Styles */
+.user-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: transparent;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.header-left, .header-right {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+/* Main Content */
+.user-main {
+  padding: 1.5rem;
+  min-height: calc(100vh - 120px); /* adjust for header/footer */
+}
+
+/* Footer Styles */
+.user-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: transparent;
+  border-top: 1px solid #ccc;
+}
+
+.footer-left, .footer-right {
+  background: none;
+  border: none;
+  color: #4b6cb7;
+  font-size: 1rem;
+  cursor: pointer;
+}

@@ -17,32 +17,32 @@
       Shops Selling {{ productName }}
     </h1>
 
-    <!-- Shops List -->
-    <section class="shop-cards" id="shopsContainer" aria-label="List of shops">
-      <article class="shop-card"
-               role="region"
-               *ngFor="let shop of filteredShops"
-               [attr.aria-label]="'Shop: ' + shop.shopName">
+      <!-- Shops List -->
+      <section class="shop-cards" id="shopsContainer" aria-label="List of shops">
+        <article class="shop-card"
+                 role="region"
+                 *ngFor="let shop of filteredShops"
+                 [attr.aria-label]="'Shop: ' + shop.shopName">
 
-        <div class="shop-header">
-          <div class="shop-thumb" aria-hidden="true">
-            <span class="material-icons md-36">storefront</span>
+          <div class="shop-header">
+            <div class="shop-thumb" aria-hidden="true">
+              <span class="material-icons md-36">storefront</span>
+            </div>
+            <div class="shop-info">
+              <h3 class="shop-name">{{ shop.shopName }}</h3>
+              <address class="shop-address">{{ shop.fullAddress }}</address>
+            </div>
           </div>
-          <div class="shop-info">
-            <h3 class="shop-name">{{ shop.shopName }}</h3>
-            <address class="shop-address">{{ shop.fullAddress }}</address>
+
+          <div class="contact-item" title="Phone">
+            <span class="material-icons md-18" aria-hidden="true">phone</span>
+            <span>{{ shop.contactNumber }}</span>
           </div>
-        </div>
 
-        <div class="contact-item" title="Phone">
-          <span class="material-icons md-18" aria-hidden="true">phone</span>
-          <span>{{ shop.contactNumber }}</span>
-        </div>
-
-        <div class="contact-item" title="Email">
-          <span class="material-icons md-18" aria-hidden="true">email</span>
-          <span>{{ shop.emailId }}</span>
-        </div>
+          <div class="contact-item" title="Email">
+            <span class="material-icons md-18" aria-hidden="true">email</span>
+            <span>{{ shop.emailId }}</span>
+          </div>
 
         <!-- Rating Stars -->
         <div class="contact-item rating-stars" *ngIf="shop.averageRating !== null && shop.averageRating !== undefined"

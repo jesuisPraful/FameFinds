@@ -53,7 +53,12 @@ const routes: Routes = [
   { path: 'view-products', component: ViewProductsComponent },
   { path: 'shop-details', component: ShopDetailsComponent },
   { path: 'rate-shop', component: RatingComponent },
+  { path: 'vendor', component: VendorCommonlayoutComponent},
   { path: 'vendor-dashboard', component: VendorDashboardComponent },
+  { path: 'user-commonlayout', component: UserCommonlayoutComponent},
+  { path: 'view-cities', component: ViewCitiesComponent },
+  { path: 'view-products', component: ViewProductsComponent },
+  { path: 'view-shops', component: ViewShopsComponent },
   { path: 'update-contact-number', component: UpdateShopContactnumberComponent },
   { path: 'update-email', component: UpdateshopEmailComponent },
   { path: 'update-name', component: UpdateshopNameComponent },
@@ -73,5 +78,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
+ 
 })
 export class AppRoutingModule { }

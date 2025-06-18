@@ -101,6 +101,7 @@ import { VendorShopOptionsComponent } from './components/vendor-shop-options/ven
     RouterModule,
     BrowserAnimationsModule
   ],
+  
   providers: [
     ProductService,
     RegisterService,
