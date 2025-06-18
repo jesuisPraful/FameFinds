@@ -28,6 +28,24 @@ export class AddShopsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    const email = localStorage.getItem("Email");
+    if (email) {
+      this.shopService.getIdByEmail(email).subscribe({
+        next: (response) => {
+          const vendorId = response.vendorId;
+          localStorage.setItem("vendorId", vendorId.toString());
+          this.vendorId = vendorId.toString();
+        },
+        error: (err) => {
+          console.error("Failed to fetch vendorId by email:", err);
+        }
+      });
+
+    } else {
+      console.warn("No email found in localStorage.");
+    }
+
     this.shopForm = this.fb.group({
       shopName: ['', Validators.required],
       emailId: ['', [Validators.required, Validators.email]],

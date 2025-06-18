@@ -33,6 +33,7 @@ namespace FameFindsDAL
             }
             catch (Exception ex)
             {
+                Console.WriteLine("Error in RegisterCustomer DAL: " + ex.Message);
                 status = false;
             }
             return status;

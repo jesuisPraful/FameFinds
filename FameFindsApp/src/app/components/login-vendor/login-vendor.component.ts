@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { VendorService } from '../../services/vendor.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ShopService } from '../../services/shop.service';
 
 @Component({
   selector: 'app-login-vendor',
@@ -14,12 +15,14 @@ export class LoginVendorComponent {
   passwordLength: number;
   highlightLogin: boolean;
   showPassword: boolean;
-  constructor(private _vendorService: VendorService,private _router:Router) {
+  vendorId: string;
+  constructor(private _vendorService: VendorService, private _router: Router, private shopService: ShopService) {
     this.message = "";
     this.showDiv = false;
     this.passwordLength = 0;
     this.highlightLogin = false;
     this.showPassword = false;
+    this.vendorId = '';
   }
   login(form: NgForm) {
     this._vendorService
@@ -31,7 +34,23 @@ export class LoginVendorComponent {
           if (resSuccess == true) {
             localStorage.setItem("Email", form.value.email);
             sessionStorage.setItem("value", resSuccess);
- 
+            const email = localStorage.getItem("Email");
+            if (email) {
+              this.shopService.getIdByEmail(email).subscribe({
+                next: (response) => {
+                  const vendorId = response.vendorId;
+                  localStorage.setItem("vendorId", vendorId.toString());
+                  this.vendorId = vendorId.toString();
+                },
+                error: (err) => {
+                  console.error("Failed to fetch vendorId by email:", err);
+                }
+              });
+
+            } else {
+              console.warn("No email found in localStorage.");
+            }
+
             this._router.navigate(['/vendor-dashboard']);
           }
           else {
