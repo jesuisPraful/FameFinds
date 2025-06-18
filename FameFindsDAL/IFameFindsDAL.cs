@@ -108,6 +108,7 @@ namespace FameFindsDAL
         bool UpdateShopProduct(int shopProductId, decimal? price = null, int? stock = null);
         bool DeleteShopProduct(int shopProductId);
         List<ShopProduct> GetProductsByShopId(int shopId);
+        object GetAverageRatingByShopId(int shopId);
 
         #endregion
     }
