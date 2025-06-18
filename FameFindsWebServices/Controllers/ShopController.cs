@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
-
 namespace FameFindsWebServices.Controllers
 {
     [Route("api/[controller]")]
@@ -22,7 +21,6 @@ namespace FameFindsWebServices.Controllers
         public IActionResult GetAllShops()
         {
             List<Shop> shops = new List<Shop>();
-
             try
             {
                 var shopList = _repository.GetAllShops();
@@ -49,20 +47,40 @@ namespace FameFindsWebServices.Controllers
             }
             catch (Exception)
             {
-                shops = null;
+  
                 return BadRequest("Failed to retrieve shops");
             }
             return Ok(shops);
         }
+        [HttpGet("GetCityIdByShopId/{shopId}")]
+        public IActionResult GetCityIdByShopId(int shopId)
+        {
+            try
+            {
+                var cityId = _repository.GetCityIdByShopId(shopId);
+                if (cityId == null)
+                {
+                    return NotFound($"No shop found with ID {shopId}");
+                }
+                return Ok(cityId);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error: " + ex.Message);
+            }
+        }
 
+
+        
         [HttpPost("Register")]
-        public IActionResult RegisterShop(Models.Shop shop)
+        public IActionResult RegisterShop(FameFindsWebServices.Models.Shop shop)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    Shop shopOne = new Shop
+                    // Mapping FameFindsWebServices.Models.Shop to FameFindsDAL.Models.Shop
+                    FameFindsDAL.Models.Shop shopOne = new FameFindsDAL.Models.Shop
                     {
                         ShopName = shop.ShopName,
                         EmailId = shop.EmailId,
@@ -109,24 +127,10 @@ namespace FameFindsWebServices.Controllers
                  
                 var shop = _repository.GetShopsByShopId(shopId);
 
+
                 if (shop != null)
                 {
-                    Shop shopOne = new Shop();
-
-                    shopOne.ShopId = shop.ShopId;
-                    shopOne.ShopName = shop.ShopName;
-                    shopOne.EmailId = shop.EmailId;
-                    shopOne.CityId = shop.CityId;
-                    shopOne.Pincode = shop.Pincode;
-                    shopOne.ContactNumber = shop.ContactNumber;
-                    shopOne.FullAddress = shop.FullAddress;
-                    shopOne.Latitude = shop.Latitude;
-                    shopOne.Longitude = shop.Longitude;
-                    shopOne.VendorId = shop.VendorId;
-
-
-                    return Ok(shopOne);
-
+                    return Ok(shop);
                 }
                 else
                 {
@@ -204,7 +208,6 @@ namespace FameFindsWebServices.Controllers
 
 
         [HttpGet("shopName")]
-        
         public IActionResult GetShopsByShopName(string shopName)
         {
             List<Shop> shops = new List<Shop>();
@@ -238,7 +241,6 @@ namespace FameFindsWebServices.Controllers
                 return BadRequest("Failed to retrieve shops");
             }
             return Ok(shops);
-
         }
 
 

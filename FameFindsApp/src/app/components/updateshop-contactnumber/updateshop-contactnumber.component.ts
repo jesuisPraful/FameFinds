@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'; // <-- Added
 import { ShopService } from '../../services/shop.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class UpdateShopContactnumberComponent {
   message: string = '';
   error: string = '';
 
-  constructor(private shopService: ShopService) { }
+  constructor(private shopService: ShopService, private router: Router) { } // <-- Added router
 
   updateContactNumber(): void {
     if (!this.shopId || !this.oldContactNumber || !this.newContactNumber) {
@@ -30,6 +31,7 @@ export class UpdateShopContactnumberComponent {
       next: (response: any) => {
         this.message = 'Contact number updated successfully.';
         this.error = '';
+        this.router.navigate(['/landing']);
       },
       error: (error) => {
         if (error.status === 404) {

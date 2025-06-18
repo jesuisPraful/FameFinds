@@ -1,4 +1,4 @@
-﻿namespace FameFindsDAL
+﻿namespace FameFindsDAL.DTOs
 {
     public class ShopWithRatingDto
     {

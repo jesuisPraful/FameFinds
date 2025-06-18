@@ -1,4 +1,5 @@
-﻿using FameFindsDAL.Models;
+﻿using FameFindsDAL.DTOs;
+using FameFindsDAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace FameFindsDAL
         void MarkOtpAsUsedByEmail(string email, string otp);
         void MarkOtpAsUsed(int customerId, string otp);
         CustomerPasswordResetToken? GetLatestVerifiedOtp(string email);
-
+       
         #endregion
 
         #region category
@@ -63,27 +64,31 @@ namespace FameFindsDAL
         VendorPasswordResetToken? GetVendorOtpByEmail(string email, string otp);
         void MarkVendorOtpAsUsedByEmail(string email, string otp);
         VendorPasswordResetToken? GetVendorLatestVerifiedOtp(string email);
+        
 
         #endregion
 
         #region Ratings
+        double GetAverageRatingByShopId(int shopId);
         bool AddRating(Rating rating);
         List<Rating> GetRatings();
         bool RemoveRating(int ratingId);
-        List<object> GetRatingsByVendor(int vendorId);
         List<ShopWithRatingDto> GetShopsSortedByRating();
-        double GetAverageRatingByShopId(int shopId);
+        List<RatingDto> GetRatingsByVendor(int vendorId);
+
+        
 
         #endregion
 
         #region shop
-
         bool RegisterShop(Shop shop);
         City CityByShop(Shop shop);
+        int? GetCityIdByShopId(int shopId);
         List<int> GetShopIdsByVendorId(int vendorId);
         List<Shop> GetAllShops();
         Shop GetShopsByShopId(int shopId);
         List<Shop> GetShopsByVendorId(int vendorId);
+        
         List<Shop> GetShopsByShopName(string shopName);
         List<Shop> GetShopsByCityName(string cityName);
         List<Shop> GetShopsByProduct(string productName);
@@ -101,6 +106,7 @@ namespace FameFindsDAL
 
         List<City> GetAllCities();
         City CityByShopId(int shopId);
+       
         bool RegisterCity(City city);
         bool DeleteCity(int cityId);
         City GetCityById(int cityId);

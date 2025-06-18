@@ -4,6 +4,7 @@ using FameFindsWebServices.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ShopProduct = FameFindsWebServices.Models.ShopProduct;
+//using ShopProduct = FameFindsWebServices.Models.ShopProduct;
 
 namespace FameFindsWebServices.Controllers
 {
@@ -41,17 +42,20 @@ namespace FameFindsWebServices.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var shopProductOne = new ShopProduct
+                    var shopProductOne = new FameFindsDAL.Models.ShopProduct
                     {
                         ShopId = shopProduct.ShopId,
                         ProductId = shopProduct.ProductId,
                         Price = shopProduct.Price,
                         Stock = shopProduct.Stock
                     };
-                    status = true;
+                    status = _repository.AddShopProduct(shopProductOne);
+
                     if (status)
-                        return Ok(shopProductOne);
-                    //return Ok("Product added to shop.");
+                        return Ok(new { message = "Product added to shop." });
+
+                    // return Ok(shopProductOne);
+                    // return Ok("Product added to shop.");
                     else
                         return BadRequest("Failed to add product");
                 }
@@ -65,7 +69,7 @@ namespace FameFindsWebServices.Controllers
             }
         }
          [HttpPut("update/{id}")]
-        public IActionResult UpdateShopProduct(int id, [FromBody] ShopProduct updatedProduct)
+        public IActionResult UpdateShopProduct(int id, ShopProduct updatedProduct)
         {
             try
             {
@@ -130,7 +134,7 @@ namespace FameFindsWebServices.Controllers
             {
                 status = _repository.DeleteShopProduct(id);
                 if (status)
-                    return Ok("Product deleted.");
+                    return Ok(new { message = "Product deleted" });
                 else
                     return NotFound("Product not found.");
             }

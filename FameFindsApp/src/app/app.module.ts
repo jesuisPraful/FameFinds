@@ -47,6 +47,10 @@ import { UpdateShopproductpriceComponent } from './components/update-shopproduct
 import { UpdateShopproductstockComponent } from './components/update-shopproductstock/update-shopproductstock.component';
 import { RouterModule } from '@angular/router';
 import { ViewRatingComponent } from './components/view-rating/view-rating.component';
+import { ViewVendorShopsComponent } from './components/view-vendor-shops/view-vendor-shops.component';
+import { VendorShopService } from './vendor-shop.service';
+import { AddShopProductComponent } from './components/add-shop-product/add-shop-product.component';
+import { VendorShopOptionsComponent } from './components/vendor-shop-options/vendor-shop-options.component';
 
 
 @NgModule({
@@ -74,7 +78,6 @@ import { ViewRatingComponent } from './components/view-rating/view-rating.compon
     RatingComponent,
     UpdateshopEmailComponent,
     UpdateshopNameComponent,
-
     UpdateShopContactnumberComponent,
     UpdateShopproductComponent,
     UpdateShopproductpriceComponent,
@@ -82,7 +85,10 @@ import { ViewRatingComponent } from './components/view-rating/view-rating.compon
     ShowShopproductComponent,
     ViewRatingComponent,
     VendorCommonlayoutComponent,
-    MapPickerComponent
+    MapPickerComponent,
+    ViewVendorShopsComponent,
+    AddShopProductComponent,
+    VendorShopOptionsComponent
   ],
   imports: [
     BrowserModule,
@@ -103,8 +109,9 @@ import { ViewRatingComponent } from './components/view-rating/view-rating.compon
     VendorService,
     ShopService,
     ForgotpasswordvendorService,
-    ForgotpasswordService
+    ForgotpasswordService,
+    VendorShopService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {  }

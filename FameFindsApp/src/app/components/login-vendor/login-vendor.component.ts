@@ -15,8 +15,8 @@ export class LoginVendorComponent {
   passwordLength: number;
   highlightLogin: boolean;
   showPassword: boolean;
-  vendorId: string;
-  constructor(private _vendorService: VendorService, private _router: Router, private shopService: ShopService) {
+    vendorId: string;
+  constructor(private _vendorService: VendorService,private _router:Router,private shopService:ShopService) {
     this.message = "";
     this.showDiv = false;
     this.passwordLength = 0;
@@ -50,7 +50,7 @@ export class LoginVendorComponent {
             } else {
               console.warn("No email found in localStorage.");
             }
-
+ 
             this._router.navigate(['/vendor-dashboard']);
           }
           else {
