@@ -14,6 +14,7 @@ namespace FameFindsDAL
         Customer LoginCustomer(string email, string passwordHash);
         Customer GetCustomerById(int customerId);
         Customer GetCustomerByUsername(string username);
+        int GetCustomerIdByEmail(string email);
         List<Customer> GetAllCustomers();
         int UpdateCustomer(Customer customer);
         int DeleteCustomer(int customerId);
@@ -70,6 +71,7 @@ namespace FameFindsDAL
         bool AddRating(Rating rating);
         List<Rating> GetRatings();
         bool RemoveRating(int ratingId);
+        List<object> GetRatingsByVendor(int vendorId);
         List<ShopWithRatingDto> GetShopsSortedByRating();
         double GetAverageRatingByShopId(int shopId);
 
@@ -79,6 +81,8 @@ namespace FameFindsDAL
         #region shop
 
         bool RegisterShop(Shop shop);
+        City CityByShop(Shop shop);
+        List<int> GetShopIdsByVendorId(int vendorId);
         List<Shop> GetAllShops();
         Shop GetShopsByShopId(int shopId);
         List<Shop> GetShopsByVendorId(int vendorId);
@@ -92,6 +96,7 @@ namespace FameFindsDAL
         bool UpdateShopContactNumber(int shopId, string nContactNumber, string contactNumber);
         bool UpdateShopEmailId(int ShopId, string nemailId, string emailId);
         bool UpdateShopIsOpen(int ShopId, bool isOpen);
+        double GetAverageRatingByShopId(int shopId);
         List<int> GetShopIdsByVendorId(int vendorId);
 
         #endregion
@@ -99,6 +104,7 @@ namespace FameFindsDAL
         #region city
 
         List<City> GetAllCities();
+        City CityByShopId(int shopId);
         bool RegisterCity(City city);
         bool DeleteCity(int cityId);
         City GetCityById(int cityId);
