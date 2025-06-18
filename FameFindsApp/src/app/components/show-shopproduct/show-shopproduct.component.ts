@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ShopProduct, ShopProductService } from 'src/app/services/shopproduct.service';
-
+import { Location } from '@angular/common'
 @Component({
   selector: 'app-show-shopproduct',
   templateUrl: './show-shopproduct.component.html',
@@ -13,7 +14,15 @@ export class ShowShopproductComponent implements OnInit {
   message: string = '';
   error: string = '';
 
-  constructor(private shopProductService: ShopProductService) { }
+  constructor(private shopProductService: ShopProductService,private router:Router,private location:Location) { }
+
+  goBack() {
+    this.location.back();
+  }
+
+  logout() {
+    this.router.navigate(['/vendorlogin']);
+  }
 
   ngOnInit(): void {
     this.getProducts();

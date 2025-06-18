@@ -43,7 +43,7 @@ namespace FameFindsWebServices.Controllers
             return Ok(products);
         }
         [HttpPost]
-        public IActionResult AddProduct([FromBody] Product product)
+        public IActionResult AddProduct([FromBody] FameFindsWebServices.Models.Product product)
         {
             bool status = false;
             try

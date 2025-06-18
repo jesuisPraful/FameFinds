@@ -1,3 +1,13 @@
+<header class="dashboard-header">
+  <div class="left-button">
+    <button (click)="goBack()">⬅ Back</button>
+  </div>
+  <div class="right-button">
+    <button (click)="logout()">Logout</button>
+  </div>
+</header>
+
+
 <div class="container mt-4">
   <h2>Add Product to Shop</h2>
 
@@ -22,7 +32,7 @@
       <input formControlName="stock" type="number" class="form-control" placeholder="Enter stock" />
     </div>
 
-    <button type="submit"  class="btn btn-primary mt-3" [disabled]="shopProductForm.invalid">
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="shopProductForm.invalid">
       Submit
     </button>
   </form>

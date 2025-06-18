@@ -3,6 +3,7 @@ import { ShopService } from 'src/app/services/shop.service';
 import { VendorShopService } from '../../vendor-shop.service';
 import { IShop } from '../../Models/shop';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-view-vendor-shops',
@@ -13,7 +14,7 @@ export class ViewVendorShopsComponent implements OnInit {
   filteredShops: IShop[] = [];
 
   
-  constructor(private shopService: VendorShopService,private router:Router) { }
+  constructor(private shopService: VendorShopService, private router: Router, private location: Location) { }
   // Hardcoded cityId → cityName map
   cityMap: { [key: number]: string } = {
     1: 'HYDERABAD',
@@ -24,6 +25,13 @@ export class ViewVendorShopsComponent implements OnInit {
     6: 'CHENNAI'
   };
   
+  logout() {
+    this.router.navigate(['/vendorlogin']);
+  }
+  goBack() {
+    this.location.back();
+  }
+
 
   ngOnInit(): void {
     const vendorIdStr = localStorage.getItem('vendorId');
