@@ -76,7 +76,7 @@ namespace FameFindsDAL
         List<ShopWithRatingDto> GetShopsSortedByRating();
         List<RatingDto> GetRatingsByVendor(int vendorId);
 
-
+        
 
         #endregion
 
@@ -106,7 +106,7 @@ namespace FameFindsDAL
 
         List<City> GetAllCities();
         City CityByShopId(int shopId);
-      
+       
         bool RegisterCity(City city);
         bool DeleteCity(int cityId);
         City GetCityById(int cityId);
