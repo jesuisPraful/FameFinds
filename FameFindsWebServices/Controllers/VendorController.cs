@@ -61,12 +61,12 @@ namespace FameFindsWebServices.Controllers
                     var vendorOne = new Vendor
                     {
                         VendorName = vendor.VendorName,
-                        Email=vendor.Email,
+                        Email = vendor.Email,
                         PasswordHash = vendor.PasswordHash,
                         PhoneNumber = vendor.PhoneNumber
                     };
                     result = _authService.AddVendor(vendorOne);
-                    if(result)
+                    if (result)
                     {
                         return Ok("Vendor Registered Successfully");
                     }
@@ -77,10 +77,10 @@ namespace FameFindsWebServices.Controllers
                 }
                 else
                 {
-                    var errors=ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage);
-                    return BadRequest(new {message="Invalid Data",errors});
+                    var errors = ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage);
+                    return BadRequest(new { message = "Invalid Data", errors });
                 }
-               
+
             }
             catch (Exception ex)
             {
@@ -193,7 +193,7 @@ namespace FameFindsWebServices.Controllers
                 var vendor = _repository.GetVendorByUsername(Email);
                 if (vendor != null)
                 {
-                    return Ok(vendor);
+                    return Ok(new { vendor.VendorId } );
                 }
                 else
                 {

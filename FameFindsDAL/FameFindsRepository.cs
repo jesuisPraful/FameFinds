@@ -506,7 +506,7 @@ namespace FameFindsDAL
             Vendor vendor=new Vendor();
             try
             {
-                vendor = _context.Vendors.FirstOrDefault(u => u.Email == Email);
+               vendor = _context.Vendors.FirstOrDefault(u => u.Email == Email);
             }
             catch (Exception ex)
             {
@@ -1196,13 +1196,15 @@ namespace FameFindsDAL
 
         //City by shopId
 
-        public City CityByShoIdp(int shopId)
+        public City CityByShopId(int shopId)
         {
             Shop shop = _context.Shops.Find(shopId);
-            City city = new City();
+            if (shop == null) return null;
+
+            City city = null;
             try
             {
-                city = _context.Cities.Where(C => C.CityId == shop.CityId).FirstOrDefault();
+                city = _context.Cities.FirstOrDefault(c => c.CityId == shop.CityId);
             }
             catch (Exception)
             {
@@ -1210,6 +1212,7 @@ namespace FameFindsDAL
             }
             return city;
         }
+
         public List<City> GetAllCities()
         {
             List<City> cities = new List<City>();
