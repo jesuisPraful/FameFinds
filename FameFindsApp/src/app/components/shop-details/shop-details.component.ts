@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IShop } from '../../Models/shop';
+import { ShopService } from '../../services/shop.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-shop-details',
@@ -8,19 +10,39 @@ import { IShop } from '../../Models/shop';
   styleUrls: ['./shop-details.component.css']
 })
 export class ShopDetailsComponent implements OnInit {
-  shop!: IShop & { averageRating?: number };
+  shop: IShop | null = null;
+  Math = Math;
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private shopService: ShopService,
+    private location: Location
+  ) { }
+  goBackin() {
+    this.location.back();
+  }
 
-  ngOnInit() {
-    const shopData = history.state.shop;
-    if (shopData) {
-      this.shop = {
-        ...shopData,
-        averageRating: shopData.averageRating ?? 0 // fallback for missing value
-      };
+  logout() {
+    this.router.navigate(['/login']);
+  }
+
+  ngOnInit(): void {
+    const storedShopId = localStorage.getItem('shopId');
+
+    if (storedShopId) {
+      const shopId = parseInt(storedShopId, 10);
+      this.shopService.getShopById(shopId).subscribe({
+        next: (data) => {
+          this.shop = data;
+        },
+        error: (err) => {
+          console.error('Error loading shop:', err);
+        }
+      });
     } else {
-      this.router.navigate(['/view-shops']); // Fallback if data is not passed
+      console.warn('No shop ID found in localStorage.');
+      this.router.navigate(['/view-shops']);
     }
   }
 
@@ -28,20 +50,21 @@ export class ShopDetailsComponent implements OnInit {
     this.router.navigate(['/view-shops']);
   }
 
-  openInMap() {
-    const url = `https://www.google.com/maps/search/?api=1&query=${this.shop.latitude},${this.shop.longitude}`;
-    window.open(url, '_blank');
-  }
-
   giveRating() {
-    this.router.navigate(['/rate-shop'], { state: { shopId: this.shop.shopId } });
-  }
+    const customerId = localStorage.getItem('customerId'); // should be set on login
 
-  rateShop() {
-    this.router.navigate(['/rate-shop'], { state: { shopId: this.shop.shopId } });
-  }
+    if (!this.shop || this.shop.shopId === undefined || this.shop.shopId === null) {
+      alert('Shop details not available yet.');
+      return;
+    }
 
-  Math = Math; // Needed for using Math in template
+    if (!customerId) {
+      alert('Customer not logged in.');
+      return;
+    }
+    //localStorage.setItem('selectedShopId', this.shop.shopId.toString());
+    //localStorage.setItem('customerId', customerId); // optional if already stored
+
+    this.router.navigate(['/rate-shop']);
+  }
 }
-
-

@@ -3,6 +3,7 @@ using FameFindsWebServices.Models;
 using FameFindsWebServices.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ResetModel = FameFindsWebServices.Models.ResetPasswordRequest;
 
 
@@ -12,10 +13,10 @@ namespace FameFindsWebServices.Controllers
     [ApiController]
     public class VendorController : Controller
     {
-        private readonly FameFindsRepository _repository;
-        private readonly AuthenticationService _authService;
-        private readonly EmailService _emailService;
-        public VendorController(FameFindsRepository repository, AuthenticationService authService, EmailService emailService)
+        private readonly IFameFindsDAL _repository;
+        private readonly IAuthenticationService _authService;
+        private readonly IEmailService _emailService;
+        public VendorController(IFameFindsDAL repository, IAuthenticationService authService, IEmailService emailService)
         {
             _repository = repository;
             _authService = authService;
@@ -49,6 +50,7 @@ namespace FameFindsWebServices.Controllers
             }
             return Ok(vendors);
         }
+
         [HttpPost("Register")]
         public IActionResult AddVendor([FromBody] Models.Vendor vendor)
         {
@@ -60,12 +62,12 @@ namespace FameFindsWebServices.Controllers
                     var vendorOne = new Vendor
                     {
                         VendorName = vendor.VendorName,
-                        Email=vendor.Email,
+                        Email = vendor.Email,
                         PasswordHash = vendor.PasswordHash,
                         PhoneNumber = vendor.PhoneNumber
                     };
                     result = _authService.AddVendor(vendorOne);
-                    if(result)
+                    if (result)
                     {
                         return Ok("Vendor Registered Successfully");
                     }
@@ -76,10 +78,10 @@ namespace FameFindsWebServices.Controllers
                 }
                 else
                 {
-                    var errors=ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage);
-                    return BadRequest(new {message="Invalid Data",errors});
+                    var errors = ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage);
+                    return BadRequest(new { message = "Invalid Data", errors });
                 }
-               
+
             }
             catch (Exception ex)
             {
@@ -116,7 +118,7 @@ namespace FameFindsWebServices.Controllers
                     PasswordHash = passwordHash
                 });
 
-                if (vendor != null)
+                if (vendor)
                     return Ok(vendor);
 
                 return Unauthorized("Invalid email or password.");
@@ -185,14 +187,14 @@ namespace FameFindsWebServices.Controllers
 
         }
         [HttpGet]
-        public IActionResult GetVendorByName(string VendorName)
+        public IActionResult GetVendorByEmail(string Email)
         {
             try
             {
-                var vendor = _repository.GetVendorByName(VendorName);
+                var vendor = _repository.GetVendorByUsername(Email);
                 if (vendor != null)
                 {
-                    return Ok(vendor);
+                    return Ok(new { vendor.VendorId } );
                 }
                 else
                 {
@@ -279,6 +281,23 @@ namespace FameFindsWebServices.Controllers
 
             return Ok("Password reset successful.");
         }
+
+        // for view-ratings
+
+        [HttpGet("GetVendorRatings/{vendorId}")]
+        public IActionResult GetVendorRatings(int vendorId)
+        {
+            try
+            {
+                var ratings = _repository.GetRatingsByVendor(vendorId);
+                return Ok(ratings);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
 
 
     }

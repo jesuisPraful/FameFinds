@@ -1,20 +1,21 @@
+<header class="dashboard-header">
+  <div class="left-button">
+    <button (click)="goBack()">⬅ Back</button>
+  </div>
+  <div class="right-button">
+    <button (click)="logout()">Logout</button>
+  </div>
+</header>
+
+
 <div class="container">
-    <h2 style="text-align: center;">All Shops</h2>
-
-    <header>
-      <div class="logo" tabindex="0">CityFamous</div>
-    </header>
-
-    <!-- No Shops Found -->
-    <div *ngIf="showMsgDiv" class="alert alert-warning text-center">
-      No shops found.
-    </div>
-
-    <!-- Page Title -->
-    <main role="main" aria-label="Shops selling selected product">
-      <h1 class="page-title" id="pageTitle">
-        Shops Selling {{ productName }}
-      </h1>
+  <br />
+  <br />
+  <!-- Page Title -->
+  <main role="main" aria-label="Shops selling selected product">
+    <h1 class="page-title" id="pageTitle">
+      Shops Selling {{ productName }}
+    </h1>
 
       <!-- Shops List -->
       <section class="shop-cards" id="shopsContainer" aria-label="List of shops">
@@ -43,22 +44,23 @@
             <span>{{ shop.emailId }}</span>
           </div>
 
-          <!-- Rating Stars -->
-          <div class="contact-item rating-stars" *ngIf="shop.averageRating !== undefined" title="Average Rating">
-            <ng-container *ngFor="let star of [1,2,3,4,5]; let i = index">
-              <span class="star" [class.filled]="i < Math.round(shop.averageRating)">★</span>
-            </ng-container>
-            <span class="rating-value">({{ shop.averageRating.toFixed(1) }})</span>
-          </div>
-
-          <button class="btn btn-primary me-2" (click)="viewShopDetails(shop)">View Details</button>
-          <button class="btn btn-outline-success" (click)="showMap(shop)">View on Map</button>
-        </article>
-
-        <!-- No Shops Message -->
-        <div *ngIf="filteredShops.length === 0" class="no-shops-msg">
-          No shops found for "{{ productName }}"
+        <!-- Rating Stars -->
+        <div class="contact-item rating-stars" *ngIf="shop.averageRating !== null && shop.averageRating !== undefined"
+             title="Average Rating">
+          <ng-container *ngFor="let star of [1,2,3,4,5]; let i = index">
+            <span class="star" [class.filled]="i < Math.round(shop.averageRating)">★</span>
+          </ng-container>
+          <span class="rating-value">({{ shop.averageRating.toFixed(1) }})</span>
         </div>
-      </section>
-    </main>
-  </div>
+
+        <button class="btn btn-primary me-2" (click)="viewShopDetails(shop)">View Details</button>
+        <button class="btn btn-outline-success" (click)="showMap(shop)">View on Map</button>
+      </article>
+      <br />
+      <!-- No Shops Message -->
+      <div *ngIf="filteredShops.length === 0" class="no-shops-msg">
+        No shops found for "{{ productName }}"
+      </div>
+    </section>
+  </main>
+</div>

@@ -28,6 +28,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FameFindsApp", "FameFindsAp
 		SlnRelativePath = "FameFindsApp\"
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FameFindsWebServicesTests", "FameFindsWebServicesTests\FameFindsWebServicesTests.csproj", "{D12479EB-9DFA-48B1-BF45-BAB8B6DE2488}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,10 @@ Global
 		{DA858FB5-F5C4-4741-B472-1E783B327E03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA858FB5-F5C4-4741-B472-1E783B327E03}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{DA858FB5-F5C4-4741-B472-1E783B327E03}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{D12479EB-9DFA-48B1-BF45-BAB8B6DE2488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D12479EB-9DFA-48B1-BF45-BAB8B6DE2488}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D12479EB-9DFA-48B1-BF45-BAB8B6DE2488}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D12479EB-9DFA-48B1-BF45-BAB8B6DE2488}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

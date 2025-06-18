@@ -1,0 +1,92 @@
+.container {
+  max-width: 600px; /* Increased width for better layout */
+  margin: 40px auto; /* Added top margin for spacing */
+  padding: 20px; /* Added padding for inner spacing */
+  border: 1px solid #ccc; /* Light border for definition */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #f9f9f9; /* Light background color */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333; /* Darker text color for better readability */
+  font-family: 'Arial', sans-serif; /* Font family for consistency */
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width:90%;
+}
+
+label {
+  font-weight: bold; /* Bold labels for emphasis */
+  color: #555; /* Slightly darker color for labels */
+}
+
+input[type="number"],
+select {
+  width: 100%; /* Full width for inputs and selects */
+  padding: 10px; /* Padding for better touch targets */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  transition: border-color 0.3s; /* Smooth transition for focus */
+}
+
+  input[type="number"]:focus,
+  select:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+  }
+
+button {
+  display: block; /* Allows to use margin for centering */
+  margin: 0 auto; /* Center horizontally */
+  padding: 10px 24px; /* Smaller padding for reduced size */
+  max-width: 160px; /* Smaller max width */
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white; /* White text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px; /* Font size for better readability */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+
+  button:disabled {
+    background-color: #ccc; /* Grey background for disabled state */
+    cursor: not-allowed; /* Not-allowed cursor for disabled state */
+  }
+
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between; /* Distribute left & right buttons */
+  align-items: center;
+  background-color: #bde6eb;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+/* Common button styling */
+.dashboard-header button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+  .dashboard-header button:hover {
+    background-color: #2980b9;
+  }
+

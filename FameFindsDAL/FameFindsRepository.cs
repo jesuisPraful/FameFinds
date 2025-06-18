@@ -1,4 +1,5 @@
-﻿using FameFindsDAL.Models;
+﻿using FameFindsDAL.DTOs;
+using FameFindsDAL.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ using static System.Formats.Asn1.AsnWriter;
 
 namespace FameFindsDAL
 {
-    public class FameFindsRepository
+    public class FameFindsRepository : IFameFindsDAL
     {
         private readonly FameFindsContext _context;
        
@@ -65,6 +66,13 @@ namespace FameFindsDAL
             }
             return customer;
         }
+        public int GetCustomerIdByEmail(string email)
+        {
+            var customer = _context.Customers.FirstOrDefault(c => c.Email == email);
+            return customer?.CustomerId ?? 0;
+        }
+
+
         public Customer GetCustomerByUsername(string username)
         {
             Customer customer = new Customer();
@@ -494,12 +502,12 @@ namespace FameFindsDAL
             }
             return vendor;
         }
-        public Vendor GetVendorByUsername(string username)
+        public Vendor GetVendorByUsername(string Email)
         {
             Vendor vendor=new Vendor();
             try
             {
-                vendor = _context.Vendors.FirstOrDefault(u => u.Email == username);
+               vendor = _context.Vendors.FirstOrDefault(u => u.Email == Email);
             }
             catch (Exception ex)
             {
@@ -636,7 +644,7 @@ namespace FameFindsDAL
                 _context.SaveChanges();
             }
         }
-        //reset password only with in 5 minutes and only after otp verification.
+
         public VendorPasswordResetToken? GetVendorLatestVerifiedOtp(string email)
         {
             var Vendor = _context.Vendors.FirstOrDefault(c => c.Email == email);
@@ -647,6 +655,11 @@ namespace FameFindsDAL
                 .OrderByDescending(t => t.RequestedAt)
                 .FirstOrDefault();
         }
+
+         
+
+
+
         #endregion
 
         #region Ratings
@@ -749,6 +762,29 @@ namespace FameFindsDAL
             return result;
         }
 
+        public List<RatingDto> GetRatingsByVendor(int vendorId)
+        {
+            var ratings = (from r in _context.Ratings
+                           where r.Shop != null && r.Shop.VendorId == vendorId
+                           select new RatingDto
+                           {
+                               CustomerName = r.Customer != null ? r.Customer.FullName : "Unknown",
+                               RatingValue = r.RatingValue ?? 0,
+                               Review = r.Review,
+                               CreatedAt =(DateTime) r.CreatedAt
+                           }).ToList();
+
+            return ratings;
+        }
+        public double GetAverageRatingByShopId(int shopId)
+        {
+            return _context.Ratings
+                .Where(r => r.ShopId == shopId)
+                .Select(r => r.RatingValue ?? 0)
+                .DefaultIfEmpty(0)
+                .Average();
+        }
+
 
         #endregion
 
@@ -813,7 +849,9 @@ namespace FameFindsDAL
         }
 
 
-        //Get Shop by Vendor Id
+        //Get ShopId by Vendor Id
+
+
         public List<Shop> GetShopsByVendorId(int vendorId)
         {
 
@@ -821,7 +859,7 @@ namespace FameFindsDAL
             try
             {
                 shops = _context.Shops
-                    .Where(s => s.VendorId == vendorId).Select(s => s)
+                    .Where(s => s.VendorId == vendorId).Select(s =>s)
                     .ToList();
             }
 
@@ -831,6 +869,26 @@ namespace FameFindsDAL
 
             }
             return shops;
+        }
+
+
+        public List<int> GetShopIdsByVendorId(int vendorId)
+        {
+
+            List<int> shopsId = new List<int>();
+            try
+            {
+                shopsId = _context.Shops
+                    .Where(s => s.VendorId == vendorId).Select(s => s.ShopId)
+                    .ToList();
+            }
+
+            catch (Exception ex)
+            {
+                shopsId = null;
+
+            }
+            return shopsId;
         }
 
 
@@ -877,7 +935,14 @@ namespace FameFindsDAL
             return shops;
         }
 
-
+        //get cityid by shopid
+        public int? GetCityIdByShopId(int shopId)
+        {
+            return _context.Shops
+                .Where(s => s.ShopId == shopId)
+                .Select(s => (int?)s.CityId)
+                .FirstOrDefault();
+        }
 
         //Get Shop By ProductName
         public List<Shop> GetShopsByProduct(string productName)
@@ -1106,9 +1171,49 @@ namespace FameFindsDAL
             }
             return status;
         }
+
+
+
+
         #endregion
 
         #region city
+
+        //City by shop
+        public City CityByShop(Shop shop)
+        {
+            City city = new City();
+            try
+            {
+                city = _context.Cities.Where(C=>C.CityId==shop.CityId).FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                city = null;
+            }
+            return city;
+        }
+
+
+        //City by shopId
+
+        public City CityByShopId(int shopId)
+        {
+            Shop shop = _context.Shops.Find(shopId);
+            if (shop == null) return null;
+
+            City city = null;
+            try
+            {
+                city = _context.Cities.FirstOrDefault(c => c.CityId == shop.CityId);
+            }
+            catch (Exception)
+            {
+                city = null;
+            }
+            return city;
+        }
+
         public List<City> GetAllCities()
         {
             List<City> cities = new List<City>();
@@ -1200,11 +1305,13 @@ namespace FameFindsDAL
             try
             {
                 _context.ShopProducts.Add(shopProduct);
+                Console.WriteLine("done added sp");
                 _context.SaveChanges();
                 status = true;
             }
             catch (Exception)
             {
+                Console.WriteLine("exception caught");
                 status = false;
             }
             return status;
@@ -1305,6 +1412,7 @@ namespace FameFindsDAL
             return shopProducts;
         }
         #endregion
+
     }
 
 }

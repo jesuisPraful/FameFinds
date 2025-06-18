@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { IShop } from '../../Models/shop';
 import { ShopService } from '../../services/shop.service';
 import { Router } from '@angular/router';
+import { RatingService } from '../../services/rating.service';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-view-shops',
@@ -16,7 +18,17 @@ export class ViewShopsComponent implements OnInit {
   selectedShop: IShop | null = null;
   showMsgDiv: boolean = false;
 
-  constructor(private _service: ShopService, private _router: Router) { }
+  constructor(private _service: ShopService, private _router: Router, private _ratingService: RatingService, private location: Location
+) { }
+
+
+  goBack() {
+    this.location.back();
+  }
+
+  logout() {
+    this._router.navigate(['/login']);
+  }
 
   ngOnInit(): void {
     const storedProduct = localStorage.getItem('selectedProduct');
@@ -30,11 +42,19 @@ export class ViewShopsComponent implements OnInit {
         next: (data) => {
           this.shops = data.map(shop => ({
             ...shop,
-            averageRating: (shop as any).averageRating ?? 0
+            averageRating: 0
           }));
 
           this.filteredShops = this.shops;
           this.showMsgDiv = this.filteredShops.length === 0;
+
+          // Fetch average ratings for each shop
+          this.filteredShops.forEach(shop => {
+            this._ratingService.getAverageRating(shop.shopId).subscribe({
+              next: avg => shop.averageRating = avg,
+              error: err => console.error(`Failed to load rating for shop ${shop.shopId}`, err)
+            });
+          });
         },
         error: (err) => {
           console.error('Error fetching shops:', err);
@@ -50,6 +70,7 @@ export class ViewShopsComponent implements OnInit {
   }
 
   viewShopDetails(shop: IShop) {
+    localStorage.setItem('shopId', shop.shopId.toString());
     this._router.navigate(['/shop-details'], { state: { shop } });
   }
 
@@ -58,5 +79,5 @@ export class ViewShopsComponent implements OnInit {
     window.open(mapUrl, '_blank');
   }
 
-  Math = Math; // Allow Math usage in template
+  Math = Math;
 }

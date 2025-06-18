@@ -12,8 +12,8 @@ namespace FameFindsWebServices.Controllers
     [ApiController]
     public class ProductController : Controller
     {
-        private readonly FameFindsRepository _repository;
-        public ProductController(FameFindsRepository repository)
+        private readonly IFameFindsDAL _repository;
+        public ProductController(IFameFindsDAL repository)
         {
             _repository = repository;
         }
@@ -43,7 +43,7 @@ namespace FameFindsWebServices.Controllers
             return Ok(products);
         }
         [HttpPost]
-        public IActionResult AddProduct([FromBody] Product product)
+        public IActionResult AddProduct([FromBody] FameFindsWebServices.Models.Product product)
         {
             bool status = false;
             try

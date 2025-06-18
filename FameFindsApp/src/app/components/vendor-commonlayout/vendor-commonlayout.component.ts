@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common'
 import { Router } from '@angular/router';
 import { Location } from '@angular/common'; 
 

@@ -1,0 +1,39 @@
+<header class="dashboard-header">
+  <div class="left-button">
+    <button (click)="goBack()">⬅ Back</button>
+  </div>
+  <div class="right-button">
+    <button (click)="logout()">Logout</button>
+  </div>
+</header>
+
+
+<div class="container mt-4">
+  <h2>Add Product to Shop</h2>
+
+  <form [formGroup]="shopProductForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="productId">Product</label>
+      <select formControlName="productId" class="form-control" required>
+        <option value="" disabled selected>Select a Product</option>
+        <option *ngFor="let product of products" [value]="product.productId">
+          {{ product.productName }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input formControlName="price" type="number" class="form-control" placeholder="Enter price" />
+    </div>
+
+    <div class="form-group">
+      <label for="stock">Stock</label>
+      <input formControlName="stock" type="number" class="form-control" placeholder="Enter stock" />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="shopProductForm.invalid">
+      Submit
+    </button>
+  </form>
+</div>

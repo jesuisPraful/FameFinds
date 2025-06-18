@@ -38,7 +38,6 @@ export class ForgotPasswordVendorComponent {
         },
         () => {
           console.log("SendOTP Method is working fine");
-          this.loading = false;
         }
       )
   }

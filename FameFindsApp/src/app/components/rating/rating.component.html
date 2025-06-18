@@ -1,5 +1,10 @@
 <div class="rating-container" @fadeIn>
-  <h2>Rate This Shop</h2>
+  <!-- Toast Messages -->
+  <div *ngIf="showSuccess" class="toast toast-success">Thank you for your feedback!</div>
+  <div *ngIf="showError" class="toast toast-error">{{ errorMessage }}</div>
+
+  <h2>Rate Our Shop!</h2>
+
   <div class="stars">
     <span *ngFor="let star of stars; let i = index"
           class="star"

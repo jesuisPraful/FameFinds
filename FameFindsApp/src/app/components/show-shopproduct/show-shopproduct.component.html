@@ -1,0 +1,100 @@
+<!--<div class="container mt-4">
+  <h2 class="text-center text-primary mb-4">Shop Products for Shop ID: {{ shopId }}</h2>-->
+<!-- Success message -->
+<!--<div *ngIf="message" class="alert alert-success text-center">
+  {{ message }}
+</div>-->
+<!-- Error message -->
+<!--<div *ngIf="error" class="alert alert-danger text-center">
+  {{ error }}
+</div>-->
+<!-- Product Table -->
+<!--<div class="table-responsive">
+  <table class="table table-striped table-hover shadow-sm rounded" *ngIf="shopProducts.length > 0; else noProducts">
+    <thead class="thead-dark">
+      <tr>
+        <th>Shop Product ID</th>
+        <th>Product ID</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th class="text-center">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of shopProducts">
+        <td>{{ product.shopProductId }}</td>
+        <td>{{ product.productId }}</td>
+        <td>{{ product.price | currency:'INR':'symbol' }}</td>
+        <td>{{ product.stock }}</td>
+        <td class="text-center">
+          <button class="btn btn-sm btn-outline-danger" (click)="deleteProduct(product.shopProductId)">
+            <i class="bi bi-trash"></i> Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>-->
+<!-- No Products Template -->
+<!--<ng-template #noProducts>
+    <p class="text-muted text-center mt-4">No products available for this shop.</p>
+  </ng-template>
+</div>-->
+<header class="dashboard-header">
+  <div class="left-button">
+    <button (click)="goBack()">⬅ Back</button>
+  </div>
+  <div class="right-button">
+    <button (click)="logout()">Logout</button>
+  </div>
+</header>
+
+
+<div style="width: 90%; margin: 0 auto; font-family: Arial, sans-serif;">
+  <h2 style="text-align: center; color: #2a5d9f;">Shop Products for Shop ID: {{ shopId }}</h2>
+
+  <!-- Success message -->
+  <div *ngIf="message" style="color: green; text-align: center; margin: 10px 0;">
+    {{ message }}
+  </div>
+
+  <!-- Error message -->
+  <div *ngIf="error" style="color: red; text-align: center; margin: 10px 0;">
+    {{ error }}
+  </div>
+
+  <!-- Product Table -->
+  <table *ngIf="shopProducts.length > 0; else noProducts"
+         style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+    <thead style="background-color: #f2f2f2;">
+      <tr>
+        <th style="padding: 8px; border: 1px solid #ccc;">Shop Product ID</th>
+        <th style="padding: 8px; border: 1px solid #ccc;">Product ID</th>
+        <th style="padding: 8px; border: 1px solid #ccc;">Price</th>
+        <th style="padding: 8px; border: 1px solid #ccc;">Stock</th>
+        <th style="padding: 8px; border: 1px solid #ccc;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of shopProducts">
+        <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">{{ product.shopProductId }}</td>
+        <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">{{ product.productId }}</td>
+        <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">₹{{ product.price }}</td>
+        <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">{{ product.stock }}</td>
+        <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">
+          <button (click)="deleteProduct(product.shopProductId)"
+                  style="padding: 4px 8px; background-color: red; color: white; border: none; cursor: pointer;">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- No Products Template -->
+  <ng-template #noProducts>
+    <p style="text-align: center; color: gray; margin-top: 20px;">
+      No products available for this shop.
+    </p>
+  </ng-template>
+</div>

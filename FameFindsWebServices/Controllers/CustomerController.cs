@@ -15,11 +15,11 @@ namespace FameFindsWebServices.Controllers
     [ApiController]
     public class CustomerController : Controller
     {
-        private readonly FameFindsRepository _repository;
-        private readonly AuthenticationService _authService;
-        private readonly EmailService _emailService;
+        private readonly IFameFindsDAL _repository;
+        private readonly IAuthenticationService _authService;
+        private readonly IEmailService _emailService;
 
-        public CustomerController(FameFindsRepository repository, AuthenticationService authService, EmailService emailService)
+        public CustomerController(IFameFindsDAL repository, IAuthenticationService authService, IEmailService emailService)
         {
             _repository = repository;
             _authService = authService;
@@ -30,7 +30,7 @@ namespace FameFindsWebServices.Controllers
         [HttpGet("GetAllCustomers")]
         public IActionResult GetAllCustomers()
         {
-            List<Customer> customers = new List<Customer>();
+            List<FameFindsDAL.Models.Customer> customers = new List<FameFindsDAL.Models.Customer>();
             try
             {
                 var customersList = _repository.GetAllCustomers();
@@ -38,14 +38,7 @@ namespace FameFindsWebServices.Controllers
                 {
                     foreach (var customer in customersList)
                     {
-                        Customer customerOne = new Customer();
-
-                        customerOne.CustomerId = customer.CustomerId;
-                        customerOne.FullName = customer.FullName;
-                        customerOne.Email = customer.Email;
-                        customerOne.PhoneNumber = customer.PhoneNumber;
-
-                        customers.Add(customerOne);
+                        customers.Add(customer);
                     }
                 }
             }
@@ -55,6 +48,15 @@ namespace FameFindsWebServices.Controllers
                 return BadRequest("Failed to retrieve customers");
             }
             return Ok(customers);
+        }
+
+        [HttpGet("customerIdByEmail/{email}")]
+        public IActionResult GetCustomerIdByEmail(string email)
+        {
+            var id = _repository.GetCustomerIdByEmail(email);
+            if (id == 0)
+                return NotFound("Customer not found");
+            return Ok(id);
         }
 
         [HttpPost("Register")]
@@ -101,7 +103,7 @@ namespace FameFindsWebServices.Controllers
                     Password = passwordHash
                 });
 
-                if (user != null)
+                if (user)
                     return Ok(user);
 
                 return Unauthorized("Invalid email or password.");
@@ -255,22 +257,6 @@ namespace FameFindsWebServices.Controllers
 
             return Ok("OTP has been sent to your email.");
         }
-
-
-        //[HttpPost("verify-otp")]
-        //public IActionResult VerifyOtp([FromBody] OtpVerificationRequest request)
-        //{
-
-        //    var token = _repository.GetOtp(request.CustomerId, request.Otp);
-        //    if (token == null || token.IsUsed == true || token.Expiry < DateTime.Now)
-        //    {
-        //        return BadRequest("Invalid or expired OTP");
-        //    }
-
-        //    _repository.MarkOtpAsUsed(request.CustomerId, request.Otp);
-        //    return Ok("OTP verified. You may now reset your password.");
-        //}
-
         [HttpPost("verify-otp")]
         public IActionResult VerifyOtp([FromBody] OtpVerificationRequest request)
         {

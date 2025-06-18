@@ -32,15 +32,24 @@ export class LoginComponent {
           if (resSuccess==true) {
             sessionStorage.setItem("Email", form.value.email);
             sessionStorage.setItem("value", resSuccess);
-            this._router.navigate(['/view-cities']);
-            //alert("Login Successfull!\n Welcome to FameFinds " + form.value.email);
-            //sessionStorage.setItem("Role", resSuccess.toString());  in this if credentials are true api method is returning true are false but not the role of user wether it is vendor or customer so no need to store this.
-            /*this._router.navigate(["/home"]);*/
-          }
-          else {
-            alert("Invalid credentials! Please try again.")
-            //this.message = "Invalid credentials! Please try again.";
-            //this.showDiv = true;
+
+            this._customerService.getCustomerIdByEmail(form.value.email).subscribe({
+              next: (customerId: number) => {
+                if (customerId > 0) {
+                  localStorage.setItem('customerId', customerId.toString());
+                } else {
+                  console.warn("Customer ID not found for this email.");
+                }
+                this._router.navigate(['/view-cities']);
+              },
+              error: (err) => {
+                console.error("Failed to fetch customerId:", err);
+                alert("Login succeeded, but failed to fetch customer ID.");
+                this._router.navigate(['/view-cities']);
+              }
+            });
+          } else {
+            alert("Invalid credentials! Please try again.");
           }
         },
         (resError) => {

@@ -15,18 +15,22 @@ import { RemoveShopComponent } from './components/remove-shop/remove-shop.compon
 import { AddCityComponent } from './components/add-city/add-city.component';
 import { RemoveCityComponent } from './components/remove-city/remove-city.component';
 import { AddShopsComponent } from './components/add-shops/add-shops.component';
+import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
 import { ViewProductsComponent } from './components/view-products/view-products.component';
 import { ShopDetailsComponent } from './components/shop-details/shop-details.component';
 import { RatingComponent } from './components/rating/rating.component';
-import { RegistrationPage2Component } from './components/registration-page2/registration-page2.component';
 import { VendorDashboardComponent } from './components/vendor-dashboard/vendor-dashboard.component';
 import { UpdateShopContactnumberComponent } from './components/updateshop-contactnumber/updateshop-contactnumber.component';
 import { UpdateshopEmailComponent } from './components/updateshop-email/updateshop-email.component';
-import { UpdateshopNameComponent } from './components/updateshop-name/updateshop-name.component'; // <-- Import added
-import { VendorCommonlayoutComponent } from './components/vendor-commonlayout/vendor-commonlayout.component';
-import { UserCommonlayoutComponent } from './components/user-commonlayout/user-commonlayout.component';
-
-
+import { UpdateshopNameComponent } from './components/updateshop-name/updateshop-name.component';
+import { ShowShopproductComponent } from './components/show-shopproduct/show-shopproduct.component';
+import { UpdateShopproductpriceComponent } from './components/update-shopproductprice/update-shopproductprice.component';
+import { UpdateShopproductstockComponent } from './components/update-shopproductstock/update-shopproductstock.component';
+import { MapPickerComponent } from './components/map-picker/map-picker.component';
+import { ViewRatingComponent } from './components/view-rating/view-rating.component';
+import { ViewVendorShopsComponent } from './components/view-vendor-shops/view-vendor-shops.component';
+import { AddShopProductComponent } from './components/add-shop-product/add-shop-product.component';
+import { VendorShopOptionsComponent } from './components/vendor-shop-options/vendor-shop-options.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -36,7 +40,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistrationPageComponent },
   { path: 'vendorlogin', component: LoginVendorComponent },
-  { path: 'vendorregister', component: RegistrationPage2Component },
+  { path: 'vendorregister',component:RegistrationPage2Component},
+  { path: 'view-shops', component: ViewShopsComponent },
+  { path: 'view-cities', component: ViewCitiesComponent },
   { path: 'update-shop', component: UpdateShopComponent },
   { path: 'update-shop/:id', component: UpdateShopComponent },
   { path: 'is-open', component: IsOpenComponent },
@@ -44,7 +50,6 @@ const routes: Routes = [
   { path: 'add-city', component: AddCityComponent },
   { path: 'remove-city', component: RemoveCityComponent },
   { path: 'add-shops', component: AddShopsComponent },
-  { path: 'vendorregister', component: RegistrationPage2Component },
   { path: 'view-products', component: ViewProductsComponent },
   { path: 'shop-details', component: ShopDetailsComponent },
   { path: 'rate-shop', component: RatingComponent },
@@ -57,7 +62,17 @@ const routes: Routes = [
   { path: 'update-contact-number', component: UpdateShopContactnumberComponent },
   { path: 'update-email', component: UpdateshopEmailComponent },
   { path: 'update-name', component: UpdateshopNameComponent },
-  { path: '**', component: LandingComponent } 
+  { path: 'view-rating', component: ViewRatingComponent },
+  { path: 'map-picker', component: MapPickerComponent },
+  { path: 'add-shop-product', component: AddShopProductComponent },
+  { path: 'shop-products', component: ShowShopproductComponent },
+  { path: 'view-shop-products', component: ShowShopproductComponent },
+  { path: 'vendor-shops', component: ViewVendorShopsComponent },
+  { path: 'vendor-shop-options', component: VendorShopOptionsComponent },
+  { path: 'update-shopproduct', component: UpdateShopComponent },
+  { path: 'update-shopproductstock', component: UpdateShopproductstockComponent },
+  { path: 'update-shopproductprice', component: UpdateShopproductpriceComponent },
+   { path: '**', component: LandingComponent }
 ];
 
 @NgModule({

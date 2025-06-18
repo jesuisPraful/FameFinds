@@ -1,4 +1,10 @@
+<header class="dashboard-header">
+  <div class="right-button">
+    <button (click)="logout()">Logout</button>
+  </div>
+</header>
 <div class="dashboard-container">
+  <h2>Welcome</h2>
   <div class="card-container">
 
     <div class="card add" (click)="navigateTo('add-shops')">
@@ -16,5 +22,12 @@
       <p>View Ratings</p>
     </div>
 
+    <div class="card rating" (click)="navigateTo('vendor-shops')">
+      <span class="icon">🏬</span>
+      <p>View Shops</p>
+    </div>
+
+
   </div>
 </div>
+

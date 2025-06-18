@@ -9,8 +9,8 @@ namespace FameFindsWebServices.Controllers
     [ApiController]
     public class RatingController : Controller
     {
-        private readonly FameFindsRepository _repository;
-        public RatingController(FameFindsRepository repository)
+        private readonly IFameFindsDAL _repository;
+        public RatingController(IFameFindsDAL repository)
         {
             _repository = repository;
         }

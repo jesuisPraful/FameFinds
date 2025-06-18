@@ -5,15 +5,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
-
 namespace FameFindsWebServices.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ShopController : Controller
     {
-        private readonly FameFindsRepository _repository;
-        public ShopController(FameFindsRepository repository)
+        private readonly IFameFindsDAL _repository;
+        public ShopController(IFameFindsDAL repository)
         {
             _repository = repository;
         }
@@ -22,10 +21,9 @@ namespace FameFindsWebServices.Controllers
         public IActionResult GetAllShops()
         {
             List<Shop> shops = new List<Shop>();
-
             try
-            { 
-               var shopList = _repository.GetAllShops();
+            {
+                var shopList = _repository.GetAllShops();
                 if (shopList != null)
                 {
                     foreach (var shop in shopList)
@@ -44,25 +42,45 @@ namespace FameFindsWebServices.Controllers
 
                         shops.Add(shopOne);
                     }
-                }                
+                }
 
             }
             catch (Exception)
             {
-                shops = null;
+  
                 return BadRequest("Failed to retrieve shops");
             }
             return Ok(shops);
         }
+        [HttpGet("GetCityIdByShopId/{shopId}")]
+        public IActionResult GetCityIdByShopId(int shopId)
+        {
+            try
+            {
+                var cityId = _repository.GetCityIdByShopId(shopId);
+                if (cityId == null)
+                {
+                    return NotFound($"No shop found with ID {shopId}");
+                }
+                return Ok(cityId);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error: " + ex.Message);
+            }
+        }
 
+
+        
         [HttpPost("Register")]
-        public IActionResult RegisterShop(Models.Shop shop)
+        public IActionResult RegisterShop(FameFindsWebServices.Models.Shop shop)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    Shop shopOne = new Shop
+                    // Mapping FameFindsWebServices.Models.Shop to FameFindsDAL.Models.Shop
+                    FameFindsDAL.Models.Shop shopOne = new FameFindsDAL.Models.Shop
                     {
                         ShopName = shop.ShopName,
                         EmailId = shop.EmailId,
@@ -109,24 +127,10 @@ namespace FameFindsWebServices.Controllers
                  
                 var shop = _repository.GetShopsByShopId(shopId);
 
+
                 if (shop != null)
                 {
-                    Shop shopOne = new Shop();
-
-                    shopOne.ShopId = shop.ShopId;
-                    shopOne.ShopName = shop.ShopName;
-                    shopOne.EmailId = shop.EmailId;
-                    shopOne.CityId = shop.CityId;
-                    shopOne.Pincode = shop.Pincode;
-                    shopOne.ContactNumber = shop.ContactNumber;
-                    shopOne.FullAddress = shop.FullAddress;
-                    shopOne.Latitude = shop.Latitude;
-                    shopOne.Longitude = shop.Longitude;
-                    shopOne.VendorId = shop.VendorId;
-
-
-                    return Ok(shopOne);
-
+                    return Ok(shop);
                 }
                 else
                 {
@@ -179,9 +183,31 @@ namespace FameFindsWebServices.Controllers
 
         }
 
+        [HttpGet("shopIds/{vendorId}")]
+        public IActionResult GetShopIdsByVendorId(int vendorId)
+        {
+            List<int> shopIds = new List<int>();
+
+            try
+            {
+                shopIds = _repository.GetShopIdsByVendorId(vendorId);
+
+                if (shopIds == null || shopIds.Count == 0)
+                {
+                    return NotFound("No shops found for the given vendor.");
+                }
+            }
+            catch (Exception)
+            {
+                return BadRequest("Failed to retrieve shop IDs.");
+            }
+
+            return Ok(shopIds);
+        }
+
+
 
         [HttpGet("shopName")]
-        
         public IActionResult GetShopsByShopName(string shopName)
         {
             List<Shop> shops = new List<Shop>();
@@ -215,7 +241,6 @@ namespace FameFindsWebServices.Controllers
                 return BadRequest("Failed to retrieve shops");
             }
             return Ok(shops);
-
         }
 
 
@@ -494,6 +519,13 @@ namespace FameFindsWebServices.Controllers
         //        return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
         //    }
         //}
+
+        [HttpGet("GetAverageRating")]
+        public IActionResult GetAverageRating(int shopId)
+        {
+            var avg = _repository.GetAverageRatingByShopId(shopId);
+            return Ok(avg);
+        }
 
 
     }

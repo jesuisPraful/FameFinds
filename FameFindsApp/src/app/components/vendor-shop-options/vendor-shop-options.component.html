@@ -1,0 +1,36 @@
+<header class="dashboard-header">
+  <div class="left-button">
+    <button (click)="goBack()">⬅ Back</button>
+  </div>
+  <div class="right-button">
+    <button (click)="logout()">Logout</button>
+  </div>
+</header>
+
+<div class="dashboard-container">
+  <h2>Shop Related Info</h2>
+  <div class="card-container">
+
+    <div class="card add" (click)="navigateTo('add-shop-product')">
+      <span class="icon">➕</span>
+      <p>Add New ShopProduct</p>
+    </div>
+
+    <!--<div class="card edit" (click)="navigateTo('update-shop')">
+      <span class="icon">📝</span>
+      <p>Update Shop</p>
+    </div>-->
+
+    <div class="card rating" (click)="navigateTo('shop-details')">
+      <span class="icon">⭐</span>
+      <p>View Ratings</p>
+    </div>
+
+    <div class="card rating" (click)="navigateTo('view-shop-products')">
+      <span class="icon">🏬</span>
+      <p>View All ShopProducts</p>
+    </div>
+
+
+  </div>
+</div>

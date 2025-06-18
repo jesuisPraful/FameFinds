@@ -13,6 +13,13 @@ export class VendorService {
     let tempVar = this._http.post(`https://localhost:7249/api/Vendor/Login/login` + param, null).pipe(catchError(this.errorHandler))
     return tempVar;
   }
+
+  // for view ratings
+  getVendorRatings(vendorId: number): Observable<any[]> {
+    return this._http.get<any[]>(`https://localhost:7249/api/Vendor/GetVendorRatings/${vendorId}`);
+  }
+
+
   errorHandler(error: HttpErrorResponse): Observable<never> {
     console.error(error);
     return throwError(error.message || "server Error");
