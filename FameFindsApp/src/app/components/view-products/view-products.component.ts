@@ -4,6 +4,7 @@ import { IProduct } from '../../Models/product';
 import { ICategory } from '../../Models/category';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Location } from '@angular/common'
 
 
 @Component({
@@ -18,11 +19,18 @@ export class ViewProductsComponent implements OnInit {
   cityName: string = '';
  
 
-  constructor(private _productservice: ProductService,private _router:Router) {
+  constructor(private _productservice: ProductService,private _router:Router,private location:Location) {
     this.products = [];
     this.categories = [];
     const nav = this._router.getCurrentNavigation();
     this.cityName = nav?.extras?.queryParams?.['city'] || '';
+  }
+  goBack() {
+    this.location.back();
+  }
+
+  logout() {
+    this._router.navigate(['/login']);
   }
 
   goToFamousProducts(productName: string) {

@@ -49,6 +49,11 @@ export class ViewCitiesComponent implements OnInit {
 
   }
 
+  logout() {
+    // logic to clear session/token
+    this._router.navigate(['/login']);
+  }
+
   searchCity(cityName: string): void {
     if (!cityName.trim()) {
       this.filteredCities = this.cities;
@@ -58,6 +63,8 @@ export class ViewCitiesComponent implements OnInit {
         city.cityName.toLowerCase().includes(lowerName)
       );
     }
+
+
   }
 
 }

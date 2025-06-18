@@ -5,6 +5,7 @@ import { ShopService } from '../../services/shop.service';
 import { ProductService } from '../../services/product.service';
 import { CityService } from '../../services/city.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-add-shop-product',
@@ -21,8 +22,18 @@ export class AddShopProductComponent {
     private shopService: ShopService,
     private productService: ProductService,
     private cityService: CityService,
-    private router: Router
+    private router: Router,
+    private location: Location
+
   ) { }
+  goBack() {
+    this.location.back();
+  }
+
+  logout() {
+    this.router.navigate(['/vendorlogin']);
+  }
+
   ngOnInit(): void {
     const shopIdStr = localStorage.getItem('selectedShopId');
     this.shopId = Number(shopIdStr);
