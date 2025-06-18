@@ -25,6 +25,8 @@ namespace FameFindsDAL
         void MarkOtpAsUsedByEmail(string email, string otp);
         void MarkOtpAsUsed(int customerId, string otp);
         CustomerPasswordResetToken? GetLatestVerifiedOtp(string email);
+
+        int GetCustomerIdByEmail(string email);
         #endregion
 
         #region category
@@ -69,6 +71,9 @@ namespace FameFindsDAL
         List<Rating> GetRatings();
         bool RemoveRating(int ratingId);
         List<ShopWithRatingDto> GetShopsSortedByRating();
+        double GetAverageRatingByShopId(int shopId);
+
+        List<object> GetRatingsByVendor(int vendorId);
         #endregion
 
         #region shop
@@ -87,6 +92,7 @@ namespace FameFindsDAL
         bool UpdateShopContactNumber(int shopId, string nContactNumber, string contactNumber);
         bool UpdateShopEmailId(int ShopId, string nemailId, string emailId);
         bool UpdateShopIsOpen(int ShopId, bool isOpen);
+        List<int> GetShopIdsByVendorId(int vendorId);
 
         #endregion
 
@@ -97,6 +103,8 @@ namespace FameFindsDAL
         bool DeleteCity(int cityId);
         City GetCityById(int cityId);
         City GetCityByName(string cityName);
+        City CityByShop(Shop shop);
+        City CityByShopId(int shopId);
 
         #endregion
 

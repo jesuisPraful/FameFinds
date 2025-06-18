@@ -28,25 +28,6 @@ export class AddShopsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    const email = localStorage.getItem("Email");
-    if (email) {
-      this.shopService.getIdByEmail(email).subscribe({
-        next: (response) => {
-          const vendorId = response.vendorId;
-          localStorage.setItem("vendorId", vendorId.toString());
-          this.vendorId = vendorId.toString();
-        },
-        error: (err) => {
-          console.error("Failed to fetch vendorId by email:", err);
-        }
-      });
-
-    } else {
-      console.warn("No email found in localStorage.");
-    }
-
-
     this.shopForm = this.fb.group({
       shopName: ['', Validators.required],
       emailId: ['', [Validators.required, Validators.email]],
@@ -59,7 +40,6 @@ export class AddShopsComponent implements OnInit {
       isOpen: [true],
       openingTime: [''],
       closingTime: [''],
-      
     });
 
     this.getAllCities();
@@ -100,7 +80,6 @@ export class AddShopsComponent implements OnInit {
   }
 
   useMyLocation(): void {
-
     localStorage.removeItem('selectedLat');
     localStorage.removeItem('selectedLng');
 
@@ -131,20 +110,17 @@ export class AddShopsComponent implements OnInit {
     }
   }
 
-
   reverseGeocode(lat: number, lng: number): void {
     const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`;
     fetch(url)
       .then(response => response.json())
       .then(data => {
         const address = data.display_name || '';
-        const city = data.address.city || data.address.town || data.address.village || '';
         const postcode = data.address.postcode || '';
 
         this.shopForm.patchValue({
           fullAddress: address,
-          pincode: postcode,
-          cityName: city
+          pincode: postcode
         });
       })
       .catch(err => console.error('Reverse geocoding error:', err));
@@ -215,4 +191,3 @@ export class AddShopsComponent implements OnInit {
     });
   }
 }
-

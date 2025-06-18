@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { VendorService } from '../services/vendor.service';
+import { VendorService } from '../../services/vendor.service';
+
 
 @Component({
   selector: 'app-view-rating',
@@ -8,7 +9,6 @@ import { VendorService } from '../services/vendor.service';
 })
 export class ViewRatingComponent implements OnInit {
   ratings: any[] = [];
-
   constructor(private vendorService: VendorService) { }
 
   ngOnInit(): void {
