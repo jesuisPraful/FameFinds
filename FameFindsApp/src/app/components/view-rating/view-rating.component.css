@@ -1,27 +1,49 @@
-.vendor-rating-container {
+.rating-container {
   padding: 20px;
-  max-width: 800px;
+  max-width: 500px;
   margin: auto;
-}
-
-.title {
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 28px;
-  color: #444;
-}
-
-.star {
-  color: gold;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
-  padding: 10px;
   border: 1px solid #ccc;
-  text-align: left;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.stars {
+  font-size: 28px;
+  color: #ccc;
+}
+
+.checked {
+  color: orange;
+}
+
+.fa-star,
+.fa-star-half-alt {
+  margin: 0 2px;
+}
+
+.rating-value {
+  font-size: 16px;
+  color: #555;
+  margin-left: 10px;
+}
+
+.review-count {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #666;
+}
+
+.no-ratings {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #888;
 }

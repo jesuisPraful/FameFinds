@@ -3,12 +3,16 @@ body, html {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* Background container with background image */
 .landing-container {
   height: 100vh;
   background-image: url('/assets/images/landing.png');
   background-size: cover;
   background-position: center;
 }
+
+/* Navbar styles */
 .navbar {
   background-color: transparent;
   color: black;
@@ -30,6 +34,7 @@ body, html {
   gap: 20px;
 }
 
+/* Dropdown button */
 .dropbtn {
   background-color: transparent;
   color: black;
@@ -40,11 +45,13 @@ body, html {
   font-weight: 500;
 }
 
+/* Dropdown container */
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
+/* Dropdown menu */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -69,28 +76,33 @@ body, html {
       background-color: #f0f0f0;
     }
 
+/* Show dropdown on hover */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-
+/* Container for main content */
 .main-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 80px); 
+  height: calc(100vh - 80px);
   text-align: center;
+  /* Added animation */
+  animation: fadeInUp 1s ease forwards;
 }
 
+  /* Welcome message style */
   .main-content h1 {
     font-size: 40px;
     font-weight: bold;
     color: black;
     margin: 0;
-    margin-top: -100px;
+    margin-top: -130px; /* Increased negative margin to move message higher */
   }
 
+/* Subtitle style */
 .s-content {
   text-align: center;
   margin-top: -30px;
@@ -102,3 +114,15 @@ body, html {
     color: black;
   }
 
+/* Animation keyframes for fadeInUp */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

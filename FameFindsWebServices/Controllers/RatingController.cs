@@ -1,6 +1,7 @@
 ﻿using FameFindsDAL;
 using FameFindsDAL.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace FameFindsWebServices.Controllers
@@ -87,6 +88,13 @@ namespace FameFindsWebServices.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
+        }
+
+        [HttpGet("average/shopId")]
+        public IActionResult GetAverageRating(int shopId)
+        {
+            var result = _repository.GetAverageRatingByShop(shopId);
+            return Ok(result);
         }
     }
 }

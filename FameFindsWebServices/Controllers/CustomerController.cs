@@ -1,6 +1,7 @@
 ﻿using FameFindsDAL;
 using FameFindsWebServices.Models;
 using FameFindsWebServices.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity.Data;
@@ -26,7 +27,7 @@ namespace FameFindsWebServices.Controllers
             _emailService = emailService;
         }
 
-
+        
         [HttpGet("GetAllCustomers")]
         public IActionResult GetAllCustomers()
         {
@@ -92,6 +93,7 @@ namespace FameFindsWebServices.Controllers
                 return BadRequest("Registration failed.");
             }
         }
+
         [HttpPost("login")]
         public IActionResult Login([FromQuery] string email, [FromQuery] string passwordHash)
         {

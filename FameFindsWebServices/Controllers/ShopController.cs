@@ -523,10 +523,8 @@ namespace FameFindsWebServices.Controllers
         [HttpGet("GetAverageRating")]
         public IActionResult GetAverageRating(int shopId)
         {
-            var avg = _repository.GetAverageRatingByShopId(shopId);
+            var avg = _repository.GetAverageRatingByShop(shopId);
             return Ok(avg);
         }
-
-
     }
 }

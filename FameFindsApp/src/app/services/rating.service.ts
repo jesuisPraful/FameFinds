@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IRating } from '../Models/rating';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { catchError, throwError } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,9 +20,9 @@ export class RatingService {
     ).pipe(catchError(this.errorHandler));
   }
 
-  getAverageRating(shopId: number) {
-    return this._http.get<number>(
-      `https://localhost:7249/api/Shop/GetAverageRating?shopId=${shopId}`
+  getAverageRating(shopId: number): Observable<{ shopId: number, averageRating: number, totalRatings: number }> {
+    return this._http.get<{ shopId: number, averageRating: number, totalRatings: number }>(
+      `https://localhost:7249/api/Rating/average/shopId?shopId=${shopId}`
     ).pipe(catchError(this.errorHandler));
   }
 

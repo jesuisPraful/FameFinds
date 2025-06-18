@@ -16,7 +16,7 @@ namespace FameFindsWebServices.Services
         bool LoginVendor(Vendor vendor);
         bool UpdatePasswordVendor(int vendorId, string newPassword);
     }
-    public class AuthenticationService:IAuthenticationService
+    public class AuthenticationService : IAuthenticationService
     {
         private readonly IFameFindsDAL _repo;
         private readonly PasswordHasher<Customer> _hasher;
@@ -75,7 +75,7 @@ namespace FameFindsWebServices.Services
         {
             bool status = false;
             string hashedPassword = _hasherV.HashPassword(vendor, vendor.PasswordHash); // Hash password
-                                                                                       // Do NOT nullify vendor.PasswordHash here
+                                                                                        // Do NOT nullify vendor.PasswordHash here
 
             FameFindsDAL.Models.Vendor vendor1 = new FameFindsDAL.Models.Vendor()
             {
@@ -88,7 +88,7 @@ namespace FameFindsWebServices.Services
             return status;
         }
 
-         public bool LoginVendor(Vendor vendor)
+        public bool LoginVendor(Vendor vendor)
         {
             var storedVendor = _repo.GetVendorByUsername(vendor.Email);
             if (storedVendor == null)

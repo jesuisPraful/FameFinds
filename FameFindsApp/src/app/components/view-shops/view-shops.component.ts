@@ -51,7 +51,11 @@ export class ViewShopsComponent implements OnInit {
           // Fetch average ratings for each shop
           this.filteredShops.forEach(shop => {
             this._ratingService.getAverageRating(shop.shopId).subscribe({
-              next: avg => shop.averageRating = avg,
+              next: avg => {
+                shop.averageRating = avg.averageRating;
+                shop.totalRating = avg.totalRatings; // optional
+              },
+
               error: err => console.error(`Failed to load rating for shop ${shop.shopId}`, err)
             });
           });
