@@ -28,7 +28,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FameFindsApp(1)", "FameFind
 		SlnRelativePath = "FameFindsApp\"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FameFindsWebServicesTests", "FameFindsWebServicesTests\FameFindsWebServicesTests.csproj", "{D12479EB-9DFA-48B1-BF45-BAB8B6DE2488}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FameFindsWebServicesTests", "FameFindsWebServicesTests\FameFindsWebServicesTests.csproj", "{D12479EB-9DFA-48B1-BF45-BAB8B6DE2488}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

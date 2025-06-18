@@ -9,7 +9,7 @@ import { ShopProduct, ShopProductService } from 'src/app/services/shopproduct.se
 export class ShowShopproductComponent implements OnInit {
 
   shopProducts: ShopProduct[] = [];
-  shopId: any = ''; 
+  shopId: any = '';
   message: string = '';
   error: string = '';
 

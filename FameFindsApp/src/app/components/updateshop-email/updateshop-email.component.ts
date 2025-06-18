@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'; // <-- Import Router
 import { ShopService } from '../../services/shop.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class UpdateshopEmailComponent {
   message: string = '';
   error: string = '';
 
-  constructor(private shopService: ShopService) { }
+  constructor(private shopService: ShopService, private router: Router) { } // <-- Inject Router
 
   updateEmail(): void {
     if (!this.shopId || !this.currentEmail || !this.newEmail) {
@@ -31,6 +32,7 @@ export class UpdateshopEmailComponent {
         this.message = 'Shop email updated successfully';
         this.error = '';
         console.log('Success:', res);
+        this.router.navigate(['/landing']); 
       },
       error: (err) => {
         this.error = 'Failed to update shop email';

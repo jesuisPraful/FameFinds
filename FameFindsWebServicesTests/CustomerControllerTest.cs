@@ -33,10 +33,10 @@ namespace FameFindsWebServicesTests
         {
             // Arrange
             var customerList = new List<FameFindsDAL.Models.Customer>
-    {
-        new FameFindsDAL.Models.Customer { CustomerId = 1, FullName = "John Doe", Email = "john@example.com", PhoneNumber = "1234567890" },
-        new FameFindsDAL.Models.Customer { CustomerId = 2, FullName = "Jane Smith", Email = "jane@example.com", PhoneNumber = "0987654321" }
-    };
+            {
+                new FameFindsDAL.Models.Customer { CustomerId = 1, FullName = "John Doe", Email = "john@example.com", PhoneNumber = "1234567890" },
+                new FameFindsDAL.Models.Customer { CustomerId = 2, FullName = "Jane Smith", Email = "jane@example.com", PhoneNumber = "0987654321" }
+            };
 
             _mockrepo
                 .Setup(repo => repo.GetAllCustomers())
