@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\91620\\Desktop\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\updateshop-contactnumber\\updateshop-contactnumber.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\91620\\Desktop\\Project\\FameFinds\\FameFindsApp|c:\\users\\91620\\desktop\\project\\famefinds\\famefindsapp\\src\\app\\components\\updateshop-email\\updateshop-email.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\91620\\Desktop\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\updateshop-email\\updateshop-email.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\91620\\Desktop\\Project\\FameFinds\\FameFindsApp|c:\\users\\91620\\desktop\\project\\famefinds\\famefindsapp\\src\\app\\components\\updateshop-contactnumber\\updateshop-contactnumber.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA858FB5-F5C4-4741-B472-1E783B327E03}|C:\\Users\\91620\\Desktop\\Project\\FameFinds\\FameFindsApp|solutionrelative:famefindsapp\\src\\app\\components\\updateshop-contactnumber\\updateshop-contactnumber.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,24 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1234,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "updateshop-email.component.css",
-              "DocumentMoniker": "C:\\Users\\91620\\Desktop\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\updateshop-email\\updateshop-email.component.css",
-              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\components\\updateshop-email\\updateshop-email.component.css",
-              "ToolTip": "C:\\Users\\91620\\Desktop\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\updateshop-email\\updateshop-email.component.css",
-              "RelativeToolTip": "FameFindsApp\\src\\app\\components\\updateshop-email\\updateshop-email.component.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-18T16:46:23.32Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -45,9 +32,22 @@
               "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\components\\updateshop-contactnumber\\updateshop-contactnumber.component.css",
               "ToolTip": "C:\\Users\\91620\\Desktop\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\updateshop-contactnumber\\updateshop-contactnumber.component.css",
               "RelativeToolTip": "FameFindsApp\\src\\app\\components\\updateshop-contactnumber\\updateshop-contactnumber.component.css",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAwwCEAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-18T16:41:16.665Z",
+              "WhenOpened": "2025-06-18T18:25:40.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "updateshop-contactnumber.component.html",
+              "DocumentMoniker": "C:\\Users\\91620\\Desktop\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\updateshop-contactnumber\\updateshop-contactnumber.component.html",
+              "RelativeDocumentMoniker": "FameFindsApp\\src\\app\\components\\updateshop-contactnumber\\updateshop-contactnumber.component.html",
+              "ToolTip": "C:\\Users\\91620\\Desktop\\Project\\FameFinds\\FameFindsApp\\src\\app\\components\\updateshop-contactnumber\\updateshop-contactnumber.component.html",
+              "RelativeToolTip": "FameFindsApp\\src\\app\\components\\updateshop-contactnumber\\updateshop-contactnumber.component.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-06-18T18:25:36.14Z",
               "EditorCaption": ""
             }
           ]
