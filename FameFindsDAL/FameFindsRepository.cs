@@ -771,7 +771,7 @@ namespace FameFindsDAL
                                CustomerName = r.Customer != null ? r.Customer.FullName : "Unknown",
                                RatingValue = r.RatingValue ?? 0,
                                Review = r.Review,
-                               CreatedAt = r.CreatedAt
+                               CreatedAt =(DateTime) r.CreatedAt
                            }).ToList();
 
             return ratings;
