@@ -748,45 +748,31 @@ namespace FameFindsDAL
             return status;
         }
 
-        public List<ShopWithRatingDto> GetShopsSortedByRating()
+        public AverageRatingDTO GetAverageRatingByShop(int shopId)
         {
-            var result = (from shop in _context.Shops
-                          select new ShopWithRatingDto
-                          {
-                              ShopId = shop.ShopId,
-                              ShopName = shop.ShopName,
-                              AverageRating = shop.Ratings.Any() ? shop.Ratings.Average(r => r.RatingValue) : 0
-                          })
-                          .OrderByDescending(s => s.AverageRating)
-                          .ToList();
-
-            return result;
-        }
-
-        public List<RatingDto> GetRatingsByVendor(int vendorId)
-        {
-            var ratings = (from r in _context.Ratings
-                           where r.Shop != null && r.Shop.VendorId == vendorId
-                           select new RatingDto
-                           {
-                               CustomerName = r.Customer != null ? r.Customer.FullName : "Unknown",
-                               RatingValue = r.RatingValue ?? 0,
-                               Review = r.Review,
-                               CreatedAt =(DateTime) r.CreatedAt
-                           }).ToList();
-
-            return ratings;
-        }
-        public double GetAverageRatingByShopId(int shopId)
-        {
-            return _context.Ratings
+            var ratings = _context.Ratings
                 .Where(r => r.ShopId == shopId)
-                .Select(r => r.RatingValue ?? 0)
-                .DefaultIfEmpty(0)
-                .Average();
+                .ToList();
+
+            if (!ratings.Any())
+            {
+                return new AverageRatingDTO
+                {
+                    ShopId = shopId,
+                    AverageRating = 0,
+                    TotalRatings = 0
+                };
+            }
+
+            return new AverageRatingDTO
+            {
+                ShopId = shopId,
+                AverageRating = Math.Round(ratings
+                .Where(r => r.RatingValue.HasValue)
+                .Average(r => r.RatingValue.Value), 2),
+                TotalRatings = ratings.Count
+            };
         }
-
-
         #endregion
 
         #region shop

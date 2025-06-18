@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VendorService } from '../../services/vendor.service'; // ✅ Correct path
+import { RatingService } from '../../services/rating.service';
 
 @Component({
   selector: 'app-view-rating',
@@ -7,24 +8,26 @@ import { VendorService } from '../../services/vendor.service'; // ✅ Correct pa
   styleUrls: ['./view-rating.component.css']
 })
 export class ViewRatingComponent implements OnInit {
-  ratings: any[] = [];
+  averageRating: number = 0;
+  totalRatings: number = 0;
+  shopId: number = 0;
 
-  constructor(private vendorService: VendorService) { }
+  // ✅ Expose these properly
+  Math = Math;
+  Number = Number;
+
+  constructor(private ratingService: RatingService) { }
 
   ngOnInit() {
-    const vendorId = Number(localStorage.getItem('vendorId')); // ✅ Adjust as needed
-
-    if (vendorId) {
-      this.vendorService.getVendorRatings(vendorId).subscribe({
-        next: (data: any[]) => this.ratings = data,
-        error: (err: any) => console.error('Error fetching ratings', err)
-      });
-    } else {
-      console.warn('Vendor ID not found in localStorage');
-    }
-  }
-
-  getStars(score: number): number[] {
-    return Array(score).fill(0);
+    this.shopId = Number(localStorage.getItem('shopId'));
+    this.ratingService.getAverageRating(this.shopId).subscribe({
+      next: (response) => {
+        this.averageRating = response.averageRating;
+        this.totalRatings = response.totalRatings;
+      },
+      error: (err) => {
+        console.error('Error fetching average rating:', err);
+      }
+    });
   }
 }

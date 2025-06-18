@@ -239,17 +239,17 @@ INSERT INTO Shop (
     VendorId
 )
 VALUES (
-    'Bandra Electronics Hub',
-    'bandra.electronics@example.com',
-    2,                  -- CityId (e.g., Mumbai)
-    '400050',           -- PINCODE
+    'Onkar Trades',
+    'pavan12@gmail.com',
+    1,                  -- CityId (e.g., Mumbai)
+    '500068',           -- PINCODE
     '9876543210',       -- Contact Number
-    'Near Bandra Station, Mumbai',
+    'Uppal x Roads',
     19.06000000,        -- Latitude
     72.83000000,        -- Longitude
     '10:00:00',         -- Opening time
     '21:00:00',         -- Closing time
-    1                   -- VendorId
+     4                  -- VendorId
 );
 
 INSERT INTO Vendor (
@@ -259,7 +259,7 @@ INSERT INTO Vendor (
     PhoneNumber
 )
 VALUES (
-    'Ravi Enterprises',
+    'Pavan',
     'ravi@example.com',
     'hashed_password_123', -- Replace with actual hash
     '9876543210'
@@ -271,8 +271,8 @@ INSERT INTO ShopProduct(
     Stock
 )
 VALUES (
-    1,
-    10,
+    14,
+    2,
     79999.00,
     25
 );

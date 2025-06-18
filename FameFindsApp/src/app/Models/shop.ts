@@ -12,4 +12,5 @@ export interface IShop {
   createdAt: Date;
   vendorId: number;
   averageRating?: number;
+  totalRating?: number;
 }
