@@ -9,7 +9,7 @@ import { ShopProduct, ShopProductService } from 'src/app/services/shopproduct.se
 export class ShowShopproductComponent implements OnInit {
 
   shopProducts: ShopProduct[] = [];
-  shopId: any = ''; 
+  shopId: any = '';
   message: string = '';
   error: string = '';
 
@@ -20,6 +20,7 @@ export class ShowShopproductComponent implements OnInit {
   }
 
   getProducts(): void {
+    this.shopId = Number(localStorage.getItem("selectedShopId"));
     this.shopProductService.getProductsByShopId(this.shopId).subscribe({
       next: (products) => {
         this.shopProducts = products;
@@ -37,10 +38,11 @@ export class ShowShopproductComponent implements OnInit {
   deleteProduct(shopProductId: number): void {
     if (confirm('Are you sure you want to delete this product?')) {
       this.shopProductService.deleteShopProduct(shopProductId).subscribe({
-        next: (res) => {
+        next: (res: string) => {
           this.message = res;
           this.error = '';
           this.getProducts(); // refresh list
+
         },
         error: () => {
           this.error = 'Delete failed.';

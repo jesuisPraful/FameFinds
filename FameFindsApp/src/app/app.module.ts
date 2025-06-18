@@ -63,7 +63,6 @@ import { ViewRatingComponent } from './components/view-rating/view-rating.compon
     OtpVerificationComponent,
     ViewShopsComponent,
     ViewCitiesComponent,
-    ViewProductsComponent,
     UpdateShopComponent,
     IsOpenComponent,
     RemoveShopComponent,
@@ -72,19 +71,21 @@ import { ViewRatingComponent } from './components/view-rating/view-rating.compon
     AddShopsComponent,
     ForgotPasswordVendorComponent,
     ShopDetailsComponent,
-    ForgotPasswordVendorComponent,
     RatingComponent,
-    UpdateShopComponent,
     UpdateshopEmailComponent,
-    UpdateshopNameComponent
-  ],
-  imports: [
-    BrowserModule,
     UpdateshopNameComponent,
-    ShowShopproductComponent,
+
+    UpdateShopContactnumberComponent,
     UpdateShopproductComponent,
     UpdateShopproductpriceComponent,
     UpdateShopproductstockComponent,
+    ShowShopproductComponent,
+    ViewRatingComponent,
+    VendorCommonlayoutComponent,
+    MapPickerComponent
+  ],
+  imports: [
+    BrowserModule,
     AppRoutingModule,
     CommonModule,
     HttpClientModule,

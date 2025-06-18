@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VendorService } from '../services/vendor.service';
+import { VendorService } from '../../services/vendor.service';
 
 @Component({
   selector: 'app-view-rating',

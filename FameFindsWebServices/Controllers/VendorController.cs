@@ -50,6 +50,7 @@ namespace FameFindsWebServices.Controllers
             }
             return Ok(vendors);
         }
+
         [HttpPost("Register")]
         public IActionResult AddVendor([FromBody] Models.Vendor vendor)
         {

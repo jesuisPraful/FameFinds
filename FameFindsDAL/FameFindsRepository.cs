@@ -11,7 +11,7 @@ using static System.Formats.Asn1.AsnWriter;
 
 namespace FameFindsDAL
 {
-    public class FameFindsRepository:IFameFindsDAL
+    public class FameFindsRepository : IFameFindsDAL
     {
         private readonly FameFindsContext _context;
        

@@ -41,7 +41,7 @@ namespace FameFindsWebServices.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var shopProductOne = new ShopProduct
+                    ShopProduct shopProductOne = new ShopProduct
                     {
                         ShopId = shopProduct.ShopId,
                         ProductId = shopProduct.ProductId,
@@ -65,7 +65,7 @@ namespace FameFindsWebServices.Controllers
             }
         }
          [HttpPut("update/{id}")]
-        public IActionResult UpdateShopProduct(int id, [FromBody] ShopProduct updatedProduct)
+        public IActionResult UpdateShopProduct(int id, ShopProduct updatedProduct)
         {
             try
             {
