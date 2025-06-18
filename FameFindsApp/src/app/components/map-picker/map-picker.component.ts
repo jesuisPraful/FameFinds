@@ -1,7 +1,7 @@
 // map-picker.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-//import maplibregl from 'maplibre-gl';
+import maplibregl from 'maplibre-gl';
 
 @Component({
   selector: 'app-map-picker',
