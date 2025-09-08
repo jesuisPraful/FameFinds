@@ -1,3 +1,5 @@
+import { Time } from "@angular/common";
+
 export interface IShop {
   shopId: number;
   shopName: string;
@@ -11,6 +13,10 @@ export interface IShop {
   isOpen: boolean;
   createdAt: Date;
   vendorId: number;
+  openingTime?: string;
+  closingTime?: string;
+
   averageRating?: number;
   totalRating?: number;
+
 }

@@ -1,59 +1,54 @@
-/* Wrapper to center the card */
 .page-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* full screen height */
-  background-color: #f4f4f4;
+  min-height: 60vh;
+  flex-direction: column;
 }
 
-/* The card itself */
 .rating-container {
-  padding: 20px;
-  width: 90%;
-  max-width: 500px;
   text-align: center;
-  border: 1px solid #ccc;
+  background: #f9f9f9;
+  padding: 50px 100px;
   border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Text & star styles */
-h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
-  color: #333;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color:lavender;
 }
 
 .stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 28px;
-  color: #ccc;
+  margin-bottom: 10px;
 }
 
-.checked {
-  color: orange;
+.fa {
+  margin: 0 4px;
+  color: goldenrod;
 }
 
-.fa-star,
-.fa-star-half-alt {
-  margin: 0 3px;
+  .fa.checked {
+    color: #fbc02d; /* Gold color for checked stars */
+  }
+
+.fa-star-o {
+  color: #ccc; /* Unfilled stars */
 }
 
 .rating-value {
-  font-size: 16px;
   margin-left: 10px;
+  font-size: 16px;
   color: #444;
 }
 
 .review-count {
-  margin-top: 10px;
-  font-size: 16px;
-  color: #666;
+  font-size: 14px;
+  color: #777;
 }
 
 .no-ratings {
-  margin-top: 20px;
   font-size: 16px;
   color: #888;
+  text-align: center;
 }

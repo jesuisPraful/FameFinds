@@ -2,15 +2,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px 8px;
+  padding: 1px, 2px;
   background-color: transparent;
-  color: white;
-  height: -10px;
+  color: black;
+  margin-left: 30px;
+  height: 50px;
+  margin-top: 50px
 }
 
 .menu-icon {
   cursor: pointer;
-  font-size: 20px;
+  font-size: 30px;
+  margin-left: 30px;
+  margin-top: 10px
 }
 
 .sidebar {
@@ -41,7 +45,7 @@
     }
 
 .main-content {
-  margin-top: 60px;
+  margin-top: 10px;
   padding: 20px;
 }
 

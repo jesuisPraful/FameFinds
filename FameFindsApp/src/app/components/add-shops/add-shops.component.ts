@@ -19,16 +19,11 @@ export class AddShopsComponent implements OnInit {
   vendorId: string;
   showToast: boolean = false;
 
-  constructor(
-    private fb: FormBuilder,
-    private shopService: ShopService,
-    private router: Router
-  ) {
+  constructor(private fb: FormBuilder,private shopService: ShopService,private router: Router) {
     this.vendorId = '';
   }
 
   ngOnInit(): void {
-
     const email = localStorage.getItem("Email");
     if (email) {
       this.shopService.getIdByEmail(email).subscribe({
@@ -199,7 +194,7 @@ export class AddShopsComponent implements OnInit {
       next: () => {
         this.loading = false;
         this.message = 'Shop added successfully!';
-        this.router.navigate(['/view-shops']);
+        this.router.navigate(['/vendor-shops']);
       },
       error: (error) => {
         this.loading = false;
@@ -209,3 +204,4 @@ export class AddShopsComponent implements OnInit {
     });
   }
 }
+

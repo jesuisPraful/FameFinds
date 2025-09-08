@@ -1,12 +1,16 @@
 .container {
   max-width: 900px;
   margin: auto;
+  padding: 1rem;
 }
 
 .card {
   border-radius: 16px;
   border: 1px solid #ddd;
+  background-color: antiquewhite;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 2rem;
+  cursor: default;
 }
 
   .card:hover {
@@ -15,17 +19,17 @@
   }
 
 .card-body {
-  padding: 20px;
+  padding: 1.5rem;
 }
 
 .card-title {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: #007bff;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 p {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   font-size: 1rem;
   color: #333;
 }
@@ -35,21 +39,73 @@ p {
   padding: 15px;
   margin-top: 20px;
   font-size: 1.1rem;
+  background-color: #f0f9ff;
+  border: 1px solid #b6e0f2;
 }
 
+/* Styled Heading */
+h2.text-center {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+  h2.text-center::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #3498db;
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+  }
+
+/* Header bar styling */
 .dashboard-header {
   display: flex;
-  justify-content: space-between; /* Distribute left & right buttons */
+  justify-content: space-between;
   align-items: center;
-  background-color: #bde6eb;
+  background-color: #3498db;
   color: white;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   border-radius: 8px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: nowrap;
 }
 
-  /* Common button styling */
+  .dashboard-header .left-button,
+  .dashboard-header .right-button {
+    flex: 0 0 auto;
+  }
+
   .dashboard-header button {
+    background-color: #ffffff;
+    color: #3498db;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+  }
+
+    .dashboard-header button:hover {
+      background-color: #e6e6e6;
+    }
+
+/* Card buttons (Add Product / View Products) */
+.card-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+  .card-buttons button {
     background-color: #3498db;
     color: white;
     border: none;
@@ -57,8 +113,43 @@ p {
     border-radius: 5px;
     cursor: pointer;
     font-weight: 500;
+    transition: background-color 0.3s ease;
   }
 
-    .dashboard-header button:hover {
+    .card-buttons button:hover {
       background-color: #2980b9;
     }
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .card-body {
+    padding: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+
+  h2.text-center {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header {
+    padding: 0.8rem 1rem;
+  }
+
+    .dashboard-header button {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+    }
+
+  .card-buttons {
+    flex-direction: column;
+  }
+
+    .card-buttons button {
+      width: 100%;
+    }
+}

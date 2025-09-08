@@ -1,116 +1,152 @@
-.add-shop-container {
-  max-width: 600px;
+.form-container {
+  width: 90%;
+  max-width: 900px;
   margin: 40px auto;
-  padding: 30px;
-  background: linear-gradient(to bottom right, #f6f8ff, #d9e9ff);
+  padding: 30px 35px;
+  background-color: lavender;
   border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+.form-title {
   text-align: center;
-  color: #2d3e50;
   margin-bottom: 25px;
+  font-size: 28px;
+  color: #333;
+}
+
+.shop-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .form-group {
-  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
 }
 
-label {
-  font-weight: 600;
-  color: #34495e;
-  margin-bottom: 6px;
-}
-
-input, select, textarea {
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 15px;
-  transition: border-color 0.3s ease;
-}
-
-  input:focus, textarea:focus, select:focus {
-    border-color: #5b9bd5;
-    outline: none;
+  .form-group label {
+    margin-bottom: 10px;
+    font-weight: 600; 
+    font-size: 17px;  
+    letter-spacing: 0.3px;  
+    color: #222;  
   }
 
-textarea {
-  resize: none;
-}
+  .form-group input,
+  .form-group select {
+    padding: 12px 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+  }
 
-.form-buttons {
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: #4c8bf5;
+      outline: none;
+    }
+
+.form-group-row {
   display: flex;
-  gap: 12px;
-  justify-content: space-between;
-  margin: 20px 0;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
-.location-btn, .map-btn {
+  .form-group-row .form-group {
+    flex: 1 1 45%;
+    min-width: 250px;
+  }
+
+.form-group-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+  .form-group-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #4c8bf5;
+  }
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  
+}
+
+.location-btn {
   flex: 1;
-  padding: 10px;
-  background-color: #4a90e2;
-  color: white;
-  font-weight: 600;
+  background-color: #f0f0f0;
   border: none;
-  border-radius: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  background-color: lightseagreen
+}
+
+  .location-btn:hover {
+    background-color: #e0e0e0;
+  }
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #4c8bf5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-  .location-btn:hover, .map-btn:hover {
-    background-color: #3b78c4;
+  .submit-btn:disabled {
+    background-color: #a0c0ff;
+    cursor: not-allowed;
   }
 
-.form-actions {
-  margin-top: 20px;
+.form-message {
+  margin-top: 12px;
+  color: #cc0000;
+  font-weight: 500;
   text-align: center;
 }
 
-button[type="submit"] {
-  background-color: #28a745;
-  color: white;
-  font-weight: bold;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 16px;
-  width: 100%;
-  transition: background-color 0.3s;
-}
-
-  button[type="submit"]:hover {
-    background-color: #218838;
-  }
-
-button[disabled] {
-  background-color: #aaa;
-  cursor: not-allowed;
-}
-
-.alert-message {
-  color: #e74c3c;
-  font-weight: bold;
-  margin-top: 6px;
-}
-
-.status-message {
+.toast {
   margin-top: 15px;
   text-align: center;
+  background-color: #e3f7d9;
+  color: #2c662d;
+  padding: 10px 14px;
+  border-radius: 6px;
   font-weight: 500;
-  color: #2c3e50;
-}
-.toast-success {
-  background-color: #d4edda;
-  color: #155724;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 5px;
-  font-weight: bold;
 }
 
+/* Responsive Fix */
+@media (max-width: 600px) {
+  .form-group-row {
+    flex-direction: column;
+  }
+
+    .form-group-row .form-group {
+      min-width: 100%;
+    }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .location-btn {
+    width: 100%;
+    margin-right: 0;
+  }
+}

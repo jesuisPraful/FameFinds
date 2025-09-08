@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IShop } from './Models/shop';
-import { Observable } from 'rxjs';
+import { IShop } from '../Models/shop';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
   providedIn: 'root'
@@ -12,5 +12,4 @@ export class VendorShopService {
   getShopsByVendorId(vendorId: number): Observable<IShop[]> {
     return this._http.get<IShop[]>(`https://localhost:7249/api/Shop/vendorId?vendorId=${vendorId}`);
   }
-
 }

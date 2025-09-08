@@ -1,3 +1,4 @@
+<!-- Header -->
 <header class="dashboard-header">
   <div class="left-button">
     <button (click)="goBack()">⬅ Back</button>
@@ -7,22 +8,28 @@
   </div>
 </header>
 
+<!-- Container -->
 <div class="container mt-4">
   <h2 class="text-center mb-4">Your Registered Shops</h2>
 
-  <!-- Shops List -->
-  <div *ngFor="let shop of filteredShops" class="card mb-4 shadow-sm" (click)="goToAddProduct(shop.shopId)">
+  <!-- Shop Cards -->
+  <div *ngFor="let shop of filteredShops" class="card mb-4 shadow-sm">
     <div class="card-body">
       <h4 class="card-title">{{ shop.shopName }}</h4>
 
-      <p><strong>City:</strong> {{ getCityName(shop.cityId??0) }}</p>
+      <p><strong>City:</strong> {{ getCityName(shop.cityId ?? 0) }}</p>
       <p><strong>Email:</strong> {{ shop.emailId }}</p>
       <p><strong>Contact Number:</strong> {{ shop.contactNumber }}</p>
+
+      <div class="card-buttons">
+        <button (click)="goToAddProduct(shop.shopId)">Add Product</button>
+        <button (click)="goToViewProduct(shop.shopId)">View Products</button>
+      </div>
     </div>
   </div>
 
-  <!-- If no shops -->
-  <div *ngIf="filteredShops.length == 0" class="alert alert-info text-center">
+  <!-- No shops message -->
+  <div *ngIf="filteredShops.length === 0" class="alert alert-info text-center">
     You have not registered any shops yet.
   </div>
 </div>

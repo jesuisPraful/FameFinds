@@ -40,7 +40,7 @@ import { VendorDashboardComponent } from './components/vendor-dashboard/vendor-d
 import { UpdateShopContactnumberComponent } from './components/updateshop-contactnumber/updateshop-contactnumber.component';
 import { UpdateshopEmailComponent } from './components/updateshop-email/updateshop-email.component';
 import { UpdateshopNameComponent } from './components/updateshop-name/updateshop-name.component';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShowShopproductComponent } from './components/show-shopproduct/show-shopproduct.component';
 import { UpdateShopproductComponent } from './components/update-shopproduct/update-shopproduct.component';
 import { UpdateShopproductpriceComponent } from './components/update-shopproductprice/update-shopproductprice.component';
@@ -48,9 +48,9 @@ import { UpdateShopproductstockComponent } from './components/update-shopproduct
 import { RouterModule } from '@angular/router';
 import { ViewRatingComponent } from './components/view-rating/view-rating.component';
 import { ViewVendorShopsComponent } from './components/view-vendor-shops/view-vendor-shops.component';
-import { VendorShopService } from './vendor-shop.service';
-import { AddShopProductComponent } from './components/add-shop-product/add-shop-product.component';
+import { VendorShopService } from './services/vendor-shop.service';
 import { VendorShopOptionsComponent } from './components/vendor-shop-options/vendor-shop-options.component';
+import { AddShopProductComponent } from './components/add-shop-product/add-shop-product.component';
 
 
 @NgModule({
@@ -87,20 +87,21 @@ import { VendorShopOptionsComponent } from './components/vendor-shop-options/ven
     VendorCommonlayoutComponent,
     MapPickerComponent,
     ViewVendorShopsComponent,
-    AddShopProductComponent,
-    VendorShopOptionsComponent
+    VendorShopOptionsComponent,
+    AddShopProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     HttpClientModule,
-    ReactiveFormsModule,
     FormsModule,
     GoogleMapsModule,
     RouterModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
+  
   providers: [
     ProductService,
     RegisterService,

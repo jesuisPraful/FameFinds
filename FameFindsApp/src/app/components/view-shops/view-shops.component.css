@@ -16,20 +16,24 @@ header {
 .shop-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
   padding: 2rem;
+  align-items: stretch; /* Ensures all cards have equal height */
 }
 
 .shop-card {
   background: #fff;
+  background-color: lavenderblush;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
-  width: 300px;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  flex: 1 1 300px;
+  max-width: 320px;
+  min-width: 260px;
 }
 
 .shop-header {
@@ -90,13 +94,15 @@ header {
 .no-shops-msg {
   padding: 2rem;
   text-align: center;
-  font-size: 4.5rem;
+  font-size: 2rem;
   color: #777;
   font-weight: 500;
 }
+
 .btn-view-details,
 .btn-view-map {
   padding: 0.5rem 1rem;
+  background-color: cornflowerblue;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -105,7 +111,7 @@ header {
 }
 
 .btn-view-details {
-  background-color: #3498db;
+  background-color: cornflowerblue;
   color: white;
   margin-right: 0.5rem;
 }
@@ -123,7 +129,6 @@ header {
     background-color: #27ae60;
   }
 
-
 .rating-stars {
   display: flex;
   align-items: center;
@@ -138,7 +143,7 @@ header {
   }
 
     .rating-stars .star.filled {
-      color: #FFD700; /* Gold color for filled stars */
+      color: #FFD700;
     }
 
 .rating-value {
@@ -149,16 +154,16 @@ header {
 
 .dashboard-header {
   display: flex;
-  justify-content: space-between; /* Distribute left & right buttons */
+  justify-content: space-between;
   align-items: center;
   background-color: #bde6eb;
   color: white;
   padding: 1rem 2rem;
   border-radius: 8px;
   margin-bottom: 1.5rem;
+  flex-wrap: wrap;
 }
 
-  /* Common button styling */
   .dashboard-header button {
     background-color: #3498db;
     color: white;
@@ -167,10 +172,34 @@ header {
     border-radius: 5px;
     cursor: pointer;
     font-weight: 500;
+    margin: 0.25rem;
   }
 
     .dashboard-header button:hover {
       background-color: #2980b9;
     }
 
+/* Responsive scaling */
+@media (max-width: 768px) {
+  .shop-cards {
+    padding: 1rem;
+  }
 
+  .shop-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+    .dashboard-header button {
+      width: 100%;
+    }
+
+  .no-shops-msg {
+    font-size: 1.75rem;
+  }
+}

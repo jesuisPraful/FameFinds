@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ShopService } from 'src/app/services/shop.service';
-import { VendorShopService } from '../../vendor-shop.service';
-import { IShop } from '../../Models/shop';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common'
+import { Location } from '@angular/common';
+
+import { VendorShopService } from '../../services/vendor-shop.service';
+import { IShop } from '../../Models/shop';
 
 @Component({
   selector: 'app-view-vendor-shops',
@@ -13,9 +13,7 @@ import { Location } from '@angular/common'
 export class ViewVendorShopsComponent implements OnInit {
   filteredShops: IShop[] = [];
 
-  
-  constructor(private shopService: VendorShopService, private router: Router, private location: Location) { }
-  // Hardcoded cityId → cityName map
+  // City ID to Name Mapping
   cityMap: { [key: number]: string } = {
     1: 'HYDERABAD',
     2: 'MUMBAI',
@@ -24,14 +22,12 @@ export class ViewVendorShopsComponent implements OnInit {
     5: 'DELHI',
     6: 'CHENNAI'
   };
-  
-  logout() {
-    this.router.navigate(['/vendorlogin']);
-  }
-  goBack() {
-    this.location.back();
-  }
 
+  constructor(
+    private shopService: VendorShopService,
+    private router: Router,
+    private location: Location
+  ) { }
 
   ngOnInit(): void {
     const vendorIdStr = localStorage.getItem('vendorId');
@@ -41,7 +37,6 @@ export class ViewVendorShopsComponent implements OnInit {
         next: (shops) => {
           console.log('Shops fetched:', shops);
           this.filteredShops = shops;
-          
         },
         error: (err) => {
           console.error('Error fetching shops:', err);
@@ -50,13 +45,31 @@ export class ViewVendorShopsComponent implements OnInit {
     }
   }
 
+  // Return City Name from ID
   getCityName(cityId: number): string {
     return this.cityMap[cityId] || 'Unknown City';
   }
 
+  // Navigate to Add Product Page
   goToAddProduct(shopId: number): void {
-    localStorage.setItem('selectedShopId', shopId.toString()); // ✅ Save to localStorage
-    //this.router.navigate(['/add-shop-product']);
-    this.router.navigate(['/vendor-shop-options']);// ✅ Navigate
+    localStorage.setItem('selectedShopId', shopId.toString());
+    this.router.navigate(['/add-shop-product']);
+  }
+
+  // Navigate to View Products Page
+  goToViewProduct(shopId: number): void {
+    localStorage.setItem('selectedShopId', shopId.toString());
+    this.router.navigate(['/view-shop-products']);
+  }
+
+  // Navigate Back
+  goBack(): void {
+    this.location.back();
+  }
+
+  // Logout and redirect to login
+  logout(): void {
+    this.router.navigate(['/vendorlogin']);
   }
 }
+

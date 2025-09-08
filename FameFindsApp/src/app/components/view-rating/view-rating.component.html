@@ -1,4 +1,4 @@
-<div class="page-wrapper">
+<!--<div class="page-wrapper">
   <div class="rating-container" *ngIf="totalRatings >= 0">
     <h2>Shop Rating</h2>
 
@@ -12,6 +12,32 @@
           }"></i>
       </ng-container>
       <span class="rating-value">({{ averageRating }} / 5)</span>
+    </div>
+
+    <p class="review-count">Total Reviews: {{ totalRatings }}</p>
+  </div>
+
+  <div class="no-ratings" *ngIf="totalRatings === 0">
+    No ratings available for this shop.
+  </div>
+</div>-->
+
+<div class="page-wrapper">
+  <div class="rating-container" *ngIf="totalRatings > 0">
+    <h2>Shop Rating</h2>
+
+    <div class="stars">
+      <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+        <i class="fa"
+           [ngClass]="{
+           'fa-star checked' : star <= Math.floor(averageRating),
+            'fa-star-half-alt checked': star === Math.ceil(averageRating) && !Number.isInteger(averageRating),
+            'fa-star-o': star > averageRating
+          }"
+        ></i>
+      </ng-container>
+      <!-- Optional: Tooltip or screen-reader fallback -->
+      <span class="sr-only">({{ averageRating }} out of 5)</span>
     </div>
 
     <p class="review-count">Total Reviews: {{ totalRatings }}</p>

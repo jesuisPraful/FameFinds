@@ -31,6 +31,7 @@ import { ViewRatingComponent } from './components/view-rating/view-rating.compon
 import { ViewVendorShopsComponent } from './components/view-vendor-shops/view-vendor-shops.component';
 import { AddShopProductComponent } from './components/add-shop-product/add-shop-product.component';
 import { VendorShopOptionsComponent } from './components/vendor-shop-options/vendor-shop-options.component';
+import { VendorCommonlayoutComponent } from './components/vendor-commonlayout/vendor-commonlayout.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -53,7 +54,11 @@ const routes: Routes = [
   { path: 'view-products', component: ViewProductsComponent },
   { path: 'shop-details', component: ShopDetailsComponent },
   { path: 'rate-shop', component: RatingComponent },
+  { path: 'vendor', component: VendorCommonlayoutComponent},
   { path: 'vendor-dashboard', component: VendorDashboardComponent },
+  { path: 'view-cities', component: ViewCitiesComponent },
+  { path: 'view-products', component: ViewProductsComponent },
+  { path: 'view-shops', component: ViewShopsComponent },
   { path: 'update-contact-number', component: UpdateShopContactnumberComponent },
   { path: 'update-email', component: UpdateshopEmailComponent },
   { path: 'update-name', component: UpdateshopNameComponent },
@@ -73,5 +78,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
+ 
 })
 export class AppRoutingModule { }

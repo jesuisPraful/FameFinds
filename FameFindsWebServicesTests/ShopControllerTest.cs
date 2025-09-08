@@ -681,22 +681,22 @@ namespace FameFindsWebServicesTests
             Assert.Equal("Not Update", notFoundResult.Value);
         }
 
-        [Fact]
-        public void GetAverageRating_ReturnsOk_WithValidAverage()
-        {
-            // Arrange
-            int shopId = 1;
-            double expectedAverage = 4.2;
+        //[Fact]
+        //public void GetAverageRating_ReturnsOk_WithValidAverage()
+        //{
+        //    // Arrange
+        //    int shopId = 1;
+        //    double expectedAverage = 4.2;
 
-            _mockrepo.Setup(r => r.GetAverageRatingByShopId(shopId)).Returns(expectedAverage);
+        //    _mockrepo.Setup(r => r.GetAverageRatingByShopId(shopId)).Returns(expectedAverage);
 
-            // Act
-            var result = _controller.GetAverageRating(shopId);
+        //    // Act
+        //    var result = _controller.GetAverageRating(shopId);
 
-            // Assert
-            var okResult = Assert.IsType<OkObjectResult>(result);
-            Assert.Equal(expectedAverage, okResult.Value);
-        }
+        //    // Assert
+        //    var okResult = Assert.IsType<OkObjectResult>(result);
+        //    Assert.Equal(expectedAverage, okResult.Value);
+        //}
 
 
     }

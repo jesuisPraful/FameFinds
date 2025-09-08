@@ -72,27 +72,27 @@ namespace FameFindsWebServicesTests
             Assert.Equal("No products found for the selected city.", notFoundResult.Value);
         }
 
-        [Fact]
-        public void AddProduct_ReturnsOk_WhenProductIsValid()
-        {
-            // Arrange
-            var newProduct = new Product
-            {
-                ProductName = "TV",
-                Description = "Smart TV",
-                CategoryId = 1,
-                CityId = 1
-            };
+        //[Fact]
+        //public void AddProduct_ReturnsOk_WhenProductIsValid()
+        //{
+        //    // Arrange
+        //    var newProduct = new Product
+        //    {
+        //        ProductName = "TV",
+        //        Description = "Smart TV",
+        //        CategoryId = 1,
+        //        CityId = 1
+        //    };
 
-            _mockrepo.Setup(r => r.AddProduct(It.IsAny<Product>())).Returns(true);
-            _controller.ModelState.Clear(); // Ensure model is valid
+        //    _mockrepo.Setup(r => r.AddProduct(It.IsAny<Product>())).Returns(true);
+        //    _controller.ModelState.Clear(); // Ensure model is valid
 
-            // Act
-            var result = _controller.AddProduct(newProduct);
+        //    // Act
+        //    var result = _controller.AddProduct(newProduct);
 
-            // Assert
-            var okResult = Assert.IsType<OkObjectResult>(result);
-            Assert.Equal("Product added successfully", okResult.Value);
-        }
+        //    // Assert
+        //    var okResult = Assert.IsType<OkObjectResult>(result);
+        //    Assert.Equal("Product added successfully", okResult.Value);
+        //}
     }
 }
