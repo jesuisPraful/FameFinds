@@ -17,17 +17,18 @@ export class ViewShopsComponent implements OnInit {
   cityName: string = '';
   selectedShop: IShop | null = null;
   showMsgDiv: boolean = false;
+  
 
   constructor(private _service: ShopService, private _router: Router, private _ratingService: RatingService, private location: Location
 ) { }
 
 
-  goBack() {
-    this.location.back();
-  }
 
   logout() {
     this._router.navigate(['/login']);
+  }
+  products() {
+    this._router.navigate(['/view-products']);
   }
 
   ngOnInit(): void {
