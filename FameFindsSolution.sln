@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FameFindsDAL", "FameFindsDA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FameFindsWebServices", "FameFindsWebServices\FameFindsWebServices.csproj", "{3076C79E-03B9-4E4D-B3A2-9D9D77BA0B9C}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FameFindsApp", "FameFindsApp\", "{DA858FB5-F5C4-4741-B472-1E783B327E03}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FameFindsApp(2)", "FameFindsApp\", "{DA858FB5-F5C4-4741-B472-1E783B327E03}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_59770"
