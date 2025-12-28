@@ -3,3 +3,7 @@ GET {{FameFindsWebServices_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+//The file is used to test your API endpoints directly from Visual Studio or VS Code.
+
+//It is basically a built-in API testing tool.

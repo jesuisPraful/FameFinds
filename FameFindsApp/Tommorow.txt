@@ -1,0 +1,83 @@
+Salesforce Basics
+
+Salesforce is a cloud-based CRM that helps businesses manage customer data, sales, marketing, and support in one place.
+Customer 360: Single view of each customer for personalized service.
+Key Clouds: Sales Cloud, Service Cloud, Marketing Cloud, Commerce Cloud.
+Low-Code Platform: Build custom apps and automate tasks without heavy coding.
+Ecosystem: Salesforce + partners + customers + Trailblazer community.
+Result: Better customer experience, shared data, and faster innovation.
+
+
+
+Salesforce Platform Basics
+
+The Salesforce Platform lets you build and customize apps on the cloud without heavy coding.
+Drag-and-drop tools & low-code automation to create custom functionality.
+Prebuilt objects & APIs for quick integration with other systems.
+Scales easily for any business use case.
+
+
+
+Customer 360 (Short)
+
+Salesforce Customer 360 gives a single, shared view of each customer across sales, service, marketing, and commerce.
+Combines data from all touchpoints—website, email, support, social, and more.
+Helps teams deliver personalized, consistent experiences in real time.
+Works with all Salesforce clouds and external systems for a unified customer profile.
+
+
+Salesforce for Nonprofits Basics (Short)
+
+Salesforce Nonprofit Cloud helps charities and NGOs manage everything in one place:
+Fundraising: Track donors, gifts, and campaigns.
+Program Management: Monitor programs, services, and participant outcomes.
+Donor Relationships: Unified view for personalized engagement.
+Automation & Reports: Streamline tasks and show impact with dashboards.
+
+
+What Salesforce Does (Short)
+
+Salesforce is a cloud-based CRM platform that helps businesses:
+Manage customer relationships: Store and track contacts, leads, and interactions.
+Boost sales & marketing: Automate campaigns, manage pipelines, and close deals faster.
+Provide support: Handle service cases and customer inquiries efficiently.
+Build custom apps: Use low-code tools to create tailored business solutions.
+Goal: Connect every team with a single, real-time view of the customer.
+
+
+Nonprofit Success Pack (NPSP) Health & Optimization – Short
+
+Keep your Salesforce NPSP running smoothly by:
+Regular Data Checks: Clean duplicates and update donor/contact info.
+Review Settings & Updates: Apply Salesforce/NPSP releases and best practices.
+Performance Monitoring: Track system speed, storage, and error logs.
+User Training & Feedback: Ensure staff know features and share improvement needs. 
+
+
+Declarative vs. Imperative on Salesforce (Short)
+
+Declarative (Point-and-Click):
+Build with clicks using tools like Flow, Process Builder, and Validation Rules.
+Faster to create, easier to maintain, upgrades automatically.
+Best for most business logic and automation.
+
+Imperative (Code):
+Write Apex, JavaScript, or custom Lightning components.
+Needed for complex logic, heavy integrations, or unique UI.
+Requires developer skills and more testing.
+
+Best Practice:
+Start declarative first; use code only when clicks can’t handle the requirement.
+
+
+Salesforce Ecosystem – Quick Look
+
+The ecosystem is the community around Salesforce, including:
+Customers: Businesses and nonprofits using Salesforce.
+Partners: Companies that build apps, integrations, or provide consulting services.
+Trailblazers: Developers, admins, and users who learn, share, and innovate.
+Salesforce Itself: Provides the platform and updates.
+
+Result: A global network that drives innovation, support, and growth for everyone using Salesforce.
+
+

@@ -38,8 +38,21 @@ internal class Program
         }
         );
 
+        //New one 
+        builder.Services.AddDbContext<FameFindsContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("ConnectionName"),
+        sqlOptions =>
+        {
+            sqlOptions.EnableRetryOnFailure(5, TimeSpan.FromSeconds(30), null);
+        }));
+
+
         builder.Services.AddScoped<IFameFindsDAL, FameFindsRepository>();
-        builder.Services.AddScoped<FameFindsContext>();
+        // I did this now
+        // builder.Services.AddScoped<FameFindsContext>();
+
+        //Older one 
         //builder.Services.AddScoped<AuthenticationService>();
 
         builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
@@ -65,12 +78,14 @@ internal class Program
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
+        //This defines how incoming requests are processed.
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
             app.UseSwaggerUI();
         }
 
+        //Enables Swagger only in the development environment.
         app.UseHttpsRedirection();
 
         app.UseCors("AllowAllOrigins");

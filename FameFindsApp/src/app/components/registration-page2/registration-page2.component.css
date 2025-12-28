@@ -11,7 +11,7 @@ body, html {
   justify-content: left;
   align-items: left;
   min-height: 100vh;
-  background-image: url('/assets/images/BgImage-Reg.png');
+  background-image: url('/assets/images/Registration.png');
   background-size: cover;
   align-items: center;
   padding: 2rem;

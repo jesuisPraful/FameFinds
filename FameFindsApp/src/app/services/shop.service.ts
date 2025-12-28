@@ -85,8 +85,6 @@ export class ShopService {
 
   }
 
-
-
   updateShopIsOpenStatus(shopId: number, isOpen: boolean) {
     return this._http.put(
       `https://localhost:7249/api/Shop/isOpen?shopId=${shopId}&isOpen=${isOpen}`,

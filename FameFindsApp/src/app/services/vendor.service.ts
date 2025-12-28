@@ -8,6 +8,7 @@ import { Observable, catchError, throwError } from 'rxjs';
 export class VendorService {
 
   constructor(private _http: HttpClient) { }
+
   validateCredentials(email: string, passwordHash: string): Observable<any> {
     let param = "?email=" + email + "&passwordHash=" + passwordHash;
     let tempVar = this._http.post(`https://localhost:7249/api/Vendor/Login/login` + param, null).pipe(catchError(this.errorHandler))

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,ViewEncapsulation } from '@angular/core';
 import { RegisterService } from '../../services/register.service';
 import { ICustomer } from '../../Models/customer';
 import { NgForm } from '@angular/forms';
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-registration-page',
   templateUrl: './registration-page.component.html',
-  styleUrls: ['./registration-page.component.css']
+  styleUrls: ['./registration-page.component.css'],
 })
 export class RegistrationPageComponent {
   user: ICustomer = {

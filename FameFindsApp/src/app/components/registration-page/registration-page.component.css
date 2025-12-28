@@ -1,21 +1,29 @@
+ 
+
+
+
+
+
 body, html {
   height: 100%;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url('/assets/images/BgImage-Reg.png');
+  /*background-image: url('/assets/images/BgImage-Reg.png'); */
+  background-color: forestgreen;
   background-size: cover;
 }
 
 .register-container {
   display: flex;
-  justify-content: left;
-  align-items: left;
-  min-height: 100vh;
-  background-image: url('/assets/images/BgImage-Reg.png');
-  background-size: cover;
-  align-items: center;
+  justify-content: center; /* or flex-end if you want box on right */
+  align-items: center; /* or flex-end if you want box at bottom */
+  min-height: 100vh; /* full height */
+  width: 100%;
+  background-image: url('../../../assets/images/Swagatam.png'); /* keep path relative to src/assets */
+  background-size: cover; /* cover full container */
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 2rem;
-  height: 40vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -134,3 +142,6 @@ button {
       border-radius: 12px;
     }
 }
+
+
+/**/

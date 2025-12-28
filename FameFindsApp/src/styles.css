@@ -1,11 +1,14 @@
-body, html {
+html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow-y: auto;/*  enable vertical scroll */
+  overflow-y: auto;
+/*  /background: url('assets/images/Background.png');*/
+  background-size: cover;
 }
 
-/* Ensure the form container does not block scroll */
+
+/* Ensure forms never block scroll */
 .shop-form-container {
   max-height: none;
   overflow: visible;

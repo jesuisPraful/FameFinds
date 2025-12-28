@@ -98,7 +98,7 @@ CREATE TABLE Products (
     CategoryId INT,
     FOREIGN KEY (CategoryId) REFERENCES Category(CategoryId),
     FOREIGN KEY (CityId) REFERENCES City(CityId)
-);
+); 
 GO
 
 
@@ -658,3 +658,6 @@ Insert into ShopProduct(ShopId, ProductId, Price, Stock)Values
 (136, 31, 290, 100),
 (137, 31, 350, 300),
 (138, 31, 180, 900);
+
+
+select * from ShopProduct;

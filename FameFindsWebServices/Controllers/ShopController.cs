@@ -52,6 +52,7 @@ namespace FameFindsWebServices.Controllers
             }
             return Ok(shops);
         }
+
         [HttpGet("GetCityIdByShopId/{shopId}")]
         public IActionResult GetCityIdByShopId(int shopId)
         {
@@ -70,8 +71,6 @@ namespace FameFindsWebServices.Controllers
             }
         }
 
-
-        
         [HttpPost("Register")]
         public IActionResult RegisterShop(FameFindsWebServices.Models.Shop shop)
         {
@@ -113,11 +112,6 @@ namespace FameFindsWebServices.Controllers
             }
         }
 
-
-
-
-
-
         [HttpGet("shopId")]
         public IActionResult GetShopsByShopId(int shopId)
         {
@@ -144,9 +138,7 @@ namespace FameFindsWebServices.Controllers
             }
         }
 
-
         [HttpGet("vendorId")]
-
         public IActionResult GetShopsByVendorId(int vendorId)
         {
             List<Shop> shops = new List<Shop>();
@@ -205,8 +197,6 @@ namespace FameFindsWebServices.Controllers
             return Ok(shopIds);
         }
 
-
-
         [HttpGet("shopName")]
         public IActionResult GetShopsByShopName(string shopName)
         {
@@ -243,9 +233,7 @@ namespace FameFindsWebServices.Controllers
             return Ok(shops);
         }
 
-
         [HttpGet("cityName")]
-
         public IActionResult GetShopsByCityName(string cityName)
         {
             List<Shop> shops = new List<Shop>();
@@ -280,7 +268,6 @@ namespace FameFindsWebServices.Controllers
             }
             return Ok(shops);
         }
-
 
         [HttpGet("productName")]
         public IActionResult GetShopsByProduct(string productName)
@@ -321,7 +308,6 @@ namespace FameFindsWebServices.Controllers
             }
              
         }
-
 
         [HttpGet("categoryName")]
         public IActionResult GetShopByCategoryName(string categoryName)
@@ -387,6 +373,7 @@ namespace FameFindsWebServices.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+
         [HttpDelete]
         public IActionResult RemoveShop(int shopId)
         {
@@ -434,8 +421,6 @@ namespace FameFindsWebServices.Controllers
             
         }
 
-
-
         [HttpPut("contactNumber")]
         public IActionResult UpdateShopContactNumber(int shopId, string contactNumber, string nContactNumber)
         {
@@ -456,8 +441,6 @@ namespace FameFindsWebServices.Controllers
                 return BadRequest("Failed to Update Shop Contact Number");
             }
         }
-
-
 
         [HttpPut("emailId")]
         public IActionResult UpdateShopEmailId(int shopId, string nemailId,string emailId)
@@ -480,7 +463,6 @@ namespace FameFindsWebServices.Controllers
                 return BadRequest("Failed to Update Shop");
             }
         }
-
 
         [HttpPut("isOpen")]
         public IActionResult UpdateShopIsOpen(int shopId, bool isOpen)
