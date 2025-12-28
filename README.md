@@ -19,8 +19,6 @@ FameFinds is a comprehensive web platform that bridges the gap between local bus
 ### Authentication & User Management
 - **OTP-based Registration:** Secure account creation with email verification
 - **Dual Role System:** Separate experiences for Shop Owners and Customers
-- **JWT Authentication:** Stateless, secure session management
-- **Profile Management:** Comprehensive user profile customization
 
 ### Shop Discovery & Management
 - **Interactive Map Integration:** Visual shop discovery using Google Maps
