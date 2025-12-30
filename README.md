@@ -6,7 +6,7 @@ FameFinds is a comprehensive web platform that bridges the gap between local bus
 
 ---
 
-## ✨ Core Value Proposition
+## Core Value Proposition
 
 - **For Customers:** Discover authentic local products, hidden gems, and famous specialties in any city through interactive map-based exploration
 - **For Shop Owners:** Gain digital presence, reach new customers, and showcase products without complex e-commerce infrastructure
@@ -14,7 +14,7 @@ FameFinds is a comprehensive web platform that bridges the gap between local bus
 
 ---
 
-## 🎯 Key Features
+## Key Features
 
 ### Authentication & User Management
 - **OTP-based Registration:** Secure account creation with email verification
@@ -42,7 +42,7 @@ FameFinds is a comprehensive web platform that bridges the gap between local bus
 
 ---
 
-## 🏛️ Architecture
+## Architecture
 
 ### Monolithic Layered Architecture
 
@@ -76,7 +76,7 @@ FameFinds is a comprehensive web platform that bridges the gap between local bus
 
 ---
 
-## 📊 Application Modules
+## Application Modules
 
 ### 1. User Module
 - Multi-factor authentication with OTP verification
@@ -126,7 +126,7 @@ FameFinds is a comprehensive web platform that bridges the gap between local bus
 
 ---
 
-## 🔄 Request Processing Flow
+## Request Processing Flow
 
 ```
 1. Client Request (Angular) → 2. API Controller
@@ -152,7 +152,7 @@ FameFinds is a comprehensive web platform that bridges the gap between local bus
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Backend
 | Technology | Purpose |
@@ -200,7 +200,7 @@ FameFinds is a comprehensive web platform that bridges the gap between local bus
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 - **.NET SDK 8.0** or higher
 - **Node.js 18.x** or higher
@@ -211,7 +211,7 @@ FameFinds is a comprehensive web platform that bridges the gap between local bus
 
 ---
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
 ### 1. Clone the Repository
 ```bash
@@ -290,7 +290,7 @@ dotnet run --seed
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Run Unit Tests
 ```bash
@@ -305,7 +305,7 @@ dotnet test /p:CollectCoverage=true /p:CoverageReportsDirectory=./coverage
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 FameFinds/
@@ -340,7 +340,7 @@ FameFinds/
 
 ---
 
-## 🔒 Security Features
+## Security Features
 
 - **JWT-based Authentication:** Secure, stateless session management
 - **Role-based Authorization:** Granular access control
@@ -353,7 +353,7 @@ FameFinds/
 
 ---
 
-## 🚦 API Endpoints Overview
+## API Endpoints Overview
 
 ### Authentication
 - `POST /api/auth/register` - Register new user
@@ -379,28 +379,16 @@ FameFinds/
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
 ### Phase 1 (Current)
-- ✅ Core platform functionality
-- ✅ Map-based shop discovery
-- ✅ Rating and review system
-
-### Phase 2 (Upcoming)
-- 🔄 Mobile application (iOS/Android)
-- 🔄 In-app messaging between customers and shop owners
-- 🔄 Advanced analytics dashboard
-- 🔄 Multi-language support
-
-### Phase 3 (Future)
-- 📋 Online ordering integration
-- 📋 Payment gateway integration
-- 📋 AI-powered product recommendations
-- 📋 Social media integration
+- Core platform functionality
+- Map-based shop discovery
+- Rating and review system
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -412,33 +400,8 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## 📄 License
-
+## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-
-## 👨‍💻 Author
-
-**Praful**  
-GitHub: [@jesuisPraful](https://github.com/jesuisPraful)
-
----
-
-## 🙏 Acknowledgments
-
-- Google Maps Platform for location services
-- The ASP.NET Core and Angular communities
-- All contributors and testers
-
----
-
-## 📞 Support
-
-For issues, questions, or suggestions:
-- Open an issue on [GitHub](https://github.com/jesuisPraful/FameFinds/issues)
-- Contact: [Your Email]
-
----
 
 **⭐ If you find this project useful, please consider giving it a star on GitHub!**
